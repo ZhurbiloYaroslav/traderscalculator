@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.5.0)
+  - INSPersistentContainer (1.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - INSPersistentContainer
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  INSPersistentContainer: 7e04a0d332ba075441ce0ee73d584ce84d76ac23
 
-PODFILE CHECKSUM: 7c721069331590a14f8442e648ec3c949a23081c
+PODFILE CHECKSUM: d0ce747ee3dffe325a8dd74e1acb7c8b477c299e
 
 COCOAPODS: 1.2.1
