@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */; };
-		C4FB60DC1F1268A700EDE9C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60DB1F1268A700EDE9C7 /* ViewController.swift */; };
+		C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */; };
 		C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */; };
 		C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60E01F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld */; };
 		C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60E31F1268A700EDE9C7 /* Assets.xcassets */; };
@@ -20,9 +21,10 @@
 		26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradersCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradersCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4FB60DB1F1268A700EDE9C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		C4FB60DE1F1268A700EDE9C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4FB60E11F1268A700EDE9C7 /* TradersCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TradersCalculator.xcdatamodel; sourceTree = "<group>"; };
 		C4FB60E31F1268A700EDE9C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +64,8 @@
 		C45F8CB21F127244007B1B49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C4FB60DB1F1268A700EDE9C7 /* ViewController.swift */,
+				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
+				C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -70,6 +73,8 @@
 		C45F8CB31F127253007B1B49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */,
+				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,8 +122,6 @@
 				C45F8CB31F127253007B1B49 /* View */,
 				C45F8CB21F127244007B1B49 /* Controller */,
 				C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */,
-				C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */,
-				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
 			);
 			path = TradersCalculator;
 			sourceTree = "<group>";
@@ -247,8 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
-				C4FB60DC1F1268A700EDE9C7 /* ViewController.swift in Sources */,
+				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
+				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
