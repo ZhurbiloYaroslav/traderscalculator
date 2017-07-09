@@ -13,9 +13,13 @@
 		C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60E01F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld */; };
 		C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60E31F1268A700EDE9C7 /* Assets.xcassets */; };
 		C4FB60E71F1268A700EDE9C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */; };
+		E34743D90C485DC1E5F1A56E /* Pods_TradersCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradersCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradersCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FB60DB1F1268A700EDE9C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34743D90C485DC1E5F1A56E /* Pods_TradersCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B25AB6699E12051529470BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A74AD94DBC0F95EE6B3D1579 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */,
+				26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C4FB60CD1F1268A700EDE9C7 = {
 			isa = PBXGroup;
 			children = (
 				C4FB60D81F1268A700EDE9C7 /* TradersCalculator */,
 				C4FB60D71F1268A700EDE9C7 /* Products */,
+				A74AD94DBC0F95EE6B3D1579 /* Pods */,
+				8B25AB6699E12051529470BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4FB60EB1F1268A700EDE9C7 /* Build configuration list for PBXNativeTarget "TradersCalculator" */;
 			buildPhases = (
+				C7EEE88B3FF3ECEE8C23A3B5 /* [CP] Check Pods Manifest.lock */,
 				C4FB60D21F1268A700EDE9C7 /* Sources */,
 				C4FB60D31F1268A700EDE9C7 /* Frameworks */,
 				C4FB60D41F1268A700EDE9C7 /* Resources */,
+				D3248783E4582C8994FB1019 /* [CP] Embed Pods Frameworks */,
+				B14AD73DA83F6F1BBEB1C702 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B14AD73DA83F6F1BBEB1C702 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7EEE88B3FF3ECEE8C23A3B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3248783E4582C8994FB1019 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4FB60D21F1268A700EDE9C7 /* Sources */ = {
@@ -264,6 +339,7 @@
 		};
 		C4FB60EC1F1268A700EDE9C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TradersCalculator/Info.plist;
@@ -277,6 +353,7 @@
 		};
 		C4FB60ED1F1268A700EDE9C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TradersCalculator/Info.plist;
