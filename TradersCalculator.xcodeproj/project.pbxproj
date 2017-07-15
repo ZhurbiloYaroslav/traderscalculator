@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */; };
+		C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */; };
+		C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A81F1A8DAF00599563 /* CalendarVC.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
+		C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */; };
+		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
+		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
+		C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3A5621F17F84B004DC1C9 /* Constants.swift */; };
+		C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */; };
 		C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */; };
 		C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */; };
 		C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */; };
@@ -21,7 +29,15 @@
 		26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradersCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptSelectParamsVC.swift; sourceTree = "<group>"; };
+		C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcAddItemVC.swift; sourceTree = "<group>"; };
+		C45697A81F1A8DAF00599563 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
+		C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
+		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
+		C4F3A5621F17F84B004DC1C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = YahooJSONResponse.rtf; sourceTree = "<group>"; };
 		C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradersCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
@@ -65,7 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
+				C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */,
 				C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */,
+				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
+				C45697A81F1A8DAF00599563 /* CalendarVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -75,6 +94,7 @@
 			children = (
 				C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */,
 				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
+				C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -82,6 +102,8 @@
 		C45F8CB41F127257007B1B49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
+				C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -94,6 +116,22 @@
 				C4FB60E01F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		C4DF3EDB1F1282E100C2CB89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C4F3A5611F17F315004DC1C9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C4F3A5621F17F84B004DC1C9 /* Constants.swift */,
+				C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		C4FB60CD1F1268A700EDE9C7 = {
@@ -117,6 +155,8 @@
 		C4FB60D81F1268A700EDE9C7 /* TradersCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				C4F3A5611F17F315004DC1C9 /* Util */,
+				C4DF3EDB1F1282E100C2CB89 /* Extensions */,
 				C45F8CB51F12726D007B1B49 /* Resources */,
 				C45F8CB41F127257007B1B49 /* Model */,
 				C45F8CB31F127253007B1B49 /* View */,
@@ -188,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */,
 				C4FB60E71F1268A700EDE9C7 /* LaunchScreen.storyboard in Resources */,
 				C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */,
 				C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */,
@@ -249,10 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
+				C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */,
+				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
+				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
+				C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
+				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
+				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
