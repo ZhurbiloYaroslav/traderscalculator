@@ -10,15 +10,22 @@ import UIKit
 
 class CalculatorVC: UIViewController {
     
-    //TODO: insert the tableview
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO: associate tableview delegate with self
+        
         
         // Make request to the server
         makeRequest()
+    }
+    
+    // Init delegates
+    func initDelegates() {
+        
+        self.tableView.delegate = self
+        
     }
     
     // Make request to the server

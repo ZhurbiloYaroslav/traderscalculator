@@ -10,6 +10,7 @@
 		C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */; };
 		C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */; };
 		C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A81F1A8DAF00599563 /* CalendarVC.swift */; };
+		C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
@@ -32,6 +33,7 @@
 		C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptSelectParamsVC.swift; sourceTree = "<group>"; };
 		C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcAddItemVC.swift; sourceTree = "<group>"; };
 		C45697A81F1A8DAF00599563 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorItemCell.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */,
 				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
 				C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */,
+				C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -103,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
-				C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C4F3A5621F17F84B004DC1C9 /* Constants.swift */,
+				C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */,
 				C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */,
 			);
 			name = Util;
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
 				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
 				C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */,

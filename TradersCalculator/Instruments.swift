@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Instruments {
+struct Instruments {
     
     var aud = ["AUD", "Australian Dollar"]
     var cad = ["CAD", "Canadian Dollar"]
