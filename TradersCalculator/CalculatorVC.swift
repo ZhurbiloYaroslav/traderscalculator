@@ -10,12 +10,13 @@ import UIKit
 
 class CalculatorVC: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var calculatorTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Init delegates
+        initDelegates()
         
         // Make request to the server
         makeRequest()
@@ -24,7 +25,8 @@ class CalculatorVC: UIViewController {
     // Init delegates
     func initDelegates() {
         
-        self.tableView.delegate = self
+        calculatorTableView.delegate = self
+        calculatorTableView.dataSource = self
         
     }
     
@@ -54,7 +56,8 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorItemCell")
+//            else { return UITableViewCell() }
         
         return UITableViewCell()
     }

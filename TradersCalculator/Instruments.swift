@@ -10,16 +10,6 @@ import Foundation
 
 struct Instruments {
     
-    var aud = ["AUD", "Australian Dollar"]
-    var cad = ["CAD", "Canadian Dollar"]
-    var chf = ["CHF", "Swiss Franc"]
-    var gbp = ["GBP", "Great Britain Pound"]
-    var eur = ["EUR", "Euro"]
-    var nzd = ["NZD", "New Zealand Dollar"]
-    var sgd = ["SGD", "Singapore Dollar"]
-    var usd = ["USD", "US Dollar"]
-    var jpy = ["JPY", "Japanese Yen"]
-    
     var forexMajors = [
         "AUDUSD", "EURUSD", "GBPUSD",
         "USDCAD", "USDCHF", "USDJPY"
@@ -39,6 +29,15 @@ struct Instruments {
     var forexExotics = [
         ""
     ]
+    
+    // As a parameter, we should use variables of forexMajors and/or forexMinors
+//    func getDictWith(instruments: [String]) -> Dictionary<String, [String: String]> {
+//        
+//        let dictionaryWithInstruments = Dictionary<String, [String: String]>()
+//        
+//        return dictionaryWithInstruments
+//    }
+    
     
     
 

@@ -15,6 +15,8 @@
 		C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
+		C4E917341F1BC30200BE792E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917331F1BC30200BE792E /* Currency.swift */; };
+		C4E94D961F1BAE3F00C313D7 /* ItemToCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E94D951F1BAE3F00C313D7 /* ItemToCalculate.swift */; };
 		C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3A5621F17F84B004DC1C9 /* Constants.swift */; };
 		C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */; };
 		C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 		C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
+		C4E917331F1BC30200BE792E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C4E94D951F1BAE3F00C313D7 /* ItemToCalculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemToCalculate.swift; sourceTree = "<group>"; };
 		C4F3A5621F17F84B004DC1C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = YahooJSONResponse.rtf; sourceTree = "<group>"; };
 		C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradersCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
+				C4E94D951F1BAE3F00C313D7 /* ItemToCalculate.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -127,12 +132,21 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		C4E94D9B1F1BAF9A00C313D7 /* Examples of JSON */ = {
+			isa = PBXGroup;
+			children = (
+				C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */,
+			);
+			name = "Examples of JSON";
+			sourceTree = "<group>";
+		};
 		C4F3A5611F17F315004DC1C9 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				C4F3A5621F17F84B004DC1C9 /* Constants.swift */,
 				C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */,
-				C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */,
+				C4E917331F1BC30200BE792E /* Currency.swift */,
+				C4E94D9B1F1BAF9A00C313D7 /* Examples of JSON */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -297,6 +311,7 @@
 				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
 				C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */,
+				C4E94D961F1BAE3F00C313D7 /* ItemToCalculate.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
 				C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */,
@@ -304,6 +319,7 @@
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
+				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
