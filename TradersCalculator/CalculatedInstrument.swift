@@ -25,7 +25,7 @@ class CalculatedInstrument {
 }
 
 // Initializers
-extension ItemToCalculate {
+extension CalculatedInstrument {
     
     // Designated initializer
     
@@ -33,7 +33,7 @@ extension ItemToCalculate {
 }
 
 // Getters and Setters
-extension ItemToCalculate {
+extension CalculatedInstrument {
     
     
     
