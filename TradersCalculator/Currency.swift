@@ -8,16 +8,48 @@
 
 import Foundation
 
-struct Currency {
+//TODO: Make these variables not global, but in the Instruments.swift like an instance variables
+
+let AUD = "AUD"
+let CAD = "CAD"
+let CHF = "CHF"
+let GBP = "GBP"
+let EUR = "EUR"
+let NZD = "NZD"
+let SGD = "SGD"
+let USD = "USD"
+let JPY = "JPY"
+let DKK = "DKK"
+let HKD = "HKD"
+let NOK = "NOK"
+let PLN = "PLN"
+let SEK = "SEK"
+let TRY = "TRY"
+let ZAR = "ZAR"
+let CNH = "CNH"
+let CZK = "CZK"
+let HUF = "HUF"
+let MXN = "MXN"
+let RUB = "RUB"
+let RUR = "RUR"
+let THB = "THB"
+let XBR = "XBR"
+let XNG = "XNG"
+let XTI = "XTI"
+let BTC = "BTC"
+
+
+let currencyFullName = [
     
-    var aud = ["AUD", "Australian Dollar"]
-    var cad = ["CAD", "Canadian Dollar"]
-    var chf = ["CHF", "Swiss Franc"]
-    var gbp = ["GBP", "Great Britain Pound"]
-    var eur = ["EUR", "Euro"]
-    var nzd = ["NZD", "New Zealand Dollar"]
-    var sgd = ["SGD", "Singapore Dollar"]
-    var usd = ["USD", "US Dollar"]
-    var jpy = ["JPY", "Japanese Yen"]
+    AUD : "Australian Dollar",
+    CAD : "Canadian Dollar",
+    CHF : "Swiss Franc",
+    GBP : "Great Britain Pound",
+    EUR : "Euro",
+    NZD : "New Zealand Dollar",
+    SGD : "Singapore Dollar",
+    USD : "US Dollar",
+    JPY : "Japanese Yen",
+    RUR : "Russian Ruble"
     
-}
+]

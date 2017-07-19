@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+//TODO: Make these variables not global, but in the Instruments.swift like an instance variables
+
 //TOOD: Make comment
 typealias DownloadComplete = () -> ()
 

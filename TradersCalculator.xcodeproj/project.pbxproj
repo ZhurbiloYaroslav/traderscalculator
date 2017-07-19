@@ -16,6 +16,8 @@
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
 		C4E917341F1BC30200BE792E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917331F1BC30200BE792E /* Currency.swift */; };
+		C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917351F1CB46500BE792E /* String+Extension.swift */; };
+		C4E917391F1CDE1000BE792E /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917381F1CDE1000BE792E /* Index.swift */; };
 		C4E94D961F1BAE3F00C313D7 /* ItemToCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E94D951F1BAE3F00C313D7 /* ItemToCalculate.swift */; };
 		C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3A5621F17F84B004DC1C9 /* Constants.swift */; };
 		C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */; };
@@ -41,6 +43,8 @@
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
 		C4E917331F1BC30200BE792E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C4E917351F1CB46500BE792E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C4E917381F1CDE1000BE792E /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		C4E94D951F1BAE3F00C313D7 /* ItemToCalculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemToCalculate.swift; sourceTree = "<group>"; };
 		C4F3A5621F17F84B004DC1C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = YahooJSONResponse.rtf; sourceTree = "<group>"; };
@@ -128,8 +132,20 @@
 		C4DF3EDB1F1282E100C2CB89 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C4E917351F1CB46500BE792E /* String+Extension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C4E917371F1CDB3F00BE792E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C4F3A5621F17F84B004DC1C9 /* Constants.swift */,
+				C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */,
+				C4E917331F1BC30200BE792E /* Currency.swift */,
+				C4E917381F1CDE1000BE792E /* Index.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		C4E94D9B1F1BAF9A00C313D7 /* Examples of JSON */ = {
@@ -140,15 +156,13 @@
 			name = "Examples of JSON";
 			sourceTree = "<group>";
 		};
-		C4F3A5611F17F315004DC1C9 /* Util */ = {
+		C4F3A5611F17F315004DC1C9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C4F3A5621F17F84B004DC1C9 /* Constants.swift */,
-				C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */,
-				C4E917331F1BC30200BE792E /* Currency.swift */,
+				C4E917371F1CDB3F00BE792E /* Constants */,
 				C4E94D9B1F1BAF9A00C313D7 /* Examples of JSON */,
 			);
-			name = Util;
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		C4FB60CD1F1268A700EDE9C7 = {
@@ -172,7 +186,7 @@
 		C4FB60D81F1268A700EDE9C7 /* TradersCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				C4F3A5611F17F315004DC1C9 /* Util */,
+				C4F3A5611F17F315004DC1C9 /* Utils */,
 				C4DF3EDB1F1282E100C2CB89 /* Extensions */,
 				C45F8CB51F12726D007B1B49 /* Resources */,
 				C45F8CB41F127257007B1B49 /* Model */,
@@ -320,6 +334,8 @@
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
+				C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */,
+				C4E917391F1CDE1000BE792E /* Index.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

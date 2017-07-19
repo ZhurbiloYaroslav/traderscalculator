@@ -19,7 +19,7 @@ class CalculatorVC: UIViewController {
         initDelegates()
         
         // Make request to the server
-        makeRequest()
+//        makeRequest()
     }
     
     // Init delegates

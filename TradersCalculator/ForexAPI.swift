@@ -11,6 +11,8 @@ import Alamofire
 
 class ForexAPI {
     
+    // Rate - цена открытия
+    
     func downloadForexData(completed: @escaping DownloadComplete) {
         
         guard let url = URL(string: Constants.yahooBaseURL) else { return }

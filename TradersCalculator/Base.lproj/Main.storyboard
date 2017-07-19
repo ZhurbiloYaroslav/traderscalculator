@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="78" width="320" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mAm-qu-LAd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalculatorItemCell" id="mAm-qu-LAd">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mAm-qu-LAd" id="JQw-o8-Fu6">
@@ -406,28 +406,34 @@
                                     <constraint firstAttribute="height" constant="50" id="NCa-iq-m8g"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hkB-At-Ifi">
-                                <rect key="frame" x="16" y="78" width="288" height="430"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hkB-At-Ifi">
+                                <rect key="frame" x="16" y="78" width="288" height="410.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y2h-Jb-QlW" userLabel="Stack Instrument">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="236.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="197"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Выберите инструмент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuN-YL-Tsw">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpv-4s-XCM">
-                                                <rect key="frame" x="0.0" y="20.5" width="288" height="216"/>
+                                                <rect key="frame" x="0.0" y="23.5" width="288" height="150"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="216" id="TYM-J8-yvY"/>
+                                                    <constraint firstAttribute="height" constant="150" id="WnJ-IC-WMq"/>
                                                 </constraints>
                                             </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Australian Dollar vs Canadian Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mD-5i-CDu">
+                                                <rect key="frame" x="0.0" y="173.5" width="288" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-Tc-T4Q" userLabel="Stack - Values">
-                                        <rect key="frame" x="0.0" y="236.5" width="288" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="217" width="288" height="193.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dIt-15-ONQ" userLabel="Stack Currency">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
@@ -610,6 +616,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="iDV-43-qYF"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="instrumentsPicker" destination="gpv-4s-XCM" id="3Hk-w1-aOu"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="InstrumentAdd" id="i3j-le-Kls"/>
                     </connections>
                 </viewController>
