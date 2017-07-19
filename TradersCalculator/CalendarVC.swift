@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CalendarVC: UIViewController {
+    
+    @IBOutlet weak var googleBannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // adMob
+        adMob()
+        
+    }
+    
+    //ADMOB
+    func adMob() {
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        
+        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
+        googleBannerView.rootViewController = self
+        googleBannerView.load(request)
+        
     }
 
 }

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class OptSelectParamsVC: UIViewController {
+    
+    @IBOutlet weak var googleBannerView: GADBannerView!
 
     @IBOutlet weak var currencyPickerView: UIPickerView!
     @IBOutlet weak var leveragePickerView: UIPickerView!
@@ -18,6 +21,9 @@ class OptSelectParamsVC: UIViewController {
         
         // Init delegates
         initDelegates()
+        
+        // adMob
+        adMob()
         
         // Select Default rows in Picker Views
         selectDefaultRowsInPickerViews()
@@ -29,6 +35,18 @@ class OptSelectParamsVC: UIViewController {
         
         self.currencyPickerView.delegate = self
         self.leveragePickerView.delegate = self
+        
+    }
+    
+    //ADMOB
+    func adMob() {
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        
+        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
+        googleBannerView.rootViewController = self
+        googleBannerView.load(request)
         
     }
     

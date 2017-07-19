@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Firebase
 import CoreData
+import GoogleMobileAds
 import INSPersistentContainer
 
 @UIApplicationMain
@@ -18,6 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Initialize the Google Mobile Ads SDK.
+        initializeGoogleMobileAds()
+        
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
         return true
     }
 
@@ -92,3 +101,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+// Initialize the Google Mobile Ads SDK.
+extension AppDelegate {
+    
+    func initializeGoogleMobileAds() {
+        
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7923953444264875~2930465540")
+        
+    }
+    
+}

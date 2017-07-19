@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CalcAddItemVC: UIViewController {
+    
+    @IBOutlet weak var googleBannerView: GADBannerView!
 
     @IBOutlet weak var instrumentsPicker: UIPickerView!
     
@@ -18,6 +21,8 @@ class CalcAddItemVC: UIViewController {
         // Init delegates
         initDelegates()
         
+        // adMob
+        adMob()
         
         Instruments().getDictionaryWithInstruments()
     }
@@ -27,6 +32,18 @@ class CalcAddItemVC: UIViewController {
         
         instrumentsPicker.delegate = self
         instrumentsPicker.dataSource = self
+        
+    }
+    
+    //ADMOB
+    func adMob() {
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        
+        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
+        googleBannerView.rootViewController = self
+        googleBannerView.load(request)
         
     }
 

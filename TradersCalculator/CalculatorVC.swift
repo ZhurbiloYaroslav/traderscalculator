@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CalculatorVC: UIViewController {
+    
+    @IBOutlet weak var googleBannerView: GADBannerView!
     
     @IBOutlet weak var calculatorTableView: UITableView!
 
@@ -17,6 +20,9 @@ class CalculatorVC: UIViewController {
         
         // Init delegates
         initDelegates()
+        
+        // adMob
+        adMob()
         
         // Make request to the server
 //        makeRequest()
@@ -27,6 +33,18 @@ class CalculatorVC: UIViewController {
         
         calculatorTableView.delegate = self
         calculatorTableView.dataSource = self
+        
+    }
+    
+    //ADMOB
+    func adMob() {
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        
+        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
+        googleBannerView.rootViewController = self
+        googleBannerView.load(request)
         
     }
     
