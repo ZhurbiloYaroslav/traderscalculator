@@ -23,5 +23,3 @@ let Soybean_N7 = "Soybean_N7"
 let Sugar_N7 = "Sugar_N7"
 let WTI_Q7 = "WTI_Q7"
 let Wheat_N7 = "Wheat_N7"
-
-

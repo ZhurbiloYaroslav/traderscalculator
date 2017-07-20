@@ -63,6 +63,8 @@ class CalcAddItemVC: UIViewController {
         currentCategoryID = 0
         currentInstrumentID = 0
         
+        navigationItem.backBarButtonItem?.title = ""
+        
         getDescriptionOfInstrumentIn(instrumentsPicker)
         
     }
@@ -151,7 +153,7 @@ extension CalcAddItemVC {
         
         // Make a adictionary with values for inserting to Firebase
         let positionDict = [
-            "instrument": "USDEUR",
+            "instrument": getInstrumentName(instrumentsPicker),
             "category": instruments.getCategoryNameBy(categoryID: currentCategoryID),
             "value": value,
             "openPrice": openPrice,

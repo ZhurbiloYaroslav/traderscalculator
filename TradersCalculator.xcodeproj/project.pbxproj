@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					C4FB60D51F1268A700EDE9C7 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4PM46468DE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -482,6 +483,7 @@
 			baseConfigurationReference = 9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4PM46468DE;
 				INFOPLIST_FILE = TradersCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -496,6 +498,7 @@
 			baseConfigurationReference = 26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4PM46468DE;
 				INFOPLIST_FILE = TradersCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

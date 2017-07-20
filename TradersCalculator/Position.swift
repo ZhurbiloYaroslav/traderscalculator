@@ -12,17 +12,14 @@ import Foundation
 class Position {
     
     fileprivate var _creationDate: String!
-    fileprivate var _instrument: Instrument!
+    fileprivate var _instrument: String!
     fileprivate var _instrumentCategory: String
     fileprivate var _value: Double!         // Value means "Лот" in Russian
     fileprivate var _openPrice: Double!
     fileprivate var _stopLoss: Double!
     fileprivate var _takeProfit: Double!
-    fileprivate var _dealDirection: DealDirection!
+    fileprivate var _dealDirection: String!
     
-    var marga: Double {
-        return _value / _openPrice
-    }
     
     //TODO: Write a description
     enum DealDirection: String {
@@ -32,10 +29,10 @@ class Position {
     }
     
     // Designated initializer
-    init(creationDate: String,       instrument: Instrument,
+    init(creationDate: String,       instrument: String,
          instrumentCategory: String, value: Double,
          openPrice: Double,          stopLoss: Double,
-         takeProfit: Double,         dealDirection: DealDirection) {
+         takeProfit: Double,         dealDirection: String) {
         
         self._creationDate = creationDate
         self._instrument = instrument
@@ -48,32 +45,70 @@ class Position {
         
     }
     
-//    //TODO: Write a description
-//    convenience init(instrumentID: String, firebaseDict: [String:Any]) {
-//        
-//        // Check Data before initialize
-//        var saveCreationDate = ""
-//        var saveInstrument = ""
-//        var saveValue = 0
-//        var saveOpenPrice = 0
-//        var saveStopLoss = 0
-//        var saveTakeProfit = 0
-//        var saveDealDirection = DealDirection.NoDirection
-//        
-//        
-//        // Assign previous variables with values
-//        
-//        if let instrument = firebaseDict["instrument"] as? String {
-//            saveInstrument = instrument
-//        }
-//        
-//        if let creationDate = firebaseDict["creationDate"] as? String {
-//            saveCreationDate = creationDate
-//        }
-//        
-//        //..........Do the same for all variables.........
-//        
-//    }
+    //TODO: Write a description
+    convenience init(positionID: String, firebaseDict: [String:Any]) {
+        
+        // Check Data before initialize
+        
+        // Set default values
+        var saveCreationDate = ""
+        var saveInstrument = ""
+        var saveInstrumentCategory = ""
+        var saveValue: Double = 0
+        var saveOpenPrice: Double = 0
+        var saveStopLoss: Double = 0
+        var saveTakeProfit: Double = 0
+        var saveDealDirection = ""
+        
+        
+        // Assign previous variables with values
+        
+        if let instrumentDealDirection = firebaseDict["dealDirection"] as? String {
+            saveDealDirection = instrumentDealDirection
+        }
+        
+        if let instrumentTakeProfit = firebaseDict["takeProfit"] as? String {
+            if let takeProfit = Double(instrumentTakeProfit) {
+                saveTakeProfit = takeProfit
+            }
+        }
+
+        if let instrumentStopLoss = firebaseDict["stopLoss"] as? String {
+            if let stopLoss = Double(instrumentStopLoss) {
+                saveStopLoss = stopLoss
+            }
+        }
+
+        if let openPrice = firebaseDict["openPrice"] as? String {
+            if let openPrice = Double(openPrice) {
+                saveOpenPrice = openPrice
+            }
+        }
+
+        if let instrumentValue = firebaseDict["value"] as? String {
+            if let value = Double(instrumentValue) {
+                saveValue = value
+            }
+        }
+        
+        if let instrumentCategory = firebaseDict["category"] as? String {
+            saveInstrumentCategory = instrumentCategory
+        }
+        
+        if let instrument = firebaseDict["instrument"] as? String {
+            saveInstrument = instrument
+        }
+        
+        if let creationDate = firebaseDict["creationDate"] as? String {
+            saveCreationDate = creationDate
+        }
+        
+        self.init(creationDate: saveCreationDate, instrument: saveInstrument,
+        instrumentCategory: saveInstrumentCategory, value: saveValue,
+        openPrice: saveOpenPrice, stopLoss: saveStopLoss,
+        takeProfit: saveTakeProfit, dealDirection: saveDealDirection)
+        
+    }
     
 }
 
@@ -82,11 +117,11 @@ class Position {
 extension Position {
     
     
-    var dealDirection: DealDirection {
+    var dealDirection: String {
         if _dealDirection != nil {
             return _dealDirection
         } else {
-            return .NoDirection
+            return ""
         }
     }
     
@@ -122,11 +157,11 @@ extension Position {
         }
     }
     
-    var instrument: Instrument {
+    var instrument: String {
         if _instrument != nil {
             return _instrument
         } else {
-            return Instrument()
+            return ""
         }
     }
     

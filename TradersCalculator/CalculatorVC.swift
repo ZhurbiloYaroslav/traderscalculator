@@ -18,12 +18,15 @@ class CalculatorVC: UIViewController {
     
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
+    var positionsArray: [Position]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Init delegates
         initDelegates()
+        
+        initializeVariables()
         
         // Configure the Firebase
         firebase = FirebaseConnect()
@@ -34,7 +37,7 @@ class CalculatorVC: UIViewController {
         
         // Set the observer for Firebase data
         firebase.ref.observe(.value, with: { snapshot in
-            // Make changes
+            self.updateTable(snapshot)
         })
         
     }
@@ -44,6 +47,15 @@ class CalculatorVC: UIViewController {
         
         calculatorTableView.delegate = self
         calculatorTableView.dataSource = self
+        
+    }
+    
+    func initializeVariables() {
+        
+        positionsArray = [Position]()
+        
+        navigationItem.title = "500 USD"
+//        navigationController?.navigationBar.barTintColor = UIColor.blue
         
     }
     
@@ -79,21 +91,47 @@ class CalculatorVC: UIViewController {
 // Table view delegates and methods
 extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    // Update the table with owners list at the begining and after changes in Firebase
+    func updateTable(_ snapshot: DataSnapshot) {
+        
+        // Define variable with the whole data from Database
+        guard let snapshotValue = snapshot.value as? [String: Any] else {
+            return
+        }
+        
+        // Define variable with only the list of positions
+        guard let positionsArrayFromFirebase = snapshotValue["positions"] as? [String: [String: Any]] else {
+            return
+        }
+        
+        // Make a temporary variable for storing owners list from Firebase
+        var updatedPositionsArray = [Position]()
+        
+        // Make objects of the owners list from Firebase and put them in the array
+        for (key, value) in positionsArrayFromFirebase {
+            let position = Position(positionID: key, firebaseDict: value)
+            updatedPositionsArray.append(position)
+        }
+        
+        // Update this class variable with data from Firebase
+        positionsArray = updatedPositionsArray
+        calculatorTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //TODO: Change it
-        return 1
+        return positionsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorItemCell")
-//            else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatedPositionCell") as? CalculatorItemCell
+            else { return UITableViewCell() }
         
-        return UITableViewCell()
+        cell.updateCell(position: positionsArray[indexPath.row])
+        
+        return cell
     }
     
 }

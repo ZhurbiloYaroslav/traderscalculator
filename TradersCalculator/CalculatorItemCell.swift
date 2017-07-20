@@ -9,25 +9,26 @@
 import UIKit
 
 class CalculatorItemCell: UITableViewCell {
-    // awakeFromNib and setSelected
     
-//    @IBOutlet weak var itemListNumber: UILabel!
-//    @IBOutlet weak var itemInstrument: UILabel!
-////    @IBOutlet weak var itemDealType: RoundButton!
-//    @IBOutlet weak var valueLabel: UILabel!       // Label for value (Russian: Лот)
-//    @IBOutlet weak var openPriceLabel: UILabel!   // The label for the open price label
-//    @IBOutlet weak var stopLossLabel: UILabel!    // The label for Stop loss param
-//    @IBOutlet weak var takeProfitLabel: UILabel!  // The label for Take profit param
-//    
-//    func updateCell() {
-//        
-//        itemListNumber.text = "01"
-//        itemInstrument.text = "USD/CAD"
-////        itemDealType.setTitle("Buy", for: .normal)
-//        valueLabel.text = "0.14"
-//        openPriceLabel.text = "1.045130"
-//        stopLossLabel.text = "1.045130"
-//        takeProfitLabel.text = "1.045130"
-//    }
+    @IBOutlet weak var instrumentNameLabel: UILabel!
+    @IBOutlet weak var dealDirectionLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!       // Label for value (Russian: Лот)
+    @IBOutlet weak var takeProfitLabel: UILabel!
+    @IBOutlet weak var stopLossLabel: UILabel!
+    
+    func updateCell(position: Position) {
+        
+        instrumentNameLabel.text = position.instrument
+        dealDirectionLabel.text = position.dealDirection
+        valueLabel.text = "\(position.value)"
+        stopLossLabel.text = "\(position.stopLoss)"
+        takeProfitLabel.text = "\(position.takeProfit)"
+        
+        if position.dealDirection == "Buy" {
+            dealDirectionLabel.textColor = UIColor.blue
+        } else {
+            dealDirectionLabel.textColor = UIColor.red
+        }
+    }
     
 }
