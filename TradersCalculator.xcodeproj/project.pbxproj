@@ -15,6 +15,8 @@
 		C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
+		C4E8B3821F1F9E4200701EBB /* SetOfInstruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8B3811F1F9E4200701EBB /* SetOfInstruments.swift */; };
+		C4E8B3841F1FA04900701EBB /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8B3831F1FA04900701EBB /* Instrument.swift */; };
 		C4E917341F1BC30200BE792E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917331F1BC30200BE792E /* Currency.swift */; };
 		C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917351F1CB46500BE792E /* String+Extension.swift */; };
 		C4E917391F1CDE1000BE792E /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917381F1CDE1000BE792E /* Index.swift */; };
@@ -43,6 +45,8 @@
 		C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
+		C4E8B3811F1F9E4200701EBB /* SetOfInstruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOfInstruments.swift; sourceTree = "<group>"; };
+		C4E8B3831F1FA04900701EBB /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		C4E917331F1BC30200BE792E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C4E917351F1CB46500BE792E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C4E917381F1CDE1000BE792E /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
@@ -116,7 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
+				C4E8B3831F1FA04900701EBB /* Instrument.swift */,
 				C4E94D951F1BAE3F00C313D7 /* CalculatedInstrument.swift */,
+				C4E8B3811F1F9E4200701EBB /* SetOfInstruments.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -337,9 +343,11 @@
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
+				C4E8B3821F1F9E4200701EBB /* SetOfInstruments.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
 				C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */,
 				C4E917391F1CDE1000BE792E /* Index.swift in Sources */,
+				C4E8B3841F1FA04900701EBB /* Instrument.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

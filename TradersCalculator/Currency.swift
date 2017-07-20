@@ -39,6 +39,7 @@ let XTI = "XTI"
 let BTC = "BTC"
 
 
+//TODO: Write a description
 let currencyFullName = [
     
     AUD : "Australian Dollar",

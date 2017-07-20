@@ -110,6 +110,11 @@ struct Instruments {
             [BTC,USD]
         ],
         
+        "Indeices CFDs": [
+            
+            ["AUS200"]
+        ],
+        
         "Futures CFDs": [
             
             [DXY_U7],
@@ -131,34 +136,96 @@ struct Instruments {
         ]
 
     ]
-    
-    // As a parameter, we should use variables of forexMajors and/or forexMinors
-    // -> Dictionary<String, [String: String]>
-    func getDictionaryWithInstruments()  {
-        
-        var dictionaryCategoryInstruments = [String : Set<String>]()
-        
-        for (categoryName, instrumentsArray) in categoriesAndInstruments {
-            
-            dictionaryCategoryInstruments.updateValue(Set<String>(), forKey: categoryName)
-            
-            for instrument in instrumentsArray {
-                
-                dictionaryCategoryInstruments[categoryName]?.update(with: instrument[0])
-                
-            }
-            
-            print(dictionaryCategoryInstruments[categoryName]!)
-            
-        }
-        
-    }
-    
-    
-    
 
 }
 
+// Methods that helps retrieve the data for Picker View during Adding a Position
+extension Instruments {
+    
+    
+    //TODO: Write a description
+    func getCategoryNameBy(categoryID: Int) -> String {
+        
+        return categories[categoryID]
+        
+    }
+    
+    //TODO: Write a description
+    func getRightCurrencyPairsArrayFor(instrumentID: Int, inCategoryID: Int) -> [String] {
+        
+        var resultArray = [String]()
+        
+        let categoryName = categories[inCategoryID]
+        
+        let arrayWithInstrumentsParts = categoriesAndInstruments[categoryName]
+        
+        guard let instrumentParts = arrayWithInstrumentsParts else {
+            return [String]()
+        }
+        
+        //TODO: Write a description
+        let currentInstrumentName = self.getArrayWithInstrumentsBy(categoryID: inCategoryID)[instrumentID]
+        
+        //TODO: Write a description
+        for instrumentPart in instrumentParts {
+            
+            //TODO: Write a description
+            if instrumentPart.indices.contains(1) {
+                
+                //TODO: Write a description
+                if instrumentPart[0] == currentInstrumentName {
+                    resultArray.append(instrumentPart[1])
+                }
+                
+            }
+            
+        }
+        
+        return resultArray
+    }
+    
+    //TODO: Write a description
+    func getArrayWithInstrumentsBy(categoryID: Int) -> [String] {
+        
+        var arrayWithInstruments = [String]()
+        
+        let categoryName = categories[categoryID]
+        
+        let arrayWithInstrumentsParts = categoriesAndInstruments[categoryName]
+        
+        guard let unwrappedArrayWithInstrumentsParts = arrayWithInstrumentsParts else {
+            return [String]()
+        }
+        
+        //TODO: Write a description
+        for instrumentParts in unwrappedArrayWithInstrumentsParts {
+            
+            if arrayWithInstruments.contains(instrumentParts[0]) == false {
+                arrayWithInstruments.append(instrumentParts[0])
+            }
+            
+        }
+        
+        return arrayWithInstruments
+    }
+    
+    //TODO: Write a description
+    func getFullInstrumentNameBy(categoryID: Int, leftPart: Int, rightPart: Int) -> String {
+        
+        var result = ""
+        
+        let leftPartName = self.getArrayWithInstrumentsBy(categoryID: categoryID)[leftPart]
+        result = leftPartName
+        
+        let rightPartName = self.getRightCurrencyPairsArrayFor(instrumentID: leftPart, inCategoryID: categoryID)
+        
+        if rightPartName.isEmpty == false {
+            result += rightPartName[rightPart]
+        }
+        
+        return result
+    }
+}
 
 
 
