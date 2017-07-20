@@ -8,12 +8,16 @@
 
 import UIKit
 import GoogleMobileAds
+import FirebaseDatabase
+import FirebaseAuth
 
 class CalculatorVC: UIViewController {
     
     @IBOutlet weak var googleBannerView: GADBannerView!
-    
     @IBOutlet weak var calculatorTableView: UITableView!
+    
+    var firebase: FirebaseConnect!  // Reference variable for the Database
+    var adMob: AdMob!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +25,18 @@ class CalculatorVC: UIViewController {
         // Init delegates
         initDelegates()
         
-        // adMob
-        adMob()
+        // Configure the Firebase
+        firebase = FirebaseConnect()
         
-        // Make request to the server
-//        makeRequest()
+        // adMob
+        adMob = AdMob()
+        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
+        
+        // Set the observer for Firebase data
+        firebase.ref.observe(.value, with: { snapshot in
+            // Make changes
+        })
+        
     }
     
     // Init delegates
@@ -36,24 +47,29 @@ class CalculatorVC: UIViewController {
         
     }
     
-    //ADMOB
-    func adMob() {
-        
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
-        
-        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
-        googleBannerView.rootViewController = self
-        googleBannerView.load(request)
-        
-    }
-    
     // Make request to the server
     func makeRequest() {
         
         let forexAPI = ForexAPI()
-        forexAPI.downloadForexData {
-            
+        forexAPI.downloadInstrumentsRates {
+            print(forexAPI.ratesByInstrumentName)
+        }
+        
+    }
+    
+//    //TODO: Make description
+//    @IBAction func unwindToCalculatorWithSavePosition(sender: UIStoryboardSegue) {
+//        if let sourceViewController = sender.source as? CalcAddItemVC {
+////            dataRecieved = sourceViewController.dataPassed
+//        }
+//    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Remove Firebase Authenticate listener
+        if let tempHandle = firebase.handle {
+            Auth.auth().removeStateDidChangeListener(tempHandle)
         }
         
     }

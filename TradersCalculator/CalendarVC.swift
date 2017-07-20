@@ -8,29 +8,43 @@
 
 import UIKit
 import GoogleMobileAds
+import FirebaseDatabase
+import FirebaseAuth
 
 class CalendarVC: UIViewController {
     
     @IBOutlet weak var googleBannerView: GADBannerView!
-
+    
+    var firebase: FirebaseConnect!  // Reference variable for the Database
+    var adMob: AdMob!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configure the Firebase
+        firebase = FirebaseConnect()
+        
         // adMob
-        adMob()
+        adMob = AdMob()
+        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
         
     }
     
-    //ADMOB
-    func adMob() {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
-        
-        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
-        googleBannerView.rootViewController = self
-        googleBannerView.load(request)
+        // Remove Firebase Authenticate listener
+        if let tempHandle = firebase.handle {
+            Auth.auth().removeStateDidChangeListener(tempHandle)
+        }
         
     }
 
 }
+
+
+
+
+
+
+

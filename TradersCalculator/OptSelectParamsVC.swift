@@ -8,13 +8,17 @@
 
 import UIKit
 import GoogleMobileAds
+import FirebaseDatabase
+import FirebaseAuth
 
 class OptSelectParamsVC: UIViewController {
     
     @IBOutlet weak var googleBannerView: GADBannerView!
-
     @IBOutlet weak var currencyPickerView: UIPickerView!
     @IBOutlet weak var leveragePickerView: UIPickerView!
+    
+    var firebase: FirebaseConnect!  // Reference variable for the Database
+    var adMob: AdMob!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +26,12 @@ class OptSelectParamsVC: UIViewController {
         // Init delegates
         initDelegates()
         
+        // Configure the Firebase
+        firebase = FirebaseConnect()
+        
         // adMob
-        adMob()
+        adMob = AdMob()
+        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
         
         // Select Default rows in Picker Views
         selectDefaultRowsInPickerViews()
@@ -38,18 +46,6 @@ class OptSelectParamsVC: UIViewController {
         
     }
     
-    //ADMOB
-    func adMob() {
-        
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
-        
-        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
-        googleBannerView.rootViewController = self
-        googleBannerView.load(request)
-        
-    }
-    
     // Select Default rows in Picker Views
     func selectDefaultRowsInPickerViews() {
         
@@ -59,6 +55,16 @@ class OptSelectParamsVC: UIViewController {
         }
         if leveragePickerView.numberOfRows(inComponent: 0) > 2 {
             leveragePickerView.selectRow(3, inComponent: 0, animated: true)
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Remove Firebase Authenticate listener
+        if let tempHandle = firebase.handle {
+            Auth.auth().removeStateDidChangeListener(tempHandle)
         }
         
     }

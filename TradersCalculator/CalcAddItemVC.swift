@@ -8,20 +8,26 @@
 
 import UIKit
 import GoogleMobileAds
+import FirebaseDatabase
+import FirebaseAuth
 
 class CalcAddItemVC: UIViewController {
     
     @IBOutlet weak var googleBannerView: GADBannerView!
-
     @IBOutlet weak var instrumentsPicker: UIPickerView!
-    
     @IBOutlet weak var instrumentDescription: UILabel!
+    @IBOutlet weak var positionValue: UITextField!
+    @IBOutlet weak var positionOpenPrice: UITextField!
+    @IBOutlet weak var positionTakeProfit: UITextField!
+    @IBOutlet weak var positionStopLoss: UITextField!
+    
+    var firebase: FirebaseConnect!  // Reference variable for the Database
+    var adMob: AdMob!
+    var forexAPI: ForexAPI!
     
     var instruments: Instruments!
-    var currentCategory: Int!
-    var currentInstrument: Int!
-    
-    var test = false
+    var currentCategoryID: Int!
+    var currentInstrumentID: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +35,17 @@ class CalcAddItemVC: UIViewController {
         // Init delegates
         initDelegates()
         
+        // Configure the Firebase
+        firebase = FirebaseConnect()
+        
         // adMob
-        adMob()
+        adMob = AdMob()
+        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
         
         initializeVariables()
         
+        // Make request to the server
+        makeRequest()
         
     }
     
@@ -48,26 +60,110 @@ class CalcAddItemVC: UIViewController {
     func initializeVariables() {
         
         instruments = Instruments()
-        currentCategory = 0
-        currentInstrument = 0
-        
+        currentCategoryID = 0
+        currentInstrumentID = 0
         
         getDescriptionOfInstrumentIn(instrumentsPicker)
         
     }
     
-    //ADMOB
-    func adMob() {
+    // Make request to the server
+    func makeRequest() {
         
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+        forexAPI = ForexAPI()
+        forexAPI.downloadInstrumentsRates {
+            self.updateUI()
+        }
         
-        googleBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
-        googleBannerView.rootViewController = self
-        googleBannerView.load(request)
+    }
+    
+    func updateUI() {
+        
+        let currentInstrumentName = getInstrumentName(instrumentsPicker)
+        if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName]?["rate"] {
+            positionOpenPrice.text = currentInstrumentRates
+            positionStopLoss.text = currentInstrumentRates
+            positionTakeProfit.text = currentInstrumentRates
+        }
         
     }
 
+    @IBAction func sellOrBuyButtonPressed(_ sender: UIButton) {
+        
+        if sender.tag == 0 {
+            // Was pressed Sell button
+            
+            // Get the dictionary with values from text fields
+            guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Sell")
+                else { return }
+            // Add new owner
+            firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+            
+        } else {
+            // Was pressed Buy button
+            
+            // Get the dictionary with values from text fields
+            guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Buy")
+                else { return }
+            
+            // Add new owner
+            firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+            
+        }
+        
+        // Dismiss this view controller and go to previous
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        
+//
+//        // Inserting data to Firebase
+//        if let owner = ownerToEdit {
+//            // Update current owner
+//            ref.child("owners").child(owner.dbID).updateChildValues(ownerValuesDict)
+//        } else {
+//
+//        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Remove Firebase Authenticate listener
+        if let tempHandle = firebase.handle {
+            Auth.auth().removeStateDidChangeListener(tempHandle)
+        }
+        
+    }
+}
+
+// Methods that related with Firebase
+extension CalcAddItemVC {
+    
+    //TODO: Make a description
+    func makeDictionaryWithFieldsValues(dealDirection: String) -> Dictionary<String, Any>? {
+        
+        //TODO: Make a check to have a correct results
+        guard let value = positionValue.text else { return nil }
+        guard let openPrice = positionOpenPrice.text else { return nil }
+        guard let stopLoss = positionStopLoss.text else { return nil }
+        guard let takeProfit = positionTakeProfit.text else { return nil }
+        
+        // Make a adictionary with values for inserting to Firebase
+        let positionDict = [
+            "instrument": "USDEUR",
+            "category": instruments.getCategoryNameBy(categoryID: currentCategoryID),
+            "value": value,
+            "openPrice": openPrice,
+            "takeProfit": takeProfit,
+            "stopLoss": stopLoss,
+            "creationDate": "20.07.2017",
+            "dealDirection": dealDirection
+        ]
+        
+        return positionDict
+    }
+    
 }
 
 // Data Picker Delegates and methods
@@ -90,9 +186,9 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         if component == 0 {
             return instruments.categories.count
         } else if component == 1 {
-            return instruments.getArrayWithInstrumentsBy(categoryID: currentCategory).count
+            return instruments.getArrayWithInstrumentsBy(categoryID: currentCategoryID).count
         } else {
-            return instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrument, inCategoryID: currentCategory).count
+            return instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentID, inCategoryID: currentCategoryID).count
         }
         
     }
@@ -114,14 +210,14 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerLabel.textAlignment = .center
             
             //TODO: Write a description
-            titleData = instruments.getArrayWithInstrumentsBy(categoryID: currentCategory)[row]
+            titleData = instruments.getArrayWithInstrumentsBy(categoryID: currentCategoryID)[row]
             
         } else {
             
             pickerLabel.textAlignment = .left
             
             //TODO: Write a description
-            titleData = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrument, inCategoryID: currentCategory)[row]
+            titleData = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentID, inCategoryID: currentCategoryID)[row]
             
         }
         
@@ -158,8 +254,8 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         if component == 0 {
             
-            currentCategory = row
-            currentInstrument = 0
+            currentCategoryID = row
+            currentInstrumentID = 0
             pickerView.reloadComponent(1)
             pickerView.reloadComponent(2)
             pickerView.selectRow(0, inComponent: 1, animated: true)
@@ -167,36 +263,47 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
             
             // Get the description of the Instrument
             getDescriptionOfInstrumentIn(pickerView)
+            updateUI()
             
         } else if component == 1 {
             
-            currentInstrument = row
-            print(currentInstrument)
+            currentInstrumentID = row
+            print(currentInstrumentID)
             
             pickerView.reloadComponent(2)
             pickerView.selectRow(0, inComponent: 2, animated: true)
             
             // Get the description of the Instrument
             getDescriptionOfInstrumentIn(pickerView)
+            updateUI()
             
         } else {
             
             // Get the description of the Instrument
             getDescriptionOfInstrumentIn(pickerView)
+            updateUI()
             
         }
         
         
     }
     
-    // Get the description of the Instrument
-    func getDescriptionOfInstrumentIn(_ pickerView: UIPickerView) {
+    // Get Name of the Instrument
+    func getInstrumentName(_ pickerView: UIPickerView) -> String {
         
         let secondColumn = pickerView.selectedRow(inComponent: 1)
         let thirdColumn = pickerView.selectedRow(inComponent: 2)
-        let instrumentFullName = instruments.getFullInstrumentNameBy(categoryID: currentCategory,
+        let instrumentFullName = instruments.getFullInstrumentNameBy(categoryID: currentCategoryID,
                                                                      leftPart: secondColumn,
                                                                      rightPart: thirdColumn)
+        
+        return instrumentFullName
+    }
+    
+    // Get the description of the Instrument
+    func getDescriptionOfInstrumentIn(_ pickerView: UIPickerView) {
+        
+        let instrumentFullName = getInstrumentName(pickerView)
         
         instrumentDescription.text = "Описание для " + instrumentFullName
         

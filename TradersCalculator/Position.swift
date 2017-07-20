@@ -1,5 +1,5 @@
 //
-//  CalculatedInstrument.swift
+//  Position.swift
 //  TradersCalculator
 //
 //  Created by Yaroslav Zhurbilo on 16.07.17.
@@ -9,7 +9,7 @@
 import Foundation
 
 //TODO: Write a description
-class CalculatedInstrument {
+class Position {
     
     fileprivate var _creationDate: String!
     fileprivate var _instrument: Instrument!
@@ -79,7 +79,7 @@ class CalculatedInstrument {
 
 
 // Getters and Setters
-extension CalculatedInstrument {
+extension Position {
     
     
     var dealDirection: DealDirection {
