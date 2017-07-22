@@ -21,12 +21,14 @@ class OptionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // Configure the Firebase
         firebase = FirebaseConnect()
         
         // adMob
         adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
+        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
     }
     
@@ -41,3 +43,11 @@ class OptionsVC: UIViewController {
     }
 
 }
+
+
+
+
+
+
+
+

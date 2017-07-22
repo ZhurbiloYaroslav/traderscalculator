@@ -7,12 +7,16 @@
 //
 
 import UIKit
+
 import GoogleMobileAds
 import FirebaseDatabase
 import FirebaseAuth
 
 class CalcAddItemVC: UIViewController {
     
+    //TODO: shrikar.com/xcode-6-tutorial-grouped-uitableview/
+    
+    @IBOutlet weak var viewInScrollView: UIView!
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var instrumentsPicker: UIPickerView!
     @IBOutlet weak var instrumentDescription: UILabel!
@@ -20,6 +24,7 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var positionOpenPrice: UITextField!
     @IBOutlet weak var positionTakeProfit: UITextField!
     @IBOutlet weak var positionStopLoss: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
@@ -40,12 +45,14 @@ class CalcAddItemVC: UIViewController {
         
         // adMob
         adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
+        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         initializeVariables()
         
         // Make request to the server
         makeRequest()
+        
+        registerForKeyboardNotifications()
         
     }
     
@@ -54,6 +61,12 @@ class CalcAddItemVC: UIViewController {
         
         instrumentsPicker.delegate = self
         instrumentsPicker.dataSource = self
+        
+        
+        positionValue.delegate = self
+        positionOpenPrice.delegate = self
+        positionTakeProfit.delegate = self
+        positionStopLoss.delegate = self
         
     }
     
@@ -89,7 +102,21 @@ class CalcAddItemVC: UIViewController {
         }
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Remove Firebase Authenticate listener
+        if let tempHandle = firebase.handle {
+            Auth.auth().removeStateDidChangeListener(tempHandle)
+        }
+        
+    }
 
+    deinit {
+        removeKeyboardNotifications()
+    }
+    
     @IBAction func sellOrBuyButtonPressed(_ sender: UIButton) {
         
         if sender.tag == 0 {
@@ -117,26 +144,62 @@ class CalcAddItemVC: UIViewController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
         
-//
-//        // Inserting data to Firebase
-//        if let owner = ownerToEdit {
-//            // Update current owner
-//            ref.child("owners").child(owner.dbID).updateChildValues(ownerValuesDict)
-//        } else {
-//
-//        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        positionValue.resignFirstResponder()
+        positionOpenPrice.resignFirstResponder()
+        positionTakeProfit.resignFirstResponder()
+        positionStopLoss.resignFirstResponder()
+        
+        return true
+    }
+    
+}
+
+// Textfield Delegate
+extension CalcAddItemVC: UITextFieldDelegate {
+    
+}
+
+// Methods, that helps hide Keyboard
+extension CalcAddItemVC {
+    
+    //TODO: Hide keyboard
+    func registerForKeyboardNotifications() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+    
+    func removeKeyboardNotifications() {
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Remove Firebase Authenticate listener
-        if let tempHandle = firebase.handle {
-            Auth.auth().removeStateDidChangeListener(tempHandle)
-        }
-        
+    func keyboardWillShow(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        guard let keyboardFrameSize = (userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            else { return }
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardFrameSize.height)
     }
+    
+    func keyboardWillHide() {
+        scrollView.contentOffset = CGPoint.zero
+    }
+    
 }
 
 // Methods that related with Firebase
@@ -270,7 +333,6 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         } else if component == 1 {
             
             currentInstrumentID = row
-            print(currentInstrumentID)
             
             pickerView.reloadComponent(2)
             pickerView.selectRow(0, inComponent: 2, animated: true)

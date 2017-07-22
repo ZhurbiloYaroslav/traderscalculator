@@ -24,6 +24,12 @@ struct Constants {
         "RUR"
     ]
     
+    // Uses in options
+    static let languages = [
+        "English",
+        "Русский"
+    ]
+    
     // "Кредитное плечо" in Russian
     // Uses in options
     static let leverage = [

@@ -15,6 +15,7 @@ class CalculatorItemCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!       // Label for value (Russian: Лот)
     @IBOutlet weak var takeProfitLabel: UILabel!
     @IBOutlet weak var stopLossLabel: UILabel!
+    @IBOutlet weak var openPriceLabel: UILabel!
     
     func updateCell(position: Position) {
         
@@ -23,11 +24,14 @@ class CalculatorItemCell: UITableViewCell {
         valueLabel.text = "\(position.value)"
         stopLossLabel.text = "\(position.stopLoss)"
         takeProfitLabel.text = "\(position.takeProfit)"
+        openPriceLabel.text = "\(position.openPrice)"
         
         if position.dealDirection == "Buy" {
             dealDirectionLabel.textColor = UIColor.blue
+            valueLabel.textColor = UIColor.blue
         } else {
             dealDirectionLabel.textColor = UIColor.red
+            valueLabel.textColor = UIColor.red
         }
     }
     

@@ -13,15 +13,20 @@ import FirebaseAuth
 
 class AdMob {
     
+    //TODO: appcoda.com/google-admob-ios-swift/
+    
     //TODO: Make description
-    func getLittleBannerFor(viewController: UIViewController, andBannerView: GADBannerView) {
+    func getLittleBannerFor(viewController: UIViewController, adBannerView: GADBannerView) {
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+//        request.testDevices = ["83c4c085bb410adc60257e1183e7630a8b602e71"]
+         request.testDevices = [kGADSimulatorID, "83c4c085bb410adc60257e1183e7630a8b602e71"]
         
-        andBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
-        andBannerView.rootViewController = viewController
-        andBannerView.load(request)
+        adBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
+        adBannerView.delegate = viewController as? GADBannerViewDelegate
+        adBannerView.rootViewController = viewController
+        adBannerView.load(request)
         
     }
 }
+

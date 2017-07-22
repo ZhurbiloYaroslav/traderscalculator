@@ -11,7 +11,7 @@ import GoogleMobileAds
 import FirebaseDatabase
 import FirebaseAuth
 
-class CalculatorVC: UIViewController {
+class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var calculatorTableView: UITableView!
@@ -33,7 +33,7 @@ class CalculatorVC: UIViewController {
         
         // adMob
         adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
+        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         // Set the observer for Firebase data
         firebase.ref.observe(.value, with: { snapshot in
@@ -54,8 +54,7 @@ class CalculatorVC: UIViewController {
         
         positionsArray = [Position]()
         
-        navigationItem.title = "500 USD"
-//        navigationController?.navigationBar.barTintColor = UIColor.blue
+//        navigationItem.title = "500 USD"
         
     }
     
@@ -64,17 +63,15 @@ class CalculatorVC: UIViewController {
         
         let forexAPI = ForexAPI()
         forexAPI.downloadInstrumentsRates {
-            print(forexAPI.ratesByInstrumentName)
+            
         }
         
     }
     
-//    //TODO: Make description
-//    @IBAction func unwindToCalculatorWithSavePosition(sender: UIStoryboardSegue) {
-//        if let sourceViewController = sender.source as? CalcAddItemVC {
-////            dataRecieved = sourceViewController.dataPassed
-//        }
-//    }
+    //TODO: Make description
+    @IBAction func backToCalculatorFromAddPositionWithoutSaving(sender: UIStoryboardSegue) {
+        
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -132,6 +129,21 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         cell.updateCell(position: positionsArray[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        // Delete row
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") {
+            (action, indexPath) in
+            
+            let deletingPositionID = self.positionsArray[indexPath.row].positionID
+            self.positionsArray.remove(at: indexPath.row)
+            self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
+            self.calculatorTableView.reloadData()
+        }
+        
+        return [deleteAction]
     }
     
 }

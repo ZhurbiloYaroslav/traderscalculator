@@ -19,6 +19,7 @@ class Position {
     fileprivate var _stopLoss: Double!
     fileprivate var _takeProfit: Double!
     fileprivate var _dealDirection: String!
+    fileprivate var _positionID: String!
     
     
     //TODO: Write a description
@@ -32,7 +33,8 @@ class Position {
     init(creationDate: String,       instrument: String,
          instrumentCategory: String, value: Double,
          openPrice: Double,          stopLoss: Double,
-         takeProfit: Double,         dealDirection: String) {
+         takeProfit: Double,         dealDirection: String,
+         positionID: String) {
         
         self._creationDate = creationDate
         self._instrument = instrument
@@ -42,6 +44,7 @@ class Position {
         self._stopLoss = stopLoss
         self._takeProfit = takeProfit
         self._dealDirection = dealDirection
+        self._positionID = positionID
         
     }
     
@@ -106,7 +109,8 @@ class Position {
         self.init(creationDate: saveCreationDate, instrument: saveInstrument,
         instrumentCategory: saveInstrumentCategory, value: saveValue,
         openPrice: saveOpenPrice, stopLoss: saveStopLoss,
-        takeProfit: saveTakeProfit, dealDirection: saveDealDirection)
+        takeProfit: saveTakeProfit, dealDirection: saveDealDirection,
+        positionID: positionID)
         
     }
     
@@ -116,6 +120,14 @@ class Position {
 // Getters and Setters
 extension Position {
     
+    
+    var positionID: String {
+        if _positionID != nil {
+            return _positionID
+        } else {
+            return ""
+        }
+    }
     
     var dealDirection: String {
         if _dealDirection != nil {

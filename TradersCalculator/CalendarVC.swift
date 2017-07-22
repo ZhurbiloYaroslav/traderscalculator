@@ -26,7 +26,7 @@ class CalendarVC: UIViewController {
         
         // adMob
         adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, andBannerView: googleBannerView)
+        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
     }
     
