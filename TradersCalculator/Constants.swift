@@ -16,6 +16,10 @@ typealias DownloadComplete = () -> ()
 
 struct Constants {
     
+    static let defaultCurrency = Constants.currenciesOfAccount[1]
+    static let defaultLanguage = Constants.languages[0]
+    static let defaultLeverage = Constants.leverage[3]
+        
     // Currency constants
     // Uses in options
     static let currenciesOfAccount = [
@@ -26,6 +30,7 @@ struct Constants {
     
     // Uses in options
     static let languages = [
+        "System",
         "English",
         "Русский"
     ]

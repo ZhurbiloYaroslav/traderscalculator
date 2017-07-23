@@ -35,4 +35,31 @@ class CalculatorItemCell: UITableViewCell {
         }
     }
     
+    func populateValues() {
+        var numberFormatter: NumberFormatter {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            return formatter
+        }
+        
+        var currencyFormatter: NumberFormatter {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            return formatter
+        }
+        
+        var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .medium
+            return formatter
+        }
+        
+//        textLabel.text = "Good Morning"
+//        numberLabel.text = numberFormatter.string(from: 9999999.999)
+//        currencyLabel.text = currencyFormatter.string(from: 5000)
+//        dateLabel.text = dateFormatter.string(from: NSDate() as Date)
+//        imageView.image = UIImage(named: "adele-hello")
+    }
+    
 }
