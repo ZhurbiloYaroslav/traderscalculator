@@ -9,7 +9,21 @@
 import Foundation
 
 struct Instruments {
+    //TODO: Make comment
     
+    //TODO: Make comment
+    var defaultCategory: String {
+        return categories[0]
+    }
+    
+    //TODO: Make comment
+    var defaultInstrumentPair: [String] {
+        guard let defInstrPair = categoriesAndInstruments["Forex Majors"]?[0]
+            else { return [EUR,USD] }
+        return defInstrPair
+    }
+    
+    //TODO: Make comment
     var categories = [
         "Forex Majors",
         "Forex Minors",
@@ -21,6 +35,7 @@ struct Instruments {
         "Commodity CFDs"
     ]
     
+    //TODO: Make comment
     var categoriesAndInstruments = [
         
         "Forex Majors": [

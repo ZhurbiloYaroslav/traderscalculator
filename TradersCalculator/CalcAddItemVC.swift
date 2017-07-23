@@ -26,6 +26,7 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var positionStopLoss: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var currentUserOptions: CurrentUser!
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     var forexAPI: ForexAPI!
@@ -39,6 +40,9 @@ class CalcAddItemVC: UIViewController {
         
         // Init delegates
         initDelegates()
+        
+        // User Options from User defaults
+        currentUserOptions = CurrentUser()
         
         // Configure the Firebase
         firebase = FirebaseConnect()
@@ -75,8 +79,6 @@ class CalcAddItemVC: UIViewController {
         instruments = Instruments()
         currentCategoryID = 0
         currentInstrumentID = 0
-        
-        navigationItem.backBarButtonItem?.title = ""
         
         getDescriptionOfInstrumentIn(instrumentsPicker)
         
@@ -146,6 +148,15 @@ class CalcAddItemVC: UIViewController {
         
     }
     
+    func saveLastUsedInstrument() {
+        
+    }
+    
+}
+
+// Textfield Delegate
+extension CalcAddItemVC: UITextFieldDelegate {
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -158,11 +169,6 @@ class CalcAddItemVC: UIViewController {
         
         return true
     }
-    
-}
-
-// Textfield Delegate
-extension CalcAddItemVC: UITextFieldDelegate {
     
 }
 

@@ -76,7 +76,7 @@ class Instrument {
     }
     
     convenience init() {
-        self.init("", [])
+        self.init(Instruments().defaultCategory, Instruments().defaultInstrumentPair)
     }
 }
 

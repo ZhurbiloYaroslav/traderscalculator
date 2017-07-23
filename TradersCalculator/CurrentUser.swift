@@ -56,14 +56,5 @@ class CurrentUser {
         }
     }
     
-    //TODO: Make comment
-//    var lastUsedInstrument: Instrument {
-//        get {
-//            return self.options["lastUsedInstrument"] ?? Instrument()
-//        }
-//        set {
-//            self.options["lastUsedInstrument"] = newValue
-//        }
-//    }
     
 }

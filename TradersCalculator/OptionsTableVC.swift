@@ -10,8 +10,8 @@ import UIKit
 
 class OptionsTableVC: UITableViewController {
     
-//    @IBOutlet var tableview: UITableView!
     var currentUserOptions: CurrentUser!
+    
     @IBOutlet weak var currencyCell: UITableViewCell!
     @IBOutlet weak var leverageCell: UITableViewCell!
     @IBOutlet weak var languageCell: UITableViewCell!
