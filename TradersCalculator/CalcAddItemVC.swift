@@ -369,7 +369,7 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         let instrumentFullName = getInstrumentName(pickerView)
         
-        instrumentDescription.text = "Описание для " + instrumentFullName
+        instrumentDescription.text = "Description for " + instrumentFullName
         
     }
     
