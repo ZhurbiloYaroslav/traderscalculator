@@ -19,7 +19,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     var positionsArray: [Position]!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +54,19 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         positionsArray = [Position]()
         
-//        navigationItem.title = "500 USD"
+        longTapOnCellRecognizerSetup()
+        
+        calculatorTableView.estimatedRowHeight = 100
+        calculatorTableView.rowHeight = UITableViewAutomaticDimension
+        
+    }
+    
+    func longTapOnCellRecognizerSetup() {
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(CalculatorVC.longPress))
+        longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        longPressGesture.delegate = self as? UIGestureRecognizerDelegate
+        calculatorTableView.addGestureRecognizer(longPressGesture)
         
     }
     
@@ -82,7 +94,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         }
         
     }
-
+    
 }
 
 // Table view delegates and methods
@@ -131,6 +143,61 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //Called, when long press occurred
+    func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+            
+            let touchPoint = longPressGestureRecognizer.location(in: self.calculatorTableView)
+            if let indexPath = calculatorTableView.indexPathForRow(at: touchPoint) {
+                
+                performAlertOnLongPressOnCellWith(indexPath)
+            }
+            
+        }
+    }
+    
+    func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
+        
+        let currentPosition = positionsArray[indexPath.row]
+        let positionName = currentPosition.instrument
+        let positionIDinFirebase = currentPosition.positionID
+        let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
+        
+        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            
+            // Deleting the position
+            let deletingPositionID = self.positionsArray[indexPath.row].positionID
+            self.positionsArray.remove(at: indexPath.row)
+            self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
+            self.calculatorTableView.reloadData()
+            
+        }
+        let EditAction = UIAlertAction(title: "Edit", style: .default) { (action) in
+            
+            self.performSegue(withIdentifier: "EditPosition", sender: positionIDinFirebase)
+            
+        }
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(EditAction)
+        alert.addAction(CancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? CalcAddItemVC
+            else { return }
+        guard let positionID = sender as? String
+            else { return }
+        destination.positionIDToEdit = positionID
+    }
+    
+    /*
+    // If we will not need it, we will delete it
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         // Delete row
@@ -145,6 +212,24 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         return [deleteAction]
     }
+    */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? CalculatorItemCell {
+            
+            if cell.cellIsOpen {
+                cell.cellIsOpen = false
+            } else {
+                cell.cellIsOpen = true
+            }
+            print(cell.cellIsOpen)
+            tableView.reloadData()
+        }
+        
+    }
+    
+    
     
 }
 

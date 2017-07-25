@@ -16,6 +16,7 @@ class CalcAddItemVC: UIViewController {
     
     //TODO: shrikar.com/xcode-6-tutorial-grouped-uitableview/
     
+    @IBOutlet weak var navigationBarTitle: UILabel!
     @IBOutlet weak var viewInScrollView: UIView!
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var instrumentsPicker: UIPickerView!
@@ -25,6 +26,7 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var positionTakeProfit: UITextField!
     @IBOutlet weak var positionStopLoss: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackWithInstrumentPicker: UIStackView!
     
     var currentUserOptions: CurrentUser!
     var firebase: FirebaseConnect!  // Reference variable for the Database
@@ -34,6 +36,9 @@ class CalcAddItemVC: UIViewController {
     var instruments: Instruments!
     var currentCategoryID: Int!
     var currentInstrumentID: Int!
+    
+    // Contains position ID in Firebase and appear when edit position from CalculatorVC
+    var positionIDToEdit: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +63,9 @@ class CalcAddItemVC: UIViewController {
         
         registerForKeyboardNotifications()
         
+        // Put here code for testing purposes
+        tests()
+        
     }
     
     // Init delegates
@@ -74,6 +82,13 @@ class CalcAddItemVC: UIViewController {
         
     }
     
+    // Put here code for testing purposes
+    func tests() {
+        
+        
+        
+    }
+    
     func initializeVariables() {
         
         instruments = Instruments()
@@ -82,14 +97,31 @@ class CalcAddItemVC: UIViewController {
         
         getDescriptionOfInstrumentIn(instrumentsPicker)
         
+        if positionIDToEdit != nil {
+            navigationBarTitle.text = "Edit position"
+            
+            stackWithInstrumentPicker.isHidden = true
+            instrumentDescription.text = "Description for XBRUSD"
+            positionValue.text = "0.79110"
+            positionOpenPrice.text = "0.79110"
+            positionStopLoss.text = "0.79110"
+            positionTakeProfit.text = "0.79110"
+            
+        }
+        
     }
     
     // Make request to the server
     func makeRequest() {
         
-        forexAPI = ForexAPI()
-        forexAPI.downloadInstrumentsRates {
-            self.updateUI()
+        // If this is not editing of the position, then we download the data
+        if positionIDToEdit == nil {
+            
+            forexAPI = ForexAPI()
+            forexAPI.downloadInstrumentsRates {
+                self.updateUI()
+            }
+            
         }
         
     }

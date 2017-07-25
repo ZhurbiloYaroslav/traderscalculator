@@ -11,6 +11,8 @@
 		C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */; };
 		C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260F4F1F2093E3004ECCB5 /* AdMob.swift */; };
 		C42783241F23CD0C00430916 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42783231F23CD0C00430916 /* CurrentUser.swift */; };
+		C451AE441F274AC500826790 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE431F274AC500826790 /* CalendarCell.swift */; };
+		C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE451F274B4500826790 /* CalendarEvent.swift */; };
 		C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */; };
 		C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */; };
 		C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A81F1A8DAF00599563 /* CalendarVC.swift */; };
@@ -42,10 +44,14 @@
 		26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradersCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		C40F79A11F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C40F79A21F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C413B4181F238C790004F327 /* OptionsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
 		C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConnect.swift; sourceTree = "<group>"; };
 		C4260F4F1F2093E3004ECCB5 /* AdMob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMob.swift; sourceTree = "<group>"; };
 		C42783231F23CD0C00430916 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		C451AE431F274AC500826790 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		C451AE451F274B4500826790 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptSelectParamsVC.swift; sourceTree = "<group>"; };
 		C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcAddItemVC.swift; sourceTree = "<group>"; };
 		C45697A81F1A8DAF00599563 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
@@ -57,9 +63,6 @@
 		C4E8B3811F1F9E4200701EBB /* SetOfPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOfPositions.swift; sourceTree = "<group>"; };
 		C4E8B3831F1FA04900701EBB /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		C4E902CB1F245FE00032A392 /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
-		C4E902CD1F2464E40032A392 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C4E902CE1F2464E40032A392 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C4E902CF1F2465070032A392 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4E917331F1BC30200BE792E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C4E917351F1CB46500BE792E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C4E917381F1CDE1000BE792E /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
 				C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */,
 				C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */,
+				C451AE431F274AC500826790 /* CalendarCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -138,6 +142,7 @@
 				C4E94D951F1BAE3F00C313D7 /* Position.swift */,
 				C4E8B3811F1F9E4200701EBB /* SetOfPositions.swift */,
 				C42783231F23CD0C00430916 /* CurrentUser.swift */,
+				C451AE451F274B4500826790 /* CalendarEvent.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,7 +273,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				ru,
+				Base,
 			);
 			mainGroup = C4FB60CD1F1268A700EDE9C7;
 			productRefGroup = C4FB60D71F1268A700EDE9C7 /* Products */;
@@ -350,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
+				C451AE441F274AC500826790 /* CalendarCell.swift in Sources */,
 				C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */,
 				C42783241F23CD0C00430916 /* CurrentUser.swift in Sources */,
 				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
@@ -358,6 +364,7 @@
 				C4E94D961F1BAE3F00C313D7 /* Position.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
+				C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */,
 				C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
@@ -380,8 +387,7 @@
 		C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C4E902CD1F2464E40032A392 /* en */,
-				C4E902CF1F2465070032A392 /* ru */,
+				C40F79A11F24A0E100B19F9E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -389,7 +395,7 @@
 		C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C4E902CE1F2464E40032A392 /* en */,
+				C40F79A21F24A0E100B19F9E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

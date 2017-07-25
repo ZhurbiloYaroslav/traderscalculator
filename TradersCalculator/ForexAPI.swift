@@ -18,7 +18,7 @@ class ForexAPI {
         guard let url = URL(string: Constants.yahooBaseURL) else { return }
         
         Alamofire.request(url).responseJSON { (response) in
-            
+
             guard let value = response.result.value as? Dictionary<String, Any>
                 else { return }
             guard let queryResult = value["query"] as? Dictionary<String, Any>

@@ -28,8 +28,8 @@ struct Instruments {
         "Forex Majors",
         "Forex Minors",
         "Forex Exotics",
-        "Energies",
         "Crypto",
+        "Energies",
         "Indeices CFDs",
         "Futures CFDs",
         "Commodity CFDs"
@@ -113,6 +113,11 @@ struct Instruments {
             
         ],
         
+        "Crypto": [
+            
+            [BTC,USD]
+        ],
+        
         "Energies": [
             
             [XBR,USD],
@@ -120,14 +125,9 @@ struct Instruments {
             [XTI,USD]
         ],
         
-        "Crypto": [
-            
-            [BTC,USD]
-        ],
-        
         "Indeices CFDs": [
             
-            ["AUS200"]
+            [AUS200]
         ],
         
         "Futures CFDs": [

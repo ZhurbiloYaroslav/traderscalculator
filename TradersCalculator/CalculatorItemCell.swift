@@ -16,16 +16,44 @@ class CalculatorItemCell: UITableViewCell {
     @IBOutlet weak var takeProfitLabel: UILabel!
     @IBOutlet weak var stopLossLabel: UILabel!
     @IBOutlet weak var openPriceLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
     
+    @IBOutlet weak var valueBeforeArrow: UILabel!
+    @IBOutlet weak var valueAfterArrow: UILabel!
+    @IBOutlet weak var stackWithArrow: UIStackView!
+    @IBOutlet weak var hiddenStackWithValues: UIStackView!
+    @IBOutlet weak var blueLabelStack: UIStackView!
+    
+    //TODO: Make comment
+    var cellIsOpen = false
+    
+    //TODO: Make comment
     func updateCell(position: Position) {
         
         instrumentNameLabel.text = position.instrument
-        dealDirectionLabel.text = position.dealDirection
         valueLabel.text = "\(position.value)"
         stopLossLabel.text = "\(position.stopLoss)"
         takeProfitLabel.text = "\(position.takeProfit)"
         openPriceLabel.text = "\(position.openPrice)"
+        valueBeforeArrow.text = "\(position.openPrice)"
+        valueAfterArrow.text = "\(position.takeProfit)"
         
+        //TODO: Make comment
+        if position.dealDirection == "Sell" {
+            dealDirectionLabel.text = "sell"
+        }
+        if position.dealDirection == "Buy" {
+            dealDirectionLabel.text = "buy"
+        }
+        
+        //TODO: Make comment
+        if cellIsOpen {
+            openCell()
+        } else {
+            closeCell()
+        }
+        
+        //TODO: Make comment
         if position.dealDirection == "Buy" {
             dealDirectionLabel.textColor = UIColor.blue
             valueLabel.textColor = UIColor.blue
@@ -35,6 +63,32 @@ class CalculatorItemCell: UITableViewCell {
         }
     }
     
+    //TODO: Implement this method
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    //TODO: Make comment
+    func openCell() {
+        
+        // stackWithArrow.isHidden = true
+        blueLabelStack.isHidden = true
+        hiddenStackWithValues.isHidden = false
+        
+    }
+    
+    //TODO: Make comment
+    func closeCell() {
+        
+        // stackWithArrow.isHidden = false
+        blueLabelStack.isHidden = false
+        hiddenStackWithValues.isHidden = true
+        
+    }
+    
+    //TODO: Make comment
     func populateValues() {
         var numberFormatter: NumberFormatter {
             let formatter = NumberFormatter()
