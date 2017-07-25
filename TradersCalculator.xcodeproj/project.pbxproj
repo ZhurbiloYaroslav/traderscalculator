@@ -17,6 +17,8 @@
 		C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */; };
 		C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A81F1A8DAF00599563 /* CalendarVC.swift */; };
 		C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */; };
+		C4A762D51F2755DD008D91FE /* CalendarAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A762D41F2755DD008D91FE /* CalendarAPI.swift */; };
+		C4A762D91F27B099008D91FE /* CalendarHorizontalScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
@@ -56,6 +58,8 @@
 		C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcAddItemVC.swift; sourceTree = "<group>"; };
 		C45697A81F1A8DAF00599563 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorItemCell.swift; sourceTree = "<group>"; };
+		C4A762D41F2755DD008D91FE /* CalendarAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarAPI.swift; sourceTree = "<group>"; };
+		C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHorizontalScrollCell.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
@@ -112,10 +116,10 @@
 			children = (
 				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
 				C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */,
+				C45697A81F1A8DAF00599563 /* CalendarVC.swift */,
 				C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */,
 				C413B4181F238C790004F327 /* OptionsTableVC.swift */,
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
-				C45697A81F1A8DAF00599563 /* CalendarVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -128,6 +132,7 @@
 				C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */,
 				C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */,
 				C451AE431F274AC500826790 /* CalendarCell.swift */,
+				C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */,
 				C4260F4F1F2093E3004ECCB5 /* AdMob.swift */,
 				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
+				C4A762D41F2755DD008D91FE /* CalendarAPI.swift */,
 				C4E8B3831F1FA04900701EBB /* Instrument.swift */,
 				C4E94D951F1BAE3F00C313D7 /* Position.swift */,
 				C4E8B3811F1F9E4200701EBB /* SetOfPositions.swift */,
@@ -374,7 +380,9 @@
 				C4E8B3821F1F9E4200701EBB /* SetOfPositions.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
 				C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */,
+				C4A762D51F2755DD008D91FE /* CalendarAPI.swift in Sources */,
 				C4E917391F1CDE1000BE792E /* Index.swift in Sources */,
+				C4A762D91F27B099008D91FE /* CalendarHorizontalScrollCell.swift in Sources */,
 				C4E8B3841F1FA04900701EBB /* Instrument.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 				C413B4191F238C790004F327 /* OptionsTableVC.swift in Sources */,

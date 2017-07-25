@@ -157,6 +157,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    //TODO: Make description
     func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
         
         let currentPosition = positionsArray[indexPath.row]
@@ -188,6 +189,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    //TODO: Make description
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? CalcAddItemVC
             else { return }
@@ -196,24 +198,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         destination.positionIDToEdit = positionID
     }
     
-    /*
-    // If we will not need it, we will delete it
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        // Delete row
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") {
-            (action, indexPath) in
-            
-            let deletingPositionID = self.positionsArray[indexPath.row].positionID
-            self.positionsArray.remove(at: indexPath.row)
-            self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
-            self.calculatorTableView.reloadData()
-        }
-        
-        return [deleteAction]
-    }
-    */
-    
+    //TODO: Make description
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: indexPath) as? CalculatorItemCell {
