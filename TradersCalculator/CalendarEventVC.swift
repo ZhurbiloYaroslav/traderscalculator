@@ -48,12 +48,6 @@ class CalendarEventVC: UIViewController {
         eventTableView.rowHeight = UITableViewAutomaticDimension
         eventTableView.estimatedRowHeight = 60
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
 }
 
 extension CalendarEventVC: UITableViewDelegate, UITableViewDataSource {
@@ -74,14 +68,14 @@ extension CalendarEventVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let descCell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventDesc", for: indexPath) as? CalendarCellEventDesc
                 else { return UITableViewCell() }
-            print("Section 1", indexPath.section)
+
             cell = descCell
             break
             
         case 1:
             guard let historyCell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventHistory", for: indexPath) as? CalendarCellEventHistory
                 else { return UITableViewCell() }
-            print("Section 2", indexPath.section)
+
             cell = historyCell
             break
             
@@ -95,8 +89,6 @@ extension CalendarEventVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "Section"
-        /*
         switch section {
         case 0:
             return "Event Description"
@@ -105,7 +97,16 @@ extension CalendarEventVC: UITableViewDelegate, UITableViewDataSource {
         default:
             return ""
         }
-        */
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.section {
+        case 0:
+            return 200
+        default:
+            return 40
+        }
     }
     
 }

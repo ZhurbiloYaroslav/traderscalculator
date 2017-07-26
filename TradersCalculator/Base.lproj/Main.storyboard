@@ -1246,15 +1246,15 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="405"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCellEventDesc" rowHeight="60" id="SVp-DU-xbZ" customClass="CalendarCellEventDesc" customModule="TradersCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="320" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCellEventDesc" rowHeight="200" id="SVp-DU-xbZ" customClass="CalendarCellEventDesc" customModule="TradersCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SVp-DU-xbZ" id="Tf5-3R-y3A">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pho-VZ-kg7">
-                                                    <rect key="frame" x="8" y="5" width="304" height="49"/>
+                                                    <rect key="frame" x="8" y="5" width="304" height="189"/>
                                                     <string key="text">Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date Release Date </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -1269,15 +1269,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCellEventHistory" rowHeight="60" id="MlI-O5-YQN" customClass="CalendarCellEventHistory" customModule="TradersCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="320" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCellEventHistory" rowHeight="40" id="MlI-O5-YQN" customClass="CalendarCellEventHistory" customModule="TradersCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="256" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlI-O5-YQN" id="CK3-lg-s5l">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSj-Mw-kw7">
-                                                    <rect key="frame" x="8" y="5" width="304" height="49"/>
+                                                    <rect key="frame" x="8" y="5" width="304" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
