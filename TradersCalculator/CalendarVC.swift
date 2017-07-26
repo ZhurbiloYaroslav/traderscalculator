@@ -14,7 +14,6 @@ import FirebaseAuth
 class CalendarVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var dateSegmentedControl: UISegmentedControl!
     @IBOutlet weak var scrollViewForSegmentedControl: UIScrollView!
     @IBOutlet weak var calendarTableView: UITableView!
     @IBOutlet weak var googleBannerView: GADBannerView!
@@ -57,6 +56,7 @@ class CalendarVC: UIViewController {
         
         calendarTableView.delegate = self
         calendarTableView.dataSource = self
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -86,6 +86,8 @@ class CalendarVC: UIViewController {
         calendarEventsWeek.append(["date 3": events])
         /// For testing purposes End
         
+        calendarTableView.estimatedRowHeight = 60
+        calendarTableView.rowHeight = UITableViewAutomaticDimension
 //        calendarTableView.sectionHeaderHeight = 0
         calendarTableView.sectionFooterHeight = 0
         
@@ -135,6 +137,33 @@ extension CalendarVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return "date"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "CalendarShowEventDetails", sender: "EventID")
+        print("performed")
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print("performed 2")
+        guard let segueID = segue.identifier
+            else { return }
+        
+        
+        switch segueID {
+        case "CalendarShowEventDetails":
+            print("performed 4")
+            guard let destination = segue.destination as? CalendarEventVC
+                else { return }
+            guard let eventID = sender as? String
+                else { return }
+            destination.eventID = eventID
+            
+        default: break
+        }
     }
     
 }

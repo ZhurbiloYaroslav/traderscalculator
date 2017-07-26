@@ -79,6 +79,9 @@
                                     <constraint firstAttribute="height" constant="50" id="oXV-Ep-2Sd"/>
                                     <constraint firstAttribute="width" constant="320" id="tZI-Mr-2Vd"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-ab-5cH">
                                 <rect key="frame" x="0.0" y="64" width="320" height="30"/>
@@ -373,6 +376,9 @@
                                     <constraint firstAttribute="width" constant="320" id="FyQ-JX-67r"/>
                                     <constraint firstAttribute="height" constant="50" id="rSv-iv-7Gg"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -397,7 +403,7 @@
         <!--Options TableVC-->
         <scene sceneID="Yvq-xF-N8T">
             <objects>
-                <tableViewController id="KZ9-nv-M8n" customClass="OptionsTableVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="KZ9-nv-M8n" customClass="OptionsTableVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="XC1-iz-tIc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,6 +568,34 @@
             </objects>
             <point key="canvasLocation" x="3068" y="969"/>
         </scene>
+        <!--Calendar Event TableVC-->
+        <scene sceneID="hPQ-SR-sZx">
+            <objects>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Qma-Qv-oWT" customClass="CalendarEventTableVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e24-aD-luI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarEventCell" id="W2I-Up-SH1">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W2I-Up-SH1" id="loZ-jo-oHG">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qma-Qv-oWT" id="GpQ-o1-4OY"/>
+                            <outlet property="delegate" destination="Qma-Qv-oWT" id="DTN-cW-kJS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgX-Au-0Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3067" y="1671"/>
+        </scene>
         <!--Выбор параметров-->
         <scene sceneID="gFZ-aD-qc2">
             <objects>
@@ -715,6 +749,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MTC-2D-90P"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZB-Rd-2Ru">
                                 <rect key="frame" x="0.0" y="114" width="320" height="454"/>
@@ -977,6 +1014,9 @@
                                     <constraint firstAttribute="height" constant="50" id="rou-A2-gGF"/>
                                     <constraint firstAttribute="width" constant="320" id="thG-v9-of6"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm1-kk-sqI">
                                 <rect key="frame" x="0.0" y="64" width="400" height="35"/>
@@ -1003,17 +1043,17 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5a-5S-to9">
-                                                            <rect key="frame" x="21" y="10.5" width="37" height="15"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="20.5" y="10.5" width="37.5" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="C5a-5S-to9" firstAttribute="centerX" secondItem="d8h-8F-NTr" secondAttribute="centerX" id="PIU-QW-k29"/>
-                                                    <constraint firstItem="C5a-5S-to9" firstAttribute="centerY" secondItem="d8h-8F-NTr" secondAttribute="centerY" id="bwb-x3-MO2"/>
+                                                    <constraint firstItem="C5a-5S-to9" firstAttribute="centerY" secondItem="d8h-8F-NTr" secondAttribute="centerY" id="ENl-M1-cjK"/>
+                                                    <constraint firstItem="C5a-5S-to9" firstAttribute="centerX" secondItem="d8h-8F-NTr" secondAttribute="centerX" id="EU3-ex-ee1"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="title" destination="C5a-5S-to9" id="WPt-Hp-3Bz"/>
@@ -1031,11 +1071,11 @@
                                     <constraint firstItem="HAI-Bj-sZA" firstAttribute="centerY" secondItem="Xm1-kk-sqI" secondAttribute="centerY" id="prl-iO-jMA"/>
                                 </constraints>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-Id-yQd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-Id-yQd">
                                 <rect key="frame" x="0.0" y="107" width="400" height="362"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="60" id="Izg-3b-tZr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="60" id="Izg-3b-tZr" customClass="CalendarCell" customModule="TradersCalculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="400" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izg-3b-tZr" id="qCF-uR-zN9">
@@ -1163,6 +1203,16 @@
                                                 <constraint firstItem="jQe-Rb-gd3" firstAttribute="top" secondItem="qCF-uR-zN9" secondAttribute="top" constant="5" id="wWR-S7-9G1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="actualLabel" destination="idC-I4-uUW" id="Op4-Pf-o3r"/>
+                                            <outlet property="consLabel" destination="id0-Zk-1cG" id="7f5-pQ-2I3"/>
+                                            <outlet property="countryLabel" destination="85v-Lp-wDs" id="eky-IX-ewF"/>
+                                            <outlet property="currencyLabel" destination="w05-r4-7eS" id="oAp-0W-M9k"/>
+                                            <outlet property="importanceLabel" destination="JaT-gD-VqY" id="16g-E3-Zei"/>
+                                            <outlet property="previousLabel" destination="uqW-h5-64Q" id="kxR-5L-heR"/>
+                                            <outlet property="timeLabel" destination="jJc-vC-jZq" id="prn-ZR-FQI"/>
+                                            <outlet property="titleLabel" destination="NK2-Dv-1DJ" id="Mdo-3f-rgo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1193,11 +1243,56 @@
                         <outlet property="collectionView" destination="HAI-Bj-sZA" id="qyd-2e-P6R"/>
                         <outlet property="googleBannerView" destination="Hgf-CL-HuI" id="e66-W6-mTM"/>
                         <outlet property="scrollViewForSegmentedControl" destination="Xm1-kk-sqI" id="bNH-G5-OjN"/>
+                        <segue destination="DRe-Z7-saX" kind="show" identifier="CalendarShowEventDetails" id="PIC-PE-vDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfQ-3K-H9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1113.75" y="1671.1267605633802"/>
+        </scene>
+        <!--Calendar EventVC-->
+        <scene sceneID="jn9-0t-h8M">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DRe-Z7-saX" customClass="CalendarEventVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lZv-dy-sTc"/>
+                        <viewControllerLayoutGuide type="bottom" id="KAF-AX-Ugf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GgC-Po-HOW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zl-DV-IoF" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ORU-TE-tp4"/>
+                                    <constraint firstAttribute="width" constant="320" id="VnN-CA-4Bd"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4FX-fb-NXF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="405"/>
+                                <connections>
+                                    <segue destination="Qma-Qv-oWT" kind="embed" id="Krb-Zo-i3o"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4FX-fb-NXF" firstAttribute="top" secondItem="lZv-dy-sTc" secondAttribute="bottom" id="Pre-i8-XOX"/>
+                            <constraint firstItem="0zl-DV-IoF" firstAttribute="centerX" secondItem="GgC-Po-HOW" secondAttribute="centerX" id="Yqf-x3-uUi"/>
+                            <constraint firstItem="0zl-DV-IoF" firstAttribute="top" secondItem="4FX-fb-NXF" secondAttribute="bottom" id="mCB-r7-G8F"/>
+                            <constraint firstItem="4FX-fb-NXF" firstAttribute="leading" secondItem="GgC-Po-HOW" secondAttribute="leading" id="mcG-b7-Kev"/>
+                            <constraint firstItem="KAF-AX-Ugf" firstAttribute="top" secondItem="0zl-DV-IoF" secondAttribute="bottom" id="wey-Lj-Vcg"/>
+                            <constraint firstAttribute="trailing" secondItem="4FX-fb-NXF" secondAttribute="trailing" id="z9D-SC-TIn"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ift-Zm-Id2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113" y="1671"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="5Hj-s7-DwO">
