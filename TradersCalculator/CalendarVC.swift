@@ -142,20 +142,17 @@ extension CalendarVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "CalendarShowEventDetails", sender: "EventID")
-        print("performed")
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        print("performed 2")
         guard let segueID = segue.identifier
             else { return }
         
         
         switch segueID {
         case "CalendarShowEventDetails":
-            print("performed 4")
             guard let destination = segue.destination as? CalendarEventVC
                 else { return }
             guard let eventID = sender as? String

@@ -24,7 +24,8 @@
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
 		C4E6A9141F2873D700678BDE /* CalendarEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E6A9131F2873D700678BDE /* CalendarEventVC.swift */; };
-		C4E6A9161F287D9600678BDE /* CalendarEventTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E6A9151F287D9600678BDE /* CalendarEventTableVC.swift */; };
+		C4E6A9181F28868C00678BDE /* CalendarCellEventDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E6A9171F28868C00678BDE /* CalendarCellEventDesc.swift */; };
+		C4E6A91A1F28890A00678BDE /* CalendarCellEventHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E6A9191F28890A00678BDE /* CalendarCellEventHistory.swift */; };
 		C4E8B3821F1F9E4200701EBB /* SetOfPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8B3811F1F9E4200701EBB /* SetOfPositions.swift */; };
 		C4E8B3841F1FA04900701EBB /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8B3831F1FA04900701EBB /* Instrument.swift */; };
 		C4E902CC1F245FE00032A392 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E902CB1F245FE00032A392 /* Localization.strings */; };
@@ -67,7 +68,8 @@
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
 		C4E6A9131F2873D700678BDE /* CalendarEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventVC.swift; sourceTree = "<group>"; };
-		C4E6A9151F287D9600678BDE /* CalendarEventTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventTableVC.swift; sourceTree = "<group>"; };
+		C4E6A9171F28868C00678BDE /* CalendarCellEventDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellEventDesc.swift; sourceTree = "<group>"; };
+		C4E6A9191F28890A00678BDE /* CalendarCellEventHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellEventHistory.swift; sourceTree = "<group>"; };
 		C4E8B3811F1F9E4200701EBB /* SetOfPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOfPositions.swift; sourceTree = "<group>"; };
 		C4E8B3831F1FA04900701EBB /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		C4E902CB1F245FE00032A392 /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
 				C45697A81F1A8DAF00599563 /* CalendarVC.swift */,
 				C4E6A9131F2873D700678BDE /* CalendarEventVC.swift */,
-				C4E6A9151F287D9600678BDE /* CalendarEventTableVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -139,6 +140,8 @@
 				C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */,
 				C451AE431F274AC500826790 /* CalendarCell.swift */,
 				C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */,
+				C4E6A9171F28868C00678BDE /* CalendarCellEventDesc.swift */,
+				C4E6A9191F28890A00678BDE /* CalendarCellEventHistory.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -368,11 +371,13 @@
 			files = (
 				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
 				C451AE441F274AC500826790 /* CalendarCell.swift in Sources */,
+				C4E6A9181F28868C00678BDE /* CalendarCellEventDesc.swift in Sources */,
 				C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */,
 				C42783241F23CD0C00430916 /* CurrentUser.swift in Sources */,
 				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
 				C45697A91F1A8DAF00599563 /* CalendarVC.swift in Sources */,
+				C4E6A91A1F28890A00678BDE /* CalendarCellEventHistory.swift in Sources */,
 				C4E94D961F1BAE3F00C313D7 /* Position.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
@@ -384,7 +389,6 @@
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
 				C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */,
 				C4E8B3821F1F9E4200701EBB /* SetOfPositions.swift in Sources */,
-				C4E6A9161F287D9600678BDE /* CalendarEventTableVC.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
 				C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */,
 				C4A762D51F2755DD008D91FE /* CalendarAPI.swift in Sources */,
