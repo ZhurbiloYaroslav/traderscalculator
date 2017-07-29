@@ -19,6 +19,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     var positionsArray: [Position]!
+    var positionsArrayByID: [String: Position]!
+    var openedPositionCell: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,15 +118,18 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         // Make a temporary variable for storing owners list from Firebase
         var updatedPositionsArray = [Position]()
+        var updatedPositionsArrayByID = [String: Position]()
         
         // Make objects of the owners list from Firebase and put them in the array
-        for (key, value) in positionsArrayFromFirebase {
-            let position = Position(positionID: key, firebaseDict: value)
+        for (positionID, firebaseDict) in positionsArrayFromFirebase {
+            let position = Position(positionID, firebaseDict)
             updatedPositionsArray.append(position)
+            updatedPositionsArrayByID.updateValue(position, forKey: positionID)
         }
         
         // Update this class variable with data from Firebase
         positionsArray = updatedPositionsArray
+        positionsArrayByID = updatedPositionsArrayByID
         calculatorTableView.reloadData()
     }
     
@@ -137,6 +142,12 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatedPositionCell") as? CalculatorItemCell
             else { return UITableViewCell() }
+        
+        cell.cellIsOpen = false
+        
+        if let openedCell = openedPositionCell, openedCell == indexPath.row {
+            cell.cellIsOpen = true
+        }
         
         cell.updateCell(position: positionsArray[indexPath.row])
         
@@ -162,7 +173,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         let currentPosition = positionsArray[indexPath.row]
         let positionName = currentPosition.instrument
-        let positionIDinFirebase = currentPosition.positionID
         let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
         
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
@@ -176,7 +186,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         }
         let EditAction = UIAlertAction(title: "Edit", style: .default) { (action) in
             
-            self.performSegue(withIdentifier: "EditPosition", sender: positionIDinFirebase)
+            self.performSegue(withIdentifier: "EditPosition", sender: currentPosition)
             
         }
         let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -193,30 +203,27 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? CalcAddItemVC
             else { return }
-        guard let positionID = sender as? String
+        guard let currentPosition = sender as? Position
             else { return }
-        destination.positionIDToEdit = positionID
+        destination.positionToEdit = currentPosition
     }
     
     //TODO: Make description
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let cell = tableView.cellForRow(at: indexPath) as? CalculatorItemCell {
-            
-            if cell.cellIsOpen {
-                cell.cellIsOpen = false
-            } else {
-                cell.cellIsOpen = true
-            }
-            print(cell.cellIsOpen)
-            tableView.reloadData()
-        }
+        openedPositionCell = indexPath.row
+        
+        tableView.reloadData()
         
     }
     
-    
-    
 }
+
+
+
+
+
+
 
 
 

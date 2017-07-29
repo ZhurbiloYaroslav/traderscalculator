@@ -108,6 +108,9 @@ class CalendarVC: UIViewController {
 // Methods related with a Table View
 extension CalendarVC: UITableViewDelegate, UITableViewDataSource {
     
+    //TODO: This post helps to hold headers of the section on top
+    // medium.com/ios-os-x-development/ios-how-to-build-a-table-view-with-multiple-cell-types-2df91a206429
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         switch selectedDateInScrollView {

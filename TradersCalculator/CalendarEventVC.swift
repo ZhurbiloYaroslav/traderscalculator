@@ -46,7 +46,7 @@ class CalendarEventVC: UIViewController {
         self.navigationItem.title = "Event Info"
         
         eventTableView.rowHeight = UITableViewAutomaticDimension
-        eventTableView.estimatedRowHeight = 60
+        eventTableView.sectionFooterHeight = 0
     }
 }
 
@@ -57,41 +57,58 @@ extension CalendarEventVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        switch section {
+        case 0:
+            return 1
+        default:
+            return 3
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = UITableViewCell()
-        
-        switch indexPath.section {
-        case 0:
-            guard let descCell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventDesc", for: indexPath) as? CalendarCellEventDesc
+        switch indexPath {
+            
+        // Means, that this is a description of the Calendar's Event
+        case [0, 0]:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventDesc", for: indexPath) as? CalendarCellEventDesc
                 else { return UITableViewCell() }
 
-            cell = descCell
-            break
+            return cell
             
-        case 1:
-            guard let historyCell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventHistory", for: indexPath) as? CalendarCellEventHistory
+        // Means, that this is a title of the History Table
+        case [1, 0]:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventHistoryTitle", for: indexPath) as? CalendarCellEventHistoryTitle
                 else { return UITableViewCell() }
 
-            cell = historyCell
-            break
+            return cell
             
+        // Means, that this is a row in the History Table
         default:
-            break
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCellEventHistoryData", for: indexPath) as? CalendarCellEventHistoryData
+                else { return UITableViewCell() }
+            
+            
+            let historyValues = [
+                "Release Date" : "Jul 26, 2017",
+                "Actual" : "40.2K",
+                "Forecast" : "39.9K",
+                "Previous" : "40.3K"
+            ]
+            
+            cell.updateCell(historyValues)
+            return cell
         }
         
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
-        case 0:
-            return "Event Description"
         case 1:
             return "History"
         default:

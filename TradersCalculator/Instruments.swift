@@ -9,6 +9,7 @@
 import Foundation
 
 struct Instruments {
+    // This should be named as Symbol(s)
     //TODO: Make comment
     
     //TODO: Make comment
@@ -30,9 +31,9 @@ struct Instruments {
         "Forex Exotics",
         "Crypto",
         "Energies",
-        "Indeices CFDs",
-        "Futures CFDs",
-        "Commodity CFDs"
+        //"Indeices CFDs",
+        //"Futures CFDs",
+        //"Commodity CFDs"
     ]
     
     //TODO: Make comment
@@ -225,7 +226,7 @@ extension Instruments {
     }
     
     //TODO: Write a description
-    func getFullInstrumentNameBy(categoryID: Int, leftPart: Int, rightPart: Int) -> String {
+    func getInstrumentNameBy(categoryID: Int, leftPart: Int, rightPart: Int) -> String {
         
         var result = ""
         
@@ -239,6 +240,35 @@ extension Instruments {
         }
         
         return result
+    }
+    
+    //TODO: Get object of the instrument to retrieve a description fo Symbol
+    func getInstrumentObject(categoryID: Int, leftPart: Int, rightPart: Int) -> Instrument {
+        
+        var instrumentParts = [String]()
+        let instrumentsLeftPartArray = getArrayWithInstrumentsBy(categoryID: categoryID)
+        let instrumentsRightPartArray = getRightCurrencyPairsArrayFor(instrumentID: leftPart, inCategoryID: categoryID)
+        
+        for instrumentIndex in 0 ..< instrumentsLeftPartArray.count {
+            
+            if instrumentIndex == leftPart {
+                instrumentParts.append(instrumentsLeftPartArray[instrumentIndex])
+            }
+            
+        }
+        
+        for instrumentIndex in 0 ..< instrumentsRightPartArray.count {
+            
+            if instrumentIndex == rightPart {
+                instrumentParts.append(instrumentsRightPartArray[instrumentIndex])
+            }
+            
+        }
+        
+        let categoryName = getCategoryNameBy(categoryID: categoryID)
+        
+        return Instrument(categoryName, instrumentParts)
+        
     }
 }
 

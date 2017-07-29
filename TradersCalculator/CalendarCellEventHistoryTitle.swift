@@ -1,5 +1,5 @@
 //
-//  CalendarCellEventHistory.swift
+//  CalendarCellEventHistoryTitle.swift
 //  TradersCalculator
 //
 //  Created by Yaroslav Zhurbilo on 26.07.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarCellEventHistory: UITableViewCell {
+class CalendarCellEventHistoryTitle: UITableViewCell {
 
     
 

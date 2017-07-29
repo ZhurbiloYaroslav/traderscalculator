@@ -25,7 +25,7 @@ struct Constants {
     static let currenciesOfAccount = [
         "EUR",
         "USD",
-        "RUR"
+        "RUB"
     ]
     
     // Uses in options

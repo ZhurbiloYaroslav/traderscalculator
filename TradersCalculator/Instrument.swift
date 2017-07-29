@@ -11,16 +11,46 @@ import Foundation
 //TODO: Write a description
 class Instrument {
     
-    private var _instrumentParts: [String]!
-    private var _instrumentCategory: String!
+    private var _parts: [String]!
+    private var _category: String!
     
-
+    // This is a name of The instrument
+    var name: String {
+        
+        var name = ""
+        for instrumentPart in _parts {
+            name += instrumentPart
+        }
+        
+        return name
+    }
+    
+    //TODO: Write a description
+    var digitsBeforeAndAfterDot: [Int] {
+        
+        if _parts != nil {
+            
+            for instrumentPart in _parts {
+                
+                switch instrumentPart {
+                case "JPY":
+                    return [3,3]
+                default:
+                    return [1,5]
+                }
+            }
+            
+        }
+        
+        return [1,5]
+        
+    }
     
     //TODO: Write a description
     var instrumentParts: [String] {
         
-        if _instrumentParts != nil {
-            return _instrumentParts
+        if _parts != nil {
+            return _parts
         } else {
             return []
         }
@@ -30,8 +60,8 @@ class Instrument {
     //TODO: Write a description
     var instrumentCategory: String {
         
-        if _instrumentCategory != nil {
-            return _instrumentCategory
+        if _category != nil {
+            return _category
         } else {
             return ""
         }
@@ -41,8 +71,8 @@ class Instrument {
     //TODO: Write a description
     var countOfinstrumentParts: Int {
         
-        if _instrumentParts != nil {
-            return self._instrumentParts.count
+        if _parts != nil {
+            return self._parts.count
         } else {
             return 0
         }
@@ -51,11 +81,11 @@ class Instrument {
     //TODO: Write a description
     var instrumentString: String {
         
-        if _instrumentParts != nil {
+        if _parts != nil {
             
             var resultString = ""
             
-            for part in _instrumentParts {
+            for part in _parts {
                 resultString += part
             }
             
@@ -70,8 +100,8 @@ class Instrument {
     //TODO: Write a description
     init(_ categoryName: String, _ instrumentParts: [String]) {
         
-        self._instrumentParts = instrumentParts
-        self._instrumentCategory = categoryName
+        self._parts = instrumentParts
+        self._category = categoryName
         
     }
     

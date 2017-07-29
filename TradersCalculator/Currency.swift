@@ -31,7 +31,6 @@ let CZK = "CZK"
 let HUF = "HUF"
 let MXN = "MXN"
 let RUB = "RUB"
-let RUR = "RUR"
 let THB = "THB"
 let XBR = "XBR"
 let XNG = "XNG"
@@ -40,7 +39,7 @@ let BTC = "BTC"
 
 
 //TODO: Write a description
-let currencyFullName = [
+let instrumentPartFullName = [
     
     AUD : "Australian Dollar",
     CAD : "Canadian Dollar",
@@ -51,6 +50,22 @@ let currencyFullName = [
     SGD : "Singapore Dollar",
     USD : "US Dollar",
     JPY : "Japanese Yen",
-    RUR : "Russian Ruble"
+    DKK : "Danish Korner",
+    HKD : "Hong Kong Dollar",
+    NOK : "Norwegian Krona",
+    PLN : "Polish Zlotys",
+    SEK : "Swedish Kronor",
+    TRY : "Turkish Lira",
+    ZAR : "South African Rand",
+    CNH : "Chinese Renminbi",
+    CZK : "Czech Republic Korunas",
+    HUF : "Hungarian Forints",
+    MXN : "Mexican Peso",
+    RUB : "Russian Ruble",
+    THB : "Thai Baht",
+    XBR : "Brent",
+    XNG : "Natural Gas",
+    XTI : "Ml",
+    BTC : "Bitcoin"
     
 ]

@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>nanopb.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -37,12 +42,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28C641E65070D6B12C01B5A4E00BB4B5</key>
+		<key>511C8C43974BF980E3DDFC85EA96E4F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>511C8C43974BF980E3DDFC85EA96E4F3</key>
+		<key>7E962856905A47EA8B9DC5EAFD7026F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4DD95323C54A78F879DAB0F1508B8E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

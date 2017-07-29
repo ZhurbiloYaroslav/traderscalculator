@@ -26,6 +26,21 @@ class CurrentUser {
         
     }
     
+    var lastUsedInstrument: LastUsedInstrument {
+        get {
+            if let data = defaults.object(forKey: "lastUsedInstrument") as? [String : Int] {
+                return LastUsedInstrument(data: data)
+            } else {
+                return LastUsedInstrument()
+            }
+            
+        }
+        set {
+            defaults.set(newValue.getDictForSave(), forKey: "lastUsedInstrument")
+            defaults.synchronize()
+        }
+    }
+    
     //TODO: Make comment
     var language: String {
         get {
@@ -55,6 +70,5 @@ class CurrentUser {
             self.options["leverage"] = newValue
         }
     }
-    
     
 }

@@ -35,10 +35,11 @@ class CalcAddItemVC: UIViewController {
     
     var instruments: Instruments!
     var currentCategoryID: Int!
-    var currentInstrumentID: Int!
+    var currentInstrumentLeftPartID: Int!
+    var currentInstrumentRightPartID: Int!
     
     // Contains position ID in Firebase and appear when edit position from CalculatorVC
-    var positionIDToEdit: String?
+    var positionToEdit: Position?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,14 +53,14 @@ class CalcAddItemVC: UIViewController {
         // Configure the Firebase
         firebase = FirebaseConnect()
         
+        // Make request to the server
+        makeRequest()
+        
         // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         initializeVariables()
-        
-        // Make request to the server
-        makeRequest()
         
         registerForKeyboardNotifications()
         
@@ -91,21 +92,27 @@ class CalcAddItemVC: UIViewController {
     
     func initializeVariables() {
         
+        let lastUsedInstrument = currentUserOptions.lastUsedInstrument
         instruments = Instruments()
-        currentCategoryID = 0
-        currentInstrumentID = 0
+        currentCategoryID = lastUsedInstrument.categoryID
+        currentInstrumentLeftPartID = lastUsedInstrument.instrumentLeftPartID
+        currentInstrumentRightPartID = lastUsedInstrument.instrumentRightPartID
         
-        getDescriptionOfInstrumentIn(instrumentsPicker)
+        // Picker View
+        instrumentsPicker.selectRow(currentCategoryID, inComponent: 0, animated: true)
+        instrumentsPicker.selectRow(currentInstrumentLeftPartID, inComponent: 1, animated: true)
+        instrumentsPicker.selectRow(currentInstrumentRightPartID, inComponent: 2, animated: true)
         
-        if positionIDToEdit != nil {
+        getDescriptionOfInstrument()
+        
+        if let unwrappedPositionToEdit = positionToEdit {
             navigationBarTitle.text = "Edit position"
             
             stackWithInstrumentPicker.isHidden = true
-            instrumentDescription.text = "Description for XBRUSD"
-            positionValue.text = "0.79110"
-            positionOpenPrice.text = "0.79110"
-            positionStopLoss.text = "0.79110"
-            positionTakeProfit.text = "0.79110"
+            positionValue.text = "\(unwrappedPositionToEdit.value)"
+            positionOpenPrice.text = "\(unwrappedPositionToEdit.openPrice)"
+            positionStopLoss.text = "\(unwrappedPositionToEdit.stopLoss)"
+            positionTakeProfit.text = "\(unwrappedPositionToEdit.takeProfit)"
             
         }
         
@@ -115,24 +122,39 @@ class CalcAddItemVC: UIViewController {
     func makeRequest() {
         
         // If this is not editing of the position, then we download the data
-        if positionIDToEdit == nil {
+        if positionToEdit == nil {
             
             forexAPI = ForexAPI()
             forexAPI.downloadInstrumentsRates {
-                self.updateUI()
+                self.updateUI(snapshotData: nil)
             }
             
         }
         
     }
     
-    func updateUI() {
+    func updateUI(snapshotData: DataSnapshot?) {
         
-        let currentInstrumentName = getInstrumentName(instrumentsPicker)
-        if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName]?["rate"] {
-            positionOpenPrice.text = currentInstrumentRates
-            positionStopLoss.text = currentInstrumentRates
-            positionTakeProfit.text = currentInstrumentRates
+        if positionToEdit == nil {
+            // If this view is used for edit position, then we don't need picker view
+            
+            let currentInstrumentName = getInstrumentName()
+            if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName]?["rate"] {
+                positionOpenPrice.text = currentInstrumentRates
+                positionStopLoss.text = currentInstrumentRates
+                positionTakeProfit.text = currentInstrumentRates
+            }
+            
+        } else {
+            // If this view is used for edit position, then we need to get values for editable position
+            
+            let currentInstrumentName = getInstrumentName()
+            if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName]?["rate"] {
+                positionOpenPrice.text = currentInstrumentRates
+                positionStopLoss.text = currentInstrumentRates
+                positionTakeProfit.text = currentInstrumentRates
+            }
+            
         }
         
     }
@@ -146,7 +168,7 @@ class CalcAddItemVC: UIViewController {
         }
         
     }
-
+    
     deinit {
         removeKeyboardNotifications()
     }
@@ -159,8 +181,21 @@ class CalcAddItemVC: UIViewController {
             // Get the dictionary with values from text fields
             guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Sell")
                 else { return }
-            // Add new owner
-            firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+            
+            if positionToEdit == nil {
+                
+                // Add new position
+                firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+                
+            } else {
+                
+                // Update existing position
+                guard let positionID = positionToEdit?.positionID
+                    else { return }
+                firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
+                
+            }
+            
             
         } else {
             // Was pressed Buy button
@@ -169,8 +204,19 @@ class CalcAddItemVC: UIViewController {
             guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Buy")
                 else { return }
             
-            // Add new owner
-            firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+            if positionToEdit == nil {
+                
+                // Add new position
+                firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+                
+            } else {
+                
+                // Update existing position
+                guard let positionID = positionToEdit?.positionID
+                    else { return }
+                firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
+                
+            }
             
         }
         
@@ -180,8 +226,13 @@ class CalcAddItemVC: UIViewController {
         
     }
     
+    // This method saves last used settings in Picker View
     func saveLastUsedInstrument() {
+        let lastUsedInstrument = LastUsedInstrument(categoryID: currentCategoryID,
+                                                    leftPartID: currentInstrumentLeftPartID,
+                                                    rightPartID: currentInstrumentRightPartID)
         
+        currentUserOptions.lastUsedInstrument = lastUsedInstrument
     }
     
 }
@@ -252,10 +303,48 @@ extension CalcAddItemVC {
         guard let stopLoss = positionStopLoss.text else { return nil }
         guard let takeProfit = positionTakeProfit.text else { return nil }
         
+        var instrumentParts = [String]()
+        
+        if let position = positionToEdit {
+            // Means, if it is editing of the position from the calculator list
+            
+            instrumentParts = position.instrumentParts
+            
+        } else {
+            // Means, if it is Adding a new position
+            
+            let instrumentLeftPart =
+                instruments.getArrayWithInstrumentsBy(categoryID: currentCategoryID)[currentInstrumentLeftPartID]
+            instrumentParts.append(instrumentLeftPart)
+            
+            let instrumentRightPart = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentLeftPartID, inCategoryID: currentCategoryID)[currentInstrumentRightPartID]
+            instrumentParts.append(instrumentRightPart)
+            
+        }
+        
+        var currentCategoryIDForSave = 0
+        
+        if positionToEdit == nil {
+            
+            currentCategoryIDForSave = currentCategoryID
+            
+        } else {
+            
+            guard let categoryName = positionToEdit?.instrumentCategory
+                else { return nil }
+            
+            guard let currentCategoryID = instruments.categories.index(of: categoryName)
+                else { return nil }
+            
+            currentCategoryIDForSave = currentCategoryID
+            
+        }
+        
         // Make a adictionary with values for inserting to Firebase
-        let positionDict = [
-            "instrument": getInstrumentName(instrumentsPicker),
-            "category": instruments.getCategoryNameBy(categoryID: currentCategoryID),
+        let positionDict: [String: Any] = [
+            "instrument": getInstrumentName(),
+            "instrumentParts": instrumentParts,
+            "category": instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave),
             "value": value,
             "openPrice": openPrice,
             "takeProfit": takeProfit,
@@ -279,7 +368,6 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
     //TODO: Write a description
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        //TODO: Write a description
         return 3
         
     }
@@ -291,7 +379,7 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         } else if component == 1 {
             return instruments.getArrayWithInstrumentsBy(categoryID: currentCategoryID).count
         } else {
-            return instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentID, inCategoryID: currentCategoryID).count
+            return instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentLeftPartID, inCategoryID: currentCategoryID).count
         }
         
     }
@@ -320,14 +408,14 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerLabel.textAlignment = .left
             
             //TODO: Write a description
-            titleData = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentID, inCategoryID: currentCategoryID)[row]
+            titleData = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentLeftPartID, inCategoryID: currentCategoryID)[row]
             
         }
         
         //TODO: Remove force-unvrap
         let myTitle = NSAttributedString(string: titleData, attributes:
-                                         [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,
-                                          NSForegroundColorAttributeName:UIColor.darkGray])
+            [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,
+             NSForegroundColorAttributeName:UIColor.darkGray])
         
         pickerLabel.attributedText = myTitle
         return pickerLabel
@@ -354,60 +442,98 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        
         if component == 0 {
             
             currentCategoryID = row
-            currentInstrumentID = 0
+            currentInstrumentLeftPartID = 0
+            currentInstrumentRightPartID = 0
             pickerView.reloadComponent(1)
             pickerView.reloadComponent(2)
             pickerView.selectRow(0, inComponent: 1, animated: true)
             pickerView.selectRow(0, inComponent: 2, animated: true)
             
-            // Get the description of the Instrument
-            getDescriptionOfInstrumentIn(pickerView)
-            updateUI()
             
         } else if component == 1 {
             
-            currentInstrumentID = row
+            currentInstrumentLeftPartID = row
+            currentInstrumentRightPartID = 0
             
             pickerView.reloadComponent(2)
             pickerView.selectRow(0, inComponent: 2, animated: true)
             
             // Get the description of the Instrument
-            getDescriptionOfInstrumentIn(pickerView)
-            updateUI()
+            getDescriptionOfInstrument()
             
         } else {
             
-            // Get the description of the Instrument
-            getDescriptionOfInstrumentIn(pickerView)
-            updateUI()
+            currentInstrumentRightPartID = row
+            
             
         }
         
+        // Get the description of the Instrument
+        getDescriptionOfInstrument()
+        
+        updateUI(snapshotData: nil)
+        saveLastUsedInstrument()
         
     }
     
     // Get Name of the Instrument
-    func getInstrumentName(_ pickerView: UIPickerView) -> String {
+    func getInstrumentName() -> String {
         
-        let secondColumn = pickerView.selectedRow(inComponent: 1)
-        let thirdColumn = pickerView.selectedRow(inComponent: 2)
-        let instrumentFullName = instruments.getFullInstrumentNameBy(categoryID: currentCategoryID,
-                                                                     leftPart: secondColumn,
-                                                                     rightPart: thirdColumn)
+        var instrumentName = ""
+        if let unwrappedPositionToEdit = positionToEdit {
+            // If it is a process of editing existing position from the calculator list
+            
+            instrumentName = unwrappedPositionToEdit.instrument
+            
+        } else {
+            // If it is a process of adding a new position
+            
+            instrumentName = instruments.getInstrumentNameBy(categoryID: currentCategoryID,
+                                                                         leftPart: currentInstrumentLeftPartID,
+                                                                         rightPart: currentInstrumentRightPartID)
+        }
         
-        return instrumentFullName
+        return instrumentName
+        
     }
     
     // Get the description of the Instrument
-    func getDescriptionOfInstrumentIn(_ pickerView: UIPickerView) {
+    func getDescriptionOfInstrument() {
         
-        let instrumentFullName = getInstrumentName(pickerView)
+        // New code
+        var description = ""
+        var instrumentParts = [String]()
+        if let position = positionToEdit {
+            instrumentParts = position.instrumentParts
+        } else {
+            let instrument = instruments.getInstrumentObject(categoryID: currentCategoryID,
+                                                             leftPart: currentInstrumentLeftPartID,
+                                                             rightPart: currentInstrumentRightPartID)
+            instrumentParts = instrument.instrumentParts
+        }
         
-        instrumentDescription.text = "Description for " + instrumentFullName
+        //
+        var iterator = 0
+        
+        for instrumentPart in instrumentParts {
+            
+            guard let fullPartName = instrumentPartFullName[instrumentPart]
+                else { return }
+            
+            if iterator == 0 {
+                description += fullPartName
+            } else {
+                description += " vs " + fullPartName
+            }
+            
+            iterator += 1
+            
+        }
+        
+        instrumentDescription.text = description
         
     }
     
