@@ -412,7 +412,7 @@
                             <tableViewSection headerTitle="Account parameters" id="5pB-c2-2Sz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsCurrencyCell" textLabel="YUF-IE-k5h" detailTextLabel="G0p-RJ-Kre" style="IBUITableViewCellStyleValue1" id="OjX-Mu-FLL">
-                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OjX-Mu-FLL" id="Ykt-Sk-0X8">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -439,7 +439,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsLeverageCell" textLabel="vng-EA-NFP" detailTextLabel="HS6-Ih-d2k" style="IBUITableViewCellStyleValue1" id="Qdv-2u-9ED">
-                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qdv-2u-9ED" id="7Tc-t3-dDR">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -470,7 +470,7 @@
                             <tableViewSection headerTitle="Interfaсe" id="Jg4-eV-XoD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsLanguageCell" textLabel="sde-7c-geb" detailTextLabel="RAy-lO-Jbw" style="IBUITableViewCellStyleValue1" id="kLe-Yl-vnP">
-                                        <rect key="frame" x="0.0" y="199.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kLe-Yl-vnP" id="QAP-b7-kLO">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -498,7 +498,7 @@
                             <tableViewSection headerTitle="Purchases" id="bBK-SC-aVf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsBuyProCell" textLabel="ILe-7Y-pGI" style="IBUITableViewCellStyleDefault" id="8uV-i2-Sj1">
-                                        <rect key="frame" x="0.0" y="299.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="300" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8uV-i2-Sj1" id="gRC-zp-bQ5">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -515,7 +515,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsRestoreCell" textLabel="vxg-Ve-wTP" style="IBUITableViewCellStyleDefault" id="fWt-80-BR1">
-                                        <rect key="frame" x="0.0" y="343.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="344" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fWt-80-BR1" id="wtN-eU-tBX">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -531,8 +531,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6h9-mi-CyH" style="IBUITableViewCellStyleDefault" id="xoy-8K-Nrj">
-                                        <rect key="frame" x="0.0" y="387.5" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsBenefitsCell" textLabel="6h9-mi-CyH" style="IBUITableViewCellStyleDefault" id="xoy-8K-Nrj">
+                                        <rect key="frame" x="0.0" y="388" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xoy-8K-Nrj" id="laO-or-Umz">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -558,9 +558,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="J5t-R1-g4V"/>
                     <connections>
+                        <outlet property="benefitsCell" destination="xoy-8K-Nrj" id="aLV-BK-gSO"/>
+                        <outlet property="buyProCell" destination="8uV-i2-Sj1" id="6zv-7n-tG2"/>
                         <outlet property="currencyCell" destination="OjX-Mu-FLL" id="0KQ-ee-zaZ"/>
                         <outlet property="languageCell" destination="kLe-Yl-vnP" id="Z2C-zt-Lfd"/>
                         <outlet property="leverageCell" destination="Qdv-2u-9ED" id="Um1-6X-Eoh"/>
+                        <outlet property="restorePurchasesCell" destination="fWt-80-BR1" id="h5R-DF-kEn"/>
                         <segue destination="4eA-5g-0oM" kind="show" identifier="OptionsChangeLanguage" id="fta-u4-Qyj"/>
                     </connections>
                 </tableViewController>
@@ -1048,10 +1051,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="60" id="Izg-3b-tZr" customClass="CalendarCell" customModule="TradersCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="400" height="60"/>
+                                        <rect key="frame" x="0.0" y="55" width="400" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izg-3b-tZr" id="qCF-uR-zN9">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Rb-gd3">
@@ -1247,10 +1250,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarCellEventDesc" rowHeight="200" id="SVp-DU-xbZ" customClass="CalendarCellEventDesc" customModule="TradersCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SVp-DU-xbZ" id="Tf5-3R-y3A">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CMV-es-eeN">
@@ -1422,7 +1425,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarCellEventHistoryTitle" rowHeight="40" id="MlI-O5-YQN" customClass="CalendarCellEventHistoryTitle" customModule="TradersCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="256" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="255" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlI-O5-YQN" id="CK3-lg-s5l">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -1467,7 +1470,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarCellEventHistoryData" rowHeight="40" id="XRg-Zo-DLL" customClass="CalendarCellEventHistoryData" customModule="TradersCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="296" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="295" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XRg-Zo-DLL" id="hVv-vg-jO9">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
