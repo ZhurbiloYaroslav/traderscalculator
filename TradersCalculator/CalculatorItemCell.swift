@@ -10,50 +10,46 @@ import UIKit
 
 class CalculatorItemCell: UITableViewCell {
     
+    // Definition of the Labels and Stack views in the Cell in CalculatorVC.swift
     @IBOutlet weak var instrumentNameLabel: UILabel!
     @IBOutlet weak var dealDirectionLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!       // Label for value (Russian: Лот)
-    @IBOutlet weak var takeProfitLabel: UILabel!
-    @IBOutlet weak var stopLossLabel: UILabel!
-    @IBOutlet weak var openPriceLabel: UILabel!
-    @IBOutlet weak var blueLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!                // Label for value (Russian: Лот)
+    
+    @IBOutlet weak var stackForProfitTop: UIStackView!
+    @IBOutlet weak var profitLabelTopRight: UILabel!
     
     @IBOutlet weak var valueBeforeArrow: UILabel!
     @IBOutlet weak var valueAfterArrow: UILabel!
-    @IBOutlet weak var stackWithArrow: UIStackView!
-    @IBOutlet weak var hiddenStackWithValues: UIStackView!
-    @IBOutlet weak var blueLabelStack: UIStackView!
     
-    //TODO: Make comment
+    @IBOutlet weak var bottomHiddenStackWithValues: UIStackView!
+    @IBOutlet weak var openPriceLabelBottomLeft: UILabel!
+    @IBOutlet weak var takeProfitLabelBottomLeft: UILabel!
+    @IBOutlet weak var stopLossLabelBottomLeft: UILabel!
+    @IBOutlet weak var marginLabelBottomLeft: UILabel!
+    
+    @IBOutlet weak var profitLabelBottomRight: UILabel!
+    @IBOutlet weak var lossLabelBottomRight: UILabel!
+    @IBOutlet weak var marginLabelBottomRight: UILabel!
+
+    
+    // False if the cell is closed (bottom stack with values is hidden)
+    // True if the cell is open (bottom stack with values is visible)
     var cellIsOpen = false
     
-    //TODO: Make comment
+    // Make changes to the labels and views of the cell
     func updateCell(position: Position) {
         
-        instrumentNameLabel.text = position.instrument
-        valueLabel.text = "\(position.value)"
-        stopLossLabel.text = "\(position.stopLoss)"
-        takeProfitLabel.text = "\(position.takeProfit)"
-        openPriceLabel.text = "\(position.openPrice)"
-        valueBeforeArrow.text = "\(position.openPrice)"
-        valueAfterArrow.text = "\(position.takeProfit)"
+        // Set the Label's values in the cell
+        setLabelsValues(position: position)
         
-        //TODO: Make comment
-        if position.dealDirection == "Sell" {
-            dealDirectionLabel.text = "sell"
-        }
-        if position.dealDirection == "Buy" {
-            dealDirectionLabel.text = "buy"
-        }
-        
-        //TODO: Make comment
+        // Open or Close the cell
         if cellIsOpen {
             openCell()
         } else {
             closeCell()
         }
         
-        //TODO: Make comment
+        // Change color of the labels
         if position.dealDirection == "Buy" {
             dealDirectionLabel.textColor = UIColor.blue
             valueLabel.textColor = UIColor.blue
@@ -61,6 +57,34 @@ class CalculatorItemCell: UITableViewCell {
             dealDirectionLabel.textColor = UIColor.red
             valueLabel.textColor = UIColor.red
         }
+    }
+    
+    // Set the Label's values in the cell
+    func setLabelsValues(position: Position) {
+        
+        instrumentNameLabel.text = position.instrument
+        valueLabel.text = "\(position.value)"
+        valueBeforeArrow.text = "\(position.openPrice)"
+        valueAfterArrow.text = "\(position.takeProfit)"
+        profitLabelTopRight.text = "\(position.getProfit())"
+        
+        openPriceLabelBottomLeft.text = "\(position.openPrice)"
+        takeProfitLabelBottomLeft.text = "\(position.takeProfit)"
+        stopLossLabelBottomLeft.text = "\(position.stopLoss)"
+        marginLabelBottomLeft.text = "\(position.getMargin())"
+        
+        profitLabelBottomRight.text = "\(position.getProfit())"
+        lossLabelBottomRight.text = "\(position.getLoss())"
+        marginLabelBottomRight.text = "\(position.getMargin())"
+        
+        // Determine, whether the Position is Sell or Buy
+        if position.dealDirection == "Sell" {
+            dealDirectionLabel.text = "sell"
+        }
+        if position.dealDirection == "Buy" {
+            dealDirectionLabel.text = "buy"
+        }
+        
     }
     
     //TODO: Implement this method
@@ -74,8 +98,8 @@ class CalculatorItemCell: UITableViewCell {
     func openCell() {
         
         // stackWithArrow.isHidden = true
-        blueLabelStack.isHidden = true
-        hiddenStackWithValues.isHidden = false
+        stackForProfitTop.isHidden = true
+        bottomHiddenStackWithValues.isHidden = false
         
     }
     
@@ -83,8 +107,8 @@ class CalculatorItemCell: UITableViewCell {
     func closeCell() {
         
         // stackWithArrow.isHidden = false
-        blueLabelStack.isHidden = false
-        hiddenStackWithValues.isHidden = true
+        stackForProfitTop.isHidden = false
+        bottomHiddenStackWithValues.isHidden = true
         
     }
     

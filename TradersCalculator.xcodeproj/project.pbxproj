@@ -27,7 +27,6 @@
 		C4A762D51F2755DD008D91FE /* CalendarAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A762D41F2755DD008D91FE /* CalendarAPI.swift */; };
 		C4A762D91F27B099008D91FE /* CalendarHorizontalScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
-		C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
 		C4E6A9141F2873D700678BDE /* CalendarEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E6A9131F2873D700678BDE /* CalendarEventVC.swift */; };
@@ -46,7 +45,7 @@
 		C4F87BDF1F1F708B00C3BC7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4F87BDE1F1F708B00C3BC7E /* GoogleService-Info.plist */; };
 		C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */; };
 		C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */; };
-		C4FB60DF1F1268A700EDE9C7 /* age.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60DD1F1268A700EDE9C7 /* age.storyboard */; };
+		C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */; };
 		C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60E01F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld */; };
 		C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60E31F1268A700EDE9C7 /* Assets.xcassets */; };
 		C4FB60E71F1268A700EDE9C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */; };
@@ -57,7 +56,7 @@
 		26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradersCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
-		C40F79A11F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/age.storyboard; sourceTree = "<group>"; };
+		C40F79A11F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C40F79A21F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C413B4181F238C790004F327 /* OptionsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
 		C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConnect.swift; sourceTree = "<group>"; };
@@ -79,7 +78,6 @@
 		C4A762D41F2755DD008D91FE /* CalendarAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarAPI.swift; sourceTree = "<group>"; };
 		C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHorizontalScrollCell.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
-		C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
 		C4E6A9131F2873D700678BDE /* CalendarEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventVC.swift; sourceTree = "<group>"; };
@@ -152,9 +150,8 @@
 		C45F8CB31F127253007B1B49 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C4FB60DD1F1268A700EDE9C7 /* age.storyboard */,
+				C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */,
 				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
-				C4DF3EDC1F1283F000C2CB89 /* RoundButton.swift */,
 				C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */,
 				C451AE431F274AC500826790 /* CalendarCell.swift */,
 				C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */,
@@ -342,7 +339,7 @@
 				C4FB60E71F1268A700EDE9C7 /* LaunchScreen.storyboard in Resources */,
 				C4F87BDF1F1F708B00C3BC7E /* GoogleService-Info.plist in Resources */,
 				C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */,
-				C4FB60DF1F1268A700EDE9C7 /* age.storyboard in Resources */,
+				C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */,
 				C4582F281F2CE64F001B7403 /* Traders_Calculator__Development.mobileprovision in Resources */,
 				C472B1CB1F29F5B500BAA1CD /* instaforexAllquotesList.rtf in Resources */,
 				C472B1C91F29F50C00BAA1CD /* quotesInstaforex.rtf in Resources */,
@@ -418,7 +415,6 @@
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
 				C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */,
-				C4DF3EDD1F1283F000C2CB89 /* RoundButton.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
@@ -441,12 +437,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C4FB60DD1F1268A700EDE9C7 /* age.storyboard */ = {
+		C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C40F79A11F24A0E100B19F9E /* Base */,
 			);
-			name = age.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */ = {

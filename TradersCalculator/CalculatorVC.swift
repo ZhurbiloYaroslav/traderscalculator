@@ -13,6 +13,10 @@ import FirebaseAuth
 
 class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
+    @IBOutlet weak var totalProfitLabel: UILabel!
+    @IBOutlet weak var totalLossLabel: UILabel!
+    @IBOutlet weak var totalMarginLabel: UILabel!
+    
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var calculatorTableView: UITableView!
     
@@ -82,6 +86,29 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
+    // Changes the top Total: Profit, Loss and Margin values
+    func changeTopTotalValues() {
+        
+        var totalProfitValue: Double = 0
+        var totalLossValue: Double = 0
+        var totalMarginValue: Double = 0
+        
+        // Iterate through positions array to get all values
+        for position in positionsArray {
+            
+            totalProfitValue += position.getProfit()
+            totalLossValue += position.getLoss()
+            totalMarginValue += position.getMargin()
+            
+        }
+        
+        // Update the Total Label's values
+        totalProfitLabel.text = "\(totalProfitValue)"
+        totalLossLabel.text = "\(totalLossValue)"
+        totalMarginLabel.text = "\(totalMarginValue)"
+        
+    }
+    
     //TODO: Make description
     @IBAction func backToCalculatorFromAddPositionWithoutSaving(sender: UIStoryboardSegue) {
         
@@ -130,6 +157,10 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         // Update this class variable with data from Firebase
         positionsArray = updatedPositionsArray
         positionsArrayByID = updatedPositionsArrayByID
+        
+        // Changes the top Total: Profit, Loss and Margin values
+        changeTopTotalValues()
+        
         calculatorTableView.reloadData()
     }
     

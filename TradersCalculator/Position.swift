@@ -43,6 +43,23 @@ class Position {
         case NoDirection
     }
     
+    //MARK: Start Methods to calculate values
+    // Returns the value of Margin
+    func getMargin() -> Double {
+        return 1.0
+    }
+    
+    // Returns the value of Margin
+    func getProfit() -> Double {
+        return 1.0
+    }
+    
+    // Returns the value of Margin
+    func getLoss() -> Double {
+        return 1.0
+    }
+    // End of Methods to calculate values
+    
     // Designated initializer
     init(creationDate: String,       instrument: String,
          instrumentParts: [String],  instrumentCategory: String,
