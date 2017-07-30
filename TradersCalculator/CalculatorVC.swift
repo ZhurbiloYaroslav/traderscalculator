@@ -114,6 +114,11 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
+    //TODO: Make description
+    @IBAction func backToCalculatorFromParamsSelectionPage(sender: UIStoryboardSegue) {
+        
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
