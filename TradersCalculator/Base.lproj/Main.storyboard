@@ -397,7 +397,13 @@
                             <constraint firstItem="lrl-Lg-3EX" firstAttribute="top" secondItem="hdq-z9-QOD" secondAttribute="bottom" id="xul-37-qqt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od"/>
+                    <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od">
+                        <barButtonItem key="rightBarButtonItem" title="BuyView" id="rNz-Ix-oaM">
+                            <connections>
+                                <segue destination="wJd-XX-aXU" kind="show" id="tlh-g1-UAT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="googleBannerView" destination="lrl-Lg-3EX" id="idd-Q2-U3g"/>
                     </connections>
@@ -1548,6 +1554,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ift-Zm-Id2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2111.25" y="1670.0704225352113"/>
+        </scene>
+        <!--Purchases TestVC-->
+        <scene sceneID="P9x-SD-87U">
+            <objects>
+                <viewController id="wJd-XX-aXU" customClass="PurchasesTestVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2fw-4e-0St"/>
+                        <viewControllerLayoutGuide type="bottom" id="v3X-tL-poq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a88-bl-CHF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eYW-3y-VVi">
+                                <rect key="frame" x="129.5" y="234.5" width="61" height="100.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4q-AS-bPg">
+                                        <rect key="frame" x="13.5" y="0.0" width="34" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxb-ZN-Yff">
+                                        <rect key="frame" x="0.0" y="30.5" width="61" height="30"/>
+                                        <state key="normal" title="Buy PRO"/>
+                                        <connections>
+                                            <action selector="buyProButtonPressed:" destination="wJd-XX-aXU" eventType="touchUpInside" id="urN-DP-64W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmC-xl-pmi">
+                                        <rect key="frame" x="4" y="70.5" width="53" height="30"/>
+                                        <state key="normal" title="Restore"/>
+                                        <connections>
+                                            <action selector="restoreButtonPressed:" destination="wJd-XX-aXU" eventType="touchUpInside" id="EW6-h7-kVa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eYW-3y-VVi" firstAttribute="centerY" secondItem="a88-bl-CHF" secondAttribute="centerY" id="2YV-Ge-qm3"/>
+                            <constraint firstItem="eYW-3y-VVi" firstAttribute="centerX" secondItem="a88-bl-CHF" secondAttribute="centerX" id="Bz4-vW-9a3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appStatusLabel" destination="m4q-AS-bPg" id="Nfg-6p-MTv"/>
+                        <outlet property="buyProButton" destination="bxb-ZN-Yff" id="Qmd-K2-7j0"/>
+                        <outlet property="restoreButton" destination="XmC-xl-pmi" id="o0I-6H-uCb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="im7-ys-XUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3068" y="1670"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="5Hj-s7-DwO">

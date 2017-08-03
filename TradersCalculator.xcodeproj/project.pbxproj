@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C41030611F309F450060F191 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41030601F309F450060F191 /* Calculator.swift */; };
 		C413B4191F238C790004F327 /* OptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413B4181F238C790004F327 /* OptionsTableVC.swift */; };
 		C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */; };
 		C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260F4F1F2093E3004ECCB5 /* AdMob.swift */; };
 		C42783241F23CD0C00430916 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42783231F23CD0C00430916 /* CurrentUser.swift */; };
+		C44CC79E1F2E715500DF2D03 /* PurchasesTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */; };
+		C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */; };
 		C451AE441F274AC500826790 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE431F274AC500826790 /* CalendarCell.swift */; };
 		C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE451F274B4500826790 /* CalendarEvent.swift */; };
 		C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */; };
@@ -58,10 +61,13 @@
 		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		C40F79A11F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C40F79A21F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C41030601F309F450060F191 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		C413B4181F238C790004F327 /* OptionsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
 		C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConnect.swift; sourceTree = "<group>"; };
 		C4260F4F1F2093E3004ECCB5 /* AdMob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMob.swift; sourceTree = "<group>"; };
 		C42783231F23CD0C00430916 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesTestVC.swift; sourceTree = "<group>"; };
+		C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		C451AE431F274AC500826790 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		C451AE451F274B4500826790 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptSelectParamsVC.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
 				C45697A81F1A8DAF00599563 /* CalendarVC.swift */,
 				C4E6A9131F2873D700678BDE /* CalendarEventVC.swift */,
+				C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 		C45F8CB41F127257007B1B49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C41030601F309F450060F191 /* Calculator.swift */,
 				C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */,
 				C4260F4F1F2093E3004ECCB5 /* AdMob.swift */,
 				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
@@ -175,6 +183,7 @@
 				C42783231F23CD0C00430916 /* CurrentUser.swift */,
 				C451AE451F274B4500826790 /* CalendarEvent.swift */,
 				C4582F251F2B552F001B7403 /* LastUsedInstrument.swift */,
+				C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44CC79E1F2E715500DF2D03 /* PurchasesTestVC.swift in Sources */,
 				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
 				C451AE441F274AC500826790 /* CalendarCell.swift in Sources */,
 				C4E6A9181F28868C00678BDE /* CalendarCellEventDesc.swift in Sources */,
@@ -414,7 +424,9 @@
 				C4E94D961F1BAE3F00C313D7 /* Position.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
+				C41030611F309F450060F191 /* Calculator.swift in Sources */,
 				C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */,
+				C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,

@@ -11,6 +11,8 @@ target 'TradersCalculator' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+
+  pod 'SwiftyStoreKit'
   
   pod 'Google-Mobile-Ads-SDK'
 

@@ -49,6 +49,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SwiftyStoreKit (0.10.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Google-Mobile-Ads-SDK
   - INSPersistentContainer
+  - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -72,8 +74,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   INSPersistentContainer: 7e04a0d332ba075441ce0ee73d584ce84d76ac23
-  nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SwiftyStoreKit: f38427d347c8ad0a0d250ae2b64f9f2fcde0569c
 
-PODFILE CHECKSUM: 087b9f92774ff72d31f2d400fbbc8c9caa679d51
+PODFILE CHECKSUM: 11aa104dd5aaf0aee368078182705cdf7511d5d5
 
 COCOAPODS: 1.2.1
