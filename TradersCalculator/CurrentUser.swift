@@ -14,7 +14,7 @@ class CurrentUser {
     private let defaults = UserDefaults.standard
     
     //TODO: Make comment
-    var options: [String: String] {
+    private var options: [String: String] {
         
         get {
             return defaults.object(forKey: "options") as? [String: String] ?? [String: String]()
@@ -52,9 +52,9 @@ class CurrentUser {
     }
     
     //TODO: Make comment
-    var accountCurrency: String {
+    var accountCurrency: String? {
         get {
-            return self.options["accountCurrency"] ?? Constants.defaultCurrency
+            return self.options["accountCurrency"] ?? nil
         }
         set {
             self.options["accountCurrency"] = newValue
@@ -62,9 +62,9 @@ class CurrentUser {
     }
     
     //TODO: Make comment
-    var leverage: String {
+    var leverage: String? {
         get {
-            return self.options["leverage"] ?? Constants.defaultLeverage
+            return self.options["leverage"] ?? nil
         }
         set {
             self.options["leverage"] = newValue

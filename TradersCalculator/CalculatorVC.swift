@@ -58,6 +58,16 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     func initializeVariables() {
         
+        //
+        
+        let userDefaults = CurrentUser()
+        
+        if userDefaults.accountCurrency == nil || userDefaults.leverage == nil {
+            performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
+        }
+        
+        //
+        
         positionsArray = [Position]()
         
         longTapOnCellRecognizerSetup()
@@ -66,6 +76,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         calculatorTableView.rowHeight = UITableViewAutomaticDimension
         
     }
+    
+    
     
     func longTapOnCellRecognizerSetup() {
         
@@ -237,11 +249,28 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     //TODO: Make description
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? CalcAddItemVC
+        guard let segueID = segue.identifier
             else { return }
-        guard let currentPosition = sender as? Position
-            else { return }
-        destination.positionToEdit = currentPosition
+        
+        switch segueID {
+        case "chooseParamsAtFirstLaunch":
+            
+            guard let destination = segue.destination as? OptSelectParamsVC
+                else { return }
+            
+            destination.doWeChooseParamsAtFirstLaunch = true
+ 
+            
+        case "EditPosition":
+            guard let destination = segue.destination as? CalcAddItemVC
+                else { return }
+            guard let currentPosition = sender as? Position
+                else { return }
+            destination.positionToEdit = currentPosition
+            
+        default: break
+        }
+        
     }
     
     //TODO: Make description

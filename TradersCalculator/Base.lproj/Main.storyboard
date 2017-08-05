@@ -351,6 +351,7 @@
                         <outlet property="totalProfitLabel" destination="IJk-5c-ffI" id="OF0-Hj-1Tt"/>
                         <segue destination="T57-kg-F5P" kind="show" identifier="AddPositionButtonPressed" id="qHu-0t-K2J"/>
                         <segue destination="T57-kg-F5P" kind="show" identifier="EditPosition" id="oXo-6y-9Go"/>
+                        <segue destination="4eA-5g-0oM" kind="show" identifier="chooseParamsAtFirstLaunch" id="w74-J8-l96"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -595,8 +596,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="R4p-hN-ckg"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Выбор параметров" id="Zyx-xn-HY0">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LAd-qn-gfX">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="4eA-5g-0oM" id="r3y-i9-ISH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-ag-o2R" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="50"/>
                                 <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SPe-7Y-Wse"/>
@@ -604,10 +620,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="58" width="304" height="339"/>
+                                <rect key="frame" x="8" y="122" width="304" height="275"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="136"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -621,12 +637,12 @@
                                                 </subviews>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="147"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="172.5" width="304" height="166.5"/>
+                                        <rect key="frame" x="0.0" y="141" width="304" height="134"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -635,7 +651,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="146"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="113.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -647,16 +663,19 @@
                             <constraint firstItem="Nde-ag-o2R" firstAttribute="centerX" secondItem="o8D-Ae-930" secondAttribute="centerX" id="092-ee-ubx"/>
                             <constraint firstAttribute="trailing" secondItem="EkR-gy-KlN" secondAttribute="trailing" constant="8" id="128-cl-zK0"/>
                             <constraint firstAttribute="bottom" secondItem="EkR-gy-KlN" secondAttribute="bottom" constant="8" id="78A-FK-oao"/>
+                            <constraint firstItem="jci-Nn-X2t" firstAttribute="leading" secondItem="o8D-Ae-930" secondAttribute="leading" id="KvS-0X-UNy"/>
                             <constraint firstItem="EkR-gy-KlN" firstAttribute="leading" secondItem="o8D-Ae-930" secondAttribute="leading" constant="8" id="Rd0-xx-qlO"/>
                             <constraint firstItem="EkR-gy-KlN" firstAttribute="top" secondItem="Nde-ag-o2R" secondAttribute="bottom" constant="8" id="WSz-Ma-D9u"/>
-                            <constraint firstItem="Nde-ag-o2R" firstAttribute="top" secondItem="caj-Rb-2Ly" secondAttribute="bottom" id="g7i-YZ-v2X"/>
+                            <constraint firstItem="jci-Nn-X2t" firstAttribute="top" secondItem="o8D-Ae-930" secondAttribute="top" id="X9h-Uk-GGV"/>
+                            <constraint firstItem="Nde-ag-o2R" firstAttribute="top" secondItem="o8D-Ae-930" secondAttribute="top" constant="64" id="ag2-UG-gN3"/>
+                            <constraint firstAttribute="trailing" secondItem="jci-Nn-X2t" secondAttribute="trailing" id="is1-4i-ZSY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Выбор параметров" id="bmc-eh-d46">
                         <barButtonItem key="backBarButtonItem" title="Back" id="hfw-2K-HaV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="K5V-R8-l9R">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="4eA-5g-0oM" id="pnl-L7-zZ2"/>
+                                <action selector="saveButtonPressed:" destination="4eA-5g-0oM" id="JeX-Q1-Pgy"/>
                                 <segue destination="eg4-fE-uh6" kind="unwind" unwindAction="backToOptionsFromParametersWithSavingWithSender:" id="Lt2-pB-LHe"/>
                             </connections>
                         </barButtonItem>
@@ -664,9 +683,11 @@
                     <connections>
                         <outlet property="currencyOrLanguageLabel" destination="ZEm-l5-rsB" id="4go-6n-2dE"/>
                         <outlet property="currencyOrLanguagePickerView" destination="fHP-zg-pcM" id="Uk8-eW-nYg"/>
+                        <outlet property="firstLaunchNavBar" destination="jci-Nn-X2t" id="4WT-lB-x5i"/>
                         <outlet property="googleBannerView" destination="Nde-ag-o2R" id="M2q-tF-TZX"/>
                         <outlet property="leveragePickerView" destination="iX2-g4-Aem" id="pdZ-fb-JSP"/>
                         <outlet property="stackViewLeverage" destination="Pst-rg-90q" id="NN0-jk-vfj"/>
+                        <segue destination="eg4-fE-uh6" kind="unwind" identifier="backToCalculatorFromParamsSelectionPage" unwindAction="backToCalculatorFromParamsSelectionPageWithSender:" id="ei4-F9-oR1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sT8-Uy-q97" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1656,6 +1677,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oXo-6y-9Go"/>
-        <segue reference="fta-u4-Qyj"/>
+        <segue reference="hhy-tK-JxJ"/>
     </inferredMetricsTieBreakers>
 </document>

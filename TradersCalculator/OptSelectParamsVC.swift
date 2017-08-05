@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class OptSelectParamsVC: UIViewController {
     
+    @IBOutlet weak var firstLaunchNavBar: UINavigationBar!
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var currencyOrLanguageLabel: UILabel!
     @IBOutlet weak var currencyOrLanguagePickerView: UIPickerView!
@@ -25,12 +26,15 @@ class OptSelectParamsVC: UIViewController {
     
     // If we press "Choose language" in Options, this value is True
     var doWeChooseLanguageNow: Bool?
+    var doWeChooseParamsAtFirstLaunch: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Init delegates
         initDelegates()
+        
+        initializeVariables()
         
         // User Options from User defaults
         currentUserOptions = CurrentUser()
@@ -55,6 +59,15 @@ class OptSelectParamsVC: UIViewController {
         
     }
     
+    func initializeVariables() {
+        
+        //TODO: Write comment
+        if doWeChooseParamsAtFirstLaunch == nil {
+            firstLaunchNavBar.isHidden = true
+        }
+        
+    }
+    
     // Select Default rows in Picker Views
     func selectDefaultRowsInPickerViews() {
         
@@ -70,12 +83,25 @@ class OptSelectParamsVC: UIViewController {
         } else {
             // Means, that we choose now currency and leverage
             
+            doWeChooseParamsAtFirstLaunch = true
+            var accountCurrency = Constants.defaultCurrency
+            if let _accountCurrency = currentUserOptions.accountCurrency {
+                accountCurrency = _accountCurrency
+                doWeChooseParamsAtFirstLaunch = false
+            }
+            
+            var accountLeverage = Constants.defaultLeverage
+            if let _leverage = currentUserOptions.leverage {
+                accountLeverage = _leverage
+                doWeChooseParamsAtFirstLaunch = false
+            }
+            
             // Select rows in PickerView
-            if let currentCurrencyIndex = Constants.currenciesOfAccount.index(of: currentUserOptions.accountCurrency) {
+            if let currentCurrencyIndex = Constants.currenciesOfAccount.index(of: accountCurrency) {
                 currencyOrLanguagePickerView.selectRow(currentCurrencyIndex, inComponent: 0, animated: true)
             }
             
-            if let currentLeverageIndex = Constants.leverage.index(of: currentUserOptions.leverage) {
+            if let currentLeverageIndex = Constants.leverage.index(of: accountLeverage) {
                 leveragePickerView.selectRow(currentLeverageIndex, inComponent: 0, animated: true)
             }
         }
@@ -93,7 +119,7 @@ class OptSelectParamsVC: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        
+                
         if doWeChooseLanguageNow != nil {
             
             let languageNumber = currencyOrLanguagePickerView.selectedRow(inComponent: 0)
@@ -108,11 +134,19 @@ class OptSelectParamsVC: UIViewController {
             currentUserOptions.accountCurrency = Constants.currenciesOfAccount[currencyNumber]
             currentUserOptions.leverage = Constants.leverage[leverageNumber]
             
+            if doWeChooseParamsAtFirstLaunch == nil {
+                
+                navigationController?.popViewController(animated: true)
+                performSegue(withIdentifier: "backToCalculatorFromParamsSelectionPage", sender: nil)
+                
+            } else {
+                
+                performSegue(withIdentifier: "backToCalculatorFromParamsSelectionPage", sender: nil)
+                
+            }
+            
         }
         
-        
-        
-        navigationController?.popViewController(animated: true)
     }
     
 }

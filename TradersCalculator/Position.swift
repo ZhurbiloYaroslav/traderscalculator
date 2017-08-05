@@ -21,6 +21,10 @@ class Position {
     fileprivate var _takeProfit: Double!
     fileprivate var _dealDirection: String!
     fileprivate var _positionID: String!
+    fileprivate var _rateXX1XX2: Double!
+    fileprivate var _rateXX1Cur: Double!
+    fileprivate var _rateCurXX2: Double!
+    fileprivate var _rateXX2Cur: Double!
     
     
     /*
