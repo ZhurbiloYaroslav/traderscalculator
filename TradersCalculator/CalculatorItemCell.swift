@@ -62,20 +62,22 @@ class CalculatorItemCell: UITableViewCell {
     // Set the Label's values in the cell
     func setLabelsValues(position: Position) {
         
-        instrumentNameLabel.text = position.instrument
+        let formatString = "%.\(position.instrument.digitsAfterDot)f"
+                
+        instrumentNameLabel.text = position.instrument.name
         valueLabel.text = "\(position.value)"
-        valueBeforeArrow.text = "\(position.openPrice)"
-        valueAfterArrow.text = "\(position.takeProfit)"
+        valueBeforeArrow.text = String(format: formatString, position.openPrice)
+        valueAfterArrow.text = String(format: formatString, position.takeProfit)
         profitLabelTopRight.text = "\(position.getProfit())"
         
-        openPriceLabelBottomLeft.text = "\(position.openPrice)"
-        takeProfitLabelBottomLeft.text = "\(position.takeProfit)"
-        stopLossLabelBottomLeft.text = "\(position.stopLoss)"
+        openPriceLabelBottomLeft.text = String(format: formatString, position.openPrice)
+        takeProfitLabelBottomLeft.text = String(format: formatString, position.takeProfit)
+        stopLossLabelBottomLeft.text = String(format: formatString, position.stopLoss)
         marginLabelBottomLeft.text = "\(position.getMargin())"
         
         profitLabelBottomRight.text = "\(position.getProfit())"
         lossLabelBottomRight.text = "\(position.getLoss())"
-        marginLabelBottomRight.text = "\(position.getMargin())"
+        marginLabelBottomRight.text = "" // was: \(position.getMargin())
         
         // Determine, whether the Position is Sell or Buy
         if position.dealDirection == "Sell" {

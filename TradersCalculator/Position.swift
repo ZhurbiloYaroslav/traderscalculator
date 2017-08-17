@@ -12,9 +12,7 @@ import Foundation
 class Position {
     
     fileprivate var _creationDate: String!
-    fileprivate var _instrument: String!
-    fileprivate var _instrumentParts: [String]!
-    fileprivate var _instrumentCategory: String!
+    fileprivate var _instrument: Instrument!
     fileprivate var _value: Double!         // Value means "Лот" in Russian
     fileprivate var _openPrice: Double!
     fileprivate var _stopLoss: Double!
@@ -64,17 +62,21 @@ class Position {
     }
     // End of Methods to calculate values
     
+    //TODO: Make description
+    func roundValue(value: Double) -> Double {
+        let digitsAfterDot = instrument.digitsAfterDot
+        
+        return value.roundTo(places: digitsAfterDot)
+    }
+    
     // Designated initializer
-    init(creationDate: String,       instrument: String,
-         instrumentParts: [String],  instrumentCategory: String,
+    init(creationDate: String,       instrument: [String: Any],
          value: Double,              openPrice: Double,
          stopLoss: Double,           takeProfit: Double,
          dealDirection: String,      positionID: String) {
         
         self._creationDate = creationDate
-        self._instrument = instrument
-        self._instrumentParts = instrumentParts
-        self._instrumentCategory = instrumentCategory
+        self._instrument = Instrument(firebaseDict: instrument)
         self._value = value
         self._openPrice = openPrice
         self._stopLoss = stopLoss
@@ -91,9 +93,7 @@ class Position {
         
         // Set default values
         var saveCreationDate = ""
-        var saveInstrument = ""
-        var saveInstrumentParts = [String]()
-        var saveInstrumentCategory = ""
+        var saveInstrument = [String: Any]()
         var saveValue: Double = 0
         var saveOpenPrice: Double = 0
         var saveStopLoss: Double = 0
@@ -109,19 +109,19 @@ class Position {
         
         if let instrumentTakeProfit = firebaseDict["takeProfit"] as? String {
             if let takeProfit = Double(instrumentTakeProfit) {
-                saveTakeProfit = takeProfit
+                saveTakeProfit = takeProfit.roundTo(places: 5)
             }
         }
         
         if let instrumentStopLoss = firebaseDict["stopLoss"] as? String {
             if let stopLoss = Double(instrumentStopLoss) {
-                saveStopLoss = stopLoss
+                saveStopLoss = stopLoss.roundTo(places: 5)
             }
         }
         
         if let openPrice = firebaseDict["openPrice"] as? String {
             if let openPrice = Double(openPrice) {
-                saveOpenPrice = openPrice
+                saveOpenPrice = openPrice.roundTo(places: 5)
             }
         }
         
@@ -131,15 +131,7 @@ class Position {
             }
         }
         
-        if let instrumentCategory = firebaseDict["category"] as? String {
-            saveInstrumentCategory = instrumentCategory
-        }
-        
-        if let instrumentParts = firebaseDict["instrumentParts"] as? [String] {
-            saveInstrumentParts = instrumentParts
-        }
-        
-        if let instrument = firebaseDict["instrument"] as? String {
+        if let instrument = firebaseDict["instrument"] as? [String: Any] {
             saveInstrument = instrument
         }
         
@@ -148,7 +140,6 @@ class Position {
         }
         
         self.init(creationDate: saveCreationDate, instrument: saveInstrument,
-                  instrumentParts: saveInstrumentParts, instrumentCategory: saveInstrumentCategory,
                   value: saveValue, openPrice: saveOpenPrice, stopLoss: saveStopLoss,
                   takeProfit: saveTakeProfit, dealDirection: saveDealDirection, positionID: positionID)
         
@@ -159,22 +150,6 @@ class Position {
 
 // Getters and Setters
 extension Position {
-    
-    var instrumentParts: [String] {
-        if _instrumentParts != nil {
-            return _instrumentParts
-        } else {
-            return [String]()
-        }
-    }
-    
-    var instrumentCategory: String {
-        if _instrumentCategory != nil {
-            return _instrumentCategory
-        } else {
-            return ""
-        }
-    }
     
     var positionID: String {
         if _positionID != nil {
@@ -194,7 +169,7 @@ extension Position {
     
     var takeProfit: Double {
         if _takeProfit != nil {
-            return _takeProfit
+            return roundValue(value: _takeProfit)
         } else {
             return 0
         }
@@ -202,7 +177,7 @@ extension Position {
     
     var stopLoss: Double {
         if _stopLoss != nil {
-            return _stopLoss
+            return roundValue(value: _stopLoss)
         } else {
             return 0
         }
@@ -210,7 +185,7 @@ extension Position {
     
     var openPrice: Double {
         if _openPrice != nil {
-            return _openPrice
+            return roundValue(value: _openPrice)
         } else {
             return 0
         }
@@ -224,11 +199,11 @@ extension Position {
         }
     }
     
-    var instrument: String {
+    var instrument: Instrument {
         if _instrument != nil {
             return _instrument
         } else {
-            return ""
+            return Instrument()
         }
     }
     

@@ -105,14 +105,16 @@ class CalcAddItemVC: UIViewController {
         
         getDescriptionOfInstrument()
         
-        if let unwrappedPositionToEdit = positionToEdit {
+        if let position = positionToEdit {
             navigationBarTitle.text = "Edit position"
             
+            let formatString = "%.\(position.instrument.digitsAfterDot)f"
+            
             stackWithInstrumentPicker.isHidden = true
-            positionValue.text = "\(unwrappedPositionToEdit.value)"
-            positionOpenPrice.text = "\(unwrappedPositionToEdit.openPrice)"
-            positionStopLoss.text = "\(unwrappedPositionToEdit.stopLoss)"
-            positionTakeProfit.text = "\(unwrappedPositionToEdit.takeProfit)"
+            positionValue.text = "\(position.value)"
+            positionOpenPrice.text = String(format: formatString, position.openPrice)
+            positionTakeProfit.text = String(format: formatString, position.takeProfit)
+            positionStopLoss.text = String(format: formatString, position.stopLoss)
             
         }
         
@@ -308,7 +310,7 @@ extension CalcAddItemVC {
         if let position = positionToEdit {
             // Means, if it is editing of the position from the calculator list
             
-            instrumentParts = position.instrumentParts
+            instrumentParts = position.instrument.parts
             
         } else {
             // Means, if it is Adding a new position
@@ -330,7 +332,7 @@ extension CalcAddItemVC {
             
         } else {
             
-            guard let categoryName = positionToEdit?.instrumentCategory
+            guard let categoryName = positionToEdit?.instrument.category
                 else { return nil }
             
             guard let currentCategoryID = instruments.categories.index(of: categoryName)
@@ -340,11 +342,11 @@ extension CalcAddItemVC {
             
         }
         
+        let categoryName = instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave)
+        
         // Make a adictionary with values for inserting to Firebase
         let positionDict: [String: Any] = [
-            "instrument": getInstrumentName(),
-            "instrumentParts": instrumentParts,
-            "category": instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave),
+            "instrument": Instrument(categoryName, instrumentParts).getDictForSavingToFirebase(),
             "value": value,
             "openPrice": openPrice,
             "takeProfit": takeProfit,
@@ -486,7 +488,7 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         if let unwrappedPositionToEdit = positionToEdit {
             // If it is a process of editing existing position from the calculator list
             
-            instrumentName = unwrappedPositionToEdit.instrument
+            instrumentName = unwrappedPositionToEdit.instrument.name
             
         } else {
             // If it is a process of adding a new position
@@ -507,12 +509,12 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         var description = ""
         var instrumentParts = [String]()
         if let position = positionToEdit {
-            instrumentParts = position.instrumentParts
+            instrumentParts = position.instrument.parts
         } else {
             let instrument = instruments.getInstrumentObject(categoryID: currentCategoryID,
                                                              leftPart: currentInstrumentLeftPartID,
                                                              rightPart: currentInstrumentRightPartID)
-            instrumentParts = instrument.instrumentParts
+            instrumentParts = instrument.parts
         }
         
         //

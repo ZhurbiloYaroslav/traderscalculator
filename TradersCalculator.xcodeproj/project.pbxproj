@@ -27,6 +27,7 @@
 		C472B1CB1F29F5B500BAA1CD /* instaforexAllquotesList.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */; };
 		C472B1CD1F29F9B600BAA1CD /* Links.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CC1F29F9B600BAA1CD /* Links.rtf */; };
 		C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */; };
+		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
 		C4A762D51F2755DD008D91FE /* CalendarAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A762D41F2755DD008D91FE /* CalendarAPI.swift */; };
 		C4A762D91F27B099008D91FE /* CalendarHorizontalScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
@@ -81,6 +82,7 @@
 		C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = instaforexAllquotesList.rtf; sourceTree = "<group>"; };
 		C472B1CC1F29F9B600BAA1CD /* Links.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Links.rtf; sourceTree = "<group>"; };
 		C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Indices.rtf; sourceTree = "<group>"; };
+		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C4A762D41F2755DD008D91FE /* CalendarAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarAPI.swift; sourceTree = "<group>"; };
 		C4A762D81F27B099008D91FE /* CalendarHorizontalScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHorizontalScrollCell.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				C4E917351F1CB46500BE792E /* String+Extension.swift */,
+				C4963EF41F36608A00E8AA00 /* Double+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
 				C451AE441F274AC500826790 /* CalendarCell.swift in Sources */,
 				C4E6A9181F28868C00678BDE /* CalendarCellEventDesc.swift in Sources */,
+				C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */,
 				C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */,
 				C4EFC70D1F28BC7500194ACC /* CalendarCellEventHistoryTitle.swift in Sources */,
 				C42783241F23CD0C00430916 /* CurrentUser.swift in Sources */,
