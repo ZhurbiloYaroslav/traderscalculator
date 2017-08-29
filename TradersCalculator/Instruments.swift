@@ -30,7 +30,7 @@ struct Instruments {
         "Forex Minors",
         "Forex Exotics",
         "Crypto",
-        "Energies",
+        //"Energies",
         //"Indeices CFDs",
         //"Futures CFDs",
         //"Commodity CFDs"

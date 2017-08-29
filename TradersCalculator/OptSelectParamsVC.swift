@@ -21,7 +21,7 @@ class OptSelectParamsVC: UIViewController {
     @IBOutlet weak var stackViewLeverage: UIStackView!
     
     var firebase: FirebaseConnect!  // Reference variable for the Database
-    var currentUserOptions: CurrentUser!
+    var options: UserDefaultsManager!
     var adMob: AdMob!
     
     // If we press "Choose language" in Options, this value is True
@@ -37,7 +37,7 @@ class OptSelectParamsVC: UIViewController {
         initializeVariables()
         
         // User Options from User defaults
-        currentUserOptions = CurrentUser()
+        options = UserDefaultsManager()
         
         // Configure the Firebase
         firebase = FirebaseConnect()
@@ -76,7 +76,7 @@ class OptSelectParamsVC: UIViewController {
             stackViewLeverage.isHidden = true
             currencyOrLanguageLabel.text = "Выберите язык"
             
-            if let currentLanguageIndex = Constants.languages.index(of: currentUserOptions.language) {
+            if let currentLanguageIndex = Constants.languages.index(of: options.language) {
                 currencyOrLanguagePickerView.selectRow(currentLanguageIndex, inComponent: 0, animated: true)
             }
             
@@ -85,13 +85,13 @@ class OptSelectParamsVC: UIViewController {
             
             doWeChooseParamsAtFirstLaunch = true
             var accountCurrency = Constants.defaultCurrency
-            if let _accountCurrency = currentUserOptions.accountCurrency {
+            if let _accountCurrency = options.accountCurrency {
                 accountCurrency = _accountCurrency
                 doWeChooseParamsAtFirstLaunch = false
             }
             
             var accountLeverage = Constants.defaultLeverage
-            if let _leverage = currentUserOptions.leverage {
+            if let _leverage = options.leverage {
                 accountLeverage = _leverage
                 doWeChooseParamsAtFirstLaunch = false
             }
@@ -124,15 +124,15 @@ class OptSelectParamsVC: UIViewController {
             
             let languageNumber = currencyOrLanguagePickerView.selectedRow(inComponent: 0)
             
-            currentUserOptions.language = Constants.currenciesOfAccount[languageNumber]
+            options.language = Constants.currenciesOfAccount[languageNumber]
             
         } else {
             
             let currencyNumber = currencyOrLanguagePickerView.selectedRow(inComponent: 0)
             let leverageNumber = leveragePickerView.selectedRow(inComponent: 0)
             
-            currentUserOptions.accountCurrency = Constants.currenciesOfAccount[currencyNumber]
-            currentUserOptions.leverage = Constants.leverage[leverageNumber]
+            options.accountCurrency = Constants.currenciesOfAccount[currencyNumber]
+            options.leverage = Constants.leverage[leverageNumber]
             
             if doWeChooseParamsAtFirstLaunch == nil {
                 
@@ -227,12 +227,12 @@ extension OptSelectParamsVC: UIPickerViewDelegate, UIPickerViewDataSource {
             if pickerView.tag == 1 {
                 // It means that the picker is Language
                 
-                currentUserOptions.language = Constants.languages[row]
+                options.language = Constants.languages[row]
                 
             } else {
                 // It means that the picker is Leverage
                 
-                currentUserOptions.leverage = Constants.leverage[row]
+                options.leverage = Constants.leverage[row]
             }
             
         } else {
@@ -240,12 +240,12 @@ extension OptSelectParamsVC: UIPickerViewDelegate, UIPickerViewDataSource {
             if pickerView.tag == 1 {
                 // It means that the picker is Currency
                 
-                currentUserOptions.accountCurrency = Constants.currenciesOfAccount[row]
+                options.accountCurrency = Constants.currenciesOfAccount[row]
                 
             } else {
                 // It means that the picker is Leverage
                 
-                currentUserOptions.leverage = Constants.leverage[row]
+                options.leverage = Constants.leverage[row]
             }
             
         }

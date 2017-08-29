@@ -1,5 +1,5 @@
 //
-//  CalendarHorizontalScrollCell.swift
+//  HistoryCell.swift
 //  TradersCalculator
 //
 //  Created by Yaroslav Zhurbilo on 25.07.17.
@@ -8,10 +8,19 @@
 
 import UIKit
 
-class CalendarHorizontalScrollCell: UICollectionViewCell {
-    
-    @IBOutlet weak var title: UILabel!
+class HistoryCell: UITableViewCell {
     
     
-    
+    func updateCell() {
+        
+        
+    }
+
 }
+
+
+
+
+
+
+

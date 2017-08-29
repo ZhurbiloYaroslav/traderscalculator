@@ -11,7 +11,7 @@ import StoreKit
 
 class OptionsTableVC: UITableViewController {
     
-    var currentUserOptions: CurrentUser!
+    var options: UserDefaultsManager!
     
     //MARK: Variables for purchases
     var purchases: [SKProduct]!
@@ -34,7 +34,7 @@ class OptionsTableVC: UITableViewController {
         
         
         // User Options from User defaults
-        currentUserOptions = CurrentUser()
+        options = UserDefaultsManager()
         
         // Update current Table
         updateTable()
@@ -77,9 +77,9 @@ class OptionsTableVC: UITableViewController {
     // Update the Table View
     func updateTable() {
         
-        currencyCell.detailTextLabel?.text = currentUserOptions.accountCurrency
-        leverageCell.detailTextLabel?.text = currentUserOptions.leverage
-        languageCell.detailTextLabel?.text = currentUserOptions.language
+        currencyCell.detailTextLabel?.text = options.accountCurrency
+        leverageCell.detailTextLabel?.text = options.leverage
+        languageCell.detailTextLabel?.text = options.language
         
         tableView.reloadData()
         

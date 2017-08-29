@@ -30,7 +30,6 @@ class CalculatorItemCell: UITableViewCell {
     @IBOutlet weak var profitLabelBottomRight: UILabel!
     @IBOutlet weak var lossLabelBottomRight: UILabel!
     @IBOutlet weak var marginLabelBottomRight: UILabel!
-
     
     // False if the cell is closed (bottom stack with values is hidden)
     // True if the cell is open (bottom stack with values is visible)
@@ -51,11 +50,11 @@ class CalculatorItemCell: UITableViewCell {
         
         // Change color of the labels
         if position.dealDirection == "Buy" {
-            dealDirectionLabel.textColor = UIColor.blue
-            valueLabel.textColor = UIColor.blue
+            dealDirectionLabel.textColor = UIColor(red: 95/255, green: 163/255, blue: 252/255, alpha: 1)
+            valueLabel.textColor = UIColor(red: 95/255, green: 163/255, blue: 252/255, alpha: 1)
         } else {
-            dealDirectionLabel.textColor = UIColor.red
-            valueLabel.textColor = UIColor.red
+            dealDirectionLabel.textColor = UIColor(red: 230/255, green: 89/255, blue: 93/255, alpha: 1)
+            valueLabel.textColor = UIColor(red: 230/255, green: 89/255, blue: 93/255, alpha: 1)
         }
     }
     
@@ -65,7 +64,7 @@ class CalculatorItemCell: UITableViewCell {
         let formatString = "%.\(position.instrument.digitsAfterDot)f"
                 
         instrumentNameLabel.text = position.instrument.name
-        valueLabel.text = "\(position.value)"
+        valueLabel.text = String(format: "%.2f", position.value)
         valueBeforeArrow.text = String(format: formatString, position.openPrice)
         valueAfterArrow.text = String(format: formatString, position.takeProfit)
         profitLabelTopRight.text = "\(position.getProfit())"
@@ -73,10 +72,10 @@ class CalculatorItemCell: UITableViewCell {
         openPriceLabelBottomLeft.text = String(format: formatString, position.openPrice)
         takeProfitLabelBottomLeft.text = String(format: formatString, position.takeProfit)
         stopLossLabelBottomLeft.text = String(format: formatString, position.stopLoss)
-        marginLabelBottomLeft.text = "\(position.getMargin())"
+        marginLabelBottomLeft.text = position.getMargin()
         
-        profitLabelBottomRight.text = "\(position.getProfit())"
-        lossLabelBottomRight.text = "\(position.getLoss())"
+        profitLabelBottomRight.text = position.getProfit()
+        lossLabelBottomRight.text = position.getLoss()
         marginLabelBottomRight.text = "" // was: \(position.getMargin())
         
         // Determine, whether the Position is Sell or Buy

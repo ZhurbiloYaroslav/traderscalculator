@@ -28,7 +28,7 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackWithInstrumentPicker: UIStackView!
     
-    var currentUserOptions: CurrentUser!
+    var options: UserDefaultsManager!
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     var forexAPI: ForexAPI!
@@ -48,7 +48,7 @@ class CalcAddItemVC: UIViewController {
         initDelegates()
         
         // User Options from User defaults
-        currentUserOptions = CurrentUser()
+        options = UserDefaultsManager()
         
         // Configure the Firebase
         firebase = FirebaseConnect()
@@ -92,7 +92,7 @@ class CalcAddItemVC: UIViewController {
     
     func initializeVariables() {
         
-        let lastUsedInstrument = currentUserOptions.lastUsedInstrument
+        let lastUsedInstrument = options.lastUsedInstrument
         instruments = Instruments()
         currentCategoryID = lastUsedInstrument.categoryID
         currentInstrumentLeftPartID = lastUsedInstrument.instrumentLeftPartID
@@ -141,7 +141,7 @@ class CalcAddItemVC: UIViewController {
             // If this view is used for edit position, then we don't need picker view
             
             let currentInstrumentName = getInstrumentName()
-            if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName]?["rate"] {
+            if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName] {
                 positionOpenPrice.text = currentInstrumentRates
                 positionStopLoss.text = currentInstrumentRates
                 positionTakeProfit.text = currentInstrumentRates
@@ -151,7 +151,7 @@ class CalcAddItemVC: UIViewController {
             // If this view is used for edit position, then we need to get values for editable position
             
             let currentInstrumentName = getInstrumentName()
-            if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName]?["rate"] {
+            if let currentInstrumentRates = forexAPI.ratesByInstrumentName[currentInstrumentName] {
                 positionOpenPrice.text = currentInstrumentRates
                 positionStopLoss.text = currentInstrumentRates
                 positionTakeProfit.text = currentInstrumentRates
@@ -173,6 +173,13 @@ class CalcAddItemVC: UIViewController {
     
     deinit {
         removeKeyboardNotifications()
+    }
+    @IBAction func clearTakeProfit(_ sender: UIButton) {
+        positionTakeProfit.text = ""
+    }
+    
+    @IBAction func clearStopLoss(_ sender: UIButton) {
+        positionStopLoss.text = ""
     }
     
     @IBAction func sellOrBuyButtonPressed(_ sender: UIButton) {
@@ -234,7 +241,7 @@ class CalcAddItemVC: UIViewController {
                                                     leftPartID: currentInstrumentLeftPartID,
                                                     rightPartID: currentInstrumentRightPartID)
         
-        currentUserOptions.lastUsedInstrument = lastUsedInstrument
+        options.lastUsedInstrument = lastUsedInstrument
     }
     
 }

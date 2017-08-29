@@ -11,11 +11,10 @@ import Foundation
 //TODO: Write a description
 class Instrument {
     
-    private var _parts: [String]!
+    private var _parts: [String]! // Later [XX1, XX2]
     private var _category: String!
     
-    // This is a name of The instrument
-    var name: String {
+    func concatenateParts() -> String {
         
         var name = ""
         for instrumentPart in _parts {
@@ -23,28 +22,15 @@ class Instrument {
         }
         
         return name
+        
     }
     
-    /* To delete
-    //TODO: Write a description
-    var instrumentString: String {
+    // This is a name of The instrument
+    var name: String {
         
-        if _parts != nil {
-            
-            var resultString = ""
-            
-            for part in _parts {
-                resultString += part
-            }
-            
-            return resultString
-            
-        } else {
-            return ""
-        }
+        return concatenateParts()
         
     }
-    */
     
     //TODO: Write a description
     var digitsAfterDot: Int {

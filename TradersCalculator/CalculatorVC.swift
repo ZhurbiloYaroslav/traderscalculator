@@ -10,6 +10,7 @@ import UIKit
 import GoogleMobileAds
 import FirebaseDatabase
 import FirebaseAuth
+import CoreData
 
 class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
@@ -60,7 +61,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         //
         
-        let userDefaults = CurrentUser()
+        let userDefaults = UserDefaultsManager()
         
         if userDefaults.accountCurrency == nil || userDefaults.leverage == nil {
             performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
@@ -107,17 +108,23 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         // Iterate through positions array to get all values
         for position in positionsArray {
-            
-            totalProfitValue += position.getProfit()
-            totalLossValue += position.getLoss()
-            totalMarginValue += position.getMargin()
+            //---Back---
+            if let profit = Double(position.getProfit()) {
+                totalProfitValue += profit
+            }
+            if let loss = Double(position.getLoss()) {
+                totalLossValue += loss
+            }
+            if let margin = Double(position.getMargin()) {
+                totalMarginValue += margin
+            }
             
         }
         
         // Update the Total Label's values
-        totalProfitLabel.text = "\(totalProfitValue)"
-        totalLossLabel.text = "\(totalLossValue)"
-        totalMarginLabel.text = "\(totalMarginValue)"
+        totalProfitLabel.text = String(format: "%.2f", totalProfitValue)
+        totalLossLabel.text = String(format: "%.2f", totalLossValue)
+        totalMarginLabel.text = String(format: "%.2f", totalMarginValue)
         
     }
     
@@ -140,6 +147,12 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         }
         
     }
+    
+}
+
+extension CalculatorVC: NSFetchedResultsControllerDelegate {
+    
+    
     
 }
 

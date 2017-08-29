@@ -1,5 +1,5 @@
 //
-//  CurrentUser.swift
+//  UserDefaultsManager.swift
 //  TradersCalculator
 //
 //  Created by Yaroslav Zhurbilo on 22.07.17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CurrentUser {
+class UserDefaultsManager {
     //TODO: Make comment
     
     private let defaults = UserDefaults.standard
@@ -27,6 +27,7 @@ class CurrentUser {
     }
     
     var lastUsedInstrument: LastUsedInstrument {
+        
         get {
             if let data = defaults.object(forKey: "lastUsedInstrument") as? [String : Int] {
                 return LastUsedInstrument(data: data)
@@ -35,20 +36,41 @@ class CurrentUser {
             }
             
         }
+        
         set {
             defaults.set(newValue.getDictForSave(), forKey: "lastUsedInstrument")
+            defaults.synchronize()
+        }
+        
+    }
+    
+    var cachedInstrumentsRates: InstrumentsRates {
+        
+        get {
+            if let data = defaults.object(forKey: "instrumentsRates") as? [String : Any] {
+                return InstrumentsRates(data: data)
+            } else {
+                return InstrumentsRates()
+            }
+        }
+        
+        set {
+            defaults.set(newValue.getDictForSave(), forKey: "instrumentsRates")
             defaults.synchronize()
         }
     }
     
     //TODO: Make comment
     var language: String {
+        
         get {
             return self.options["language"] ?? Constants.defaultLanguage
         }
+        
         set {
             self.options["language"] = newValue
         }
+        
     }
     
     //TODO: Make comment
