@@ -20,8 +20,21 @@ class CoreDataManager {
         self.context = appDelegate.persistentContainer.viewContext
     }
     
-    func entityForName(_ entityName: String) -> NSEntityDescription {
-        return NSEntityDescription.entity(forEntityName: entityName, in: self.context)!
+    func saveInDBPosition(_ position: Position) {
+        let entity = entityForName("Position")
+        
+        entity.setValue(position.dealDirection, forKey: "dealDirection")
+        entity.setValue(position.instrument, forKey: "instrument")
+        entity.setValue(position.openPrice, forKey: "openPrice")
+        entity.setValue(position.stopLoss, forKey: "stopLoss")
+        entity.setValue(position.takeProfit, forKey: "takeProfit")
+        entity.setValue(position.value, forKey: "value")
+        entity.setValue(Date(), forKey: "creationDate")
+        
+    }
+    
+    func entityForName(_ entityName: String) -> NSManagedObject {
+        return NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context)
     }
     
 }

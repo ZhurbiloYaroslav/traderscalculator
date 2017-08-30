@@ -2,14 +2,13 @@
 //  Position.swift
 //  TradersCalculator
 //
-//  Created by Yaroslav Zhurbilo on 16.07.17.
+//  Created by Yaroslav Zhurbilo on 30.08.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
 import Foundation
 
-//TODO: Write a description
-class Position {
+public class Position {
     
     fileprivate var _creationDate: String!
     fileprivate var _instrument: Instrument!
@@ -21,6 +20,7 @@ class Position {
     fileprivate var _positionID: String!
     
     private let digitsAfterDotForResultValues = 2
+    
     
     //TODO: Write a description
     enum DealDirection: String {
@@ -34,7 +34,7 @@ class Position {
     func getMargin() -> String {
         
         let formatString = "%.\(digitsAfterDotForResultValues)f"
-        let margin = Calculator(position: self).getMargin()
+        let margin = Double(Calculator(position: self).getMargin())
         let formattedMargin = String(format: formatString, margin)
         return formattedMargin
         
@@ -143,7 +143,7 @@ class Position {
                   takeProfit: saveTakeProfit, dealDirection: saveDealDirection, positionID: positionID)
         
     }
-    
+
 }
 
 // Get Current Rates For Calculation
@@ -233,6 +233,7 @@ extension Position {
 
 
 // Getters and Setters
+
 extension Position {
     
     var positionID: String {

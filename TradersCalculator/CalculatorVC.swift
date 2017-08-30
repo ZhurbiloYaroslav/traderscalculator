@@ -27,6 +27,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     var positionsArrayByID: [String: Position]!
     var openedPositionCell: Int?
     
+    var coreDataManager = CoreDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,15 +61,39 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     func initializeVariables() {
         
-        //
+        // Test core data start
+        
+        // Retrieving position from DB Start
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Position")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            
+            let results = try coreDataManager.context.fetch(request) as! [NSManagedObject]
+            
+            if results.count > 0 {
+                for result in results {
+                    print(result)
+                    if let instrument = result.value(forKey: "instrument") as? String {
+                        print("---", instrument)
+                    }
+                }
+            }
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+        // Retrieving position from DB End
+        
+        // Test core data end
         
         let userDefaults = UserDefaultsManager()
         
         if userDefaults.accountCurrency == nil || userDefaults.leverage == nil {
             performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
         }
-        
-        //
         
         positionsArray = [Position]()
         
@@ -78,7 +104,16 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
-    
+    func getCurrentDate() -> String {
+        
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateString = dateFormatter.string(from: date as Date)
+        return dateString
+        
+    }
     
     func longTapOnCellRecognizerSetup() {
         
@@ -233,7 +268,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
         
         let currentPosition = positionsArray[indexPath.row]
-        let positionName = currentPosition.instrument
+        let positionName = currentPosition.instrument.name
         let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
         
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
@@ -245,11 +280,13 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             self.calculatorTableView.reloadData()
             
         }
+        
         let EditAction = UIAlertAction(title: "Edit", style: .default) { (action) in
             
             self.performSegue(withIdentifier: "EditPosition", sender: currentPosition)
             
         }
+        
         let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(DeleteAction)

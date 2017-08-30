@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Positions" representedClassName="Positions" syncable="YES">
+    <entity name="ListOfPositions" representedClassName="ListOfPositions" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="dealDirection" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="instrument" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="openPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="stopLoss" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="takeProfit" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="listName" attributeType="String" syncable="YES"/>
+        <relationship name="toPosition" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="toListOfPositions" inverseEntity="Position" syncable="YES"/>
+    </entity>
+    <entity name="Position" representedClassName="Position" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dealDirection" attributeType="String" syncable="YES"/>
+        <attribute name="instrument" attributeType="String" syncable="YES"/>
+        <attribute name="openPrice" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="stopLoss" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="takeProfit" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toListOfPositions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListOfPositions" inverseName="toPosition" inverseEntity="ListOfPositions" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Positions" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="ListOfPositions" positionX="-63" positionY="36" width="128" height="90"/>
+        <element name="Position" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

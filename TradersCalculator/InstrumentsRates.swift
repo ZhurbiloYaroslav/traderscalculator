@@ -13,15 +13,18 @@ struct InstrumentsRates {
     var rates: [String: String]!
     var date: String!
     
+    //MARK: Initializer Designated
     init(rates: [String: String], date: String) {
         self.rates = rates
         self.date = date
     }
     
+    //MARK: Initializer Convenience
     init() {
         self.init(rates: [String: String](), date: "")
     }
     
+    //MARK: Initializer Convenience for retrieve info from DB
     init(data: [String: Any]) {
         
         var rates = [String: String]()
