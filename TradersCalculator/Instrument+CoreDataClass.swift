@@ -1,15 +1,16 @@
 //
-//  Instrument.swift
+//  Instrument+CoreDataClass.swift
 //  TradersCalculator
 //
-//  Created by Yaroslav Zhurbilo on 19.07.17.
+//  Created by Yaroslav Zhurbilo on 30.08.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-//TODO: Write a description
-class Instrument {
+@objc(Instrument)
+public class Instrument: NSManagedObject {
     
     private var _parts: [String]! // Later [XX1, XX2]
     private var _category: String!
@@ -36,7 +37,7 @@ class Instrument {
     var digitsAfterDot: Int {
         
         switch parts {
-        case let x where x.contains("JPY"):
+        case let x where (x.contains("JPY")):
             return 3
         default:
             return 5
@@ -44,6 +45,7 @@ class Instrument {
         
     }
     
+    /* toDelete
     //TODO: Write a description
     var parts: [String] {
         
@@ -65,6 +67,7 @@ class Instrument {
         }
         
     }
+    */
     
     //TODO: Write a description
     var countOfparts: Int {
@@ -77,10 +80,10 @@ class Instrument {
     }
     
     //TODO: Write a description
-    init(_ categoryName: String, _ instrumentParts: [String]) {
+    init(_ categoryName: String, _ instrumentParts: NSOrderedSet) {
         
-        self._parts = instrumentParts
-        self._category = categoryName
+        self.parts = instrumentParts
+        self.category = categoryName
         
     }
     
@@ -97,7 +100,7 @@ class Instrument {
             saveCategory = instrumentCategory
         }
         
-        if let instrumentParts = firebaseDict["parts"] as? [String] {
+        if let instrumentParts = firebaseDict["parts"] as? NSOrderedSet {
             saveParts = instrumentParts
         }
         
@@ -128,11 +131,3 @@ class Instrument {
         
     }
 }
-
-
-
-
-
-
-
-

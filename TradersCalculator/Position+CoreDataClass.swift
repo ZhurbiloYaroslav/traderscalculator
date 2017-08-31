@@ -1,5 +1,5 @@
 //
-//  Position.swift
+//  Position+CoreDataClass.swift
 //  TradersCalculator
 //
 //  Created by Yaroslav Zhurbilo on 30.08.17.
@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import CoreData
 
-public class Position {
+@objc(Position)
+public class Position: NSManagedObject {
     
-    fileprivate var _creationDate: String!
+    
+    fileprivate var _creationDate: Date!
     fileprivate var _instrument: Instrument!
     fileprivate var _value: Double!         // Value means "Лот" in Russian
     fileprivate var _openPrice: Double!
@@ -18,16 +21,9 @@ public class Position {
     fileprivate var _takeProfit: Double!
     fileprivate var _dealDirection: String!
     fileprivate var _positionID: String!
+ 
     
     private let digitsAfterDotForResultValues = 2
-    
-    
-    //TODO: Write a description
-    enum DealDirection: String {
-        case Sell
-        case Buy
-        case NoDirection
-    }
     
     //MARK: Start Methods to calculate values
     // Returns the value of Margin
@@ -69,7 +65,7 @@ public class Position {
     }
     
     // Designated initializer
-    init(creationDate: String,       instrument: [String: Any],
+    init(creationDate: Date,       instrument: [String: Any],
          value: Double,              openPrice: Double,
          stopLoss: Double,           takeProfit: Double,
          dealDirection: String,      positionID: String) {
@@ -86,12 +82,12 @@ public class Position {
     }
     
     //TODO: Write a description
-    convenience init(_ positionID: String, _ firebaseDict: [String:Any]) {
+    convenience init(_ positionID: String, _ managedObject: NSManagedObject) {
         
         // Check Data before initialize
         
         // Set default values
-        var saveCreationDate = ""
+        var saveCreationDate = Date()
         var saveInstrument = [String: Any]()
         var saveValue: Double = 0
         var saveOpenPrice: Double = 0
@@ -99,42 +95,41 @@ public class Position {
         var saveTakeProfit: Double = 0
         var saveDealDirection = ""
         
-        
         // Assign previous variables with values
         
-        if let instrumentDealDirection = firebaseDict["dealDirection"] as? String {
+        if let instrumentDealDirection = managedObject.value(forKey: "dealDirection") as? String {
             saveDealDirection = instrumentDealDirection
         }
         
-        if let instrumentTakeProfit = firebaseDict["takeProfit"] as? String {
+        if let instrumentTakeProfit = managedObject.value(forKey: "takeProfit") as? String {
             if let takeProfit = Double(instrumentTakeProfit) {
                 saveTakeProfit = takeProfit.roundTo(places: 5)
             }
         }
         
-        if let instrumentStopLoss = firebaseDict["stopLoss"] as? String {
+        if let instrumentStopLoss = managedObject.value(forKey: "stopLoss") as? String {
             if let stopLoss = Double(instrumentStopLoss) {
                 saveStopLoss = stopLoss.roundTo(places: 5)
             }
         }
         
-        if let openPrice = firebaseDict["openPrice"] as? String {
+        if let openPrice = managedObject.value(forKey: "openPrice") as? String {
             if let openPrice = Double(openPrice) {
                 saveOpenPrice = openPrice.roundTo(places: 5)
             }
         }
         
-        if let instrumentValue = firebaseDict["value"] as? String {
+        if let instrumentValue = managedObject.value(forKey: "value") as? String {
             if let value = Double(instrumentValue) {
                 saveValue = value
             }
         }
         
-        if let instrument = firebaseDict["instrument"] as? [String: Any] {
+        if let instrument = managedObject.value(forKey: "instrument") as? [String: Any] {
             saveInstrument = instrument
         }
         
-        if let creationDate = firebaseDict["creationDate"] as? String {
+        if let creationDate = managedObject.value(forKey: "creationDate") as? Date {
             saveCreationDate = creationDate
         }
         
@@ -143,7 +138,7 @@ public class Position {
                   takeProfit: saveTakeProfit, dealDirection: saveDealDirection, positionID: positionID)
         
     }
-
+    
 }
 
 // Get Current Rates For Calculation
@@ -178,7 +173,7 @@ extension Position {
     }
     
     fileprivate var _currencyPairXX2USDName: String? {
-        if instrument.parts.indices.contains(1) {
+        if instrument.parts.count > 1 {
             return "\(instrument.parts[1])USD"
         } else {
             return nil
@@ -190,7 +185,7 @@ extension Position {
     }
     
     fileprivate var _currencyPairUSDXX2Name: String? {
-        if instrument.parts.indices.contains(1) {
+        if instrument.parts.count > 1 {
             return "USD\(instrument.parts[1])"
         } else {
             return nil
@@ -243,7 +238,7 @@ extension Position {
             return ""
         }
     }
-    
+    /* toDelete
     var dealDirection: String {
         if _dealDirection != nil {
             return _dealDirection
@@ -292,17 +287,12 @@ extension Position {
         }
     }
     
-    var creationDate: String {
+    var creationDate: Date {
         if _creationDate != nil {
             return _creationDate
         } else {
-            return ""
+            return Date()
         }
     }
-    
+    */
 }
-
-
-
-
-

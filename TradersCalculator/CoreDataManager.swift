@@ -21,6 +21,7 @@ class CoreDataManager {
     }
     
     func saveInDBPosition(_ position: Position) {
+        /*
         let entity = entityForName("Position")
         
         entity.setValue(position.dealDirection, forKey: "dealDirection")
@@ -30,7 +31,7 @@ class CoreDataManager {
         entity.setValue(position.takeProfit, forKey: "takeProfit")
         entity.setValue(position.value, forKey: "value")
         entity.setValue(Date(), forKey: "creationDate")
-        
+        */
     }
     
     func entityForName(_ entityName: String) -> NSManagedObject {

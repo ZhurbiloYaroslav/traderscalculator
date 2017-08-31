@@ -1,5 +1,5 @@
 //
-//  ListOfPositions.swift
+//  ListOfPositions+CoreDataClass.swift
 //  TradersCalculator
 //
 //  Created by Yaroslav Zhurbilo on 30.08.17.
@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-public class ListOfPositions {
+@objc(ListOfPositions)
+public class ListOfPositions: NSManagedObject {
 
 }
