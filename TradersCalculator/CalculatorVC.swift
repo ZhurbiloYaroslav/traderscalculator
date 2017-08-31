@@ -106,7 +106,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     func getCurrentDate() -> String {
         
-        
         let date = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
