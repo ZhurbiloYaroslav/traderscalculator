@@ -50,11 +50,11 @@ class CalculatorItemCell: UITableViewCell {
         
         // Change color of the labels
         if position.dealDirection == "Buy" {
-            dealDirectionLabel.textColor = UIColor(red: 95/255, green: 163/255, blue: 252/255, alpha: 1)
-            valueLabel.textColor = UIColor(red: 95/255, green: 163/255, blue: 252/255, alpha: 1)
+            dealDirectionLabel.textColor = Constants.Color.blue
+            valueLabel.textColor = Constants.Color.blue
         } else {
-            dealDirectionLabel.textColor = UIColor(red: 230/255, green: 89/255, blue: 93/255, alpha: 1)
-            valueLabel.textColor = UIColor(red: 230/255, green: 89/255, blue: 93/255, alpha: 1)
+            dealDirectionLabel.textColor = Constants.Color.red
+            valueLabel.textColor = Constants.Color.red
         }
     }
     

@@ -84,4 +84,21 @@ extension String {
     }
 }
 
-
+extension String {
+    var myFloatConverter: String {
+        let converter = NumberFormatter()
+        
+        converter.decimalSeparator = ","
+        if let result = converter.number(from: self) {
+            return String(format: "%.2f", result.floatValue)
+            
+        } else {
+            
+            converter.decimalSeparator = "."
+            if let result = converter.number(from: self) {
+                return String(format: "%.2f", result.floatValue)
+            }
+        }
+        return "0.00"
+    }
+}

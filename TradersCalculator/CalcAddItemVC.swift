@@ -111,7 +111,7 @@ class CalcAddItemVC: UIViewController {
             let formatString = "%.\(position.instrument.digitsAfterDot)f"
             
             stackWithInstrumentPicker.isHidden = true
-            positionValue.text = "\(position.value)"
+            positionValue.text = String(format: "%.2f", position.value)
             positionOpenPrice.text = String(format: formatString, position.openPrice)
             positionTakeProfit.text = String(format: formatString, position.takeProfit)
             positionStopLoss.text = String(format: formatString, position.stopLoss)
@@ -307,10 +307,10 @@ extension CalcAddItemVC {
     func makeDictionaryWithFieldsValues(dealDirection: String) -> Dictionary<String, Any>? {
         
         //TODO: Make a check to have a correct results
-        guard let value = positionValue.text else { return nil }
-        guard let openPrice = positionOpenPrice.text else { return nil }
-        guard let stopLoss = positionStopLoss.text else { return nil }
-        guard let takeProfit = positionTakeProfit.text else { return nil }
+        guard let value = positionValue.text?.myFloatConverter else { return nil }
+        guard let openPrice = positionOpenPrice.text?.myFloatConverter else { return nil }
+        guard let stopLoss = positionStopLoss.text?.myFloatConverter else { return nil }
+        guard let takeProfit = positionTakeProfit.text?.myFloatConverter else { return nil }
         
         var instrumentParts = [String]()
         

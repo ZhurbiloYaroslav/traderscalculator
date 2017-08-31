@@ -6,8 +6,8 @@
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
+import UIKit
 import Foundation
-
 
 //TODO: Make these variables not global, but in the Instruments.swift like an instance variables
 
@@ -15,6 +15,11 @@ import Foundation
 typealias DownloadComplete = () -> ()
 
 struct Constants {
+    
+    struct Color {
+        static let blue = UIColor(red: 81/255, green: 152/255, blue: 241/255, alpha: 1)
+        static let red = UIColor(red: 210/255, green: 107/255, blue: 88/255, alpha: 1)
+    }
     
     static let defaultCurrency = Constants.currenciesOfAccount[1]
     static let defaultLanguage = Constants.languages[0]

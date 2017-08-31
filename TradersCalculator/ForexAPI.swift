@@ -27,7 +27,10 @@ class ForexAPI {
                 guard let instrumentName = resource["symbol"] as? String else { return }
                 guard let instrumentRate = resource["bid"] as? Double else { return }
                 
-                self.ratesByInstrumentName.updateValue(String(instrumentRate), forKey: instrumentName)
+                let digitsAfterDotInInstrument = instrumentName.contains("JPY") ? 3 : 5
+                let formatString = "%.\(digitsAfterDotInInstrument)f"
+                
+                self.ratesByInstrumentName.updateValue(String(format: formatString, instrumentRate), forKey: instrumentName)
                 
             }
             
