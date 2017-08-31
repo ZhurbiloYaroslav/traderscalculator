@@ -13,12 +13,10 @@
 		C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */; };
 		C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260F4F1F2093E3004ECCB5 /* AdMob.swift */; };
 		C42783241F23CD0C00430916 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42783231F23CD0C00430916 /* UserDefaultsManager.swift */; };
-		C439ABAC1F5718E000F22510 /* Position+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C439ABA91F5718E000F22510 /* Position+CoreDataProperties.swift */; };
-		C439ABAD1F5718E000F22510 /* Instrument+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C439ABAA1F5718E000F22510 /* Instrument+CoreDataProperties.swift */; };
-		C439ABAE1F5718E000F22510 /* ListOfPositions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C439ABAB1F5718E000F22510 /* ListOfPositions+CoreDataProperties.swift */; };
 		C44CC79E1F2E715500DF2D03 /* PurchasesTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */; };
 		C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */; };
 		C451AE441F274AC500826790 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE431F274AC500826790 /* HistoryCell.swift */; };
+		C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE451F274B4500826790 /* CalendarEvent.swift */; };
 		C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */; };
 		C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */; };
 		C45697A91F1A8DAF00599563 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45697A81F1A8DAF00599563 /* HistoryVC.swift */; };
@@ -30,13 +28,13 @@
 		C472B1CB1F29F5B500BAA1CD /* instaforexAllquotesList.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */; };
 		C472B1CD1F29F9B600BAA1CD /* Links.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CC1F29F9B600BAA1CD /* Links.rtf */; };
 		C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */; };
-		C491B4471F56ED8C00D38AF1 /* Position+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491B4431F56ED8C00D38AF1 /* Position+CoreDataClass.swift */; };
-		C491B4651F57048D00D38AF1 /* ListOfPositions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491B45E1F57048D00D38AF1 /* ListOfPositions+CoreDataClass.swift */; };
-		C491B4671F57048D00D38AF1 /* Instrument+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491B4601F57048D00D38AF1 /* Instrument+CoreDataClass.swift */; };
+		C494B9AC1F56B6F1000AC1D6 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = C494B9A81F56B6F1000AC1D6 /* Position.swift */; };
+		C494B9AE1F56B6F1000AC1D6 /* ListOfPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C494B9AA1F56B6F1000AC1D6 /* ListOfPositions.swift */; };
 		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
+		C4E8B3841F1FA04900701EBB /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8B3831F1FA04900701EBB /* Instrument.swift */; };
 		C4E902CC1F245FE00032A392 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E902CB1F245FE00032A392 /* Localization.strings */; };
 		C4E917341F1BC30200BE792E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917331F1BC30200BE792E /* Currency.swift */; };
 		C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917351F1CB46500BE792E /* String+Extension.swift */; };
@@ -65,12 +63,10 @@
 		C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConnect.swift; sourceTree = "<group>"; };
 		C4260F4F1F2093E3004ECCB5 /* AdMob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMob.swift; sourceTree = "<group>"; };
 		C42783231F23CD0C00430916 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		C439ABA91F5718E000F22510 /* Position+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Position+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C439ABAA1F5718E000F22510 /* Instrument+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instrument+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C439ABAB1F5718E000F22510 /* ListOfPositions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListOfPositions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesTestVC.swift; sourceTree = "<group>"; };
 		C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		C451AE431F274AC500826790 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		C451AE451F274B4500826790 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptSelectParamsVC.swift; sourceTree = "<group>"; };
 		C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcAddItemVC.swift; sourceTree = "<group>"; };
 		C45697A81F1A8DAF00599563 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -82,13 +78,13 @@
 		C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = instaforexAllquotesList.rtf; sourceTree = "<group>"; };
 		C472B1CC1F29F9B600BAA1CD /* Links.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Links.rtf; sourceTree = "<group>"; };
 		C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Indices.rtf; sourceTree = "<group>"; };
-		C491B4431F56ED8C00D38AF1 /* Position+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Position+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C491B45E1F57048D00D38AF1 /* ListOfPositions+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListOfPositions+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C491B4601F57048D00D38AF1 /* Instrument+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instrument+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C494B9A81F56B6F1000AC1D6 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		C494B9AA1F56B6F1000AC1D6 /* ListOfPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfPositions.swift; sourceTree = "<group>"; };
 		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
+		C4E8B3831F1FA04900701EBB /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		C4E902CB1F245FE00032A392 /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
 		C4E917331F1BC30200BE792E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C4E917351F1CB46500BE792E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -163,12 +159,15 @@
 		C45F8CB41F127257007B1B49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C491B4411F56ED6B00D38AF1 /* Core Data Models */,
 				C41030601F309F450060F191 /* Calculator.swift */,
 				C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */,
 				C4260F4F1F2093E3004ECCB5 /* AdMob.swift */,
 				C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */,
+				C4E8B3831F1FA04900701EBB /* Instrument.swift */,
+				C494B9A81F56B6F1000AC1D6 /* Position.swift */,
+				C494B9AA1F56B6F1000AC1D6 /* ListOfPositions.swift */,
 				C42783231F23CD0C00430916 /* UserDefaultsManager.swift */,
+				C451AE451F274B4500826790 /* CalendarEvent.swift */,
 				C4582F251F2B552F001B7403 /* LastUsedInstrument.swift */,
 				C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */,
 				C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */,
@@ -187,27 +186,6 @@
 				C4FB60E01F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		C491B4411F56ED6B00D38AF1 /* Core Data Models */ = {
-			isa = PBXGroup;
-			children = (
-				C491B4601F57048D00D38AF1 /* Instrument+CoreDataClass.swift */,
-				C491B4431F56ED8C00D38AF1 /* Position+CoreDataClass.swift */,
-				C491B45E1F57048D00D38AF1 /* ListOfPositions+CoreDataClass.swift */,
-				C491B4421F56ED7500D38AF1 /* Properties */,
-			);
-			name = "Core Data Models";
-			sourceTree = "<group>";
-		};
-		C491B4421F56ED7500D38AF1 /* Properties */ = {
-			isa = PBXGroup;
-			children = (
-				C439ABAA1F5718E000F22510 /* Instrument+CoreDataProperties.swift */,
-				C439ABA91F5718E000F22510 /* Position+CoreDataProperties.swift */,
-				C439ABAB1F5718E000F22510 /* ListOfPositions+CoreDataProperties.swift */,
-			);
-			name = Properties;
 			sourceTree = "<group>";
 		};
 		C4DF3EDB1F1282E100C2CB89 /* Extensions */ = {
@@ -421,8 +399,6 @@
 			files = (
 				C44CC79E1F2E715500DF2D03 /* PurchasesTestVC.swift in Sources */,
 				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
-				C439ABAD1F5718E000F22510 /* Instrument+CoreDataProperties.swift in Sources */,
-				C439ABAC1F5718E000F22510 /* Position+CoreDataProperties.swift in Sources */,
 				C451AE441F274AC500826790 /* HistoryCell.swift in Sources */,
 				C45F50D61F4DAE7C009D3F9F /* CoreDataManager.swift in Sources */,
 				C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */,
@@ -433,21 +409,21 @@
 				C40FADA01F54564800778090 /* InstrumentsRates.swift in Sources */,
 				C45697A91F1A8DAF00599563 /* HistoryVC.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
-				C491B4671F57048D00D38AF1 /* Instrument+CoreDataClass.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
-				C491B4471F56ED8C00D38AF1 /* Position+CoreDataClass.swift in Sources */,
+				C494B9AC1F56B6F1000AC1D6 /* Position.swift in Sources */,
 				C41030611F309F450060F191 /* Calculator.swift in Sources */,
-				C491B4651F57048D00D38AF1 /* ListOfPositions+CoreDataClass.swift in Sources */,
+				C451AE461F274B4500826790 /* CalendarEvent.swift in Sources */,
 				C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */,
+				C494B9AE1F56B6F1000AC1D6 /* ListOfPositions.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
-				C439ABAE1F5718E000F22510 /* ListOfPositions+CoreDataProperties.swift in Sources */,
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
 				C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
 				C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */,
 				C4E917391F1CDE1000BE792E /* Index.swift in Sources */,
+				C4E8B3841F1FA04900701EBB /* Instrument.swift in Sources */,
 				C4582F261F2B552F001B7403 /* LastUsedInstrument.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 				C413B4191F238C790004F327 /* OptionsTableVC.swift in Sources */,

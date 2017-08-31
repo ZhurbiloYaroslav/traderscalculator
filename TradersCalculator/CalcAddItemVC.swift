@@ -33,8 +33,6 @@ class CalcAddItemVC: UIViewController {
     var adMob: AdMob!
     var forexAPI: ForexAPI!
     
-    var coreDataManager = CoreDataManager()
-    
     var instruments: Instruments!
     var currentCategoryID: Int!
     var currentInstrumentLeftPartID: Int!
@@ -185,12 +183,12 @@ class CalcAddItemVC: UIViewController {
     }
     
     @IBAction func sellOrBuyButtonPressed(_ sender: UIButton) {
-        /*
+        
         if sender.tag == 0 {
             // Was pressed Sell button
             
             // Get the dictionary with values from text fields
-            guard let positionValuesDict = makePositionObjectFromFieldsValues(dealDirection: "Sell")
+            guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Sell")
                 else { return }
             
             if positionToEdit == nil {
@@ -212,7 +210,7 @@ class CalcAddItemVC: UIViewController {
             // Was pressed Buy button
             
             // Get the dictionary with values from text fields
-            guard let positionValuesDict = makePositionObjectFromFieldsValues(dealDirection: "Buy")
+            guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Buy")
                 else { return }
             
             if positionToEdit == nil {
@@ -234,7 +232,7 @@ class CalcAddItemVC: UIViewController {
         // Dismiss this view controller and go to previous
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
-        */
+        
     }
     
     // This method saves last used settings in Picker View
@@ -303,80 +301,71 @@ extension CalcAddItemVC {
 }
 
 // Methods that related with Firebase
-//extension CalcAddItemVC {
-//    
-//    //TODO: Make a description
-//    func makePositionObjectFromFieldsValues(dealDirection: String) -> Position? {
-//        
-//        //TODO: Make a check to have a correct results
-//        guard let value = positionValue.text else { return nil }
-//        guard let openPrice = positionOpenPrice.text else { return nil }
-//        guard let stopLoss = positionStopLoss.text else { return nil }
-//        guard let takeProfit = positionTakeProfit.text else { return nil }
-//        
-//        var instrumentParts = [String]()
-//        
-//        if let position = positionToEdit {
-//            // Means, if it is editing of the position from the calculator list
-//            
-//            instrumentParts = position.instrument.parts
-//            
-//        } else {
-//            // Means, if it is Adding a new position
-//            
-//            let instrumentLeftPart =
-//                instruments.getArrayWithInstrumentsBy(categoryID: currentCategoryID)[currentInstrumentLeftPartID]
-//            instrumentParts.append(instrumentLeftPart)
-//            
-//            let instrumentRightPart = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentLeftPartID, inCategoryID: currentCategoryID)[currentInstrumentRightPartID]
-//            instrumentParts.append(instrumentRightPart)
-//            
-//        }
-//        
-//        var currentCategoryIDForSave = 0
-//        
-//        if positionToEdit == nil {
-//            
-//            currentCategoryIDForSave = currentCategoryID
-//            
-//        } else {
-//            
-//            guard let categoryName = positionToEdit?.instrument.category
-//                else { return nil }
-//            
-//            guard let currentCategoryID = instruments.categories.index(of: categoryName)
-//                else { return nil }
-//            
-//            currentCategoryIDForSave = currentCategoryID
-//            
-//        }
-//        
-//        let categoryName = instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave)
-//        
-//        // Make a adictionary with values for inserting to Firebase
-//        
-//        let position: Position =
-//            Position(creationDate: Date(),
-//                     instrument: Instrument(categoryName, instrumentParts).getDictForSavingToFirebase(),
-//                     value: value,
-//                     openPrice: openPrice,
-//                     stopLoss: stopLoss,
-//                     takeProfit: takeProfit,
-//                     dealDirection: dealDirection,
-//                     positionID: <#T##String#>)
-//        
-//            "instrument": ,
-//            "value": ,
-//            "openPrice": ,
-//            "takeProfit": ,
-//            "stopLoss": ,
-//            "creationDate": "20.07.2017",
-//            "dealDirection": dealDirection
-//        
-//        return positionDict
-//    }
-//    
-//}
+extension CalcAddItemVC {
+    
+    //TODO: Make a description
+    func makeDictionaryWithFieldsValues(dealDirection: String) -> Dictionary<String, Any>? {
+        
+        //TODO: Make a check to have a correct results
+        guard let value = positionValue.text else { return nil }
+        guard let openPrice = positionOpenPrice.text else { return nil }
+        guard let stopLoss = positionStopLoss.text else { return nil }
+        guard let takeProfit = positionTakeProfit.text else { return nil }
+        
+        var instrumentParts = [String]()
+        
+        if let position = positionToEdit {
+            // Means, if it is editing of the position from the calculator list
+            
+            instrumentParts = position.instrument.parts
+            
+        } else {
+            // Means, if it is Adding a new position
+            
+            let instrumentLeftPart =
+                instruments.getArrayWithInstrumentsBy(categoryID: currentCategoryID)[currentInstrumentLeftPartID]
+            instrumentParts.append(instrumentLeftPart)
+            
+            let instrumentRightPart = instruments.getRightCurrencyPairsArrayFor(instrumentID: currentInstrumentLeftPartID, inCategoryID: currentCategoryID)[currentInstrumentRightPartID]
+            instrumentParts.append(instrumentRightPart)
+            
+        }
+        
+        var currentCategoryIDForSave = 0
+        
+        if positionToEdit == nil {
+            
+            currentCategoryIDForSave = currentCategoryID
+            
+        } else {
+            
+            guard let categoryName = positionToEdit?.instrument.category
+                else { return nil }
+            
+            guard let currentCategoryID = instruments.categories.index(of: categoryName)
+                else { return nil }
+            
+            currentCategoryIDForSave = currentCategoryID
+            
+        }
+        
+        let categoryName = instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave)
+        
+        // Make a adictionary with values for inserting to Firebase
+        let positionDict: [String: Any] = [
+            "instrument": Instrument(categoryName, instrumentParts).getDictForSavingToFirebase(),
+            "value": value,
+            "openPrice": openPrice,
+            "takeProfit": takeProfit,
+            "stopLoss": stopLoss,
+            "creationDate": "20.07.2017",
+            "dealDirection": dealDirection
+        ]
+        
+        return positionDict
+    }
+    
+}
 
 // Data Picker Delegates and methods
 extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -525,7 +514,7 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         // New code
         var description = ""
-        var instrumentParts = NSOrderedSet
+        var instrumentParts = [String]()
         if let position = positionToEdit {
             instrumentParts = position.instrument.parts
         } else {
