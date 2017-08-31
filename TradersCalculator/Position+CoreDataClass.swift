@@ -60,11 +60,14 @@ public class Position: NSManagedObject {
     }
     
     // Designated initializer
-    init(creationDate: NSDate,       instrument: [String: Any],
+    convenience init(creationDate: NSDate,       instrument: [String: Any],
          value: Double,              openPrice: Double,
          stopLoss: Double,           takeProfit: Double,
          dealDirection: String,      positionID: String) {
         
+        let coreDataManager = CoreDataManager()
+        let position = NSEntityDescription.entity(forEntityName: "Position", in: coreDataManager.context)!
+        self.init(entity: position, insertInto: coreDataManager.context)
         self.creationDate = creationDate
         self.instrument = Instrument(firebaseDict: instrument)
         self.value = value

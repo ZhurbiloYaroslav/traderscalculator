@@ -53,8 +53,11 @@ public class Instrument: NSManagedObject {
         return self.parts.count
     }
     
-    init(_ categoryName: String, _ instrumentParts: [String]) {
+    convenience init(_ categoryName: String, _ instrumentParts: [String]) {
         
+        let coreDataManager = CoreDataManager()
+        let instrument = NSEntityDescription.entity(forEntityName: "Instrument", in: coreDataManager.context)!
+        self.init(entity: instrument, insertInto: coreDataManager.context)
         self.part1 = instrumentParts[0]
         self.part2 = ""
         self.category = categoryName
