@@ -1,26 +1,17 @@
 //
-//  Position.swift
+//  Position+CoreDataClass.swift
 //  TradersCalculator
 //
-//  Created by Yaroslav Zhurbilo on 30.08.17.
+//  Created by Yaroslav Zhurbilo on 31.08.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-public class Position {
-    
-    fileprivate var _creationDate: String!
-    fileprivate var _instrument: Instrument!
-    fileprivate var _value: Double!         // Value means "Лот" in Russian
-    fileprivate var _openPrice: Double!
-    fileprivate var _stopLoss: Double!
-    fileprivate var _takeProfit: Double!
-    fileprivate var _dealDirection: String!
-    fileprivate var _positionID: String!
+public class Position: NSManagedObject {
     
     private let digitsAfterDotForResultValues = 2
-    
     
     //TODO: Write a description
     enum DealDirection: String {
@@ -69,19 +60,19 @@ public class Position {
     }
     
     // Designated initializer
-    init(creationDate: String,       instrument: [String: Any],
+    init(creationDate: NSDate,       instrument: [String: Any],
          value: Double,              openPrice: Double,
          stopLoss: Double,           takeProfit: Double,
          dealDirection: String,      positionID: String) {
         
-        self._creationDate = creationDate
-        self._instrument = Instrument(firebaseDict: instrument)
-        self._value = value
-        self._openPrice = openPrice
-        self._stopLoss = stopLoss
-        self._takeProfit = takeProfit
-        self._dealDirection = dealDirection
-        self._positionID = positionID
+        self.creationDate = creationDate
+        self.instrument = Instrument(firebaseDict: instrument)
+        self.value = value
+        self.openPrice = openPrice
+        self.stopLoss = stopLoss
+        self.takeProfit = takeProfit
+        self.dealDirection = dealDirection
+        //self.positionID = positionID
         
     }
     
@@ -91,7 +82,7 @@ public class Position {
         // Check Data before initialize
         
         // Set default values
-        var saveCreationDate = ""
+        var saveCreationDate = NSDate()
         var saveInstrument = [String: Any]()
         var saveValue: Double = 0
         var saveOpenPrice: Double = 0
@@ -134,7 +125,7 @@ public class Position {
             saveInstrument = instrument
         }
         
-        if let creationDate = firebaseDict["creationDate"] as? String {
+        if let creationDate = firebaseDict["creationDate"] as? NSDate {
             saveCreationDate = creationDate
         }
         
@@ -143,7 +134,7 @@ public class Position {
                   takeProfit: saveTakeProfit, dealDirection: saveDealDirection, positionID: positionID)
         
     }
-
+    
 }
 
 // Get Current Rates For Calculation
@@ -174,7 +165,7 @@ extension Position {
     }
     
     fileprivate var _currencyPairXX1USDName: String {
-        return "\(_instrument.parts[0])USD"
+        return "\(instrument.parts[0])USD"
     }
     
     fileprivate var _currencyPairXX2USDName: String? {
@@ -213,91 +204,6 @@ extension Position {
         
         return rateValue
         
-    }
-    
-    
-    /*
-     private static let formatter: NSDateFormatter = {
-     let formatter = NSDateFormatter()
-     formatter.dateFormat = "MM/dd/yyyy HH:mma"
-     return formatter
-     
-     }
-     
-     static func dateFromString(string : String) -> NSDate? {
-     return formatter.dateFromString(string)
-     }
-     */
-    
-}
-
-
-// Getters and Setters
-
-extension Position {
-    
-    var positionID: String {
-        if _positionID != nil {
-            return _positionID
-        } else {
-            return ""
-        }
-    }
-    
-    var dealDirection: String {
-        if _dealDirection != nil {
-            return _dealDirection
-        } else {
-            return ""
-        }
-    }
-    
-    var takeProfit: Double {
-        if _takeProfit != nil {
-            return roundValue(value: _takeProfit)
-        } else {
-            return 0
-        }
-    }
-    
-    var stopLoss: Double {
-        if _stopLoss != nil {
-            return roundValue(value: _stopLoss)
-        } else {
-            return 0
-        }
-    }
-    
-    var openPrice: Double {
-        if _openPrice != nil {
-            return roundValue(value: _openPrice)
-        } else {
-            return 0
-        }
-    }
-    
-    var value: Double {
-        if _value != nil {
-            return _value
-        } else {
-            return 0
-        }
-    }
-    
-    var instrument: Instrument {
-        if _instrument != nil {
-            return _instrument
-        } else {
-            return Instrument()
-        }
-    }
-    
-    var creationDate: String {
-        if _creationDate != nil {
-            return _creationDate
-        } else {
-            return ""
-        }
     }
     
 }

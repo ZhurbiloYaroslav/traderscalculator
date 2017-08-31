@@ -4,12 +4,12 @@
         <attribute name="category" attributeType="String" syncable="YES"/>
         <attribute name="part1" attributeType="String" syncable="YES"/>
         <attribute name="part2" attributeType="String" syncable="YES"/>
-        <relationship name="position" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Position" inverseName="instrument" inverseEntity="Position" syncable="YES"/>
+        <relationship name="position" maxCount="1" deletionRule="Nullify" destinationEntity="Position" inverseName="instrument" inverseEntity="Position" syncable="YES"/>
     </entity>
     <entity name="ListOfPositions" representedClassName=".ListOfPositions" syncable="YES">
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="listName" attributeType="String" syncable="YES"/>
-        <relationship name="position" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="listOfPositions" inverseEntity="Position" syncable="YES"/>
+        <relationship name="position" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="listOfPositions" inverseEntity="Position" syncable="YES"/>
     </entity>
     <entity name="Position" representedClassName=".Position" syncable="YES">
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -18,8 +18,8 @@
         <attribute name="stopLoss" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="takeProfit" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="instrument" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Instrument" inverseName="position" inverseEntity="Instrument" syncable="YES"/>
-        <relationship name="listOfPositions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListOfPositions" inverseName="position" inverseEntity="ListOfPositions" syncable="YES"/>
+        <relationship name="instrument" maxCount="1" deletionRule="Nullify" destinationEntity="Instrument" inverseName="position" inverseEntity="Instrument" syncable="YES"/>
+        <relationship name="listOfPositions" maxCount="1" deletionRule="Nullify" destinationEntity="ListOfPositions" inverseName="position" inverseEntity="ListOfPositions" syncable="YES"/>
     </entity>
     <elements>
         <element name="ListOfPositions" positionX="-63" positionY="36" width="128" height="90"/>

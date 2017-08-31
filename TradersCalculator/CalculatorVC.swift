@@ -274,10 +274,10 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
             
             // Deleting the position
-            let deletingPositionID = self.positionsArray[indexPath.row].positionID
-            self.positionsArray.remove(at: indexPath.row)
-            self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
-            self.calculatorTableView.reloadData()
+            // let deletingPositionID = self.positionsArray[indexPath.row].positionID
+            // self.positionsArray.remove(at: indexPath.row)
+            // self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
+            // self.calculatorTableView.reloadData()
             
         }
         

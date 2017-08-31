@@ -1,27 +1,20 @@
 //
-//  Instrument.swift
+//  Instrument+CoreDataClass.swift
 //  TradersCalculator
 //
-//  Created by Yaroslav Zhurbilo on 19.07.17.
+//  Created by Yaroslav Zhurbilo on 31.08.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-//TODO: Write a description
-class Instrument {
+
+public class Instrument: NSManagedObject {
     
-    private var _parts: [String]! // Later [XX1, XX2]
-    private var _category: String!
-    
-    func concatenateParts() -> String {
+    var parts: [String] {
         
-        var name = ""
-        for instrumentPart in _parts {
-            name += instrumentPart
-        }
-        
-        return name
+        return [part1, part2]
         
     }
     
@@ -29,6 +22,17 @@ class Instrument {
     var name: String {
         
         return concatenateParts()
+        
+    }
+    
+    func concatenateParts() -> String {
+        
+        var name = ""
+        for instrumentPart in parts {
+            name += instrumentPart
+        }
+        
+        return name
         
     }
     
@@ -44,43 +48,16 @@ class Instrument {
         
     }
     
-    //TODO: Write a description
-    var parts: [String] {
-        
-        if _parts != nil {
-            return _parts
-        } else {
-            return []
-        }
-        
-    }
-    
-    //TODO: Write a description
-    var category: String {
-        
-        if _category != nil {
-            return _category
-        } else {
-            return ""
-        }
-        
-    }
-    
-    //TODO: Write a description
     var countOfparts: Int {
         
-        if _parts != nil {
-            return self._parts.count
-        } else {
-            return 0
-        }
+        return self.parts.count
     }
     
-    //TODO: Write a description
     init(_ categoryName: String, _ instrumentParts: [String]) {
         
-        self._parts = instrumentParts
-        self._category = categoryName
+        self.part1 = instrumentParts[0]
+        self.part2 = ""
+        self.category = categoryName
         
     }
     
@@ -107,21 +84,11 @@ class Instrument {
     
     // Returns a dictionary with Instrument values for saving to the Firebase
     func getDictForSavingToFirebase() -> [String: Any] {
-        var saveCategory = ""
-        var saveParts = [String]()
-        
-        if let categoryForSave = _category {
-            saveCategory = categoryForSave
-        }
-        
-        if let partsForSave = _parts {
-            saveParts = partsForSave
-        }
         
         // Make a adictionary with values for inserting to Firebase
         let instrumentDict: [String: Any] = [
-            "parts": saveParts,
-            "category": saveCategory
+            "parts": parts,
+            "category": category
         ]
         
         return instrumentDict

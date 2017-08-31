@@ -199,9 +199,8 @@ class CalcAddItemVC: UIViewController {
             } else {
                 
                 // Update existing position
-                guard let positionID = positionToEdit?.positionID
-                    else { return }
-                firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
+                
+                // firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
                 
             }
             
@@ -221,9 +220,8 @@ class CalcAddItemVC: UIViewController {
             } else {
                 
                 // Update existing position
-                guard let positionID = positionToEdit?.positionID
-                    else { return }
-                firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
+                
+                // firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
                 
             }
             
