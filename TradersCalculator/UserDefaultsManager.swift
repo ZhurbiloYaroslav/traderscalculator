@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class UserDefaultsManager {
     //TODO: Make comment
@@ -91,6 +92,51 @@ class UserDefaultsManager {
         set {
             self.options["leverage"] = newValue
         }
+    }
+    
+    //TODO: Make comment
+    var isProVersion: String {
+        get {
+            return self.options["isProVersion"] ?? "false"
+        }
+        set {
+            self.options["isProVersion"] = newValue
+        }
+    }
+    //TODO: Make comment
+    var numberForNextListOfPositionsName: String {
+        get {
+            
+            guard let stringValue = self.options["numberForNextListOfPositionsName"] else {
+                self.options["numberForNextListOfPositionsName"] = "1"
+                return "1"
+            }
+            guard var number = Int(stringValue) else {
+                self.options["numberForNextListOfPositionsName"] = "1"
+                return "1"
+            }
+            
+            number += 1
+            
+            let stringWithNewNumber = "\(number)"
+            self.options["numberForNextListOfPositionsName"] = stringWithNewNumber
+            return stringWithNewNumber
+            
+        }
+    }
+    
+    //TODO: Make comment
+    var currentListOfPositionsID: URL? {
+        
+        get {
+            return defaults.url(forKey: "currentListOfPositionsID") ?? nil
+        }
+        
+        set {
+            defaults.set(newValue, forKey: "currentListOfPositionsID")
+            defaults.synchronize()
+        }
+        
     }
     
 }

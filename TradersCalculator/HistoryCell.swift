@@ -10,9 +10,13 @@ import UIKit
 
 class HistoryCell: UITableViewCell {
     
+    @IBOutlet weak var listNameLabel: UILabel!
+    @IBOutlet weak var creationDateLabel: UILabel!
     
-    func updateCell() {
+    func updateCell(_ list: ListOfPositions) {
         
+        self.listNameLabel.text = list.listName
+        self.creationDateLabel.text = "\(list.creationDate)"
         
     }
 

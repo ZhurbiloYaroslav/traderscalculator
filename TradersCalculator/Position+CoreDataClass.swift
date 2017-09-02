@@ -75,7 +75,6 @@ public class Position: NSManagedObject {
         self.stopLoss = stopLoss
         self.takeProfit = takeProfit
         self.dealDirection = dealDirection
-        //self.positionID = positionID
         
     }
     

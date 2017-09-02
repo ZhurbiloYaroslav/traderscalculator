@@ -578,6 +578,27 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Test functions" id="A1Y-hy-0mK">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TestPro" textLabel="39w-oe-XOh" style="IBUITableViewCellStyleDefault" id="lZu-in-3OZ">
+                                        <rect key="frame" x="0.0" y="568" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lZu-in-3OZ" id="FrM-pe-Y6S">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Is not Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="39w-oe-XOh">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="KZ9-nv-M8n" id="Gxk-hZ-TM5"/>
@@ -589,6 +610,7 @@
                         <outlet property="benefitsCell" destination="xoy-8K-Nrj" id="aLV-BK-gSO"/>
                         <outlet property="buyProCell" destination="8uV-i2-Sj1" id="6zv-7n-tG2"/>
                         <outlet property="currencyCell" destination="OjX-Mu-FLL" id="0KQ-ee-zaZ"/>
+                        <outlet property="isProLabel" destination="39w-oe-XOh" id="y7S-2T-7C1"/>
                         <outlet property="languageCell" destination="kLe-Yl-vnP" id="Z2C-zt-Lfd"/>
                         <outlet property="leverageCell" destination="Qdv-2u-9ED" id="Um1-6X-Eoh"/>
                         <outlet property="restorePurchasesCell" destination="fWt-80-BR1" id="h5R-DF-kEn"/>
@@ -608,7 +630,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -635,10 +657,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="122" width="304" height="438"/>
+                                <rect key="frame" x="8" y="122" width="304" height="275"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="136"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -652,12 +674,12 @@
                                                 </subviews>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="221.5" width="304" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="141" width="304" height="134"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -666,7 +688,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="113.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -1102,6 +1124,10 @@
                                                 <constraint firstItem="jQe-Rb-gd3" firstAttribute="top" secondItem="qCF-uR-zN9" secondAttribute="top" constant="5" id="wWR-S7-9G1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="creationDateLabel" destination="uqW-h5-64Q" id="gbZ-7S-cvA"/>
+                                            <outlet property="listNameLabel" destination="NK2-Dv-1DJ" id="JFQ-Ql-6oA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1225,7 +1251,7 @@
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w74-J8-l96"/>
+        <segue reference="hhy-tK-JxJ"/>
         <segue reference="oXo-6y-9Go"/>
     </inferredMetricsTieBreakers>
 </document>

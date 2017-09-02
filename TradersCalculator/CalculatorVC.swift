@@ -61,34 +61,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     func initializeVariables() {
         
-        // Test core data start
-        
-        // Retrieving position from DB Start
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Position")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            
-            let results = try coreDataManager.context.fetch(request) as! [NSManagedObject]
-            
-            if results.count > 0 {
-                for result in results {
-                    print(result)
-                    if let instrument = result.value(forKey: "instrument") as? String {
-                        print("---", instrument)
-                    }
-                }
-            }
-            
-        } catch let err as NSError {
-            print(err.debugDescription)
-        }
-        
-        // Retrieving position from DB End
-        
-        // Test core data end
-        
         let userDefaults = UserDefaultsManager()
         
         if userDefaults.accountCurrency == nil || userDefaults.leverage == nil {

@@ -15,6 +15,8 @@ class HistoryVC: UIViewController {
     @IBOutlet weak var googleBannerView: GADBannerView!
     
     var adMob: AdMob!
+    var arrayWithListOfPositions: [ListOfPositions]!
+    var coreDataManager: CoreDataManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,9 @@ class HistoryVC: UIViewController {
     
     func initializeVariables() {
         
+        coreDataManager = CoreDataManager()
+        arrayWithListOfPositions = coreDataManager.getAllListsOfPositions()
+        
         calendarTableView.estimatedRowHeight = 60
         calendarTableView.rowHeight = UITableViewAutomaticDimension
         calendarTableView.sectionFooterHeight = 0
@@ -56,11 +61,12 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return arrayWithListOfPositions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as? HistoryCell else { return UITableViewCell() }
+        cell.updateCell(arrayWithListOfPositions[indexPath.row])
         
         return cell
     }

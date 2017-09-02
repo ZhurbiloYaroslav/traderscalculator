@@ -35,6 +35,7 @@
 		C472B1CD1F29F9B600BAA1CD /* Links.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CC1F29F9B600BAA1CD /* Links.rtf */; };
 		C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */; };
 		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
+		C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B93831F5AFF00003433DF /* FirstLaunch.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
@@ -88,6 +89,7 @@
 		C472B1CC1F29F9B600BAA1CD /* Links.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Links.rtf; sourceTree = "<group>"; };
 		C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Indices.rtf; sourceTree = "<group>"; };
 		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		C49B93831F5AFF00003433DF /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */,
 				C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */,
 				C40FAD9F1F54564800778090 /* InstrumentsRates.swift */,
+				C49B93831F5AFF00003433DF /* FirstLaunch.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
 				C40FADA01F54564800778090 /* InstrumentsRates.swift in Sources */,
+				C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */,
 				C45697A91F1A8DAF00599563 /* HistoryVC.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,

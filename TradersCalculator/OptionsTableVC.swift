@@ -24,6 +24,11 @@ class OptionsTableVC: UITableViewController {
     @IBOutlet weak var restorePurchasesCell: UITableViewCell!
     @IBOutlet weak var benefitsCell: UITableViewCell!
     
+    // test start
+    @IBOutlet weak var isProLabel: UILabel!
+    
+    // test end
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,6 +114,14 @@ class OptionsTableVC: UITableViewController {
             
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().restoreCompletedTransactions()
+            
+        case [4,0]:
+            
+            var isProVersion = UserDefaultsManager().isProVersion
+            isProVersion = (isProVersion == "false") ? "true" : "false"
+            UserDefaultsManager().isProVersion = isProVersion
+            isProLabel.text = (isProVersion == "false") ? "Is not Pro" : "Is Pro"
+            print(isProVersion)
             
         default:
             break
