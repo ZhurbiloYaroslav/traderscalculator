@@ -23,7 +23,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
-    var positionsArray: [Position]!
+    var positionsArray = [Position]()
     var positionsArrayByID: [String: Position]!
     var openedPositionCell: Int?
     
@@ -37,17 +37,9 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         initializeVariables()
         
-        // Configure the Firebase
-        firebase = FirebaseConnect()
-        
         // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
-        
-        // Set the observer for Firebase data
-        firebase.ref.observe(.value, with: { snapshot in
-            self.updateTable(snapshot)
-        })
         
     }
     
@@ -66,8 +58,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         if userDefaults.accountCurrency == nil || userDefaults.leverage == nil {
             performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
         }
-        
-        positionsArray = [Position]()
         
         longTapOnCellRecognizerSetup()
         
@@ -144,16 +134,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Remove Firebase Authenticate listener
-        if let tempHandle = firebase.handle {
-            Auth.auth().removeStateDidChangeListener(tempHandle)
-        }
-        
-    }
-    
 }
 
 extension CalculatorVC: NSFetchedResultsControllerDelegate {
@@ -169,26 +149,17 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     // Update the table with owners list at the begining and after changes in Firebase
     func updateTable(_ snapshot: DataSnapshot) {
         
-        // Define variable with the whole data from Database
-        guard let snapshotValue = snapshot.value as? [String: Any] else {
-            return
+        // test positions in db start
+        let currentListOfPositions = CoreDataManager().getAllListsOfPositions()[0]
+        let arrayWithPositions = coreDataManager.getAllPositionsFor(currentListOfPositions)
+        for position in arrayWithPositions {
+            print("---", position.instrument.name)
         }
-        
-        // Define variable with only the list of positions
-        guard let positionsArrayFromFirebase = snapshotValue["positions"] as? [String: [String: Any]] else {
-            return
-        }
+        // test positions in db end
         
         // Make a temporary variable for storing owners list from Firebase
         var updatedPositionsArray = [Position]()
         var updatedPositionsArrayByID = [String: Position]()
-        
-        // Make objects of the owners list from Firebase and put them in the array
-        for (positionID, firebaseDict) in positionsArrayFromFirebase {
-            let position = Position(positionID, firebaseDict)
-            updatedPositionsArray.append(position)
-            updatedPositionsArrayByID.updateValue(position, forKey: positionID)
-        }
         
         // Update this class variable with data from Firebase
         positionsArray = updatedPositionsArray

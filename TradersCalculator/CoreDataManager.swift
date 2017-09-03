@@ -14,19 +14,23 @@ class CoreDataManager {
     
     private let appDelegate: AppDelegate!
     let context: NSManagedObjectContext!
+    let persStoreCoord: NSPersistentStoreCoordinator
     
     init() {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.context = appDelegate.persistentContainer.viewContext
+        self.persStoreCoord = appDelegate.persistentContainer.persistentStoreCoordinator
     }
     
     func saveInDB(_ position: Position) {
+        
+        print("---Saving position to DB")
         
         do {
             try context.save()
             print("---Saved position to DB")
         } catch {
-            print(error.localizedDescription)
+            print("---", error.localizedDescription)
         }
         
     }
@@ -38,6 +42,14 @@ class CoreDataManager {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func updateInDB(_ position: Position) {
+
+    }
+    
+    func updateInDB(_ listOfPositions: ListOfPositions) {
+        
     }
     
     func getAllPositionsFor(_ listOfPositions: ListOfPositions) -> [Position] {
@@ -70,7 +82,6 @@ class CoreDataManager {
             let allListsOfPositions = results as! [ListOfPositions]
             
             for listOfPosition in allListsOfPositions {
-                print("---getAllListsOfPositions", listOfPosition.listName)
                 arrayWithListsOfPositions.append(listOfPosition)
             }
         } catch let err as NSError {
@@ -82,6 +93,23 @@ class CoreDataManager {
     
     func entityForName(_ entityName: String) -> NSManagedObject {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context)
+    }
+    
+    func getInstanceOfCurrentPositionsList() -> ListOfPositions? {
+        
+        guard let currentListUrl = UserDefaultsManager().currentListOfPositionsID else {
+            return nil
+        }
+        
+        guard let objectID = persStoreCoord.managedObjectID(forURIRepresentation: currentListUrl) else {
+            return nil
+        }
+        guard let listOfPositionsObject = context.object(with: objectID) as? ListOfPositions else {
+            return nil
+        }
+        
+        return listOfPositionsObject
+        
     }
     
 }

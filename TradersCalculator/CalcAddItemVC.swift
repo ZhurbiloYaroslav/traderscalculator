@@ -33,7 +33,8 @@ class CalcAddItemVC: UIViewController {
     var adMob: AdMob!
     var forexAPI: ForexAPI!
     
-    var instruments: Instruments!
+    var coreDataManager = CoreDataManager()
+    var instruments = Instruments()
     var currentCategoryID: Int!
     var currentInstrumentLeftPartID: Int!
     var currentInstrumentRightPartID: Int!
@@ -64,17 +65,12 @@ class CalcAddItemVC: UIViewController {
         
         registerForKeyboardNotifications()
         
-        // Put here code for testing purposes
-        tests()
-        
     }
     
-    // Init delegates
     func initDelegates() {
         
         instrumentsPicker.delegate = self
         instrumentsPicker.dataSource = self
-        
         
         positionValue.delegate = self
         positionOpenPrice.delegate = self
@@ -83,17 +79,10 @@ class CalcAddItemVC: UIViewController {
         
     }
     
-    // Put here code for testing purposes
-    func tests() {
-        
-        
-        
-    }
-    
     func initializeVariables() {
         
+        
         let lastUsedInstrument = options.lastUsedInstrument
-        instruments = Instruments()
         currentCategoryID = lastUsedInstrument.categoryID
         currentInstrumentLeftPartID = lastUsedInstrument.instrumentLeftPartID
         currentInstrumentRightPartID = lastUsedInstrument.instrumentRightPartID
@@ -120,7 +109,6 @@ class CalcAddItemVC: UIViewController {
         
     }
     
-    // Make request to the server
     func makeRequest() {
         
         // If this is not editing of the position, then we download the data
@@ -161,16 +149,6 @@ class CalcAddItemVC: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Remove Firebase Authenticate listener
-        if let tempHandle = firebase.handle {
-            Auth.auth().removeStateDidChangeListener(tempHandle)
-        }
-        
-    }
-    
     deinit {
         removeKeyboardNotifications()
     }
@@ -188,19 +166,16 @@ class CalcAddItemVC: UIViewController {
             // Was pressed Sell button
             
             // Get the dictionary with values from text fields
-            guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Sell")
+            guard let position = makePositionInstanceWithFieldsValues(dealDirection: "Sell")
                 else { return }
-            
             if positionToEdit == nil {
-                
-                // Add new position
-                firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+                coreDataManager.saveInDB(position)
                 
             } else {
                 
                 // Update existing position
                 
-                // firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
+                
                 
             }
             
@@ -209,13 +184,13 @@ class CalcAddItemVC: UIViewController {
             // Was pressed Buy button
             
             // Get the dictionary with values from text fields
-            guard let positionValuesDict = makeDictionaryWithFieldsValues(dealDirection: "Buy")
+            guard let positionValuesDict = makePositionInstanceWithFieldsValues(dealDirection: "Buy")
                 else { return }
             
             if positionToEdit == nil {
                 
                 // Add new position
-                firebase.ref.child("positions").childByAutoId().setValue(positionValuesDict)
+                
                 
             } else {
                 
@@ -302,13 +277,21 @@ extension CalcAddItemVC {
 extension CalcAddItemVC {
     
     //TODO: Make a description
-    func makeDictionaryWithFieldsValues(dealDirection: String) -> Dictionary<String, Any>? {
+    func makePositionInstanceWithFieldsValues(dealDirection: String) -> Position? {
         
         //TODO: Make a check to have a correct results
-        guard let value = positionValue.text?.myFloatConverter else { return nil }
-        guard let openPrice = positionOpenPrice.text?.myFloatConverter else { return nil }
-        guard let stopLoss = positionStopLoss.text?.myFloatConverter else { return nil }
-        guard let takeProfit = positionTakeProfit.text?.myFloatConverter else { return nil }
+        guard let value = positionValue.text?.myFloatConverter else {
+            return nil
+        }
+        guard let openPrice = positionOpenPrice.text?.myFloatConverter else {
+            return nil
+        }
+        guard let stopLoss = positionStopLoss.text?.myFloatConverter else {
+            return nil
+        }
+        guard let takeProfit = positionTakeProfit.text?.myFloatConverter else {
+            return nil
+        }
         
         var instrumentParts = [String]()
         
@@ -349,18 +332,17 @@ extension CalcAddItemVC {
         
         let categoryName = instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave)
         
-        // Make a adictionary with values for inserting to Firebase
-        let positionDict: [String: Any] = [
-            "instrument": Instrument(categoryName, instrumentParts).getDictForSavingToFirebase(),
-            "value": value,
-            "openPrice": openPrice,
-            "takeProfit": takeProfit,
-            "stopLoss": stopLoss,
-            "creationDate": "20.07.2017",
-            "dealDirection": dealDirection
-        ]
+        // Make a Position with values for inserting to Core Data
+        let positionInstance = Position(
+            creationDate: NSDate(),
+            instrument: Instrument(categoryName, instrumentParts),
+            value: value,
+            openPrice: openPrice,
+            stopLoss: stopLoss,
+            takeProfit: takeProfit,
+            dealDirection: dealDirection)
         
-        return positionDict
+        return positionInstance
     }
     
 }

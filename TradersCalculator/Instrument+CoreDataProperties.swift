@@ -2,7 +2,7 @@
 //  Instrument+CoreDataProperties.swift
 //  TradersCalculator
 //
-//  Created by Yaroslav Zhurbilo on 31.08.17.
+//  Created by Yaroslav Zhurbilo on 03.09.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
@@ -16,9 +16,9 @@ extension Instrument {
         return NSFetchRequest<Instrument>(entityName: "Instrument")
     }
 
+    @NSManaged public var category: String
     @NSManaged public var part1: String
     @NSManaged public var part2: String
-    @NSManaged public var category: String
     @NSManaged public var position: Position
 
 }

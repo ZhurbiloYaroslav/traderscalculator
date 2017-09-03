@@ -59,7 +59,7 @@ public class Instrument: NSManagedObject {
         let instrument = NSEntityDescription.entity(forEntityName: "Instrument", in: coreDataManager.context)!
         self.init(entity: instrument, insertInto: coreDataManager.context)
         self.part1 = instrumentParts[0]
-        self.part2 = ""
+        self.part2 = instrumentParts[1]
         self.category = categoryName
         
     }

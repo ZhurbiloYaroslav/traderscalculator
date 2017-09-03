@@ -85,20 +85,20 @@ extension String {
 }
 
 extension String {
-    var myFloatConverter: String {
+    var myFloatConverter: Double {
         let converter = NumberFormatter()
         
         converter.decimalSeparator = ","
         if let result = converter.number(from: self) {
-            return String(format: "%.2f", result.floatValue)
+            return result.doubleValue
             
         } else {
             
             converter.decimalSeparator = "."
             if let result = converter.number(from: self) {
-                return String(format: "%.2f", result.floatValue)
+                return result.doubleValue
             }
         }
-        return "0.00"
+        return 0.00
     }
 }

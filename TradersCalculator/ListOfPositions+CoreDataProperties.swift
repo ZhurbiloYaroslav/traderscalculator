@@ -2,7 +2,7 @@
 //  ListOfPositions+CoreDataProperties.swift
 //  TradersCalculator
 //
-//  Created by Yaroslav Zhurbilo on 31.08.17.
+//  Created by Yaroslav Zhurbilo on 03.09.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 

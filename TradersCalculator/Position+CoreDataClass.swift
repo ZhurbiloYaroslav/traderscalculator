@@ -60,80 +60,23 @@ public class Position: NSManagedObject {
     }
     
     // Designated initializer
-    convenience init(creationDate: NSDate,       instrument: [String: Any],
-         value: Double,              openPrice: Double,
-         stopLoss: Double,           takeProfit: Double,
-         dealDirection: String,      positionID: String) {
+    convenience init(creationDate: NSDate, instrument: Instrument,
+                     value: Double, openPrice: Double,
+                     stopLoss: Double, takeProfit: Double,
+                     dealDirection: String) {
         
         let coreDataManager = CoreDataManager()
         let position = NSEntityDescription.entity(forEntityName: "Position", in: coreDataManager.context)!
         self.init(entity: position, insertInto: coreDataManager.context)
+        
         self.creationDate = creationDate
-        self.instrument = Instrument(firebaseDict: instrument)
         self.value = value
         self.openPrice = openPrice
         self.stopLoss = stopLoss
         self.takeProfit = takeProfit
         self.dealDirection = dealDirection
-        
-    }
-    
-    //TODO: Write a description
-    convenience init(_ positionID: String, _ firebaseDict: [String:Any]) {
-        
-        // Check Data before initialize
-        
-        // Set default values
-        var saveCreationDate = NSDate()
-        var saveInstrument = [String: Any]()
-        var saveValue: Double = 0
-        var saveOpenPrice: Double = 0
-        var saveStopLoss: Double = 0
-        var saveTakeProfit: Double = 0
-        var saveDealDirection = ""
-        
-        
-        // Assign previous variables with values
-        
-        if let instrumentDealDirection = firebaseDict["dealDirection"] as? String {
-            saveDealDirection = instrumentDealDirection
-        }
-        
-        if let instrumentTakeProfit = firebaseDict["takeProfit"] as? String {
-            if let takeProfit = Double(instrumentTakeProfit) {
-                saveTakeProfit = takeProfit.roundTo(places: 5)
-            }
-        }
-        
-        if let instrumentStopLoss = firebaseDict["stopLoss"] as? String {
-            if let stopLoss = Double(instrumentStopLoss) {
-                saveStopLoss = stopLoss.roundTo(places: 5)
-            }
-        }
-        
-        if let openPrice = firebaseDict["openPrice"] as? String {
-            if let openPrice = Double(openPrice) {
-                saveOpenPrice = openPrice.roundTo(places: 5)
-            }
-        }
-        
-        if let instrumentValue = firebaseDict["value"] as? String {
-            if let value = Double(instrumentValue) {
-                saveValue = value
-            }
-        }
-        
-        if let instrument = firebaseDict["instrument"] as? [String: Any] {
-            saveInstrument = instrument
-        }
-        
-        if let creationDate = firebaseDict["creationDate"] as? NSDate {
-            saveCreationDate = creationDate
-        }
-        
-        self.init(creationDate: saveCreationDate, instrument: saveInstrument,
-                  value: saveValue, openPrice: saveOpenPrice, stopLoss: saveStopLoss,
-                  takeProfit: saveTakeProfit, dealDirection: saveDealDirection, positionID: positionID)
+        self.instrument = instrument
+        self.listOfPositions = coreDataManager.getAllListsOfPositions()[0]
         
     }
     

@@ -31,16 +31,6 @@ class OptionsVC: UIViewController {
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Remove Firebase Authenticate listener
-        if let tempHandle = firebase.handle {
-            Auth.auth().removeStateDidChangeListener(tempHandle)
-        }
-        
-    }
 
 }
 
