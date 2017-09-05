@@ -44,6 +44,16 @@
                                             <segue destination="T57-kg-F5P" kind="show" identifier="InstrumentAdd" id="J65-Kh-cIp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekU-aX-uFi">
+                                        <rect key="frame" x="16" y="30" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Test">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="testButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pHj-cC-bL3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.59607843137254901" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -630,7 +640,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -657,10 +667,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="122" width="304" height="275"/>
+                                <rect key="frame" x="8" y="122" width="304" height="438"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="136"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="216.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -674,12 +684,12 @@
                                                 </subviews>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="141" width="304" height="134"/>
+                                        <rect key="frame" x="0.0" y="221.5" width="304" height="216.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -688,7 +698,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="113.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -1086,7 +1096,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-Id-yQd">
                                 <rect key="frame" x="0.0" y="64" width="320" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="1ur-4K-qJc">
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Msn-JY-qMl">
                                     <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1096,22 +1106,28 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izg-3b-tZr" id="qCF-uR-zN9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Rb-gd3">
                                                     <rect key="frame" x="8" y="5.5" width="304" height="49"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Название рабочего списка" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK2-Dv-1DJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="9.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqW-h5-64Q">
-                                                            <rect key="frame" x="0.0" y="29.5" width="304" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="19.5" width="304" height="10"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Positions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-a2-u8P">
+                                                            <rect key="frame" x="0.0" y="39.5" width="304" height="9.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1127,6 +1143,7 @@
                                         <connections>
                                             <outlet property="creationDateLabel" destination="uqW-h5-64Q" id="gbZ-7S-cvA"/>
                                             <outlet property="listNameLabel" destination="NK2-Dv-1DJ" id="JFQ-Ql-6oA"/>
+                                            <outlet property="positionsLabel" destination="7Hs-a2-u8P" id="Vp4-LC-N7y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1142,10 +1159,17 @@
                             <constraint firstItem="4kJ-em-az0" firstAttribute="top" secondItem="yr9-Id-yQd" secondAttribute="bottom" constant="50" id="y9q-ge-mp8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="H3Y-k7-hkk"/>
+                    <navigationItem key="navigationItem" title="History" id="H3Y-k7-hkk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="ktL-AO-Bbo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k0J-se-vUN">
+                            <connections>
+                                <action selector="addLIstButtonPressed:" destination="mgg-5x-8vw" id="3Pr-lm-ID4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="calendarTableView" destination="yr9-Id-yQd" id="anV-Fi-MCh"/>
                         <outlet property="googleBannerView" destination="Hgf-CL-HuI" id="e66-W6-mTM"/>
+                        <outlet property="historyTableView" destination="yr9-Id-yQd" id="oFN-ng-ELa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfQ-3K-H9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1251,7 +1275,7 @@
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hhy-tK-JxJ"/>
         <segue reference="oXo-6y-9Go"/>
+        <segue reference="w74-J8-l96"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -28,14 +28,13 @@ class FirstLaunch {
     }
     
     public static func insertBaseRecordsIntoCoreData() {
-        let firstListOfPositions = ListOfPositions()
-        let listIdInDBURI = firstListOfPositions.objectID.uriRepresentation()
         
+        let firstListOfPositions = ListOfPositions(needSave: true)
+        CoreDataManager().saveContext()
+        
+        let listIdInDBURI = firstListOfPositions.objectID.uriRepresentation()
         UserDefaultsManager().currentListOfPositionsID = listIdInDBURI
         
-        CoreDataManager().saveInDB(firstListOfPositions)
-        
-        print("---This is first launch of the App")
     }
     
 }

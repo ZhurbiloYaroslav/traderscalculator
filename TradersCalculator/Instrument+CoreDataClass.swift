@@ -53,11 +53,18 @@ public class Instrument: NSManagedObject {
         return self.parts.count
     }
     
-    convenience init(_ categoryName: String, _ instrumentParts: [String]) {
+    convenience init(needSave: Bool, _ categoryName: String, _ instrumentParts: [String]) {
         
         let coreDataManager = CoreDataManager()
+        
         let instrument = NSEntityDescription.entity(forEntityName: "Instrument", in: coreDataManager.context)!
-        self.init(entity: instrument, insertInto: coreDataManager.context)
+        
+        if(needSave) {
+            self.init(entity: instrument, insertInto: coreDataManager.context)
+        } else {
+            self.init(entity: instrument, insertInto: nil)
+        }
+        
         self.part1 = instrumentParts[0]
         self.part2 = instrumentParts[1]
         self.category = categoryName
@@ -65,37 +72,7 @@ public class Instrument: NSManagedObject {
     }
     
     convenience init() {
-        self.init(Instruments().defaultCategory, Instruments().defaultInstrumentPair)
-    }
-    
-    // Makes an Instrument from dictionary with values from the Firebase
-    convenience init(firebaseDict: [String: Any]) {
-        var saveCategory = Instruments().defaultCategory
-        var saveParts = Instruments().defaultInstrumentPair
-        
-        if let instrumentCategory = firebaseDict["category"] as? String {
-            saveCategory = instrumentCategory
-        }
-        
-        if let instrumentParts = firebaseDict["parts"] as? [String] {
-            saveParts = instrumentParts
-        }
-        
-        self.init(saveCategory, saveParts)
-        
-    }
-    
-    // Returns a dictionary with Instrument values for saving to the Firebase
-    func getDictForSavingToFirebase() -> [String: Any] {
-        
-        // Make a adictionary with values for inserting to Firebase
-        let instrumentDict: [String: Any] = [
-            "parts": parts,
-            "category": category
-        ]
-        
-        return instrumentDict
-        
+        self.init(needSave: true, Instruments().defaultCategory, Instruments().defaultInstrumentPair)
     }
 }
 

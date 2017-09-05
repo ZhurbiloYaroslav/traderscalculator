@@ -8,15 +8,20 @@
 
 import UIKit
 import GoogleMobileAds
+import CoreData
 
 class HistoryVC: UIViewController {
     
-    @IBOutlet weak var calendarTableView: UITableView!
+    @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var googleBannerView: GADBannerView!
     
     var adMob: AdMob!
     var arrayWithListOfPositions: [ListOfPositions]!
+    
+    var userDefaultsManager: UserDefaultsManager!
     var coreDataManager: CoreDataManager!
+    var context: NSManagedObjectContext!
+    //var controller: NSFetchedResultsController<ListOfPositions>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,25 +35,46 @@ class HistoryVC: UIViewController {
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
+        longTapOnCellRecognizerSetup()
+
     }
     
     // Init delegates
     func initDelegates() {
         
-        calendarTableView.delegate = self
-        calendarTableView.dataSource = self
+        historyTableView.delegate = self
+        historyTableView.dataSource = self
         
     }
     
     func initializeVariables() {
         
+        userDefaultsManager = UserDefaultsManager()
         coreDataManager = CoreDataManager()
+        context = coreDataManager.context
         arrayWithListOfPositions = coreDataManager.getAllListsOfPositions()
         
-        calendarTableView.estimatedRowHeight = 60
-        calendarTableView.rowHeight = UITableViewAutomaticDimension
-        calendarTableView.sectionFooterHeight = 0
+        historyTableView.estimatedRowHeight = 60
+        historyTableView.rowHeight = UITableViewAutomaticDimension
+        historyTableView.sectionFooterHeight = 0
         
+    }
+    
+    func longTapOnCellRecognizerSetup() {
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(CalculatorVC.longPress))
+        longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        longPressGesture.delegate = self as? UIGestureRecognizerDelegate
+        historyTableView.addGestureRecognizer(longPressGesture)
+        
+    }
+    
+    @IBAction func addLIstButtonPressed(_ sender: UIBarButtonItem) {
+        _ = ListOfPositions(needSave: true)
+        coreDataManager.saveContext()
+        
+        arrayWithListOfPositions = coreDataManager.getAllListsOfPositions()
+        historyTableView.reloadData()
     }
 
 }
@@ -71,9 +97,58 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
-        performSegue(withIdentifier: "CalendarShowEventDetails", sender: "EventID")
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+            
+            let touchPoint = longPressGestureRecognizer.location(in: self.historyTableView)
+            if let indexPath = historyTableView.indexPathForRow(at: touchPoint) {
+                
+                performAlertOnLongPressOnCellWith(indexPath)
+            }
+            
+        }
+    }
+    
+    func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
+        
+        let currentList = arrayWithListOfPositions[indexPath.row]
+        let listName = currentList.listName
+        let alert = UIAlertController(title: nil, message: "\(listName)", preferredStyle: .actionSheet)
+        
+        let openAction = UIAlertAction(title: "Open", style: .default) { (action) in
+            
+            let currentListIdURL = currentList.objectID.uriRepresentation()
+            UserDefaultsManager().currentListOfPositionsID = currentListIdURL
+            
+            
+            
+        }
+        
+        let editAction = UIAlertAction(title: "Edit", style: .default) { (action) in
+            
+            self.performSegue(withIdentifier: "EditPosition", sender: currentList)
+            
+        }
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            
+            // Deleting the position
+            // let deletingPositionID = self.positionsArray[indexPath.row].positionID
+            // self.positionsArray.remove(at: indexPath.row)
+            // self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
+            // self.calculatorTableView.reloadData()
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(openAction)
+        alert.addAction(editAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
         
     }
     

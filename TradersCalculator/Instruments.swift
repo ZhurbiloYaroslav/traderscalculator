@@ -243,7 +243,7 @@ extension Instruments {
     }
     
     //TODO: Get object of the instrument to retrieve a description fo Symbol
-    func getInstrumentObject(categoryID: Int, leftPart: Int, rightPart: Int) -> Instrument {
+    func getInstrumentParts(categoryID: Int, leftPart: Int, rightPart: Int) -> [String] {
         
         var instrumentParts = [String]()
         let instrumentsLeftPartArray = getArrayWithInstrumentsBy(categoryID: categoryID)
@@ -264,10 +264,8 @@ extension Instruments {
             }
             
         }
-        
-        let categoryName = getCategoryNameBy(categoryID: categoryID)
-        
-        return Instrument(categoryName, instrumentParts)
+
+        return instrumentParts
         
     }
 }

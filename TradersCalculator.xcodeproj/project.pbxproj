@@ -165,10 +165,10 @@
 			children = (
 				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
 				C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */,
+				C45697A81F1A8DAF00599563 /* HistoryVC.swift */,
 				C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */,
 				C413B4181F238C790004F327 /* OptionsTableVC.swift */,
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
-				C45697A81F1A8DAF00599563 /* HistoryVC.swift */,
 				C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */,
 			);
 			name = Controller;

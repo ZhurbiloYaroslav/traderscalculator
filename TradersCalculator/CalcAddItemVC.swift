@@ -165,18 +165,13 @@ class CalcAddItemVC: UIViewController {
         if sender.tag == 0 {
             // Was pressed Sell button
             
-            // Get the dictionary with values from text fields
             guard let position = makePositionInstanceWithFieldsValues(dealDirection: "Sell")
                 else { return }
+            
             if positionToEdit == nil {
-                coreDataManager.saveInDB(position)
-                
+                coreDataManager.saveContext()
             } else {
-                
-                // Update existing position
-                
-                
-                
+                coreDataManager.updateInDB(position)
             }
             
             
@@ -184,20 +179,13 @@ class CalcAddItemVC: UIViewController {
             // Was pressed Buy button
             
             // Get the dictionary with values from text fields
-            guard let positionValuesDict = makePositionInstanceWithFieldsValues(dealDirection: "Buy")
+            guard let position = makePositionInstanceWithFieldsValues(dealDirection: "Buy")
                 else { return }
             
             if positionToEdit == nil {
-                
-                // Add new position
-                
-                
+                coreDataManager.saveContext()
             } else {
-                
-                // Update existing position
-                
-                // firebase.ref.child("positions").child(positionID).setValue(positionValuesDict)
-                
+                coreDataManager.updateInDB(position)
             }
             
         }
@@ -334,8 +322,9 @@ extension CalcAddItemVC {
         
         // Make a Position with values for inserting to Core Data
         let positionInstance = Position(
+            needSave: true,
             creationDate: NSDate(),
-            instrument: Instrument(categoryName, instrumentParts),
+            instrument: Instrument(needSave: true, categoryName, instrumentParts),
             value: value,
             openPrice: openPrice,
             stopLoss: stopLoss,
@@ -498,10 +487,9 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         if let position = positionToEdit {
             instrumentParts = position.instrument.parts
         } else {
-            let instrument = instruments.getInstrumentObject(categoryID: currentCategoryID,
+            instrumentParts = instruments.getInstrumentParts(categoryID: currentCategoryID,
                                                              leftPart: currentInstrumentLeftPartID,
                                                              rightPart: currentInstrumentRightPartID)
-            instrumentParts = instrument.parts
         }
         
         //

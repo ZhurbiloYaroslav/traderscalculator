@@ -12,20 +12,25 @@ import CoreData
 
 public class ListOfPositions: NSManagedObject {
     
-    convenience init(_ listName: String, _ creationDate: NSDate, _ position: NSSet) {
+    convenience init(needSave: Bool, _ listName: String, _ creationDate: NSDate, _ position: NSSet) {
         
         let coreDataManager = CoreDataManager()
         
         let listOfPositions = NSEntityDescription.entity(forEntityName: "ListOfPositions", in: coreDataManager.context)!
         
-        self.init(entity: listOfPositions, insertInto: coreDataManager.context)
+        if(needSave) {
+            self.init(entity: listOfPositions, insertInto: coreDataManager.context)
+        } else {
+            self.init(entity: listOfPositions, insertInto: nil)
+        }
+        
         self.listName = listName
         self.creationDate = creationDate
         self.position = position
     }
     
-    convenience init() {
+    convenience init(needSave: Bool) {
         let nextNameNumber = UserDefaultsManager().numberForNextListOfPositionsName
-        self.init("Рабочий набор \(nextNameNumber)", NSDate(), NSSet(()))
+        self.init(needSave: needSave, "Рабочий набор \(nextNameNumber)", NSDate(), NSSet(()))
     }
 }

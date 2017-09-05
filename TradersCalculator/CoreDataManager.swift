@@ -16,26 +16,15 @@ class CoreDataManager {
     let context: NSManagedObjectContext!
     let persStoreCoord: NSPersistentStoreCoordinator
     
+    var controller: NSFetchedResultsController<Position>!
+    
     init() {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.context = appDelegate.persistentContainer.viewContext
         self.persStoreCoord = appDelegate.persistentContainer.persistentStoreCoordinator
     }
     
-    func saveInDB(_ position: Position) {
-        
-        print("---Saving position to DB")
-        
-        do {
-            try context.save()
-            print("---Saved position to DB")
-        } catch {
-            print("---", error.localizedDescription)
-        }
-        
-    }
-    
-    func saveInDB(_ listOfPositions: ListOfPositions) {
+    func saveContext() {
 
         do {
             try context.save()
@@ -52,18 +41,16 @@ class CoreDataManager {
         
     }
     
-    func getAllPositionsFor(_ listOfPositions: ListOfPositions) -> [Position] {
+    func getPositionsForCurrentList() -> [Position] {
         
         var arrayWithPositions = [Position]()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Position")
+        let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
         
         do {
-            let results = try context.fetch(fetchRequest)
-            let positions = results as! [Position]
+            let positions = try context.fetch(fetchRequest)
             
-            for position in positions {
-                print("---", position.instrument)
-                arrayWithPositions.append(position)
+            for _position in positions {
+                arrayWithPositions.append(_position)
             }
         } catch let err as NSError {
             print(err.debugDescription)
@@ -75,14 +62,13 @@ class CoreDataManager {
     func getAllListsOfPositions() -> [ListOfPositions] {
         
         var arrayWithListsOfPositions = [ListOfPositions]()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ListOfPositions")
+        let fetchRequest: NSFetchRequest<ListOfPositions> = ListOfPositions.fetchRequest()
         
         do {
-            let results = try context.fetch(fetchRequest)
-            let allListsOfPositions = results as! [ListOfPositions]
+            let lists = try context.fetch(fetchRequest)
             
-            for listOfPosition in allListsOfPositions {
-                arrayWithListsOfPositions.append(listOfPosition)
+            for _list in lists {
+                arrayWithListsOfPositions.append(_list)
             }
         } catch let err as NSError {
             print(err.debugDescription)
@@ -104,6 +90,7 @@ class CoreDataManager {
         guard let objectID = persStoreCoord.managedObjectID(forURIRepresentation: currentListUrl) else {
             return nil
         }
+        
         guard let listOfPositionsObject = context.object(with: objectID) as? ListOfPositions else {
             return nil
         }

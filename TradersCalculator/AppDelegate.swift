@@ -17,16 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FirstLaunch.configure()
         
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         initializeGoogleMobileAds()
         
         FirebaseConfiguration.shared.setLoggerLevel(.min)
         FirebaseApp.configure()
+        
+        // test start
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print("---", paths[0])
+        // test end
         
         return true
     }

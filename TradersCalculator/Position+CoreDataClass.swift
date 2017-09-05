@@ -60,14 +60,19 @@ public class Position: NSManagedObject {
     }
     
     // Designated initializer
-    convenience init(creationDate: NSDate, instrument: Instrument,
+    convenience init(needSave: Bool, creationDate: NSDate, instrument: Instrument,
                      value: Double, openPrice: Double,
                      stopLoss: Double, takeProfit: Double,
                      dealDirection: String) {
         
         let coreDataManager = CoreDataManager()
         let position = NSEntityDescription.entity(forEntityName: "Position", in: coreDataManager.context)!
-        self.init(entity: position, insertInto: coreDataManager.context)
+        
+        if(needSave) {
+            self.init(entity: position, insertInto: coreDataManager.context)
+        } else {
+            self.init(entity: position, insertInto: nil)
+        }
         
         self.creationDate = creationDate
         self.value = value
@@ -75,8 +80,9 @@ public class Position: NSManagedObject {
         self.stopLoss = stopLoss
         self.takeProfit = takeProfit
         self.dealDirection = dealDirection
+        
         self.instrument = instrument
-        self.listOfPositions = coreDataManager.getAllListsOfPositions()[0]
+        self.listOfPositions = coreDataManager.getInstanceOfCurrentPositionsList()!
         
     }
     

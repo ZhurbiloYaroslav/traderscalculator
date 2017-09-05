@@ -8,8 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-import FirebaseDatabase
-import FirebaseAuth
 import CoreData
 
 class CalculatorVC: UIViewController, GADBannerViewDelegate {
@@ -21,37 +19,41 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var calculatorTableView: UITableView!
     
-    var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     var positionsArray = [Position]()
-    var positionsArrayByID: [String: Position]!
+    var positionsArrayByID: [NSManagedObjectID: Position]!
     var openedPositionCell: Int?
     
-    var coreDataManager = CoreDataManager()
+    var coreDataManager: CoreDataManager!
+    var context: NSManagedObjectContext!
+    var controller: NSFetchedResultsController<Position>!
+    
+    @IBAction func testButton(_ sender: UIButton) {
+        
+        updateTable()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init delegates
         initDelegates()
         
         initializeVariables()
         
-        // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
-    }
-    
-    // Init delegates
-    func initDelegates() {
-        
-        calculatorTableView.delegate = self
-        calculatorTableView.dataSource = self
+        attemptFetch()
         
     }
     
     func initializeVariables() {
+        
+        controller = NSFetchedResultsController<Position>()
+        coreDataManager = CoreDataManager()
+        context = coreDataManager.context
+        updateTable()
         
         let userDefaults = UserDefaultsManager()
         
@@ -63,6 +65,13 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         calculatorTableView.estimatedRowHeight = 100
         calculatorTableView.rowHeight = UITableViewAutomaticDimension
+        
+    }
+    
+    func initDelegates() {
+        
+        calculatorTableView.delegate = self
+        calculatorTableView.dataSource = self
         
     }
     
@@ -82,16 +91,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         longPressGesture.minimumPressDuration = 1.0 // 1 second press
         longPressGesture.delegate = self as? UIGestureRecognizerDelegate
         calculatorTableView.addGestureRecognizer(longPressGesture)
-        
-    }
-    
-    // Make request to the server
-    func makeRequest() {
-        
-        let forexAPI = ForexAPI()
-        forexAPI.downloadInstrumentsRates {
-            
-        }
         
     }
     
@@ -138,34 +137,84 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
 
 extension CalculatorVC: NSFetchedResultsControllerDelegate {
     
+    func attemptFetch() {
+        
+        guard let currentList = coreDataManager.getInstanceOfCurrentPositionsList() else {
+            return
+        }
+        
+        let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
+        let dateSort  = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchRequest.predicate = NSPredicate(format: "listOfPositions.listName == %@", currentList.listName)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+    }
     
+    func update(cell: CalculatorItemCell, indexPath: IndexPath) {
+        
+        let item = controller.object(at: indexPath)
+        
+        cell.updateCell(position: item)
+        
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        calculatorTableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        calculatorTableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                calculatorTableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                calculatorTableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .move:
+            if let newIndexPath = newIndexPath, let indexPath = indexPath {
+                calculatorTableView.moveRow(at: indexPath, to: newIndexPath)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                let cell = calculatorTableView.cellForRow(at: indexPath) as! CalculatorItemCell
+                update(cell: cell, indexPath: indexPath)
+            }
+        }
+    }
     
 }
 
 // Table view delegates and methods
 extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
-    
-    // Update the table with owners list at the begining and after changes in Firebase
-    func updateTable(_ snapshot: DataSnapshot) {
+    func updateTable() {
         
-        // test positions in db start
-        let currentListOfPositions = CoreDataManager().getAllListsOfPositions()[0]
-        let arrayWithPositions = coreDataManager.getAllPositionsFor(currentListOfPositions)
-        for position in arrayWithPositions {
-            print("---", position.instrument.name)
+        positionsArray = [Position]()
+        positionsArrayByID = [NSManagedObjectID: Position]()
+        
+        positionsArray = coreDataManager.getPositionsForCurrentList()
+        
+        for position in positionsArray {
+            positionsArrayByID.updateValue(position, forKey: position.objectID)
         }
-        // test positions in db end
         
-        // Make a temporary variable for storing owners list from Firebase
-        var updatedPositionsArray = [Position]()
-        var updatedPositionsArrayByID = [String: Position]()
-        
-        // Update this class variable with data from Firebase
-        positionsArray = updatedPositionsArray
-        positionsArrayByID = updatedPositionsArrayByID
-        
-        // Changes the top Total: Profit, Loss and Margin values
         changeTopTotalValues()
         
         calculatorTableView.reloadData()
@@ -173,11 +222,16 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //TODO: Change it
-        return positionsArray.count
+        if let sections = controller.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatedPositionCell") as? CalculatorItemCell
             else { return UITableViewCell() }
         
@@ -187,12 +241,11 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             cell.cellIsOpen = true
         }
         
-        cell.updateCell(position: positionsArray[indexPath.row])
+        cell.updateCell(position: controller.object(at: indexPath))
         
         return cell
     }
     
-    //Called, when long press occurred
     func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
         if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
@@ -206,7 +259,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    //TODO: Make description
     func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
         
         let currentPosition = positionsArray[indexPath.row]
@@ -214,12 +266,15 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
         
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
-            
-            // Deleting the position
-            // let deletingPositionID = self.positionsArray[indexPath.row].positionID
-            // self.positionsArray.remove(at: indexPath.row)
-            // self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
-            // self.calculatorTableView.reloadData()
+            print("---started deleting")
+            let deletingPosition = self.controller.object(at: indexPath)
+            print("---instr", deletingPosition.instrument.name)
+            let deletingPositionID = deletingPosition.objectID
+            self.context.delete(deletingPosition)
+            self.positionsArray.remove(at: indexPath.row)
+            self.positionsArrayByID.removeValue(forKey: deletingPositionID)
+            print("---ended deleting")
+            self.calculatorTableView.reloadData()
             
         }
         
@@ -239,7 +294,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    //TODO: Make description
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueID = segue.identifier
             else { return }
@@ -251,7 +305,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
                 else { return }
             
             destination.doWeChooseParamsAtFirstLaunch = true
- 
+            
             
         case "EditPosition":
             guard let destination = segue.destination as? CalcAddItemVC
