@@ -76,6 +76,11 @@ class HistoryVC: UIViewController {
         arrayWithListOfPositions = coreDataManager.getAllListsOfPositions()
         historyTableView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        historyTableView.reloadData()
+    }
 
 }
 
@@ -121,19 +126,22 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
             let currentListIdURL = currentList.objectID.uriRepresentation()
             UserDefaultsManager().currentListOfPositionsID = currentListIdURL
             
+        }
+        
+        let editAction = UIAlertAction(title: "Edit name", style: .default) { (action) in
             
+            //TODO:
             
         }
         
-        let editAction = UIAlertAction(title: "Edit", style: .default) { (action) in
+        let exportAction = UIAlertAction(title: "Export", style: .default) { (action) in
             
-            self.performSegue(withIdentifier: "EditPosition", sender: currentList)
+            //TODO:
             
         }
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
             
-            // Deleting the position
             // let deletingPositionID = self.positionsArray[indexPath.row].positionID
             // self.positionsArray.remove(at: indexPath.row)
             // self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
@@ -145,6 +153,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         
         alert.addAction(openAction)
         alert.addAction(editAction)
+        alert.addAction(exportAction)
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)
         

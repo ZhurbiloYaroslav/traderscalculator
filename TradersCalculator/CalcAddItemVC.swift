@@ -9,12 +9,8 @@
 import UIKit
 
 import GoogleMobileAds
-import FirebaseDatabase
-import FirebaseAuth
 
 class CalcAddItemVC: UIViewController {
-    
-    //TODO: shrikar.com/xcode-6-tutorial-grouped-uitableview/
     
     @IBOutlet weak var navigationBarTitle: UILabel!
     @IBOutlet weak var viewInScrollView: UIView!
@@ -29,7 +25,6 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var stackWithInstrumentPicker: UIStackView!
     
     var options: UserDefaultsManager!
-    var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     var forexAPI: ForexAPI!
     
@@ -50,9 +45,6 @@ class CalcAddItemVC: UIViewController {
         
         // User Options from User defaults
         options = UserDefaultsManager()
-        
-        // Configure the Firebase
-        firebase = FirebaseConnect()
         
         // Make request to the server
         makeRequest()
@@ -81,13 +73,11 @@ class CalcAddItemVC: UIViewController {
     
     func initializeVariables() {
         
-        
         let lastUsedInstrument = options.lastUsedInstrument
         currentCategoryID = lastUsedInstrument.categoryID
         currentInstrumentLeftPartID = lastUsedInstrument.instrumentLeftPartID
         currentInstrumentRightPartID = lastUsedInstrument.instrumentRightPartID
         
-        // Picker View
         instrumentsPicker.selectRow(currentCategoryID, inComponent: 0, animated: true)
         instrumentsPicker.selectRow(currentInstrumentLeftPartID, inComponent: 1, animated: true)
         instrumentsPicker.selectRow(currentInstrumentRightPartID, inComponent: 2, animated: true)
@@ -116,14 +106,14 @@ class CalcAddItemVC: UIViewController {
             
             forexAPI = ForexAPI()
             forexAPI.downloadInstrumentsRates {
-                self.updateUI(snapshotData: nil)
+                self.updateUI()
             }
             
         }
         
     }
     
-    func updateUI(snapshotData: DataSnapshot?) {
+    func updateUI() {
         
         if positionToEdit == nil {
             // If this view is used for edit position, then we don't need picker view
@@ -163,32 +153,15 @@ class CalcAddItemVC: UIViewController {
     @IBAction func sellOrBuyButtonPressed(_ sender: UIButton) {
         
         if sender.tag == 0 {
-            // Was pressed Sell button
-            
-            guard let position = makePositionInstanceWithFieldsValues(dealDirection: "Sell")
-                else { return }
-            
-            if positionToEdit == nil {
-                coreDataManager.saveContext()
-            } else {
-                coreDataManager.updateInDB(position)
-            }
-            
+            // Pressed Sell
+            makePositionInstanceWithFieldsValues(dealDirection: "Sell")
             
         } else {
-            // Was pressed Buy button
-            
-            // Get the dictionary with values from text fields
-            guard let position = makePositionInstanceWithFieldsValues(dealDirection: "Buy")
-                else { return }
-            
-            if positionToEdit == nil {
-                coreDataManager.saveContext()
-            } else {
-                coreDataManager.updateInDB(position)
-            }
+            // Pressed Buy
+            makePositionInstanceWithFieldsValues(dealDirection: "Buy")
             
         }
+        coreDataManager.saveContext()
         
         // Dismiss this view controller and go to previous
         navigationController?.popViewController(animated: true)
@@ -265,20 +238,20 @@ extension CalcAddItemVC {
 extension CalcAddItemVC {
     
     //TODO: Make a description
-    func makePositionInstanceWithFieldsValues(dealDirection: String) -> Position? {
+    func makePositionInstanceWithFieldsValues(dealDirection: String) {
         
         //TODO: Make a check to have a correct results
         guard let value = positionValue.text?.myFloatConverter else {
-            return nil
+            return
         }
         guard let openPrice = positionOpenPrice.text?.myFloatConverter else {
-            return nil
+            return
         }
         guard let stopLoss = positionStopLoss.text?.myFloatConverter else {
-            return nil
+            return
         }
         guard let takeProfit = positionTakeProfit.text?.myFloatConverter else {
-            return nil
+            return
         }
         
         var instrumentParts = [String]()
@@ -309,29 +282,39 @@ extension CalcAddItemVC {
         } else {
             
             guard let categoryName = positionToEdit?.instrument.category
-                else { return nil }
+                else { return }
             
             guard let currentCategoryID = instruments.categories.index(of: categoryName)
-                else { return nil }
+                else { return }
             
             currentCategoryIDForSave = currentCategoryID
             
         }
         
-        let categoryName = instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave)
+        if positionToEdit == nil {
+            
+            let categoryName = instruments.getCategoryNameBy(categoryID: currentCategoryIDForSave)
+            
+            _ = Position(
+                needSave: true,
+                creationDate: NSDate(),
+                instrument: Instrument(needSave: true, categoryName, instrumentParts),
+                value: value,
+                openPrice: openPrice,
+                stopLoss: stopLoss,
+                takeProfit: takeProfit,
+                dealDirection: dealDirection)
+            
+        } else {
+            
+            positionToEdit?.value = value
+            positionToEdit?.openPrice = openPrice
+            positionToEdit?.stopLoss = stopLoss
+            positionToEdit?.takeProfit = takeProfit
+            positionToEdit?.dealDirection = dealDirection
+            
+        }
         
-        // Make a Position with values for inserting to Core Data
-        let positionInstance = Position(
-            needSave: true,
-            creationDate: NSDate(),
-            instrument: Instrument(needSave: true, categoryName, instrumentParts),
-            value: value,
-            openPrice: openPrice,
-            stopLoss: stopLoss,
-            takeProfit: takeProfit,
-            dealDirection: dealDirection)
-        
-        return positionInstance
     }
     
 }
@@ -452,7 +435,7 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         // Get the description of the Instrument
         getDescriptionOfInstrument()
         
-        updateUI(snapshotData: nil)
+        updateUI()
         saveLastUsedInstrument()
         
     }
@@ -470,8 +453,8 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
             // If it is a process of adding a new position
             
             instrumentName = instruments.getInstrumentNameBy(categoryID: currentCategoryID,
-                                                                         leftPart: currentInstrumentLeftPartID,
-                                                                         rightPart: currentInstrumentRightPartID)
+                                                             leftPart: currentInstrumentLeftPartID,
+                                                             rightPart: currentInstrumentRightPartID)
         }
         
         return instrumentName

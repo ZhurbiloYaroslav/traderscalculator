@@ -20,19 +20,11 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var calculatorTableView: UITableView!
     
     var adMob: AdMob!
-    var positionsArray = [Position]()
-    var positionsArrayByID: [NSManagedObjectID: Position]!
     var openedPositionCell: Int?
     
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
     var controller: NSFetchedResultsController<Position>!
-    
-    @IBAction func testButton(_ sender: UIButton) {
-        
-        updateTable()
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +94,10 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         var totalMarginValue: Double = 0
         
         // Iterate through positions array to get all values
-        for position in positionsArray {
+        guard let arrayWithPositionsFromCoreData = controller.fetchedObjects else {
+            return
+        }
+        for position in arrayWithPositionsFromCoreData {
             //---Back---
             if let profit = Double(position.getProfit()) {
                 totalProfitValue += profit
@@ -133,6 +128,14 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        attemptFetch()
+        updateTable()
+        calculatorTableView.reloadData()
+    }
+    
 }
 
 extension CalculatorVC: NSFetchedResultsControllerDelegate {
@@ -144,9 +147,10 @@ extension CalculatorVC: NSFetchedResultsControllerDelegate {
         }
         
         let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
-        let dateSort  = NSSortDescriptor(key: "creationDate", ascending: false)
+        let sortByPart1  = NSSortDescriptor(key: "instrument.part1", ascending: true)
+        let sortByPart2  = NSSortDescriptor(key: "instrument.part2", ascending: true)
         fetchRequest.predicate = NSPredicate(format: "listOfPositions.listName == %@", currentList.listName)
-        fetchRequest.sortDescriptors = [dateSort]
+        fetchRequest.sortDescriptors = [sortByPart1, sortByPart2]
         
         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -206,15 +210,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     func updateTable() {
         
-        positionsArray = [Position]()
-        positionsArrayByID = [NSManagedObjectID: Position]()
-        
-        positionsArray = coreDataManager.getPositionsForCurrentList()
-        
-        for position in positionsArray {
-            positionsArrayByID.updateValue(position, forKey: position.objectID)
-        }
-        
         changeTopTotalValues()
         
         calculatorTableView.reloadData()
@@ -261,34 +256,43 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
         
-        let currentPosition = positionsArray[indexPath.row]
+        let currentPosition = self.controller.object(at: indexPath)
         let positionName = currentPosition.instrument.name
         let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
         
-        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
-            print("---started deleting")
-            let deletingPosition = self.controller.object(at: indexPath)
-            print("---instr", deletingPosition.instrument.name)
-            let deletingPositionID = deletingPosition.objectID
-            self.context.delete(deletingPosition)
-            self.positionsArray.remove(at: indexPath.row)
-            self.positionsArrayByID.removeValue(forKey: deletingPositionID)
-            print("---ended deleting")
-            self.calculatorTableView.reloadData()
-            
-        }
-        
-        let EditAction = UIAlertAction(title: "Edit", style: .default) { (action) in
+        let editAction = UIAlertAction(title: "Edit position", style: .default) { (action) in
             
             self.performSegue(withIdentifier: "EditPosition", sender: currentPosition)
             
         }
         
-        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let savePositions = UIAlertAction(title: "Save all positions to history", style: .default) { (action) in
+            
+            //TODO:
+            
+        }
         
-        alert.addAction(DeleteAction)
-        alert.addAction(EditAction)
-        alert.addAction(CancelAction)
+        let deleteAction = UIAlertAction(title: "Delete  position", style: .destructive) { (action) in
+            
+            self.context.delete(currentPosition)
+            self.coreDataManager.saveContext()
+            self.calculatorTableView.reloadData()
+            
+        }
+        
+        let deleteAllPositions = UIAlertAction(title: "Delete all positions", style: .destructive) { (action) in
+            
+            //TODO:
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(editAction)
+        alert.addAction(savePositions)
+        alert.addAction(deleteAction)
+        alert.addAction(deleteAllPositions)
+        alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
         

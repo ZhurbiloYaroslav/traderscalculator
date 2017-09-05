@@ -18,7 +18,7 @@
         <attribute name="stopLoss" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="takeProfit" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="instrument" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Instrument" inverseName="position" inverseEntity="Instrument" syncable="YES"/>
+        <relationship name="instrument" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Instrument" inverseName="position" inverseEntity="Instrument" syncable="YES"/>
         <relationship name="listOfPositions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListOfPositions" inverseName="position" inverseEntity="ListOfPositions" syncable="YES"/>
     </entity>
     <elements>

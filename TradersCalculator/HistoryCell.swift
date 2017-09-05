@@ -17,15 +17,30 @@ class HistoryCell: UITableViewCell {
     func updateCell(_ list: ListOfPositions) {
         
         self.listNameLabel.text = list.listName
-        self.creationDateLabel.text = "\(list.creationDate)"
+        self.creationDateLabel.text = getFormatted(date: list.creationDate)
         self.positionsLabel.text = ""
         
         for position in list.position {
+            
             if let position = position as? Position {
-                self.positionsLabel.text = self.positionsLabel.text! + position.instrument.name + ", "
+                self.positionsLabel.text = self.positionsLabel.text! + position.instrument.name + " "
+                self.positionsLabel.text = self.positionsLabel.text! + position.dealDirection + " "
+                self.positionsLabel.text = self.positionsLabel.text! + "\(position.value)" + "\n"
+                self.positionsLabel.text = self.positionsLabel.text! + "\(position.openPrice)" + " -> "
+                self.positionsLabel.text = self.positionsLabel.text! + "\(position.takeProfit)" + "\n"
             }
             
         }
+        
+    }
+    
+    //TODO: Make comment
+    func getFormatted(date: NSDate) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm"
+        let dateString = dateFormatter.string(from: date as Date)
+        return dateString
         
     }
 
