@@ -179,8 +179,8 @@
 /* Class = "UILabel"; text = "Margin value"; ObjectID = "kyU-Ya-XYX"; */
 "kyU-Ya-XYX.text" = "Margin value";
 
-/* Class = "UILabel"; text = "List of positions name"; ObjectID = "low-QV-Law"; */
-"low-QV-Law.text" = "List of positions name";
+/* Class = "UILabel"; text = "List"; ObjectID = "low-QV-Law"; */
+"low-QV-Law.text" = "List";
 
 /* Class = "UILabel"; text = "Free"; ObjectID = "m4q-AS-bPg"; */
 "m4q-AS-bPg.text" = "Free";

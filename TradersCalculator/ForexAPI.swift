@@ -46,7 +46,9 @@ class ForexAPI {
     }
     
     func saveLastRatesToUserDefaults() {
-        UserDefaultsManager().cachedInstrumentsRates = InstrumentsRates(rates: ratesByInstrumentName, date: "2017-08-28")
+        let thisDate = Date()
+        UserDefaultsManager().cachedInstrumentsRates = InstrumentsRates(rates: ratesByInstrumentName,
+                                                                        date: "\(thisDate)")
     }
     
     /*

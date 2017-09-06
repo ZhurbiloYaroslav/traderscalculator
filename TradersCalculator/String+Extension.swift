@@ -102,3 +102,36 @@ extension String {
         return 0.00
     }
 }
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
+    
+    func localized(comment: String = "") -> String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: comment)
+    }
+    
+    func localized(lang:String) ->String {
+        
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }
+    
+    //    func localized() -> String {
+    //        if let _ = UserDefaults.standard.string(forKey: "i18n_language") {} else {
+    //            // we set a default, just in case
+    //            UserDefaults.standard.set("fr", forKey: "i18n_language")
+    //            UserDefaults.standard.synchronize()
+    //        }
+    //
+    //        let lang = UserDefaults.standard.string(forKey: "i18n_language")
+    //
+    //        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+    //        let bundle = Bundle(path: path!)
+    //
+    //        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    //    }
+}
