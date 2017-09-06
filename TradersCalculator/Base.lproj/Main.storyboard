@@ -71,17 +71,6 @@
                                     <constraint firstItem="jNf-L2-2if" firstAttribute="centerY" secondItem="PbE-hm-I7y" secondAttribute="centerY" id="n5h-HE-CWf"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-qP-Tx7" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="oXV-Ep-2Sd"/>
-                                    <constraint firstAttribute="width" constant="320" id="tZI-Mr-2Vd"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-ab-5cH">
                                 <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                                 <subviews>
@@ -100,7 +89,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9md-EW-wge">
-                                <rect key="frame" x="0.0" y="124" width="320" height="345"/>
+                                <rect key="frame" x="0.0" y="124" width="320" height="305"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="b2t-9A-Wn7">
                                     <rect key="frame" x="0.0" y="148" width="320" height="44"/>
@@ -318,12 +307,45 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PiZ-Q5-3Tg">
+                                <rect key="frame" x="0.0" y="429" width="320" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="low-QV-Law">
+                                        <rect key="frame" x="5" y="10" width="310" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93656378984451294" green="0.9386104941368103" blue="0.95605641603469849" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="low-QV-Law" secondAttribute="trailing" constant="5" id="5es-qw-4b8"/>
+                                    <constraint firstItem="low-QV-Law" firstAttribute="centerX" secondItem="PiZ-Q5-3Tg" secondAttribute="centerX" id="5x8-no-Ahs"/>
+                                    <constraint firstItem="low-QV-Law" firstAttribute="centerY" secondItem="PiZ-Q5-3Tg" secondAttribute="centerY" id="Ias-Hu-e1I"/>
+                                    <constraint firstAttribute="height" constant="40" id="Yc2-X8-oDF"/>
+                                    <constraint firstItem="low-QV-Law" firstAttribute="leading" secondItem="PiZ-Q5-3Tg" secondAttribute="leading" constant="5" id="gce-aZ-rf2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xsQ-ie-s7q"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-qP-Tx7" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oXV-Ep-2Sd"/>
+                                    <constraint firstAttribute="width" constant="320" id="tZI-Mr-2Vd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PiZ-Q5-3Tg" secondAttribute="trailing" id="0Ev-Xq-KTb"/>
                             <constraint firstItem="PbE-hm-I7y" firstAttribute="top" secondItem="rVT-sL-CWx" secondAttribute="bottom" constant="30" id="6W2-gf-DlO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9md-EW-wge" secondAttribute="bottom" constant="50" id="7HF-G8-oVi"/>
+                            <constraint firstItem="PiZ-Q5-3Tg" firstAttribute="top" secondItem="9md-EW-wge" secondAttribute="bottom" id="6m3-qA-H0o"/>
                             <constraint firstItem="hfa-ab-5cH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Uq-J7-6To"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PiZ-Q5-3Tg" secondAttribute="bottom" constant="50" id="8ld-be-PwZ"/>
                             <constraint firstAttribute="trailing" secondItem="rVT-sL-CWx" secondAttribute="trailing" id="CxV-is-i1P"/>
                             <constraint firstAttribute="trailing" secondItem="hfa-ab-5cH" secondAttribute="trailing" id="FJ5-Aj-6yC"/>
                             <constraint firstAttribute="trailing" secondItem="PbE-hm-I7y" secondAttribute="trailing" id="SJJ-Sm-T9L"/>
@@ -332,6 +354,7 @@
                             <constraint firstItem="rVT-sL-CWx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XcT-B5-xWE"/>
                             <constraint firstItem="9md-EW-wge" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bo9-q8-zp8"/>
                             <constraint firstAttribute="trailing" secondItem="9md-EW-wge" secondAttribute="trailing" id="dcD-xk-hOT"/>
+                            <constraint firstItem="PiZ-Q5-3Tg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="esm-7m-kK0"/>
                             <constraint firstItem="rVT-sL-CWx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gd9-Wr-Vz3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yHx-qP-Tx7" secondAttribute="bottom" id="me4-AE-WaY"/>
                             <constraint firstItem="9md-EW-wge" firstAttribute="top" secondItem="PbE-hm-I7y" secondAttribute="bottom" id="ssp-aW-owM"/>
@@ -344,6 +367,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calculatorTableView" destination="9md-EW-wge" id="7Hg-Es-5Z1"/>
+                        <outlet property="currentListOfPositionsNameLabel" destination="low-QV-Law" id="Gay-aH-csb"/>
                         <outlet property="googleBannerView" destination="yHx-qP-Tx7" id="kY3-Dv-Pv6"/>
                         <outlet property="totalLossLabel" destination="RB4-fx-vsM" id="lpR-7Q-emV"/>
                         <outlet property="totalMarginLabel" destination="jNf-L2-2if" id="xap-sI-upm"/>
@@ -1096,7 +1120,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izg-3b-tZr" id="qCF-uR-zN9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Rb-gd3">

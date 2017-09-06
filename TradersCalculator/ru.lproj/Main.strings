@@ -1,0 +1,231 @@
+
+/* Class = "UILabel"; text = "USDEUR"; ObjectID = "090-yk-39A"; */
+"090-yk-39A.text" = "USDEUR";
+
+/* Class = "UILabel"; text = "Australian Dollar vs Canadian Dollar"; ObjectID = "2mD-5i-CDu"; */
+"2mD-5i-CDu.text" = "Australian Dollar vs Canadian Dollar";
+
+/* Class = "UILabel"; text = "Is not Pro"; ObjectID = "39w-oe-XOh"; */
+"39w-oe-XOh.text" = "Is not Pro";
+
+/* Class = "UITableViewSection"; headerTitle = "Account parameters"; ObjectID = "5pB-c2-2Sz"; */
+"5pB-c2-2Sz.headerTitle" = "Account parameters";
+
+/* Class = "UILabel"; text = "Benefits of PRO"; ObjectID = "6h9-mi-CyH"; */
+"6h9-mi-CyH.text" = "Benefits of PRO";
+
+/* Class = "UILabel"; text = "Positions"; ObjectID = "7Hs-a2-u8P"; */
+"7Hs-a2-u8P.text" = "Positions";
+
+/* Class = "UITabBarItem"; title = "Calculator"; ObjectID = "7dO-1x-z2g"; */
+"7dO-1x-z2g.title" = "Calculator";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "89A-GN-cVz"; */
+"89A-GN-cVz.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "Test functions"; ObjectID = "A1Y-hy-0mK"; */
+"A1Y-hy-0mK.headerTitle" = "Test functions";
+
+/* Class = "UILabel"; text = "Margin"; ObjectID = "APJ-PG-0yd"; */
+"APJ-PG-0yd.text" = "Margin";
+
+/* Class = "UIButton"; normalTitle = "clear"; ObjectID = "Bsc-y5-5gL"; */
+"Bsc-y5-5gL.normalTitle" = "clear";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Cam-my-Uo2"; */
+"Cam-my-Uo2.title" = "Back";
+
+/* Class = "UILabel"; text = "Developers"; ObjectID = "DV7-dc-myD"; */
+"DV7-dc-myD.text" = "Developers";
+
+/* Class = "UINavigationItem"; title = "Options"; ObjectID = "Dap-HV-7od"; */
+"Dap-HV-7od.title" = "Options";
+
+/* Class = "UILabel"; text = "→"; ObjectID = "FIs-Vo-fed"; */
+"FIs-Vo-fed.text" = "→";
+
+/* Class = "UILabel"; text = "USD"; ObjectID = "G0p-RJ-Kre"; */
+"G0p-RJ-Kre.text" = "USD";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "GNX-vu-xNH"; */
+"GNX-vu-xNH.title" = "History";
+
+/* Class = "UINavigationItem"; title = "History"; ObjectID = "H3Y-k7-hkk"; */
+"H3Y-k7-hkk.title" = "History";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "H4a-sB-YfL"; */
+"H4a-sB-YfL.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "1:100"; ObjectID = "HS6-Ih-d2k"; */
+"HS6-Ih-d2k.text" = "1:100";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "HzS-ML-Zjt"; */
+"HzS-ML-Zjt.text" = "0.00";
+
+/* Class = "UILabel"; text = "0.00 USD"; ObjectID = "IJk-5c-ffI"; */
+"IJk-5c-ffI.text" = "0.00 USD";
+
+/* Class = "UILabel"; text = "Buy Pro"; ObjectID = "ILe-7Y-pGI"; */
+"ILe-7Y-pGI.text" = "Buy Pro";
+
+/* Class = "UILabel"; text = "T/P value"; ObjectID = "Ieq-Pd-aha"; */
+"Ieq-Pd-aha.text" = "T/P value";
+
+/* Class = "UITableViewSection"; headerTitle = "Interfaсe"; ObjectID = "Jg4-eV-XoD"; */
+"Jg4-eV-XoD.headerTitle" = "Interfaсe";
+
+/* Class = "UILabel"; text = "Take profit"; ObjectID = "LYy-6s-1mO"; */
+"LYy-6s-1mO.text" = "Take profit";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MzK-Cp-xVu"; */
+"MzK-Cp-xVu.text" = "Label";
+
+/* Class = "UILabel"; text = "Название рабочего списка"; ObjectID = "NK2-Dv-1DJ"; */
+"NK2-Dv-1DJ.text" = "Название рабочего списка";
+
+/* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "NV4-6p-hGB"; */
+"NV4-6p-hGB.normalTitle" = "Buy";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "OM1-Wb-1x5"; */
+"OM1-Wb-1x5.text" = "0.00";
+
+/* Class = "UITextField"; placeholder = "Value"; ObjectID = "PEN-0Z-uhi"; */
+"PEN-0Z-uhi.placeholder" = "Value";
+
+/* Class = "UITextField"; text = "1.00"; ObjectID = "PEN-0Z-uhi"; */
+"PEN-0Z-uhi.text" = "1.00";
+
+/* Class = "UILabel"; text = "Choose an instrument"; ObjectID = "QuN-YL-Tsw"; */
+"QuN-YL-Tsw.text" = "Choose an instrument";
+
+/* Class = "UILabel"; text = "System"; ObjectID = "RAy-lO-Jbw"; */
+"RAy-lO-Jbw.text" = "System";
+
+/* Class = "UILabel"; text = "0.00 USD"; ObjectID = "RB4-fx-vsM"; */
+"RB4-fx-vsM.text" = "0.00 USD";
+
+/* Class = "UILabel"; text = "OP value"; ObjectID = "TIg-4j-4mQ"; */
+"TIg-4j-4mQ.text" = "OP value";
+
+/* Class = "UITextField"; placeholder = "Stop loss"; ObjectID = "U1h-vI-AqH"; */
+"U1h-vI-AqH.placeholder" = "Stop loss";
+
+/* Class = "UITextField"; text = "1.00590"; ObjectID = "U1h-vI-AqH"; */
+"U1h-vI-AqH.text" = "1.00590";
+
+/* Class = "UILabel"; text = "sell"; ObjectID = "VFX-yf-UNB"; */
+"VFX-yf-UNB.text" = "sell";
+
+/* Class = "UIButton"; normalTitle = "Restore"; ObjectID = "XmC-xl-pmi"; */
+"XmC-xl-pmi.normalTitle" = "Restore";
+
+/* Class = "UILabel"; text = "Account currency"; ObjectID = "YUF-IE-k5h"; */
+"YUF-IE-k5h.text" = "Account currency";
+
+/* Class = "UILabel"; text = "Stop loss"; ObjectID = "YUU-kp-uYy"; */
+"YUU-kp-uYy.text" = "Stop loss";
+
+/* Class = "UILabel"; text = "Choose account currency"; ObjectID = "ZEm-l5-rsB"; */
+"ZEm-l5-rsB.text" = "Choose account currency";
+
+/* Class = "UINavigationItem"; title = "Parameters"; ObjectID = "Zyx-xn-HY0"; */
+"Zyx-xn-HY0.title" = "Parameters";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "a4H-MN-c1X"; */
+"a4H-MN-c1X.text" = "Value";
+
+/* Class = "UITableViewSection"; headerTitle = "Purchases"; ObjectID = "bBK-SC-aVf"; */
+"bBK-SC-aVf.headerTitle" = "Purchases";
+
+/* Class = "UILabel"; text = "Add position"; ObjectID = "bBk-VE-QGu"; */
+"bBk-VE-QGu.text" = "Add position";
+
+/* Class = "UILabel"; text = "OP"; ObjectID = "bYJ-mP-mzt"; */
+"bYJ-mP-mzt.text" = "OP";
+
+/* Class = "UINavigationItem"; title = "Выбор параметров"; ObjectID = "bmc-eh-d46"; */
+"bmc-eh-d46.title" = "Выбор параметров";
+
+/* Class = "UILabel"; text = "S/L"; ObjectID = "bmz-tF-ZY6"; */
+"bmz-tF-ZY6.text" = "S/L";
+
+/* Class = "UIButton"; normalTitle = "Buy PRO"; ObjectID = "bxb-ZN-Yff"; */
+"bxb-ZN-Yff.normalTitle" = "Buy PRO";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "eR6-3t-0lO"; */
+"eR6-3t-0lO.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "0.50"; ObjectID = "eym-7g-0y0"; */
+"eym-7g-0y0.text" = "0.50";
+
+/* Class = "UILabel"; text = "S/L value"; ObjectID = "feZ-ec-JbT"; */
+"feZ-ec-JbT.text" = "S/L value";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "hfw-2K-HaV"; */
+"hfw-2K-HaV.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "clear"; ObjectID = "iTi-xo-Gf8"; */
+"iTi-xo-Gf8.normalTitle" = "clear";
+
+/* Class = "UIButton"; normalTitle = "Sell"; ObjectID = "iWN-yN-S5D"; */
+"iWN-yN-S5D.normalTitle" = "Sell";
+
+/* Class = "UILabel"; text = "Choose account leverage"; ObjectID = "iln-yV-b4X"; */
+"iln-yV-b4X.text" = "Choose account leverage";
+
+/* Class = "UILabel"; text = "0.00 USD"; ObjectID = "jNf-L2-2if"; */
+"jNf-L2-2if.text" = "0.00 USD";
+
+/* Class = "UILabel"; text = "Margin value"; ObjectID = "kyU-Ya-XYX"; */
+"kyU-Ya-XYX.text" = "Margin value";
+
+/* Class = "UILabel"; text = "List of positions name"; ObjectID = "low-QV-Law"; */
+"low-QV-Law.text" = "List of positions name";
+
+/* Class = "UILabel"; text = "Free"; ObjectID = "m4q-AS-bPg"; */
+"m4q-AS-bPg.text" = "Free";
+
+/* Class = "UITextField"; placeholder = "Take profit"; ObjectID = "p7r-Pa-9Kg"; */
+"p7r-Pa-9Kg.placeholder" = "Take profit";
+
+/* Class = "UITextField"; text = "1.00590"; ObjectID = "p7r-Pa-9Kg"; */
+"p7r-Pa-9Kg.text" = "1.00590";
+
+/* Class = "UILabel"; text = "T/P"; ObjectID = "pMu-M5-dBY"; */
+"pMu-M5-dBY.text" = "T/P";
+
+/* Class = "UINavigationItem"; title = "Добавить позицию"; ObjectID = "sOU-1R-7zg"; */
+"sOU-1R-7zg.title" = "Добавить позицию";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "sde-7c-geb"; */
+"sde-7c-geb.text" = "Language";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "sqy-an-xcz"; */
+"sqy-an-xcz.text" = "0.00";
+
+/* Class = "UITabBarItem"; title = "Options"; ObjectID = "uW4-Dc-fBl"; */
+"uW4-Dc-fBl.title" = "Options";
+
+/* Class = "UILabel"; text = "Дата"; ObjectID = "uqW-h5-64Q"; */
+"uqW-h5-64Q.text" = "Дата";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "uqv-BE-1fQ"; */
+"uqv-BE-1fQ.text" = "0.00";
+
+/* Class = "UILabel"; text = "Leverage"; ObjectID = "vng-EA-NFP"; */
+"vng-EA-NFP.text" = "Leverage";
+
+/* Class = "UILabel"; text = "Restore purchases"; ObjectID = "vxg-Ve-wTP"; */
+"vxg-Ve-wTP.text" = "Restore purchases";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "wO9-FN-vtX"; */
+"wO9-FN-vtX.title" = " ";
+
+/* Class = "UILabel"; text = "Open price"; ObjectID = "yft-wk-Q41"; */
+"yft-wk-Q41.text" = "Open price";
+
+/* Class = "UITextField"; placeholder = "Open price"; ObjectID = "zFS-BB-cbi"; */
+"zFS-BB-cbi.placeholder" = "Open price";
+
+/* Class = "UITextField"; text = "1.00490"; ObjectID = "zFS-BB-cbi"; */
+"zFS-BB-cbi.text" = "1.00490";

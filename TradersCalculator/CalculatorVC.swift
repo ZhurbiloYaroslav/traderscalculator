@@ -15,6 +15,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var totalProfitLabel: UILabel!
     @IBOutlet weak var totalLossLabel: UILabel!
     @IBOutlet weak var totalMarginLabel: UILabel!
+    @IBOutlet weak var currentListOfPositionsNameLabel: UILabel!
     
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var calculatorTableView: UITableView!
@@ -198,6 +199,10 @@ extension CalculatorVC: NSFetchedResultsControllerDelegate {
 extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     func updateTable() {
+        
+        if let currentListOfPositions = coreDataManager.getInstanceOfCurrentPositionsList() {
+            currentListOfPositionsNameLabel.text = currentListOfPositions.listName
+        }
         
         changeTopTotalValues()
         

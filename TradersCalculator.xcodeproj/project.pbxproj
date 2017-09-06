@@ -27,6 +27,7 @@
 		C4582F261F2B552F001B7403 /* LastUsedInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4582F251F2B552F001B7403 /* LastUsedInstrument.swift */; };
 		C4582F2A1F2CE8FF001B7403 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4582F291F2CE8FF001B7403 /* StoreKit.framework */; };
 		C45F50D61F4DAE7C009D3F9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */; };
+		C464FB001F5FF90000D5A9C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C464FB021F5FF90000D5A9C9 /* Localizable.strings */; };
 		C472B1C91F29F50C00BAA1CD /* quotesInstaforex.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1C81F29F50C00BAA1CD /* quotesInstaforex.rtf */; };
 		C472B1CB1F29F5B500BAA1CD /* instaforexAllquotesList.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */; };
 		C472B1CD1F29F9B600BAA1CD /* Links.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CC1F29F9B600BAA1CD /* Links.rtf */; };
@@ -36,7 +37,6 @@
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
-		C4E902CC1F245FE00032A392 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E902CB1F245FE00032A392 /* Localization.strings */; };
 		C4E917341F1BC30200BE792E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917331F1BC30200BE792E /* Currency.swift */; };
 		C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917351F1CB46500BE792E /* String+Extension.swift */; };
 		C4E917391F1CDE1000BE792E /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E917381F1CDE1000BE792E /* Index.swift */; };
@@ -81,6 +81,10 @@
 		C4582F251F2B552F001B7403 /* LastUsedInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastUsedInstrument.swift; sourceTree = "<group>"; };
 		C4582F291F2CE8FF001B7403 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C464FAFE1F5FF84400D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		C464FAFF1F5FF84400D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C464FB011F5FF90000D5A9C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C464FB031F5FF90500D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C472B1C81F29F50C00BAA1CD /* quotesInstaforex.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = quotesInstaforex.rtf; sourceTree = "<group>"; };
 		C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = instaforexAllquotesList.rtf; sourceTree = "<group>"; };
 		C472B1CC1F29F9B600BAA1CD /* Links.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Links.rtf; sourceTree = "<group>"; };
@@ -90,7 +94,6 @@
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
-		C4E902CB1F245FE00032A392 /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
 		C4E917331F1BC30200BE792E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C4E917351F1CB46500BE792E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C4E917381F1CDE1000BE792E /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
@@ -210,7 +213,7 @@
 				C4F87BDE1F1F708B00C3BC7E /* GoogleService-Info.plist */,
 				C4FB60E31F1268A700EDE9C7 /* Assets.xcassets */,
 				C4FB60E81F1268A700EDE9C7 /* Info.plist */,
-				C4E902CB1F245FE00032A392 /* Localization.strings */,
+				C464FB021F5FF90000D5A9C9 /* Localizable.strings */,
 				C4FB60E01F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld */,
 			);
 			name = Resources;
@@ -341,6 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = C4FB60CD1F1268A700EDE9C7;
 			productRefGroup = C4FB60D71F1268A700EDE9C7 /* Products */;
@@ -360,7 +364,7 @@
 				C472B1CD1F29F9B600BAA1CD /* Links.rtf in Resources */,
 				C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */,
 				C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */,
-				C4E902CC1F245FE00032A392 /* Localization.strings in Resources */,
+				C464FB001F5FF90000D5A9C9 /* Localizable.strings in Resources */,
 				C4FB60E71F1268A700EDE9C7 /* LaunchScreen.storyboard in Resources */,
 				C4F87BDF1F1F708B00C3BC7E /* GoogleService-Info.plist in Resources */,
 				C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */,
@@ -465,10 +469,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C464FB021F5FF90000D5A9C9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C464FB011F5FF90000D5A9C9 /* Base */,
+				C464FB031F5FF90500D5A9C9 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C40F79A11F24A0E100B19F9E /* Base */,
+				C464FAFE1F5FF84400D5A9C9 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -477,6 +491,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C40F79A21F24A0E100B19F9E /* Base */,
+				C464FAFF1F5FF84400D5A9C9 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
