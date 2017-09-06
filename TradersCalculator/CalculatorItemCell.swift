@@ -38,8 +38,7 @@ class CalculatorItemCell: UITableViewCell {
     // Make changes to the labels and views of the cell
     func updateCell(position: Position) {
         
-        // Set the Label's values in the cell
-        setLabelsValues(position: position)
+        setLabelsValues(position)
         
         // Open or Close the cell
         if cellIsOpen {
@@ -58,8 +57,7 @@ class CalculatorItemCell: UITableViewCell {
         }
     }
     
-    // Set the Label's values in the cell
-    func setLabelsValues(position: Position) {
+    func setLabelsValues(_ position: Position) {
         
         let formatString = "%.\(position.instrument.digitsAfterDot)f"
                 
@@ -88,57 +86,18 @@ class CalculatorItemCell: UITableViewCell {
         
     }
     
-    //TODO: Implement this method
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    //TODO: Make comment
     func openCell() {
         
-        // stackWithArrow.isHidden = true
         stackForProfitTop.isHidden = true
         bottomHiddenStackWithValues.isHidden = false
         
     }
     
-    //TODO: Make comment
     func closeCell() {
         
-        // stackWithArrow.isHidden = false
         stackForProfitTop.isHidden = false
         bottomHiddenStackWithValues.isHidden = true
         
-    }
-    
-    //TODO: Make comment
-    func populateValues() {
-        var numberFormatter: NumberFormatter {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            return formatter
-        }
-        
-        var currencyFormatter: NumberFormatter {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .currency
-            return formatter
-        }
-        
-        var dateFormatter: DateFormatter {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .medium
-            return formatter
-        }
-        
-//        textLabel.text = "Good Morning"
-//        numberLabel.text = numberFormatter.string(from: 9999999.999)
-//        currencyLabel.text = currencyFormatter.string(from: 5000)
-//        dateLabel.text = dateFormatter.string(from: NSDate() as Date)
-//        imageView.image = UIImage(named: "adele-hello")
     }
     
 }

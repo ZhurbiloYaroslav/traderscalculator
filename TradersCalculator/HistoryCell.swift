@@ -12,9 +12,28 @@ class HistoryCell: UITableViewCell {
     
     @IBOutlet weak var listNameLabel: UILabel!
     @IBOutlet weak var creationDateLabel: UILabel!
+    
+    @IBOutlet weak var bottomHiddenStackWithPositions: UIStackView!
     @IBOutlet weak var positionsLabel: UILabel!
     
+    // False if the cell is closed (bottom stack with values is hidden)
+    // True if the cell is open (bottom stack with values is visible)
+    var cellIsOpen = false
+    
     func updateCell(_ list: ListOfPositions) {
+        
+        setLabelsValues(list)
+        
+        // Open or Close the cell
+        if cellIsOpen {
+            openCell()
+        } else {
+            closeCell()
+        }
+        
+    }
+    
+    func setLabelsValues(_ list: ListOfPositions) {
         
         self.listNameLabel.text = list.listName
         self.creationDateLabel.text = getFormatted(date: list.creationDate)
@@ -34,7 +53,18 @@ class HistoryCell: UITableViewCell {
         
     }
     
-    //TODO: Make comment
+    func openCell() {
+        
+        bottomHiddenStackWithPositions.isHidden = false
+        
+    }
+    
+    func closeCell() {
+        
+        bottomHiddenStackWithPositions.isHidden = true
+        
+    }
+    
     func getFormatted(date: NSDate) -> String {
         
         let dateFormatter = DateFormatter()

@@ -20,7 +20,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var calculatorTableView: UITableView!
     
     var adMob: AdMob!
-    var openedPositionCell: Int?
+    var openedCell: Int?
     
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
@@ -64,16 +64,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         calculatorTableView.delegate = self
         calculatorTableView.dataSource = self
-        
-    }
-    
-    func getCurrentDate() -> String {
-        
-        let date = NSDate()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let dateString = dateFormatter.string(from: date as Date)
-        return dateString
         
     }
     
@@ -147,9 +137,9 @@ extension CalculatorVC: NSFetchedResultsControllerDelegate {
         }
         
         let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "listOfPositions == %@", currentList)
         let sortByPart1  = NSSortDescriptor(key: "instrument.part1", ascending: true)
         let sortByPart2  = NSSortDescriptor(key: "instrument.part2", ascending: true)
-        fetchRequest.predicate = NSPredicate(format: "listOfPositions.listName == %@", currentList.listName)
         fetchRequest.sortDescriptors = [sortByPart1, sortByPart2]
         
         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -205,7 +195,6 @@ extension CalculatorVC: NSFetchedResultsControllerDelegate {
     
 }
 
-// Table view delegates and methods
 extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     func updateTable() {
@@ -232,7 +221,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.cellIsOpen = false
         
-        if let openedCell = openedPositionCell, openedCell == indexPath.row {
+        if let openedCell = openedCell, openedCell == indexPath.row {
             cell.cellIsOpen = true
         }
         
@@ -323,10 +312,13 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    //TODO: Make description
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        openedPositionCell = indexPath.row
+        if openedCell == indexPath.row {
+            openedCell = nil
+        } else {
+            openedCell = indexPath.row
+        }
         
         tableView.reloadData()
         

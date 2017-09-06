@@ -9,7 +9,7 @@
     <entity name="ListOfPositions" representedClassName=".ListOfPositions" syncable="YES">
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="listName" attributeType="String" syncable="YES"/>
-        <relationship name="position" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="listOfPositions" inverseEntity="Position" syncable="YES"/>
+        <relationship name="position" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Position" inverseName="listOfPositions" inverseEntity="Position" syncable="YES"/>
     </entity>
     <entity name="Position" representedClassName=".Position" syncable="YES">
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
