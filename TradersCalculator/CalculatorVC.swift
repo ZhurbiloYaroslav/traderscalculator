@@ -254,19 +254,22 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         let positionName = currentPosition.instrument.name
         let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
         
-        let editAction = UIAlertAction(title: "Edit position", style: .default) { (action) in
+        let titleForEditAction = "Edit position".localized()
+        let editAction = UIAlertAction(title: titleForEditAction, style: .default) { (action) in
             
             self.performSegue(withIdentifier: "EditPosition", sender: currentPosition)
             
         }
         
-        let savePositions = UIAlertAction(title: "Save all positions to history", style: .default) { (action) in
+        let titleForSavePosition = "Save all positions to history".localized()
+        let savePositions = UIAlertAction(title: titleForSavePosition, style: .default) { (action) in
             
             //TODO:
             
         }
         
-        let deleteAction = UIAlertAction(title: "Delete  position", style: .destructive) { (action) in
+        let titleForDeleteAction = "Delete  position".localized()
+        let deleteAction = UIAlertAction(title: titleForDeleteAction, style: .destructive) { (action) in
             
             self.context.delete(currentPosition)
             self.coreDataManager.saveContext()
@@ -274,13 +277,15 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        let deleteAllPositions = UIAlertAction(title: "Delete all positions", style: .destructive) { (action) in
+        let titleForDeleteAllPositions = "Delete all positions".localized()
+        let deleteAllPositions = UIAlertAction(title: titleForDeleteAllPositions, style: .destructive) { (action) in
             
             //TODO:
             
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let titleForCancelAction = "Cancel".localized()
+        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         alert.addAction(editAction)
         alert.addAction(savePositions)
@@ -303,7 +308,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
                 else { return }
             
             destination.doWeChooseParamsAtFirstLaunch = true
-            
             
         case "EditPosition":
             guard let destination = segue.destination as? CalcAddItemVC

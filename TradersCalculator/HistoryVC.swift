@@ -196,36 +196,38 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         let listName = editedListOfPositions.listName
         let alert = UIAlertController(title: nil, message: "\(listName)", preferredStyle: .actionSheet)
         
-        let openAction = UIAlertAction(title: "Open", style: .default) { (action) in
+        let titleForOpenAction = "Open".localized()
+        let openAction = UIAlertAction(title: titleForOpenAction, style: .default) { (action) in
             
             let currentListIdURL = editedListOfPositions.objectID.uriRepresentation()
             UserDefaultsManager().currentListOfPositionsID = currentListIdURL
             
         }
         
-        let editAction = UIAlertAction(title: "Edit name", style: .default) { (action) in
+        let titleForEditAction = "Edit name".localized()
+        let editAction = UIAlertAction(title: titleForEditAction, style: .default) { (action) in
             
             //TODO:
             
         }
         
-        let exportAction = UIAlertAction(title: "Export", style: .default) { (action) in
+        let titleForExportAction = "Export".localized()
+        let exportAction = UIAlertAction(title: titleForExportAction, style: .default) { (action) in
             
             //TODO:
             
         }
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+        let titleForDeleteAction = "Delete".localized()
+        let deleteAction = UIAlertAction(title: titleForDeleteAction, style: .destructive) { (action) in
             
             self.context.delete(editedListOfPositions)
             self.coreDataManager.saveContext()
-            // self.positionsArray.remove(at: indexPath.row)
-            // self.firebase.ref.child("positions").child(deletingPositionID).removeValue()
-            // self.calculatorTableView.reloadData()
             
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let titleForCancelAction = "Cancel".localized()
+        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         alert.addAction(openAction)
         alert.addAction(editAction)

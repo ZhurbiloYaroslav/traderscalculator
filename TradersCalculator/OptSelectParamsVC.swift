@@ -74,7 +74,7 @@ class OptSelectParamsVC: UIViewController {
         if doWeChooseLanguageNow != nil {
             // Means, that we choose now language
             stackViewLeverage.isHidden = true
-            currencyOrLanguageLabel.text = "Выберите язык"
+            currencyOrLanguageLabel.text = "Choose language".localized()
             
             if let currentLanguageIndex = Constants.languages.index(of: options.language) {
                 currencyOrLanguagePickerView.selectRow(currentLanguageIndex, inComponent: 0, animated: true)

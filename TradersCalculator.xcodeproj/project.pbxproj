@@ -80,9 +80,9 @@
 		C4582F291F2CE8FF001B7403 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C464FB011F5FF90000D5A9C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C464FB041F60004D00D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		C464FB051F60004D00D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		C464FB061F60007200D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C464FB071F60193300D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		C464FB081F60193400D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C464FB091F60194400D5A9C9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C472B1C81F29F50C00BAA1CD /* quotesInstaforex.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = quotesInstaforex.rtf; sourceTree = "<group>"; };
 		C472B1CA1F29F5B500BAA1CD /* instaforexAllquotesList.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = instaforexAllquotesList.rtf; sourceTree = "<group>"; };
 		C472B1CC1F29F9B600BAA1CD /* Links.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Links.rtf; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C464FB011F5FF90000D5A9C9 /* Base */,
-				C464FB061F60007200D5A9C9 /* ru */,
+				C464FB091F60194400D5A9C9 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -478,7 +478,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C40F79A11F24A0E100B19F9E /* Base */,
-				C464FB041F60004D00D5A9C9 /* ru */,
+				C464FB071F60193300D5A9C9 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -487,7 +487,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C40F79A21F24A0E100B19F9E /* Base */,
-				C464FB051F60004D00D5A9C9 /* ru */,
+				C464FB081F60193400D5A9C9 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

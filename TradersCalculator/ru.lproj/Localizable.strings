@@ -6,11 +6,44 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 */
 
-"Properties777"
-= "Параметры";
+"sell"
+= "sell";
 
+"buy"
+= "sell";
 
+"Edit position"
+= "Редактировать позицию";
 
+"Edit position #navBarTitle"
+= "Редактировать позицию";
+
+"Save all positions to history"
+= "Сохранить все позиции в историю";
+
+"Delete  position"
+= "Удалить позицию";
+
+"Delete all positions"
+= "Удалить все позиции";
+
+"Cancel"
+= "Отмена";
+
+"Open"
+= "Открыть";
+
+"Edit name"
+= "Редактировать имя";
+
+"Export"
+= "Экспорт";
+
+"Delete"
+= "Удалить";
+
+"Choose language"
+= "Выберите язык";
 
 
 

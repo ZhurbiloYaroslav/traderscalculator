@@ -78,10 +78,10 @@ class CalculatorItemCell: UITableViewCell {
         
         // Determine, whether the Position is Sell or Buy
         if position.dealDirection == "Sell" {
-            dealDirectionLabel.text = "sell"
+            dealDirectionLabel.text = "sell".localized()
         }
         if position.dealDirection == "Buy" {
-            dealDirectionLabel.text = "buy"
+            dealDirectionLabel.text = "buy".localized()
         }
         
     }

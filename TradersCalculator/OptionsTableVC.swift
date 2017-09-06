@@ -29,6 +29,8 @@ class OptionsTableVC: UITableViewController {
     
     // test end
     
+    //TODO: Сделать перевод этого блока
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +54,7 @@ class OptionsTableVC: UITableViewController {
         
         
     }
+    
     
     func initializeVariables() {
         

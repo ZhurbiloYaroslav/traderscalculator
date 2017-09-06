@@ -645,7 +645,7 @@
             </objects>
             <point key="canvasLocation" x="3068" y="969"/>
         </scene>
-        <!--Выбор параметров-->
+        <!--Paremeters-->
         <scene sceneID="gFZ-aD-qc2">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="4eA-5g-0oM" customClass="OptSelectParamsVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -654,7 +654,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -681,10 +681,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="122" width="304" height="438"/>
+                                <rect key="frame" x="8" y="122" width="304" height="275"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="136"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -698,12 +698,12 @@
                                                 </subviews>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="221.5" width="304" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="141" width="304" height="134"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -712,7 +712,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="113.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -732,7 +732,7 @@
                             <constraint firstAttribute="trailing" secondItem="jci-Nn-X2t" secondAttribute="trailing" id="is1-4i-ZSY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Выбор параметров" id="bmc-eh-d46">
+                    <navigationItem key="navigationItem" title="Paremeters" id="bmc-eh-d46">
                         <barButtonItem key="backBarButtonItem" title="Back" id="hfw-2K-HaV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="K5V-R8-l9R">
                             <connections>
@@ -776,7 +776,7 @@
             </objects>
             <point key="canvasLocation" x="118.125" y="122.53521126760563"/>
         </scene>
-        <!--Добавить позицию-->
+        <!--Add position-->
         <scene sceneID="QW2-tV-2Z7">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="T57-kg-F5P" customClass="CalcAddItemVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -1042,7 +1042,7 @@
                             <constraint firstItem="0zc-v1-5hm" firstAttribute="leading" secondItem="zC8-4U-NK3" secondAttribute="leading" id="wiK-qx-0db"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Добавить позицию" id="sOU-1R-7zg">
+                    <navigationItem key="navigationItem" title="Add position" id="sOU-1R-7zg">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Cam-my-Uo2"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -1126,13 +1126,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Rb-gd3">
                                                     <rect key="frame" x="8" y="5.5" width="304" height="59"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Название рабочего списка" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK2-Dv-1DJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="List name" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK2-Dv-1DJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="304" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqW-h5-64Q">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqW-h5-64Q">
                                                             <rect key="frame" x="0.0" y="23" width="304" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1296,6 +1296,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oXo-6y-9Go"/>
-        <segue reference="w74-J8-l96"/>
+        <segue reference="hhy-tK-JxJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -80,8 +80,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "MzK-Cp-xVu"; */
 "MzK-Cp-xVu.text" = "Label";
 
-/* Class = "UILabel"; text = "Название рабочего списка"; ObjectID = "NK2-Dv-1DJ"; */
-"NK2-Dv-1DJ.text" = "Название рабочего списка";
+/* Class = "UILabel"; text = "List name"; ObjectID = "NK2-Dv-1DJ"; */
+"NK2-Dv-1DJ.text" = "List name";
 
 /* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "NV4-6p-hGB"; */
 "NV4-6p-hGB.normalTitle" = "Buy";
@@ -143,8 +143,8 @@
 /* Class = "UILabel"; text = "OP"; ObjectID = "bYJ-mP-mzt"; */
 "bYJ-mP-mzt.text" = "OP";
 
-/* Class = "UINavigationItem"; title = "Выбор параметров"; ObjectID = "bmc-eh-d46"; */
-"bmc-eh-d46.title" = "Выбор параметров";
+/* Class = "UINavigationItem"; title = "Paremeters"; ObjectID = "bmc-eh-d46"; */
+"bmc-eh-d46.title" = "Paremeters";
 
 /* Class = "UILabel"; text = "S/L"; ObjectID = "bmz-tF-ZY6"; */
 "bmz-tF-ZY6.text" = "S/L";
@@ -194,8 +194,8 @@
 /* Class = "UILabel"; text = "T/P"; ObjectID = "pMu-M5-dBY"; */
 "pMu-M5-dBY.text" = "T/P";
 
-/* Class = "UINavigationItem"; title = "Добавить позицию"; ObjectID = "sOU-1R-7zg"; */
-"sOU-1R-7zg.title" = "Добавить позицию";
+/* Class = "UINavigationItem"; title = "Add position"; ObjectID = "sOU-1R-7zg"; */
+"sOU-1R-7zg.title" = "Add position";
 
 /* Class = "UILabel"; text = "Language"; ObjectID = "sde-7c-geb"; */
 "sde-7c-geb.text" = "Language";
@@ -206,8 +206,8 @@
 /* Class = "UITabBarItem"; title = "Options"; ObjectID = "uW4-Dc-fBl"; */
 "uW4-Dc-fBl.title" = "Options";
 
-/* Class = "UILabel"; text = "Дата"; ObjectID = "uqW-h5-64Q"; */
-"uqW-h5-64Q.text" = "Дата";
+/* Class = "UILabel"; text = "Date"; ObjectID = "uqW-h5-64Q"; */
+"uqW-h5-64Q.text" = "Date";
 
 /* Class = "UILabel"; text = "0.00"; ObjectID = "uqv-BE-1fQ"; */
 "uqv-BE-1fQ.text" = "0.00";

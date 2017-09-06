@@ -85,7 +85,7 @@ class CalcAddItemVC: UIViewController {
         getDescriptionOfInstrument()
         
         if let position = positionToEdit {
-            navigationBarTitle.text = "Edit position"
+            navigationBarTitle.text = "Edit position #navBarTitle".localized()
             
             let formatString = "%.\(position.instrument.digitsAfterDot)f"
             
