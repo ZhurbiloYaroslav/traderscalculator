@@ -105,7 +105,16 @@ extension String {
 
 extension String {
     func localized() -> String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+        
+        switch UserDefaultsManager().language {
+        case "Русский":
+            let path = Bundle.main.path(forResource: "ru", ofType: "lproj")
+            let bundle = Bundle(path: path!)!
+            return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+        default:
+            let bundle = Bundle.main
+            return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+        }
     }
     
     func localized(comment: String = "") -> String {

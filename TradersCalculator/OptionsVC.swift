@@ -21,14 +21,23 @@ class OptionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateUILabelsWithLocalizedText()
         
-        
-        // Configure the Firebase
-        firebase = FirebaseConnect()
-        
-        // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+        
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "Options".localized()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateUILabelsWithLocalizedText()
         
     }
 

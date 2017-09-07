@@ -30,6 +30,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateUILabelsWithLocalizedText()
+        
         initDelegates()
         
         initializeVariables()
@@ -38,6 +40,12 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         attemptFetch()
+        
+    }
+    
+    
+    func updateUILabelsWithLocalizedText() {
+        
         
     }
     
@@ -122,6 +130,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        updateUILabelsWithLocalizedText()
+
         attemptFetch()
         updateTable()
         calculatorTableView.reloadData()

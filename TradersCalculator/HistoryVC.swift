@@ -27,12 +27,12 @@ class HistoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init delegates
+        updateUILabelsWithLocalizedText()
+        
         initDelegates()
         
         initializeVariables()
         
-        // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
@@ -42,7 +42,12 @@ class HistoryVC: UIViewController {
 
     }
     
-    // Init delegates
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "History".localized()
+        
+    }
+    
     func initDelegates() {
         
         historyTableView.delegate = self
@@ -82,6 +87,9 @@ class HistoryVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateUILabelsWithLocalizedText()
+        
         historyTableView.reloadData()
     }
 

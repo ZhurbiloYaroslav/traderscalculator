@@ -143,8 +143,8 @@
 /* Class = "UILabel"; text = "OP"; ObjectID = "bYJ-mP-mzt"; */
 "bYJ-mP-mzt.text" = "OP";
 
-/* Class = "UINavigationItem"; title = "Paremeters"; ObjectID = "bmc-eh-d46"; */
-"bmc-eh-d46.title" = "Paremeters";
+/* Class = "UINavigationItem"; title = "Parameters"; ObjectID = "bmc-eh-d46"; */
+"bmc-eh-d46.title" = "Parameters";
 
 /* Class = "UILabel"; text = "S/L"; ObjectID = "bmz-tF-ZY6"; */
 "bmz-tF-ZY6.text" = "S/L";

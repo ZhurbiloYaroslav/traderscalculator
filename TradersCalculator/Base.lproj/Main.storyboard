@@ -310,7 +310,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PiZ-Q5-3Tg">
                                 <rect key="frame" x="0.0" y="429" width="320" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="low-QV-Law">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="low-QV-Law">
                                         <rect key="frame" x="5" y="10" width="310" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -421,7 +421,9 @@
                             <constraint firstItem="lrl-Lg-3EX" firstAttribute="top" secondItem="hdq-z9-QOD" secondAttribute="bottom" id="xul-37-qqt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od"/>
+                    <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="LLI-w9-pau"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="googleBannerView" destination="lrl-Lg-3EX" id="idd-Q2-U3g"/>
                         <segue destination="wJd-XX-aXU" kind="show" identifier="TestPurchases" id="zh2-86-gfp"/>
@@ -583,7 +585,7 @@
                             </tableViewSection>
                             <tableViewSection id="Ncz-tW-Lra">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="About" textLabel="DV7-dc-myD" style="IBUITableViewCellStyleDefault" id="Oj5-KZ-u6D">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Developers" textLabel="DV7-dc-myD" style="IBUITableViewCellStyleDefault" id="Oj5-KZ-u6D">
                                         <rect key="frame" x="0.0" y="468" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oj5-KZ-u6D" id="yk3-je-nyP">
@@ -634,6 +636,7 @@
                         <outlet property="benefitsCell" destination="xoy-8K-Nrj" id="aLV-BK-gSO"/>
                         <outlet property="buyProCell" destination="8uV-i2-Sj1" id="6zv-7n-tG2"/>
                         <outlet property="currencyCell" destination="OjX-Mu-FLL" id="0KQ-ee-zaZ"/>
+                        <outlet property="developersCell" destination="Oj5-KZ-u6D" id="QPQ-wk-T47"/>
                         <outlet property="isProLabel" destination="39w-oe-XOh" id="y7S-2T-7C1"/>
                         <outlet property="languageCell" destination="kLe-Yl-vnP" id="Z2C-zt-Lfd"/>
                         <outlet property="leverageCell" destination="Qdv-2u-9ED" id="Um1-6X-Eoh"/>
@@ -645,7 +648,7 @@
             </objects>
             <point key="canvasLocation" x="3068" y="969"/>
         </scene>
-        <!--Paremeters-->
+        <!--Parameters-->
         <scene sceneID="gFZ-aD-qc2">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="4eA-5g-0oM" customClass="OptSelectParamsVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -732,7 +735,7 @@
                             <constraint firstAttribute="trailing" secondItem="jci-Nn-X2t" secondAttribute="trailing" id="is1-4i-ZSY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Paremeters" id="bmc-eh-d46">
+                    <navigationItem key="navigationItem" title="Parameters" id="bmc-eh-d46">
                         <barButtonItem key="backBarButtonItem" title="Back" id="hfw-2K-HaV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="K5V-R8-l9R">
                             <connections>
@@ -746,6 +749,7 @@
                         <outlet property="currencyOrLanguagePickerView" destination="fHP-zg-pcM" id="Uk8-eW-nYg"/>
                         <outlet property="firstLaunchNavBar" destination="jci-Nn-X2t" id="4WT-lB-x5i"/>
                         <outlet property="googleBannerView" destination="Nde-ag-o2R" id="M2q-tF-TZX"/>
+                        <outlet property="leverageLabel" destination="iln-yV-b4X" id="Ipb-wJ-hZE"/>
                         <outlet property="leveragePickerView" destination="iX2-g4-Aem" id="pdZ-fb-JSP"/>
                         <outlet property="stackViewLeverage" destination="Pst-rg-90q" id="NN0-jk-vfj"/>
                         <segue destination="eg4-fE-uh6" kind="unwind" identifier="backToCalculatorFromParamsSelectionPage" unwindAction="backToCalculatorFromParamsSelectionPageWithSender:" id="ei4-F9-oR1"/>
@@ -1047,16 +1051,25 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buyButton" destination="NV4-6p-hGB" id="7Zf-OK-1fh"/>
+                        <outlet property="clearLossButton" destination="Bsc-y5-5gL" id="5qi-ML-dB5"/>
+                        <outlet property="clearProfitButton" destination="iTi-xo-Gf8" id="2JH-X9-c33"/>
                         <outlet property="googleBannerView" destination="b8d-2n-e0T" id="P3B-rG-TLl"/>
                         <outlet property="instrumentDescription" destination="2mD-5i-CDu" id="HbR-VG-2g8"/>
                         <outlet property="instrumentsPicker" destination="gpv-4s-XCM" id="3Hk-w1-aOu"/>
+                        <outlet property="instrumentsPickerDescription" destination="QuN-YL-Tsw" id="gz5-3o-0sU"/>
                         <outlet property="navigationBarTitle" destination="bBk-VE-QGu" id="8rt-TA-x28"/>
+                        <outlet property="openPriceLabel" destination="yft-wk-Q41" id="e6B-1d-L11"/>
                         <outlet property="positionOpenPrice" destination="zFS-BB-cbi" id="D5y-sx-hKM"/>
                         <outlet property="positionStopLoss" destination="U1h-vI-AqH" id="uh7-vs-PXa"/>
                         <outlet property="positionTakeProfit" destination="p7r-Pa-9Kg" id="MC3-rs-dPS"/>
                         <outlet property="positionValue" destination="PEN-0Z-uhi" id="VpL-xH-aMg"/>
                         <outlet property="scrollView" destination="CZB-Rd-2Ru" id="OOd-eH-1ew"/>
+                        <outlet property="sellButton" destination="iWN-yN-S5D" id="vDY-zL-gDu"/>
                         <outlet property="stackWithInstrumentPicker" destination="Y2h-Jb-QlW" id="EQA-RX-h0i"/>
+                        <outlet property="stopLossLabel" destination="YUU-kp-uYy" id="aSL-Gd-cyy"/>
+                        <outlet property="takeProfitLabel" destination="LYy-6s-1mO" id="54E-in-Wdq"/>
+                        <outlet property="valueLabel" destination="a4H-MN-c1X" id="rqG-2v-7nd"/>
                         <outlet property="viewInScrollView" destination="BLB-Pz-tqP" id="txX-Yi-74K"/>
                     </connections>
                 </viewController>
@@ -1295,7 +1308,7 @@
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oXo-6y-9Go"/>
         <segue reference="hhy-tK-JxJ"/>
+        <segue reference="J65-Kh-cIp"/>
     </inferredMetricsTieBreakers>
 </document>

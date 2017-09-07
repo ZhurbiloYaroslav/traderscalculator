@@ -17,10 +17,10 @@ class OptSelectParamsVC: UIViewController {
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var currencyOrLanguageLabel: UILabel!
     @IBOutlet weak var currencyOrLanguagePickerView: UIPickerView!
+    @IBOutlet weak var leverageLabel: UILabel!
     @IBOutlet weak var leveragePickerView: UIPickerView!
     @IBOutlet weak var stackViewLeverage: UIStackView!
     
-    var firebase: FirebaseConnect!  // Reference variable for the Database
     var options: UserDefaultsManager!
     var adMob: AdMob!
     
@@ -31,27 +31,30 @@ class OptSelectParamsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init delegates
+        updateUILabelsWithLocalizedText()
+        
         initDelegates()
         
         initializeVariables()
         
-        // User Options from User defaults
         options = UserDefaultsManager()
         
-        // Configure the Firebase
-        firebase = FirebaseConnect()
-        
-        // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
-        // Select Default rows in Picker Views
         selectDefaultRowsInPickerViews()
         
     }
     
-    // Init delegates
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "Parameters".localized()
+        
+        currencyOrLanguageLabel.text = "Choose account currency".localized()
+        leverageLabel.text = "Choose account leverage".localized()
+        
+    }
+    
     func initDelegates() {
         
         self.currencyOrLanguagePickerView.delegate = self
@@ -61,14 +64,12 @@ class OptSelectParamsVC: UIViewController {
     
     func initializeVariables() {
         
-        //TODO: Write comment
         if doWeChooseParamsAtFirstLaunch == nil {
             firstLaunchNavBar.isHidden = true
         }
         
     }
     
-    // Select Default rows in Picker Views
     func selectDefaultRowsInPickerViews() {
         
         if doWeChooseLanguageNow != nil {
@@ -139,9 +140,15 @@ class OptSelectParamsVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateUILabelsWithLocalizedText()
+        
+    }
+    
 }
 
-// Place for PickerView Delegates and methods
 extension OptSelectParamsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

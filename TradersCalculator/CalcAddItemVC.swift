@@ -24,6 +24,16 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackWithInstrumentPicker: UIStackView!
     
+    @IBOutlet weak var instrumentsPickerDescription: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var openPriceLabel: UILabel!
+    @IBOutlet weak var takeProfitLabel: UILabel!
+    @IBOutlet weak var stopLossLabel: UILabel!
+    @IBOutlet weak var sellButton: UIButton!
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var clearProfitButton: UIButton!
+    @IBOutlet weak var clearLossButton: UIButton!
+    
     var options: UserDefaultsManager!
     var adMob: AdMob!
     var forexAPI: ForexAPI!
@@ -40,22 +50,41 @@ class CalcAddItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init delegates
+        updateUILabelsWithLocalizedText()
+        
         initDelegates()
         
-        // User Options from User defaults
         options = UserDefaultsManager()
         
-        // Make request to the server
         makeRequest()
         
-        // adMob
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         initializeVariables()
         
         registerForKeyboardNotifications()
+        
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        instrumentsPickerDescription.text = "".localized()
+        
+        valueLabel.text = "Value".localized()
+        openPriceLabel.text = "Open price".localized()
+        takeProfitLabel.text = "Take profit".localized()
+        stopLossLabel.text = "Stop loss".localized()
+        sellButton.setTitle("Sell".localized(), for: .normal)
+        buyButton.setTitle("Buy".localized(), for: .normal)
+        clearProfitButton.setTitle("clear".localized(), for: .normal)
+        clearLossButton.setTitle("clear".localized(), for: .normal)
+        
+        if positionToEdit != nil {
+            navigationBarTitle.text = "Edit position #navBarTitle".localized()
+        } else {
+            navigationBarTitle.text = "Add position".localized()
+        }
         
     }
     
@@ -85,7 +114,6 @@ class CalcAddItemVC: UIViewController {
         getDescriptionOfInstrument()
         
         if let position = positionToEdit {
-            navigationBarTitle.text = "Edit position #navBarTitle".localized()
             
             let formatString = "%.\(position.instrument.digitsAfterDot)f"
             
@@ -176,6 +204,13 @@ class CalcAddItemVC: UIViewController {
                                                     rightPartID: currentInstrumentRightPartID)
         
         options.lastUsedInstrument = lastUsedInstrument
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateUILabelsWithLocalizedText()
+        
     }
     
 }

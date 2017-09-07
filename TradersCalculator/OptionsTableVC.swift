@@ -23,6 +23,7 @@ class OptionsTableVC: UITableViewController {
     @IBOutlet weak var buyProCell: UITableViewCell!
     @IBOutlet weak var restorePurchasesCell: UITableViewCell!
     @IBOutlet weak var benefitsCell: UITableViewCell!
+    @IBOutlet weak var developersCell: UITableViewCell!
     
     // test start
     @IBOutlet weak var isProLabel: UILabel!
@@ -34,18 +35,27 @@ class OptionsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init delegates
+        updateUILabelsWithLocalizedText()
+        
         initDelegates()
         
         initializeVariables()
         
-        
-        // User Options from User defaults
         options = UserDefaultsManager()
         
-        // Update current Table
         updateTable()
         
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        currencyCell.textLabel?.text = "Account currency".localized()
+        leverageCell.textLabel?.text = "Leverage".localized()
+        languageCell.textLabel?.text = "Language".localized()
+        buyProCell.textLabel?.text = "Buy Pro".localized()
+        restorePurchasesCell.textLabel?.text = "Restore purchases".localized()
+        benefitsCell.textLabel?.text = "Benefits of PRO".localized()
+        developersCell.textLabel?.text = "Developers".localized()
     }
     
     // Init delegates
@@ -137,11 +147,29 @@ class OptionsTableVC: UITableViewController {
         updateTable()
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Account parameters".localized()
+        case 1:
+            return "Interfaсe".localized()
+        case 2:
+            return "Purchases".localized()
+        case 3:
+            return "".localized()
+        case 4:
+            return "".localized()
+        default:
+            return "".localized()
+        }
+    }
     
-    //TODO: github.com/Ftkey/LTModalViewController
-    //TODO: cocoapods.org/pods/JModalController
-    //TODO: github.com/martinnormark/HalfModalPresentationController
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateUILabelsWithLocalizedText()
+        
+    }
     
 }
 
