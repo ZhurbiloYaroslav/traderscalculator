@@ -41,7 +41,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="T57-kg-F5P" kind="show" identifier="InstrumentAdd" id="J65-Kh-cIp"/>
+                                            <action selector="AddPositionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbu-J1-onx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -324,13 +324,24 @@
                                     <constraint firstAttribute="height" constant="44" id="WRs-sm-PqE"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="add" id="epz-RX-xWw"/>
+                                    <barButtonItem systemItem="add" id="epz-RX-xWw">
+                                        <connections>
+                                            <action selector="addListOfPositionsButtonPressed:" destination="BYZ-38-t0r" id="ZBb-gG-mb9"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="liO-G5-KAb"/>
                                     <barButtonItem title="List name" id="1L5-kh-aWO">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="addPositionsToTheListButtonPressed:" destination="BYZ-38-t0r" id="2Wc-c5-SqO"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sMZ-6y-hAU"/>
-                                    <barButtonItem systemItem="stop" id="7KM-L7-18s"/>
+                                    <barButtonItem systemItem="stop" id="7KM-L7-18s">
+                                        <connections>
+                                            <action selector="clearListOfPositionsAndCurrentList:" destination="BYZ-38-t0r" id="aKz-fq-xPp"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -419,6 +430,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od">
                         <barButtonItem key="backBarButtonItem" title="Back" id="LLI-w9-pau"/>
+                        <barButtonItem key="rightBarButtonItem" title="Buy test" id="Dmj-Vd-DSy"/>
                     </navigationItem>
                     <connections>
                         <outlet property="containerConstraintToChange" destination="KzN-QD-cRa" id="z6J-Zb-FE6"/>
@@ -600,6 +612,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="A7M-Pq-A6h" kind="show" id="jdI-dq-qY1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1245,6 +1260,206 @@
             </objects>
             <point key="canvasLocation" x="3068" y="1670"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="oVm-Fm-wSH">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="A7M-Pq-A6h" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Jes-4m-T8u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Компания разработчик" id="t5b-zQ-6WB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="TqZ-vE-9Ga" detailTextLabel="jHk-7R-La5" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="FCX-iC-W1u">
+                                        <rect key="frame" x="0.0" y="56" width="320" height="81"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FCX-iC-W1u" id="5te-iD-LyC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Digital Lab Studio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TqZ-vE-9Ga">
+                                                    <rect key="frame" x="15" y="9" width="135" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jHk-7R-La5">
+                                                    <rect key="frame" x="15" y="30" width="276" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <string key="text">разработка мобильных приложений, сайтов, 
+фото-видео студия, рекламное агентство.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="hCn-fZ-kFa" detailTextLabel="SO3-85-gny" style="IBUITableViewCellStyleValue1" id="4Ux-Pp-MhA">
+                                        <rect key="frame" x="0.0" y="137" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ux-Pp-MhA" id="pu9-gn-exV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Менеджер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hCn-fZ-kFa">
+                                                    <rect key="frame" x="15" y="12" width="86" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Дмитрий Лысенко" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SO3-85-gny">
+                                                    <rect key="frame" x="158" y="12" width="147" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="yed-K3-YKE" detailTextLabel="Lr2-ui-bP1" style="IBUITableViewCellStyleValue1" id="rhJ-rk-FAU">
+                                        <rect key="frame" x="0.0" y="181" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhJ-rk-FAU" id="zMX-vg-ggK">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yed-K3-YKE">
+                                                    <rect key="frame" x="15" y="12" width="69.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="+38093-913-3710" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lr2-ui-bP1">
+                                                    <rect key="frame" x="161.5" y="12" width="143.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Fmg-WN-57k" detailTextLabel="0Cy-v1-RcT" style="IBUITableViewCellStyleValue1" id="ubs-sG-RBp">
+                                        <rect key="frame" x="0.0" y="225" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubs-sG-RBp" id="f5x-8j-QwK">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Почта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fmg-WN-57k">
+                                                    <rect key="frame" x="15" y="12" width="48.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Cy-v1-RcT">
+                                                    <rect key="frame" x="69.5" y="12" width="235.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <string key="text">diglabstudio@gmail.com
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="GxZ-O2-7G7" detailTextLabel="001-1Z-K8X" style="IBUITableViewCellStyleValue1" id="AUo-DK-W4u">
+                                        <rect key="frame" x="0.0" y="269" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AUo-DK-W4u" id="OJB-rw-Hha">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Сайт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GxZ-O2-7G7">
+                                                    <rect key="frame" x="15" y="12" width="39.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="https://diglabstudio.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="001-1Z-K8X">
+                                                    <rect key="frame" x="118" y="12" width="187" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Программисты" id="bra-1Z-7W1">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Xw1-Jz-WLq" detailTextLabel="e5J-E8-FQd" style="IBUITableViewCellStyleValue1" id="phx-9y-8UH">
+                                        <rect key="frame" x="0.0" y="369" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="phx-9y-8UH" id="jeg-BQ-1zw">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xw1-Jz-WLq">
+                                                    <rect key="frame" x="15" y="12" width="27" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ярослав Журбило" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e5J-E8-FQd">
+                                                    <rect key="frame" x="158.5" y="12" width="146.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FoH-qV-BAy" detailTextLabel="xhi-JV-jIM" style="IBUITableViewCellStyleValue1" id="LuE-Tk-ObL">
+                                        <rect key="frame" x="0.0" y="413" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LuE-Tk-ObL" id="Zjf-UC-IiP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Android" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FoH-qV-BAy">
+                                                    <rect key="frame" x="15" y="12" width="60" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Андрей Бац" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xhi-JV-jIM">
+                                                    <rect key="frame" x="210" y="12" width="95" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="A7M-Pq-A6h" id="Hp8-iw-MxN"/>
+                            <outlet property="delegate" destination="A7M-Pq-A6h" id="bdJ-gP-0mI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcC-Pd-Bhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4119" y="1583"/>
+        </scene>
         <!--History-->
         <scene sceneID="5Hj-s7-DwO">
             <objects>
@@ -1291,6 +1506,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="w74-J8-l96"/>
-        <segue reference="J65-Kh-cIp"/>
+        <segue reference="qHu-0t-K2J"/>
     </inferredMetricsTieBreakers>
 </document>

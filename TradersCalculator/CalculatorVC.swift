@@ -25,7 +25,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     var adMob: AdMob!
     var openedCell: Int?
     
-    var freeOrProVersion: FreeOrProVersion!
+    var freeOrPro: FreeOrProVersion!
     var userDefaultsManager: UserDefaultsManager!
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
@@ -56,7 +56,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     func initializeVariables() {
         
-        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+        freeOrPro = FreeOrProVersion(bannerView: googleBannerView,
                                             constraint: containerConstraintToChange,
                                             tableViewToChange: calculatorTableView)
         
@@ -130,12 +130,206 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
-    //TODO: Make description
+    @IBAction func addListOfPositionsButtonPressed(_ sender: UIBarButtonItem) {
+        
+        self.performAlertForCreatingListOfPositions()
+        
+    }
+    
+    func performAlertForCreatingListOfPositions() {
+        
+        let titleForSavePositionsAlert = "Create an empty list".localized()
+        let createListAlert = UIAlertController(title: titleForSavePositionsAlert, message: nil, preferredStyle: .alert)
+        
+        createListAlert.addTextField(configurationHandler: { (textField) in
+            
+            textField.text = ListOfPositions(needSave: false).listName
+            
+        })
+        
+        let titleForSaveAndClearAction = "save & clear".localized()
+        let saveAndClearAction = UIAlertAction(title: titleForSaveAndClearAction, style: .default, handler: { (_) in
+            
+            self.addNewListOfPositions(createListAlert, andOpenIt: false)
+            
+        })
+        
+        let titleForSaveAndOpenAction = "save & open".localized()
+        let saveAndOpenAction = UIAlertAction(title: titleForSaveAndOpenAction, style: .default, handler: { (_) in
+            
+            self.addNewListOfPositions(createListAlert, andOpenIt: true)
+            
+        })
+        
+        let titleForCancelAction = "cancel".localized()
+        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
+        
+        
+        createListAlert.addAction(saveAndClearAction)
+        createListAlert.addAction(saveAndOpenAction)
+        createListAlert.addAction(cancelAction)
+        
+        self.present(createListAlert, animated: true, completion: nil)
+        
+    }
+    
+    func addNewListOfPositions(_ createListAlert: UIAlertController, andOpenIt: Bool) {
+        
+        var newListOfPositions: ListOfPositions!
+        let listNameFromTextField = createListAlert.textFields![0].text!
+        
+        if freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions) == false {
+            simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                 andMessage: nil)
+            return
+        }
+        
+        if coreDataManager.thereIsNoListWithSimilarName(listNameFromTextField) {
+            
+            newListOfPositions = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
+            self.coreDataManager.saveContext()
+            
+            if andOpenIt {
+                self.userDefaultsManager.currentListOfPositionsID = newListOfPositions.objectID.uriRepresentation()
+            } else {
+                self.userDefaultsManager.currentListOfPositionsID = nil
+            }
+            
+            self.updateTable()
+            
+        } else {
+            
+            self.simpleAlertWithTitle("The list with such name exists".localized(),
+                                      andMessage: nil)
+            return
+        }
+        
+    }
+    @IBAction func AddPositionButtonPressed(_ sender: UIButton) {
+        
+        if freeOrPro.canWeAddMoreRecordsWithType(type: .Position) == false {
+            simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                 andMessage: nil)
+            return
+        }
+        
+        performSegue(withIdentifier: "AddPositionButtonPressed", sender: nil)
+        
+    }
+    
+    @IBAction func addPositionsToTheListButtonPressed(_ sender: UIBarButtonItem) {
+        
+        self.performAlertForSavingAllPositionsToHistory()
+
+    }
+    
+    func performAlertForSavingAllPositionsToHistory() {
+        
+        let titleForSavePositionsAlert = "Save all positions to the list in history".localized()
+        let savePositionsAlert = UIAlertController(title: titleForSavePositionsAlert, message: nil, preferredStyle: .alert)
+        
+        savePositionsAlert.addTextField(configurationHandler: { (textField) in
+            
+            if let listOfPositions = self.coreDataManager.getInstanceOfCurrentPositionsList() {
+                textField.text = listOfPositions.listName
+            } else {
+                textField.text = ListOfPositions(needSave: false).listName
+            }
+            
+        })
+        
+        let titleForSaveAndClearAction = "save & clear".localized()
+        let saveAndClearAction = UIAlertAction(title: titleForSaveAndClearAction, style: .default, handler: { (_) in
+            
+            self.saveAllPositionToHistoryWith(savePositionsAlert, andOpenIt: false)
+            
+        })
+        
+        let titleForSaveAndOpenAction = "save & open".localized()
+        let saveAndOpenAction = UIAlertAction(title: titleForSaveAndOpenAction, style: .default, handler: { (_) in
+            
+            self.saveAllPositionToHistoryWith(savePositionsAlert, andOpenIt: true)
+            
+        })
+        
+        savePositionsAlert.addAction(saveAndClearAction)
+        savePositionsAlert.addAction(saveAndOpenAction)
+        
+        let titleForCancelAction = "cancel".localized()
+        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
+        
+        savePositionsAlert.addAction(cancelAction)
+        
+        self.present(savePositionsAlert, animated: true, completion: nil)
+        
+    }
+    
+    func saveAllPositionToHistoryWith(_ savePositionsAlert: UIAlertController, andOpenIt: Bool) {
+        
+        var listOfPositionsForSaving: ListOfPositions!
+        let listNameFromTextField = savePositionsAlert.textFields![0].text!
+        
+        
+        if freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions) == false {
+            simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                 andMessage: nil)
+            return
+        }
+        
+        if coreDataManager.thereIsNoListWithSimilarName(listNameFromTextField) {
+            
+            listOfPositionsForSaving = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
+            
+        } else {
+            
+            self.simpleAlertWithTitle("The list with such name exists".localized(),
+                                      andMessage: nil)
+            return
+            
+        }
+        
+        let positionsArray = self.controller.fetchedObjects!
+        
+        for position in positionsArray {
+            position.listOfPositions = listOfPositionsForSaving
+        }
+        
+        self.coreDataManager.saveContext()
+        
+        if andOpenIt {
+            self.userDefaultsManager.currentListOfPositionsID = listOfPositionsForSaving.objectID.uriRepresentation()
+        } else {
+            self.userDefaultsManager.currentListOfPositionsID = nil
+        }
+        
+        self.updateTable()
+        
+    }
+    
+    func simpleAlertWithTitle(_ alertTitle: String, andMessage: String?) {
+        
+        let newAlert = UIAlertController(title: alertTitle, message: andMessage, preferredStyle: .alert)
+        
+        let titleForOkAction = "ok".localized()
+        let okAction = UIAlertAction(title: titleForOkAction, style: .cancel, handler: nil)
+        
+        newAlert.addAction(okAction)
+        
+        self.present(newAlert, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func clearListOfPositionsAndCurrentList(_ sender: UIBarButtonItem) {
+        
+        UserDefaultsManager().currentListOfPositionsID = nil
+        updateTable()
+
+    }
+    
     @IBAction func backToCalculatorFromAddPositionWithoutSaving(sender: UIStoryboardSegue) {
         
     }
     
-    //TODO: Make description
     @IBAction func backToCalculatorFromParamsSelectionPage(sender: UIStoryboardSegue) {
         
     }
@@ -143,7 +337,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        freeOrProVersion.removeAdIfPRO()
+        freeOrPro.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
 
@@ -230,6 +424,15 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         attemptFetch()
         
+        updateListButtonTitleAndState()
+        
+        changeTopTotalValues()
+        
+        calculatorTableView.reloadData()
+    }
+    
+    func updateListButtonTitleAndState() {
+        
         if let currentListOfPositions = coreDataManager.getInstanceOfCurrentPositionsList() {
             
             listNameToolBarButton.title = currentListOfPositions.listName
@@ -239,7 +442,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
             listNameToolBarButton.title = "Choose or create a list".localized()
             listNameToolBarButton.isEnabled = false
-
+            
         } else if let positions = controller.fetchedObjects, positions.count > 0 {
             
             listNameToolBarButton.title = "Save positions to the list".localized()
@@ -247,9 +450,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        changeTopTotalValues()
-        
-        calculatorTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -304,10 +504,10 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        let titleForSavePosition = "Save all positions to history".localized()
-        let savePositions = UIAlertAction(title: titleForSavePosition, style: .default) { (action) in
+        let titleForMovePosition = "Move this position to list".localized()
+        let moveAction = UIAlertAction(title: titleForMovePosition, style: .default) { (action) in
             
-            self.performAlertForSavingAllPositionsToHistory()
+            //TODO: Write fuction for moving selected position
             
         }
         
@@ -316,7 +516,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
             self.context.delete(currentPosition)
             self.coreDataManager.saveContext()
-            self.calculatorTableView.reloadData()
+            self.updateTable()
             
         }
         
@@ -324,69 +524,10 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         longPressAlert.addAction(editAction)
-        longPressAlert.addAction(savePositions)
         longPressAlert.addAction(deleteAction)
         longPressAlert.addAction(cancelAction)
         
         self.present(longPressAlert, animated: true, completion: nil)
-        
-    }
-    
-    func performAlertForSavingAllPositionsToHistory() {
-        
-        let titleForSavePositionsAlert = "Save all positions to the list in history".localized()
-        let savePositionsAlert = UIAlertController(title: titleForSavePositionsAlert, message: nil, preferredStyle: .alert)
-        
-        savePositionsAlert.addTextField(configurationHandler: { (textField) in
-            
-            if let listOfPositions = self.coreDataManager.getInstanceOfCurrentPositionsList() {
-                textField.text = listOfPositions.listName
-            } else {
-                textField.text = ListOfPositions(needSave: false).listName
-            }
-            
-        })
-        
-        let titleForConfirmAction = "save".localized()
-        let confirmAction = UIAlertAction(title: titleForConfirmAction, style: .default, handler: { (_) in
-            
-            self.saveAllPositionToHistoryWith(savePositionsAlert)
-            
-        })
-        
-        savePositionsAlert.addAction(confirmAction)
-        
-        let titleForCancelAction = "cancel".localized()
-        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
-        
-        savePositionsAlert.addAction(cancelAction)
-        
-        self.present(savePositionsAlert, animated: true, completion: nil)
-        
-    }
-    
-    func saveAllPositionToHistoryWith(_ savePositionsAlert: UIAlertController) {
-        
-        var listOfPositionsForSaving = ListOfPositions()
-        let listNameFromTextField = savePositionsAlert.textFields![0].text!
-        
-        if let list = coreDataManager.getInstanceOfPositionListWith(listNameFromTextField) {
-            listOfPositionsForSaving = list
-            listOfPositionsForSaving.creationDate = NSDate()
-        } else {
-            listOfPositionsForSaving = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
-        }
-        
-        let positionsArray = self.controller.fetchedObjects!
-        
-        for position in positionsArray {
-            position.listOfPositions = listOfPositionsForSaving
-        }
-        
-        self.coreDataManager.saveContext()
-        
-        self.userDefaultsManager.currentListOfPositionsID = nil
-        self.updateTable()
         
     }
     

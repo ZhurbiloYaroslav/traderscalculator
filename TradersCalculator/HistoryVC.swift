@@ -22,7 +22,7 @@ class HistoryVC: UIViewController {
     var openedCell: Int?
     var arrayWithListOfPositions: [ListOfPositions]!
     
-    var freeOrProVersion: FreeOrProVersion!
+    var freeOrPro: FreeOrProVersion!
     var userDefaultsManager: UserDefaultsManager!
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
@@ -61,7 +61,7 @@ class HistoryVC: UIViewController {
     
     func initializeVariables() {
         
-        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+        freeOrPro = FreeOrProVersion(bannerView: googleBannerView,
                                             constraint: containerConstraintToChange,
                                             tableViewToChange: historyTableView)
         
@@ -85,18 +85,10 @@ class HistoryVC: UIViewController {
         
     }
     
-    @IBAction func addLIstButtonPressed(_ sender: UIBarButtonItem) {
-        _ = ListOfPositions(needSave: true)
-        coreDataManager.saveContext()
-        
-        arrayWithListOfPositions = coreDataManager.getAllListsOfPositions()
-        historyTableView.reloadData()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        freeOrProVersion.removeAdIfPRO()
+        freeOrPro.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
         
@@ -415,7 +407,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateTitleForListOfPositions(newTitle: String, editedListOfPositions: ListOfPositions) {
-        if self.coreDataManager.getInstanceOfPositionListWith(newTitle) == nil {
+        if coreDataManager.thereIsNoListWithSimilarName(newTitle) {
             
             editedListOfPositions.listName = newTitle
             
@@ -424,14 +416,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             
             let newAlertTitle = "This name of the list exist".localized()
-            let newAlert = UIAlertController(title: newAlertTitle, message: nil, preferredStyle: .alert)
-            
-            let titleForOkAction = "ok".localized()
-            let okAction = UIAlertAction(title: titleForOkAction, style: .cancel, handler: nil)
-            
-            newAlert.addAction(okAction)
-            
-            self.present(newAlert, animated: true, completion: nil)
+            simpleAlertWithTitle(newAlertTitle, andMessage: nil)
             
         }
     }
@@ -465,11 +450,31 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
+    
     func makeDublicateOfTheListOfPositions(_ editedListOfPositions: ListOfPositions, withAlert savePositionsAlert: UIAlertController) {
         
+        let listOfPositionsForSaving: ListOfPositions!
         let listNameFromTextField = savePositionsAlert.textFields![0].text!
-        let listOfPositionsForSaving = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
-        coreDataManager.saveContext()
+        
+        if freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions) == false {
+            simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                 andMessage: nil)
+            return
+        }
+        
+        if coreDataManager.thereIsNoListWithSimilarName(listNameFromTextField) {
+            
+            listOfPositionsForSaving = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
+            coreDataManager.saveContext()
+            
+        } else {
+            
+            self.simpleAlertWithTitle("The list with such name exists".localized(),
+                                      andMessage: nil)
+            return
+            
+        }
         
         let positionsArray = coreDataManager.getPositionsForList(editedListOfPositions)
         
@@ -494,6 +499,19 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         self.coreDataManager.saveContext()
         
         self.historyTableView.reloadData()
+        
+    }
+    
+    func simpleAlertWithTitle(_ alertTitle: String, andMessage: String?) {
+        
+        let newAlert = UIAlertController(title: alertTitle, message: andMessage, preferredStyle: .alert)
+        
+        let titleForOkAction = "ok".localized()
+        let okAction = UIAlertAction(title: titleForOkAction, style: .cancel, handler: nil)
+        
+        newAlert.addAction(okAction)
+        
+        self.present(newAlert, animated: true, completion: nil)
         
     }
     

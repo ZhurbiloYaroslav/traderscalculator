@@ -51,14 +51,6 @@ class CoreDataManager {
         }
     }
     
-    func updateInDB(_ position: Position) {
-
-    }
-    
-    func updateInDB(_ listOfPositions: ListOfPositions) {
-        
-    }
-    
     func getPositionsForList(_ listOfPositions: ListOfPositions) -> [Position] {
         
         var arrayWithPositions = [Position]()
@@ -79,7 +71,7 @@ class CoreDataManager {
         
     }
     
-    func getPositionsForCurrentList() -> [Position] {
+    func getAllPositions() -> [Position] {
         
         var arrayWithPositions = [Position]()
         let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
@@ -157,5 +149,15 @@ class CoreDataManager {
         
         return listOfPositionsObject
         
+    }
+    
+    func thereIsNoListWithSimilarName(_ listName: String) -> Bool {
+        
+        let listWithSimilarName = getInstanceOfPositionListWith(listName)
+        if listWithSimilarName == nil {
+            return true
+        } else {
+            return false
+        }
     }
 }

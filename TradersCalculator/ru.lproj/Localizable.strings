@@ -189,6 +189,18 @@
 "Save positions to the list"
 = "Сохранить позиции в список";
 
+"save & clear"
+= "Сохранить и очистить";
+
+"save & open"
+= "Сохранить и открыть";
+
+"The list with such name exists"
+= "Список с таким именем уже существует";
+
+"Buy PRO to add more records"
+= "Купите PRO для добавления больше записей";
+
 
 
 

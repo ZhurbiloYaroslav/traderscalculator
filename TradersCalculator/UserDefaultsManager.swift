@@ -10,11 +10,9 @@ import Foundation
 import CoreData
 
 class UserDefaultsManager {
-    //TODO: Make comment
     
     private let defaults = UserDefaults.standard
     
-    //TODO: Make comment
     private var options: [String: String] {
         
         get {
@@ -125,7 +123,6 @@ class UserDefaultsManager {
         }
     }
     
-    //TODO: Make comment
     var currentListOfPositionsID: URL? {
         
         get {
@@ -134,6 +131,18 @@ class UserDefaultsManager {
         
         set {
             defaults.set(newValue, forKey: "currentListOfPositionsID")
+            defaults.synchronize()
+        }
+        
+    }
+    
+    var amountOfExports: Int {
+        
+        get {
+            return defaults.object(forKey: "amountOfExports") as? Int ?? 0
+        }
+        set {
+            defaults.set(newValue, forKey: "amountOfExports")
             defaults.synchronize()
         }
         

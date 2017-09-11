@@ -15,6 +15,58 @@ class FreeOrProVersion {
     public weak var tableViewToChange: UITableView?
     public weak var containerConstraintToChange: NSLayoutConstraint!
     
+    private var coreDataManager: CoreDataManager!
+    
+    private let maxAmountOf_Positions_InFreeVersion = 9
+    private let maxAmountOf_Lists_InFreeVersion = 3
+    private let maxAmountOf_Exports_InFreeVersion = 3
+    
+    private var currentAmountOf_Positions: Int {
+        return coreDataManager.getAllPositions().count
+    }
+    
+    private var currentAmountOf_Lists: Int {
+        return coreDataManager.getAllListsOfPositions().count
+    }
+    
+    private var currentAmountOf_Exports: Int {
+        return UserDefaultsManager().amountOfExports
+    }
+    
+    func canWeAddMoreRecordsWithType(type: RecordTypes) -> Bool {
+        
+        if isPRO {
+            return true
+        }
+        
+        switch type {
+        case .Position:
+            
+            if currentAmountOf_Positions < maxAmountOf_Positions_InFreeVersion {
+                return true
+            } else {
+                return false
+            }
+            
+        case .ListOfPositions:
+            
+            if currentAmountOf_Lists < maxAmountOf_Lists_InFreeVersion {
+                return true
+            } else {
+                return false
+            }
+            
+        case .ExportOfList:
+            
+            if currentAmountOf_Exports < maxAmountOf_Exports_InFreeVersion {
+                return true
+            } else {
+                return false
+            }
+            
+        }
+    }
+    
     private var isPRO: Bool {
         return UserDefaultsManager().isProVersion
     }
@@ -23,6 +75,7 @@ class FreeOrProVersion {
         self.containerConstraintToChange = viewConstraint
         self.googleBannerView = bannerView
         self.tableViewToChange = tableViewToChange
+        self.coreDataManager = CoreDataManager()
         
     }
     
@@ -61,6 +114,12 @@ class FreeOrProVersion {
             table.layoutIfNeeded()
         }
         
+    }
+    
+    enum RecordTypes {
+        case Position
+        case ListOfPositions
+        case ExportOfList
     }
     
 }
