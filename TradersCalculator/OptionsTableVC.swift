@@ -23,12 +23,7 @@ class OptionsTableVC: UITableViewController {
     @IBOutlet weak var buyProCell: UITableViewCell!
     @IBOutlet weak var restorePurchasesCell: UITableViewCell!
     @IBOutlet weak var benefitsCell: UITableViewCell!
-    @IBOutlet weak var developersCell: UITableViewCell!
-    
-    // test start
-    @IBOutlet weak var isProLabel: UILabel!
-    
-    // test end
+    @IBOutlet weak var appInfoCell: UITableViewCell!
     
     //TODO: Сделать перевод этого блока
     
@@ -52,10 +47,10 @@ class OptionsTableVC: UITableViewController {
         currencyCell.textLabel?.text = "Account currency".localized()
         leverageCell.textLabel?.text = "Leverage".localized()
         languageCell.textLabel?.text = "Language".localized()
-        buyProCell.textLabel?.text = "Buy Pro".localized()
+        buyProCell.textLabel?.text = UserDefaultsManager().isProVersion ? "Pro version".localized() : "Buy Pro".localized()
         restorePurchasesCell.textLabel?.text = "Restore purchases".localized()
         benefitsCell.textLabel?.text = "Benefits of PRO".localized()
-        developersCell.textLabel?.text = "Developers".localized()
+        appInfoCell.textLabel?.text = "App info".localized()
     }
     
     // Init delegates
@@ -81,7 +76,7 @@ class OptionsTableVC: UITableViewController {
             print("IAP is enabled, loading")
             
             let productsID: NSSet = NSSet(objects: "com.soft4status.TradersCalculator.BuyPro")
-                
+            
             let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
             request.delegate = self
             request.start()
@@ -112,15 +107,21 @@ class OptionsTableVC: UITableViewController {
             performSegue(withIdentifier: "OptionsChangeLanguage", sender: nil)
             
         case [2,0]:
-        // Here we will implement Purchase of Pro version without Ads
-        
-        for product in purchases {
-            let prodID = product.productIdentifier
-            if(prodID == "com.soft4status.TradersCalculator.BuyPro") {
-                p = product
-                purchaseProVersion()
-            }
-        }
+            // Here we will implement Purchase of Pro version without Ads
+            
+            let isProVersion = UserDefaultsManager().isProVersion
+            UserDefaultsManager().isProVersion = !isProVersion
+            buyProCell.textLabel?.text = (isProVersion) ? "Buy Pro".localized() : "Pro version".localized()
+
+            switchPro()
+            
+            //        for product in purchases {
+            //            let prodID = product.productIdentifier
+            //            if(prodID == "com.soft4status.TradersCalculator.BuyPro") {
+            //                p = product
+            //                purchaseProVersion()
+            //            }
+            //        }
             
         case [2,1]:
             // Here we will implement Restore of Pro version without Ads
@@ -128,18 +129,16 @@ class OptionsTableVC: UITableViewController {
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().restoreCompletedTransactions()
             
-        case [4,0]:
-            
-            var isProVersion = UserDefaultsManager().isProVersion
-            isProVersion = (isProVersion == "false") ? "true" : "false"
-            UserDefaultsManager().isProVersion = isProVersion
-            isProLabel.text = (isProVersion == "false") ? "Is not Pro" : "Is Pro"
-            print(isProVersion)
-            
         default:
             break
         }
         
+    }
+    
+    func switchPro() {
+        if let parentVC = self.parent as? OptionsVC {
+            parentVC.removeAdIfPRO()
+        }
     }
     
     //TODO: Unwind segue from Picker Views with selecting

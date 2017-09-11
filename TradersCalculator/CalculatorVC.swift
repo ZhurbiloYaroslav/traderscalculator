@@ -23,6 +23,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     var adMob: AdMob!
     var openedCell: Int?
     
+    var userDefaultsManager: UserDefaultsManager!
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
     var controller: NSFetchedResultsController<Position>!
@@ -52,6 +53,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     func initializeVariables() {
         
         controller = NSFetchedResultsController<Position>()
+        userDefaultsManager = UserDefaultsManager()
         coreDataManager = CoreDataManager()
         context = coreDataManager.context
         updateTable()
@@ -143,15 +145,18 @@ extension CalculatorVC: NSFetchedResultsControllerDelegate {
     
     func attemptFetch() {
         
-        guard let currentList = coreDataManager.getInstanceOfCurrentPositionsList() else {
-            return
+        let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
+        
+        if let currentList = coreDataManager.getInstanceOfCurrentPositionsList() {
+            fetchRequest.predicate = NSPredicate(format: "listOfPositions == %@", currentList)
+        } else {
+            fetchRequest.predicate = NSPredicate(format: "listOfPositions = nil")
         }
         
-        let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "listOfPositions == %@", currentList)
         let sortByPart1  = NSSortDescriptor(key: "instrument.part1", ascending: true)
         let sortByPart2  = NSSortDescriptor(key: "instrument.part2", ascending: true)
-        fetchRequest.sortDescriptors = [sortByPart1, sortByPart2]
+        let sortByPart3  = NSSortDescriptor(key: "takeProfit", ascending: true)
+        fetchRequest.sortDescriptors = [sortByPart1, sortByPart2, sortByPart3]
         
         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -210,8 +215,12 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
     func updateTable() {
         
+        attemptFetch()
+        
         if let currentListOfPositions = coreDataManager.getInstanceOfCurrentPositionsList() {
             currentListOfPositionsNameLabel.text = currentListOfPositions.listName
+        } else {
+            currentListOfPositionsNameLabel.text = "Choose or create a history list".localized()
         }
         
         changeTopTotalValues()
@@ -262,7 +271,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         let currentPosition = self.controller.object(at: indexPath)
         let positionName = currentPosition.instrument.name
-        let alert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
+        let longPressAlert = UIAlertController(title: nil, message: "\(positionName)", preferredStyle: .actionSheet)
         
         let titleForEditAction = "Edit position".localized()
         let editAction = UIAlertAction(title: titleForEditAction, style: .default) { (action) in
@@ -274,7 +283,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         let titleForSavePosition = "Save all positions to history".localized()
         let savePositions = UIAlertAction(title: titleForSavePosition, style: .default) { (action) in
             
-            //TODO:
+            self.performAlertForSavingAllPositionsToHistory()
             
         }
         
@@ -287,23 +296,73 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        let titleForDeleteAllPositions = "Delete all positions".localized()
-        let deleteAllPositions = UIAlertAction(title: titleForDeleteAllPositions, style: .destructive) { (action) in
-            
-            //TODO:
-            
-        }
-        
         let titleForCancelAction = "Cancel".localized()
         let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
-        alert.addAction(editAction)
-        alert.addAction(savePositions)
-        alert.addAction(deleteAction)
-        alert.addAction(deleteAllPositions)
-        alert.addAction(cancelAction)
+        longPressAlert.addAction(editAction)
+        longPressAlert.addAction(savePositions)
+        longPressAlert.addAction(deleteAction)
+        longPressAlert.addAction(cancelAction)
         
-        self.present(alert, animated: true, completion: nil)
+        self.present(longPressAlert, animated: true, completion: nil)
+        
+    }
+    
+    func performAlertForSavingAllPositionsToHistory() {
+        
+        let titleForSavePositionsAlert = "Save all positions to the list in history".localized()
+        let savePositionsAlert = UIAlertController(title: titleForSavePositionsAlert, message: nil, preferredStyle: .alert)
+        
+        savePositionsAlert.addTextField(configurationHandler: { (textField) in
+            
+            if let listOfPositions = self.coreDataManager.getInstanceOfCurrentPositionsList() {
+                textField.text = listOfPositions.listName
+            } else {
+                textField.text = ListOfPositions(needSave: false).listName
+            }
+            
+        })
+        
+        let titleForConfirmAction = "save".localized()
+        let confirmAction = UIAlertAction(title: titleForConfirmAction, style: .default, handler: { (_) in
+            
+            self.saveAllPositionToHistoryWith(savePositionsAlert)
+            
+        })
+        
+        savePositionsAlert.addAction(confirmAction)
+        
+        let titleForCancelAction = "cancel".localized()
+        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
+        
+        savePositionsAlert.addAction(cancelAction)
+        
+        self.present(savePositionsAlert, animated: true, completion: nil)
+        
+    }
+    
+    func saveAllPositionToHistoryWith(_ savePositionsAlert: UIAlertController) {
+        
+        var listOfPositionsForSaving = ListOfPositions()
+        let listNameFromTextField = savePositionsAlert.textFields![0].text!
+        
+        if let list = coreDataManager.getInstanceOfPositionListWith(listNameFromTextField) {
+            listOfPositionsForSaving = list
+            listOfPositionsForSaving.creationDate = NSDate()
+        } else {
+            listOfPositionsForSaving = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
+        }
+        
+        let positionsArray = self.controller.fetchedObjects!
+        
+        for position in positionsArray {
+            position.listOfPositions = listOfPositionsForSaving
+        }
+        
+        self.coreDataManager.saveContext()
+        
+        self.userDefaultsManager.currentListOfPositionsID = nil
+        self.updateTable()
         
     }
     

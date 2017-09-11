@@ -31,6 +31,7 @@ public class ListOfPositions: NSManagedObject {
     
     convenience init(needSave: Bool) {
         let nextNameNumber = UserDefaultsManager().numberForNextListOfPositionsName
-        self.init(needSave: needSave, "Рабочий набор \(nextNameNumber)", NSDate(), NSSet(()))
+        let workingSetTitle = "Working set".localized()
+        self.init(needSave: needSave, "\(workingSetTitle) \(nextNameNumber)", NSDate(), NSSet(()))
     }
 }

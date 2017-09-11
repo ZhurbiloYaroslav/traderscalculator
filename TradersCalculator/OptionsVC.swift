@@ -14,6 +14,8 @@ import FirebaseAuth
 class OptionsVC: UIViewController {
     
     @IBOutlet weak var googleBannerView: GADBannerView!
+    @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerView: UIView!
     
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
@@ -34,10 +36,26 @@ class OptionsVC: UIViewController {
         
     }
     
+    func removeAdIfPRO() {
+        
+        let isPRO = UserDefaultsManager().isProVersion
+        if isPRO {
+            googleBannerView.isHidden = true
+            containerTopConstraint.constant = 0
+            containerView.layoutIfNeeded()
+        } else {
+            googleBannerView.isHidden = false
+            containerTopConstraint.constant = 50
+            containerView.layoutIfNeeded()
+        }
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateUILabelsWithLocalizedText()
+        removeAdIfPRO()
         
     }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C402E8C21F6203F7001433F0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C402E8C11F6203F7001433F0 /* MessageUI.framework */; };
+		C402E8CC1F63EFE0001433F0 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C402E8CB1F63EFE0001433F0 /* Formatter.swift */; };
 		C40FADA01F54564800778090 /* InstrumentsRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FAD9F1F54564800778090 /* InstrumentsRates.swift */; };
 		C41030611F309F450060F191 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41030601F309F450060F191 /* Calculator.swift */; };
 		C413B4191F238C790004F327 /* OptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413B4181F238C790004F327 /* OptionsTableVC.swift */; };
@@ -33,6 +35,7 @@
 		C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */; };
 		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
 		C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B93831F5AFF00003433DF /* FirstLaunch.swift */; };
+		C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
@@ -58,6 +61,8 @@
 		26453EE913CD3E1FB612E382 /* Pods-TradersCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradersCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E33190463A2E8E53F8E9DB2 /* Pods-TradersCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradersCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradersCalculator/Pods-TradersCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		C402E8C11F6203F7001433F0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C402E8CB1F63EFE0001433F0 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C40F79A11F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C40F79A21F24A0E100B19F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40FAD9F1F54564800778090 /* InstrumentsRates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentsRates.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Indices.rtf; sourceTree = "<group>"; };
 		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C49B93831F5AFF00003433DF /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeOrProVersion.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C402E8C21F6203F7001433F0 /* MessageUI.framework in Frameworks */,
 				E34743D90C485DC1E5F1A56E /* Pods_TradersCalculator.framework in Frameworks */,
 				C4582F2A1F2CE8FF001B7403 /* StoreKit.framework in Frameworks */,
 			);
@@ -125,6 +132,7 @@
 		8B25AB6699E12051529470BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C402E8C11F6203F7001433F0 /* MessageUI.framework */,
 				C4582F291F2CE8FF001B7403 /* StoreKit.framework */,
 				7C45E4AE2E0B71A31BA02899 /* Pods_TradersCalculator.framework */,
 			);
@@ -154,8 +162,8 @@
 		C45411AE1F58666800266979 /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				C4EAF6D31F5BDD29005AC480 /* Position+CoreDataProperties.swift */,
 				C4EAF6D41F5BDD29005AC480 /* Instrument+CoreDataProperties.swift */,
+				C4EAF6D31F5BDD29005AC480 /* Position+CoreDataProperties.swift */,
 				C4EAF6D51F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift */,
 			);
 			name = Properties;
@@ -200,6 +208,8 @@
 				C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */,
 				C40FAD9F1F54564800778090 /* InstrumentsRates.swift */,
 				C49B93831F5AFF00003433DF /* FirstLaunch.swift */,
+				C402E8CB1F63EFE0001433F0 /* Formatter.swift */,
+				C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -454,7 +464,9 @@
 				C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
 				C4E917361F1CB46500BE792E /* String+Extension.swift in Sources */,
+				C402E8CC1F63EFE0001433F0 /* Formatter.swift in Sources */,
 				C4E917391F1CDE1000BE792E /* Index.swift in Sources */,
+				C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */,
 				C4582F261F2B552F001B7403 /* LastUsedInstrument.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 				C413B4191F238C790004F327 /* OptionsTableVC.swift in Sources */,

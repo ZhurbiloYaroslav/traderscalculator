@@ -106,7 +106,7 @@ struct Instruments {
             [USD,MXN],
             [USD,NOK],
             [USD,PLN],
-            [USD,RUB],
+            [USD,RUR],
             [USD,SEK],
             [USD,THB],
             [USD,TRY],

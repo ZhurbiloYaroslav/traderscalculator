@@ -13,57 +13,66 @@ public class Position: NSManagedObject {
     
     private let digitsAfterDotForResultValues = 2
     
-    //TODO: Write a description
     enum DealDirection: String {
         case Sell
         case Buy
-        case NoDirection
     }
     
     //MARK: Start Methods to calculate values
-    // Returns the value of Margin
     func getMargin() -> String {
         
-        let formatString = "%.\(digitsAfterDotForResultValues)f"
         let margin = Double(Calculator(position: self).getMargin())
+        
+        
+        
+        let formatString = "%.\(digitsAfterDotForResultValues)f"
         let formattedMargin = String(format: formatString, margin)
         return formattedMargin
         
     }
     
-    // Returns the value of Margin
     func getProfit() -> String {
         
-        let formatString = "%.\(digitsAfterDotForResultValues)f"
+        if (self.takeProfit == 0) {
+            return ""
+        }
+        
         let profit = Calculator(position: self).getProfit()
+        
+        
+        
+        let formatString = "%.\(digitsAfterDotForResultValues)f"
         let formattedProfit = String(format: formatString, profit)
         return formattedProfit
     }
     
-    // Returns the value of Margin
     func getLoss() -> String {
         
-        let formatString = "%.\(digitsAfterDotForResultValues)f"
+        if (self.stopLoss == 0) {
+            return ""
+        }
+        
         let loss = Calculator(position: self).getLoss()
+        
+        
+        
+        let formatString = "%.\(digitsAfterDotForResultValues)f"
         let formattedLoss = String(format: formatString, loss)
         return formattedLoss
     }
     
     // End of Methods to calculate values
     
-    
-    //TODO: Make description
     func roundValue(value: Double) -> Double {
         let digitsAfterDot = instrument.digitsAfterDot
         
         return value.roundTo(places: digitsAfterDot)
     }
     
-    // Designated initializer
-    convenience init(needSave: Bool, creationDate: NSDate, instrument: Instrument,
-                     value: Double, openPrice: Double,
-                     stopLoss: Double, takeProfit: Double,
-                     dealDirection: String) {
+    convenience init(needSave: Bool, creationDate: NSDate,
+                     instrument: Instrument, value: Double,
+                     openPrice: Double, stopLoss: Double,
+                     takeProfit: Double, dealDirection: String) {
         
         let coreDataManager = CoreDataManager()
         let position = NSEntityDescription.entity(forEntityName: "Position", in: coreDataManager.context)!
@@ -82,7 +91,7 @@ public class Position: NSManagedObject {
         self.dealDirection = dealDirection
         
         self.instrument = instrument
-        self.listOfPositions = coreDataManager.getInstanceOfCurrentPositionsList()!
+        self.listOfPositions = coreDataManager.getInstanceOfCurrentPositionsList()
         
     }
     

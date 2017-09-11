@@ -24,9 +24,6 @@
 "Delete  position"
 = "Delete  position";
 
-"Delete all positions"
-= "Delete all positions";
-
 "Cancel"
 = "Cancel";
 
@@ -76,7 +73,7 @@
 = "Calculator";
 
 "History"
-= "History";
+= "List";
 
 "Options"
 = "Options";
@@ -108,18 +105,95 @@
 "Buy Pro"
 = "Buy Pro";
 
+"Pro version"
+= "Pro version";
+
 "Restore purchases"
 = "Restore purchases";
 
 "Benefits of PRO"
-= "Benefits of PRO";
+= "Benefits of Pro";
 
-"Developers"
-= "Developers";
+"App info"
+= "App info";
 
 "Choose account currency"
 = "Choose account currency";
 
 "Choose account leverage"
 = "Choose account leverage";
+
+"Save all positions to the list in history"
+= "Save all positions to the list in history";
+
+"save"
+= "save";
+
+"cancel"
+= "cancel";
+
+"Edit name of the history"
+= "Edit name of the history";
+
+"Choose or create a history list"
+= "Choose or create a history list";
+
+"This name of the list exist"
+= "This name of the list exist";
+
+"ok"
+= "ok";
+
+"export date"
+= "Export Date";
+
+"list date"
+= "List Date";
+
+"list name"
+= "List Name";
+
+"instrument name"
+= "Instrument name";
+
+"value"
+= "Value";
+
+"open price"
+= "Open price";
+
+"take profit"
+= "Take profit";
+
+"stop loss"
+= "Stop loss";
+
+"profit"
+= "Profit";
+
+"loss"
+= "Loss";
+
+"margin"
+= "Margin";
+
+"Could Not Send Email"
+= "Could Not Send Email";
+
+"Your device could not send e-mail. Please check e-mail configuration and try again"
+= "Your device could not send e-mail. Please check e-mail configuration and try again";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import CoreData
+import MessageUI
 
 class HistoryVC: UIViewController {
     
@@ -37,9 +38,9 @@ class HistoryVC: UIViewController {
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         attemptFetch()
-
+        
         longTapOnCellRecognizerSetup()
-
+        
     }
     
     func updateUILabelsWithLocalizedText() {
@@ -92,7 +93,128 @@ class HistoryVC: UIViewController {
         
         historyTableView.reloadData()
     }
+    
+    @IBAction func exportButtonPressed(_ sender: UIBarButtonItem) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+}
 
+extension HistoryVC: MFMailComposeViewControllerDelegate {
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        
+        mailComposerVC.setToRecipients(["5814611@gmail.com"])
+        mailComposerVC.setSubject("Export of the history")
+        
+        let dataForExport = getCsvDataForExportHistory()
+        mailComposerVC.addAttachmentData(dataForExport, mimeType: "text/csv", fileName: "ExportedHistory.csv")
+        
+        mailComposerVC.setMessageBody("Export of the history is in attachments", isHTML: false)
+        
+        return mailComposerVC
+        
+    }
+    
+    func getCsvDataForExportHistory() -> Data {
+        
+        var csvText = ""
+        
+        var headerOfCsvFile = ""
+        headerOfCsvFile += getWrappedString("export date".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("list date".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("list name".localized(), withDelimiter: true)
+        
+        headerOfCsvFile += getWrappedString("instrument name".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("value".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("open price".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("take profit".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("stop loss".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("profit".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("loss".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("margin".localized(), withEndOfLine: true)
+        
+        csvText += headerOfCsvFile
+        
+        if let listOfPositionsArray = controller.fetchedObjects {
+            for list in listOfPositionsArray {
+                
+                for _position in list.position {
+                    
+                    let position = _position as! Position
+                    let creationDate = position.listOfPositions?.creationDate ?? NSDate()
+                    let listName = position.listOfPositions?.listName ?? ""
+                    
+                    var newLine = ""
+                    newLine += getWrappedString(Formatter.getFormatted(date: NSDate()), withDelimiter: true)
+                    newLine += getWrappedString(Formatter.getFormatted(date: creationDate), withDelimiter: true)
+                    newLine += getWrappedString(listName, withDelimiter: true)
+                    newLine += getWrappedString(position.instrument.name, withDelimiter: true)
+                    newLine += getWrappedStringFromDouble(position.value, withDelimiter: true)
+                    newLine += getWrappedStringFromDouble(position.openPrice, withDelimiter: true)
+                    newLine += getWrappedStringFromDouble(position.takeProfit, withDelimiter: true)
+                    newLine += getWrappedStringFromDouble(position.stopLoss, withDelimiter: true)
+                    newLine += getWrappedString(position.getProfit(), withDelimiter: true)
+                    newLine += getWrappedString(position.getLoss(), withDelimiter: true)
+                    newLine += getWrappedString(position.getMargin(), withEndOfLine: true)
+                    
+                    csvText.append(newLine)
+                }
+            }
+        }
+        
+        print(csvText)
+        
+        if let csvData = csvText.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            return csvData
+        } else {
+            return Data()
+        }
+        
+    }
+    
+    func getWrappedString(_ string: String, withDelimiter: Bool = false, withEndOfLine: Bool = false) -> String {
+        
+        let delimiter = ","
+        let endOfLine = "\n"
+        
+        var result = "\"" + string + "\""
+        result += withDelimiter ? delimiter : ""
+        result += withEndOfLine ? endOfLine : ""
+        return result
+    }
+    
+    func getWrappedStringFromDouble(_ double: Double, withDelimiter: Bool = false, withEndOfLine: Bool = false) -> String {
+        let stringFromDouble = String(describing: double)
+        return getWrappedString(stringFromDouble, withDelimiter: withDelimiter, withEndOfLine: withEndOfLine)
+    }
+
+    
+    func showSendMailErrorAlert() {
+        
+        let alertTitle = "Could Not Send Email".localized()
+        let alertMessage = "Your device could not send e-mail. Please check e-mail configuration and try again".localized()
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        let okActionTitle = "OK"
+        let okAction = UIAlertAction(title: okActionTitle, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        
+    }
+    
 }
 
 extension HistoryVC: NSFetchedResultsControllerDelegate {
@@ -100,7 +222,7 @@ extension HistoryVC: NSFetchedResultsControllerDelegate {
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<ListOfPositions> = ListOfPositions.fetchRequest()
-        let sortDescriptor  = NSSortDescriptor(key: "creationDate", ascending: true)
+        let sortDescriptor  = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -170,7 +292,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as? HistoryCell else { return UITableViewCell()
         }
         
@@ -200,7 +322,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     
     func performAlertOnLongPressOnCellWith(_ indexPath: IndexPath) {
         
-        let editedListOfPositions = arrayWithListOfPositions[indexPath.row]
+        let editedListOfPositions = controller.object(at: indexPath)
         let listName = editedListOfPositions.listName
         let alert = UIAlertController(title: nil, message: "\(listName)", preferredStyle: .actionSheet)
         
@@ -210,12 +332,57 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
             let currentListIdURL = editedListOfPositions.objectID.uriRepresentation()
             UserDefaultsManager().currentListOfPositionsID = currentListIdURL
             
+            self.tabBarController?.selectedIndex = 0
+            
         }
         
         let titleForEditAction = "Edit name".localized()
         let editAction = UIAlertAction(title: titleForEditAction, style: .default) { (action) in
             
-            //TODO:
+            let titleForEditNameAlert = "Edit name of the history".localized()
+            let editNameAlert = UIAlertController(title: titleForEditNameAlert, message: nil, preferredStyle: .alert)
+            
+            editNameAlert.addTextField(configurationHandler: { (textField) in
+                textField.text = editedListOfPositions.listName
+            })
+            
+            let titleForConfirmAction = "save".localized()
+            let confirmAction = UIAlertAction(title: titleForConfirmAction, style: .default, handler: { (_) in
+                
+                let textField = editNameAlert.textFields![0]
+                if let listNameFromTextField = textField.text {
+                    
+                    if self.coreDataManager.getInstanceOfPositionListWith(listNameFromTextField) == nil {
+                        
+                        editedListOfPositions.listName = textField.text!
+                        
+                        self.coreDataManager.saveContext()
+                        
+                    } else {
+                        
+                        let newAlertTitle = "This name of the list exist".localized()
+                        let newAlert = UIAlertController(title: newAlertTitle, message: nil, preferredStyle: .alert)
+                        
+                        let titleForOkAction = "ok".localized()
+                        let okAction = UIAlertAction(title: titleForOkAction, style: .cancel, handler: nil)
+                        
+                        newAlert.addAction(okAction)
+                        
+                        self.present(newAlert, animated: true, completion: nil)
+                        
+                    }
+                    
+                }
+                
+            })
+            
+            let titleForCancelAction = "cancel".localized()
+            let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
+            
+            editNameAlert.addAction(confirmAction)
+            editNameAlert.addAction(cancelAction)
+            
+            self.present(editNameAlert, animated: true, completion: nil)
             
         }
         
@@ -231,6 +398,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
             
             self.context.delete(editedListOfPositions)
             self.coreDataManager.saveContext()
+            self.userDefaultsManager.currentListOfPositionsID = nil
             
         }
         

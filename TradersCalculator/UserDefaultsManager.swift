@@ -95,12 +95,12 @@ class UserDefaultsManager {
     }
     
     //TODO: Make comment
-    var isProVersion: String {
+    var isProVersion: Bool {
         get {
-            return self.options["isProVersion"] ?? "false"
+            return (self.options["isProVersion"] == "true") ? true : false
         }
         set {
-            self.options["isProVersion"] = newValue
+            self.options["isProVersion"] = String(newValue)
         }
     }
     //TODO: Make comment

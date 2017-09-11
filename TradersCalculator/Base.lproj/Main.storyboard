@@ -425,6 +425,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="LLI-w9-pau"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerTopConstraint" destination="KzN-QD-cRa" id="cp0-UY-mjH"/>
+                        <outlet property="containerView" destination="Avd-bG-vOh" id="FsS-wZ-1Ey"/>
                         <outlet property="googleBannerView" destination="lrl-Lg-3EX" id="idd-Q2-U3g"/>
                         <segue destination="wJd-XX-aXU" kind="show" identifier="TestPurchases" id="zh2-86-gfp"/>
                     </connections>
@@ -585,35 +587,14 @@
                             </tableViewSection>
                             <tableViewSection id="Ncz-tW-Lra">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Developers" textLabel="DV7-dc-myD" style="IBUITableViewCellStyleDefault" id="Oj5-KZ-u6D">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppInfo" textLabel="DV7-dc-myD" style="IBUITableViewCellStyleDefault" id="Oj5-KZ-u6D">
                                         <rect key="frame" x="0.0" y="468" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oj5-KZ-u6D" id="yk3-je-nyP">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Developers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DV7-dc-myD">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Test functions" id="A1Y-hy-0mK">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TestPro" textLabel="39w-oe-XOh" style="IBUITableViewCellStyleDefault" id="lZu-in-3OZ">
-                                        <rect key="frame" x="0.0" y="568" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lZu-in-3OZ" id="FrM-pe-Y6S">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Is not Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="39w-oe-XOh">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="App info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DV7-dc-myD">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -633,11 +614,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="J5t-R1-g4V"/>
                     <connections>
+                        <outlet property="appInfoCell" destination="Oj5-KZ-u6D" id="ciN-Nh-tIs"/>
                         <outlet property="benefitsCell" destination="xoy-8K-Nrj" id="aLV-BK-gSO"/>
                         <outlet property="buyProCell" destination="8uV-i2-Sj1" id="6zv-7n-tG2"/>
                         <outlet property="currencyCell" destination="OjX-Mu-FLL" id="0KQ-ee-zaZ"/>
-                        <outlet property="developersCell" destination="Oj5-KZ-u6D" id="QPQ-wk-T47"/>
-                        <outlet property="isProLabel" destination="39w-oe-XOh" id="y7S-2T-7C1"/>
                         <outlet property="languageCell" destination="kLe-Yl-vnP" id="Z2C-zt-Lfd"/>
                         <outlet property="leverageCell" destination="Qdv-2u-9ED" id="Um1-6X-Eoh"/>
                         <outlet property="restorePurchasesCell" destination="fWt-80-BR1" id="h5R-DF-kEn"/>
@@ -1193,10 +1173,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="H3Y-k7-hkk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="ktL-AO-Bbo"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k0J-se-vUN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="ktL-AO-Bbo">
                             <connections>
-                                <action selector="addLIstButtonPressed:" destination="mgg-5x-8vw" id="3Pr-lm-ID4"/>
+                                <action selector="exportButtonPressed:" destination="mgg-5x-8vw" id="30V-Ge-yuh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1263,11 +1242,11 @@
             </objects>
             <point key="canvasLocation" x="3068" y="1670"/>
         </scene>
-        <!--History-->
+        <!--Список-->
         <scene sceneID="5Hj-s7-DwO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7US-jN-yWl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="icon-calendar" id="GNX-vu-xNH"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Список" image="icon-calendar" id="GNX-vu-xNH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EX6-iK-v6d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1286,7 +1265,7 @@
         <scene sceneID="v8W-wo-qXj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mBt-Ve-J3e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Options" image="icon-settings" id="uW4-Dc-fBl"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Options" image="icon-settings" id="uW4-Dc-fBl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dH0-O2-yKT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

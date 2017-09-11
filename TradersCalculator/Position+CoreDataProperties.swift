@@ -22,6 +22,6 @@ extension Position {
     @NSManaged public var takeProfit: Double
     @NSManaged public var value: Double
     @NSManaged public var instrument: Instrument
-    @NSManaged public var listOfPositions: ListOfPositions
+    @NSManaged public var listOfPositions: ListOfPositions?
 
 }

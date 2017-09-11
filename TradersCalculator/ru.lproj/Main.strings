@@ -35,8 +35,8 @@
 /* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Cam-my-Uo2"; */
 "Cam-my-Uo2.title" = "Back";
 
-/* Class = "UILabel"; text = "Developers"; ObjectID = "DV7-dc-myD"; */
-"DV7-dc-myD.text" = "Developers";
+/* Class = "UILabel"; text = "AppInfo"; ObjectID = "DV7-dc-myD"; */
+"DV7-dc-myD.text" = "App info";
 
 /* Class = "UINavigationItem"; title = "Options"; ObjectID = "Dap-HV-7od"; */
 "Dap-HV-7od.title" = "Options";

@@ -24,9 +24,6 @@
 "Delete  position"
 = "Удалить позицию";
 
-"Delete all positions"
-= "Удалить все позиции";
-
 "Cancel"
 = "Отмена";
 
@@ -76,7 +73,7 @@
 = "Калькулятор";
 
 "History"
-= "История";
+= "Список";
 
 "Options"
 = "Настройки";
@@ -108,20 +105,92 @@
 "Buy Pro"
 = "Купить Pro";
 
+"Pro version"
+= "Pro версия";
+
 "Restore purchases"
 = "Восстановить покупки";
 
 "Benefits of PRO"
-= "Преимущества PRO";
+= "Преимущества Pro";
 
-"Developers"
-= "Разработчики";
+"App info"
+= "Информация о приложении";
 
 "Choose account currency"
 = "Выберите валюту счета";
 
 "Choose account leverage"
 = "Выберите кредитное плечо";
+
+"Save all positions to the list in history"
+= "Сохранить все позиции в список истории";
+
+"save"
+= "сохранить";
+
+"cancel"
+= "отмена";
+
+"Edit name of the history"
+= "Редактировать название истории";
+
+"Choose or create a history list"
+= "Выберите или создайте список";
+
+"This name of the list exist"
+= "Это имя уже существует";
+
+"ok"
+= "хорошо";
+
+"export date"
+= "Дата экспорта";
+
+"list date"
+= "Дата изменения списка";
+
+"list name"
+= "Название списка";
+
+"instrument name"
+= "Название инструмента";
+
+"value"
+= "Лот";
+
+"open price"
+= "Цена открытия";
+
+"take profit"
+= "Тейк профит";
+
+"stop loss"
+= "Стоп лосс";
+
+"profit"
+= "Прибыль";
+
+"loss"
+= "Убыток";
+
+"margin"
+= "Маржа";
+
+"Could Not Send Email"
+= "Не получилось отправить email";
+
+"Your device could not send e-mail. Please check e-mail configuration and try again"
+= "Ваше устройство не может отправить e-mail. Пожалуйста, проверьте конфигурацию e-mail и попробуйте опять";
+
+
+
+
+
+
+
+
+
 
 
 

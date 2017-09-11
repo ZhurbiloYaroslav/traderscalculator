@@ -68,8 +68,19 @@ class CalculatorItemCell: UITableViewCell {
         profitLabelTopRight.text = "\(position.getProfit())"
         
         openPriceLabelBottomLeft.text = String(format: formatString, position.openPrice)
-        takeProfitLabelBottomLeft.text = String(format: formatString, position.takeProfit)
-        stopLossLabelBottomLeft.text = String(format: formatString, position.stopLoss)
+        
+        if (position.takeProfit == 0) {
+            takeProfitLabelBottomLeft.text = ""
+        } else {
+            takeProfitLabelBottomLeft.text = String(format: formatString, position.takeProfit)
+        }
+        
+        if (position.stopLoss == 0) {
+            stopLossLabelBottomLeft.text = ""
+        } else {
+            stopLossLabelBottomLeft.text = String(format: formatString, position.stopLoss)
+        }
+        
         marginLabelBottomLeft.text = position.getMargin()
         
         profitLabelBottomRight.text = position.getProfit()

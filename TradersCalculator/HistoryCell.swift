@@ -36,7 +36,7 @@ class HistoryCell: UITableViewCell {
     func setLabelsValues(_ list: ListOfPositions) {
         
         self.listNameLabel.text = list.listName
-        self.creationDateLabel.text = getFormatted(date: list.creationDate)
+        self.creationDateLabel.text = Formatter.getFormatted(date: list.creationDate)
         self.positionsLabel.text = ""
         
         for position in list.position {
@@ -62,15 +62,6 @@ class HistoryCell: UITableViewCell {
     func closeCell() {
         
         bottomHiddenStackWithPositions.isHidden = true
-        
-    }
-    
-    func getFormatted(date: NSDate) -> String {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm"
-        let dateString = dateFormatter.string(from: date as Date)
-        return dateString
         
     }
 

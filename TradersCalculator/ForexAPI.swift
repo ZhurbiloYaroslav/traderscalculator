@@ -19,18 +19,26 @@ class ForexAPI {
         
         Alamofire.request(url).responseJSON { (response) in
             
-            guard let resourcesArray = response.result.value as? [Dictionary<String, Any>]
-                else { return }
+            guard let resourcesArray = response.result.value as? [Dictionary<String, Any>] else {
+                return
+            }
             
             for resource in resourcesArray {
                 
-                guard let instrumentName = resource["symbol"] as? String else { return }
-                guard let instrumentRate = resource["bid"] as? Double else { return }
+                guard let instrumentName = resource["symbol"] as? String else {
+                    return
+                }
                 
-                let digitsAfterDotInInstrument = instrumentName.contains("JPY") ? 3 : 5
+                guard let instrumentRate = resource["bid"] as? Double else {
+                    return
+                }
+                
+                let correctInstrumentName = self.replaceInstrumentNameWithCorrect(instrumentName)
+                
+                let digitsAfterDotInInstrument = correctInstrumentName.contains("JPY") ? 3 : 5
                 let formatString = "%.\(digitsAfterDotInInstrument)f"
                 
-                self.ratesByInstrumentName.updateValue(String(format: formatString, instrumentRate), forKey: instrumentName)
+                self.ratesByInstrumentName.updateValue(String(format: formatString, instrumentRate), forKey: correctInstrumentName)
                 
             }
             
@@ -39,6 +47,17 @@ class ForexAPI {
             completed()
         }
         
+    }
+    
+    func replaceInstrumentNameWithCorrect(_ instrumentName: String) -> String {
+        switch instrumentName {
+        case let x where x.contains("RUR"):
+            return "RUB"
+        case "#Bitcoin":
+            return instrumentName.replacingOccurrences(of: "#Bitcoin", with: "BTCUSD")
+        default:
+            return instrumentName
+        }
     }
     
     init() {

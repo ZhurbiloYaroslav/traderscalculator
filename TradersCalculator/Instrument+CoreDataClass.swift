@@ -49,14 +49,12 @@ public class Instrument: NSManagedObject {
     }
     
     var countOfparts: Int {
-        
         return self.parts.count
     }
     
     convenience init(needSave: Bool, _ categoryName: String, _ instrumentParts: [String]) {
         
         let coreDataManager = CoreDataManager()
-        
         let instrument = NSEntityDescription.entity(forEntityName: "Instrument", in: coreDataManager.context)!
         
         if(needSave) {
@@ -72,7 +70,7 @@ public class Instrument: NSManagedObject {
     }
     
     convenience init() {
-        self.init(needSave: true, Instruments().defaultCategory, Instruments().defaultInstrumentPair)
+        self.init(needSave: false, Instruments().defaultCategory, Instruments().defaultInstrumentPair)
     }
 }
 
