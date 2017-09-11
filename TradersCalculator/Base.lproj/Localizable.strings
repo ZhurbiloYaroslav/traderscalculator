@@ -19,7 +19,7 @@
 = "Edit position";
 
 "Save all positions to history"
-= "Save all positions to history";
+= "Save all positions to list";
 
 "Delete  position"
 = "Delete  position";
@@ -124,7 +124,7 @@
 = "Choose account leverage";
 
 "Save all positions to the list in history"
-= "Save all positions to the list in history";
+= "Save all positions to the list";
 
 "save"
 = "save";
@@ -183,7 +183,8 @@
 "Your device could not send e-mail. Please check e-mail configuration and try again"
 = "Your device could not send e-mail. Please check e-mail configuration and try again";
 
-
+"Copy"
+= "Duplicate";
 
 
 

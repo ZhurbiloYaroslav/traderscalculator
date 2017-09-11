@@ -345,6 +345,13 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+        let titleForCopyAction = "Copy".localized()
+        let copyAction = UIAlertAction(title: titleForCopyAction, style: .default) { (action) in
+            
+            self.performAlertForCopyOfTheListOfPositions(editedListOfPositions)
+            
+        }
+        
         let titleForEditAction = "Edit name".localized()
         let editAction = UIAlertAction(title: titleForEditAction, style: .default) { (action) in
             
@@ -361,25 +368,8 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
                 let textField = editNameAlert.textFields![0]
                 if let listNameFromTextField = textField.text {
                     
-                    if self.coreDataManager.getInstanceOfPositionListWith(listNameFromTextField) == nil {
-                        
-                        editedListOfPositions.listName = textField.text!
-                        
-                        self.coreDataManager.saveContext()
-                        
-                    } else {
-                        
-                        let newAlertTitle = "This name of the list exist".localized()
-                        let newAlert = UIAlertController(title: newAlertTitle, message: nil, preferredStyle: .alert)
-                        
-                        let titleForOkAction = "ok".localized()
-                        let okAction = UIAlertAction(title: titleForOkAction, style: .cancel, handler: nil)
-                        
-                        newAlert.addAction(okAction)
-                        
-                        self.present(newAlert, animated: true, completion: nil)
-                        
-                    }
+                    self.updateTitleForListOfPositions(newTitle: listNameFromTextField,
+                                                  editedListOfPositions: editedListOfPositions)
                     
                 }
                 
@@ -415,12 +405,95 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         alert.addAction(openAction)
+        alert.addAction(copyAction)
         alert.addAction(editAction)
-        alert.addAction(exportAction)
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func updateTitleForListOfPositions(newTitle: String, editedListOfPositions: ListOfPositions) {
+        if self.coreDataManager.getInstanceOfPositionListWith(newTitle) == nil {
+            
+            editedListOfPositions.listName = newTitle
+            
+            self.coreDataManager.saveContext()
+            
+        } else {
+            
+            let newAlertTitle = "This name of the list exist".localized()
+            let newAlert = UIAlertController(title: newAlertTitle, message: nil, preferredStyle: .alert)
+            
+            let titleForOkAction = "ok".localized()
+            let okAction = UIAlertAction(title: titleForOkAction, style: .cancel, handler: nil)
+            
+            newAlert.addAction(okAction)
+            
+            self.present(newAlert, animated: true, completion: nil)
+            
+        }
+    }
+    
+    func performAlertForCopyOfTheListOfPositions(_ editedListOfPositions: ListOfPositions) {
+        
+        let titleForSavePositionsAlert = "Make dublicate of the list with positions".localized()
+        let savePositionsAlert = UIAlertController(title: titleForSavePositionsAlert, message: nil, preferredStyle: .alert)
+        
+        savePositionsAlert.addTextField(configurationHandler: { (textField) in
+            
+            textField.text = ListOfPositions(needSave: false).listName
+            
+        })
+        
+        let titleForConfirmAction = "save".localized()
+        let confirmAction = UIAlertAction(title: titleForConfirmAction, style: .default, handler: { (_) in
+            
+            self.makeDublicateOfTheListOfPositions(editedListOfPositions, withAlert: savePositionsAlert)
+            
+        })
+        
+        savePositionsAlert.addAction(confirmAction)
+        
+        let titleForCancelAction = "cancel".localized()
+        let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
+        
+        savePositionsAlert.addAction(cancelAction)
+        
+        self.present(savePositionsAlert, animated: true, completion: nil)
+        
+    }
+    
+    func makeDublicateOfTheListOfPositions(_ editedListOfPositions: ListOfPositions, withAlert savePositionsAlert: UIAlertController) {
+        
+        let listNameFromTextField = savePositionsAlert.textFields![0].text!
+        let listOfPositionsForSaving = ListOfPositions(needSave: true, listNameFromTextField, NSDate(), NSSet())
+        coreDataManager.saveContext()
+        
+        let positionsArray = coreDataManager.getPositionsForList(editedListOfPositions)
+        
+        for position in positionsArray {
+            let categoryNameOfInstrument = position.instrument.category
+            let partsOfInstrument = position.instrument.parts
+            let newInstrument = Instrument(needSave: true, categoryNameOfInstrument, partsOfInstrument)
+            
+            let newPosition = Position(needSave: true,
+                                       creationDate: NSDate(),
+                                       instrument: newInstrument,
+                                       value: position.value,
+                                       openPrice: position.openPrice,
+                                       stopLoss: position.stopLoss,
+                                       takeProfit: position.takeProfit,
+                                       dealDirection: position.dealDirection)
+            
+            newPosition.listOfPositions = listOfPositionsForSaving
+            
+        }
+        
+        self.coreDataManager.saveContext()
+        
+        self.historyTableView.reloadData()
         
     }
     

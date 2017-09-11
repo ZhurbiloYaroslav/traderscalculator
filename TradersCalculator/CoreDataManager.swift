@@ -59,6 +59,26 @@ class CoreDataManager {
         
     }
     
+    func getPositionsForList(_ listOfPositions: ListOfPositions) -> [Position] {
+        
+        var arrayWithPositions = [Position]()
+        let fetchRequest: NSFetchRequest<Position> = Position.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "listOfPositions == %@", listOfPositions)
+        
+        do {
+            let positions = try context.fetch(fetchRequest)
+            
+            for _position in positions {
+                arrayWithPositions.append(_position)
+            }
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+        return arrayWithPositions
+        
+    }
+    
     func getPositionsForCurrentList() -> [Position] {
         
         var arrayWithPositions = [Position]()
