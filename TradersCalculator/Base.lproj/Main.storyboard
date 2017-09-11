@@ -430,7 +430,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od">
                         <barButtonItem key="backBarButtonItem" title="Back" id="LLI-w9-pau"/>
-                        <barButtonItem key="rightBarButtonItem" title="Buy test" id="Dmj-Vd-DSy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Buy test" id="Dmj-Vd-DSy">
+                            <connections>
+                                <segue destination="pCn-sg-V8Y" kind="show" identifier="inAppTest2" id="yzN-ZZ-TxO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="containerConstraintToChange" destination="KzN-QD-cRa" id="z6J-Zb-FE6"/>
@@ -755,6 +759,24 @@
                 <exit id="eg4-fE-uh6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4121" y="969"/>
+        </scene>
+        <!--In App Test2VC-->
+        <scene sceneID="vDk-SS-piP">
+            <objects>
+                <viewController id="pCn-sg-V8Y" customClass="inAppTest2VC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8HG-bu-rK7"/>
+                        <viewControllerLayoutGuide type="bottom" id="2dR-TR-dh4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yIM-0M-0vR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ml0-JY-YaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5134" y="201"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Jub-y8-U1y">
@@ -1258,7 +1280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="im7-ys-XUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3068" y="1670"/>
+            <point key="canvasLocation" x="3068" y="1790"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="oVm-Fm-wSH">
