@@ -73,9 +73,9 @@ class UserDefaultsManager {
     }
     
     //TODO: Make comment
-    var accountCurrency: String? {
+    var accountCurrency: String {
         get {
-            return self.options["accountCurrency"] ?? nil
+            return self.options["accountCurrency"] ?? Constants.defaultCurrency
         }
         set {
             self.options["accountCurrency"] = newValue

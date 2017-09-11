@@ -24,6 +24,7 @@ class FirstLaunch {
         if isFirstLaunched {
             insertBaseRecordsIntoCoreData()
         }
+        ForexAPI().downloadInstrumentsRates(){}
         
     }
     

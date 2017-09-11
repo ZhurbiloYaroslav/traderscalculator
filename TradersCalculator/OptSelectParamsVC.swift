@@ -93,11 +93,7 @@ class OptSelectParamsVC: UIViewController {
             // Means, that we choose now currency and leverage
             
             doWeChooseParamsAtFirstLaunch = true
-            var accountCurrency = Constants.defaultCurrency
-            if let _accountCurrency = options.accountCurrency {
-                accountCurrency = _accountCurrency
-                doWeChooseParamsAtFirstLaunch = false
-            }
+            let accountCurrency = options.accountCurrency
             
             var accountLeverage = Constants.defaultLeverage
             if let _leverage = options.leverage {

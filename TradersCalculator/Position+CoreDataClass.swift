@@ -21,9 +21,9 @@ public class Position: NSManagedObject {
     //MARK: Start Methods to calculate values
     func getMargin() -> String {
         
-        let margin = Double(Calculator(position: self).getMargin())
+        var margin = Double(Calculator(position: self).getMargin())
         
-        
+        margin = getValueDependingOnAccountCurrency(requestedValue: margin)
         
         let formatString = "%.\(digitsAfterDotForResultValues)f"
         let formattedMargin = String(format: formatString, margin)
@@ -37,9 +37,9 @@ public class Position: NSManagedObject {
             return ""
         }
         
-        let profit = Calculator(position: self).getProfit()
+        var profit = Calculator(position: self).getProfit()
         
-        
+        profit = getValueDependingOnAccountCurrency(requestedValue: profit)
         
         let formatString = "%.\(digitsAfterDotForResultValues)f"
         let formattedProfit = String(format: formatString, profit)
@@ -52,13 +52,42 @@ public class Position: NSManagedObject {
             return ""
         }
         
-        let loss = Calculator(position: self).getLoss()
+        var loss = Calculator(position: self).getLoss()
         
-        
+        loss = getValueDependingOnAccountCurrency(requestedValue: loss)
         
         let formatString = "%.\(digitsAfterDotForResultValues)f"
         let formattedLoss = String(format: formatString, loss)
         return formattedLoss
+    }
+    
+    func getValueDependingOnAccountCurrency(requestedValue: Double) -> Double {
+        
+        let accountCurrency = UserDefaultsManager().accountCurrency
+        let ratesByInstrumentName = ForexAPI().ratesByInstrumentName
+        
+        switch accountCurrency {
+        case "USD":
+            return requestedValue
+        case "EUR":
+            let currencyPair = "EURUSD"
+            if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
+                let resultValue = requestedValue / rateForCurrentAccountCurrency
+                return resultValue
+            }
+            
+        case "RUB":
+            let currencyPair = "USDRUB"
+            if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
+                let resultValue = requestedValue / rateForCurrentAccountCurrency
+                return resultValue
+            }
+            
+        default:
+            break
+        }
+        
+        return 0
     }
     
     // End of Methods to calculate values
