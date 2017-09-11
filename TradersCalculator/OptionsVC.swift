@@ -43,6 +43,10 @@ class OptionsVC: UIViewController {
         
         navigationItem.title = "Options".localized()
         
+        self.tabBarController?.tabBar.items?[0].title = "Calculator".localized()
+        self.tabBarController?.tabBar.items?[1].title = "History".localized()
+        self.tabBarController?.tabBar.items?[2].title = "Options".localized()
+        
     }
     
     func removeAdIfPRO() {

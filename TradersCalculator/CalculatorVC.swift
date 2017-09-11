@@ -48,6 +48,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     
     func updateUILabelsWithLocalizedText() {
+
         
         
     }

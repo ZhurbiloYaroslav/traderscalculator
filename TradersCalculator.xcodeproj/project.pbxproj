@@ -36,6 +36,7 @@
 		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
 		C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B93831F5AFF00003433DF /* FirstLaunch.swift */; };
 		C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */; };
+		C4AD63EE1F66769300091AD9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63ED1F66769300091AD9 /* TabBarController.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
@@ -95,6 +96,7 @@
 		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C49B93831F5AFF00003433DF /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeOrProVersion.swift; sourceTree = "<group>"; };
+		C4AD63ED1F66769300091AD9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		C45F8CB21F127244007B1B49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4AD63ED1F66769300091AD9 /* TabBarController.swift */,
 				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
 				C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */,
 				C45697A81F1A8DAF00599563 /* HistoryVC.swift */,
@@ -457,6 +460,7 @@
 				C41030611F309F450060F191 /* Calculator.swift in Sources */,
 				C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */,
 				C45411AA1F58665700266979 /* ListOfPositions+CoreDataClass.swift in Sources */,
+				C4AD63EE1F66769300091AD9 /* TabBarController.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,

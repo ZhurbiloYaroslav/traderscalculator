@@ -749,7 +749,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Jub-y8-U1y">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SmR-gZ-kVU" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SmR-gZ-kVU" customClass="TabBarController" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="7NP-BS-8pX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1250,11 +1250,11 @@
             </objects>
             <point key="canvasLocation" x="3068" y="1670"/>
         </scene>
-        <!--Список-->
+        <!--History-->
         <scene sceneID="5Hj-s7-DwO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7US-jN-yWl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Список" image="icon-calendar" id="GNX-vu-xNH"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="History" image="icon-calendar" id="GNX-vu-xNH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EX6-iK-v6d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
