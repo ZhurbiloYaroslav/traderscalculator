@@ -15,7 +15,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var totalProfitLabel: UILabel!
     @IBOutlet weak var totalLossLabel: UILabel!
     @IBOutlet weak var totalMarginLabel: UILabel!
-    @IBOutlet weak var currentListOfPositionsNameLabel: UILabel!
+    @IBOutlet weak var listNameToolBarButton: UIBarButtonItem!
+    
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
     @IBOutlet weak var googleBannerView: GADBannerView!
@@ -230,9 +231,20 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         attemptFetch()
         
         if let currentListOfPositions = coreDataManager.getInstanceOfCurrentPositionsList() {
-            currentListOfPositionsNameLabel.text = currentListOfPositions.listName
-        } else {
-            currentListOfPositionsNameLabel.text = "Choose or create a history list".localized()
+            
+            listNameToolBarButton.title = currentListOfPositions.listName
+            listNameToolBarButton.isEnabled = false
+            
+        } else if let positions = controller.fetchedObjects, positions.count == 0 {
+            
+            listNameToolBarButton.title = "Choose or create a list".localized()
+            listNameToolBarButton.isEnabled = false
+
+        } else if let positions = controller.fetchedObjects, positions.count > 0 {
+            
+            listNameToolBarButton.title = "Save positions to the list".localized()
+            listNameToolBarButton.isEnabled = true
+            
         }
         
         changeTopTotalValues()

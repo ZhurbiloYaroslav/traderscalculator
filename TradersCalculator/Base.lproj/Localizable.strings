@@ -135,8 +135,8 @@
 "Edit name of the history"
 = "Edit name of the history";
 
-"Choose or create a history list"
-= "Choose or create a history list";
+"Choose or create a list"
+= "Choose or create a list";
 
 "This name of the list exist"
 = "This name of the list exist";
@@ -186,7 +186,8 @@
 "Copy"
 = "Duplicate";
 
-
+"Save positions to the list"
+= "Save positions to the list";
 
 
 

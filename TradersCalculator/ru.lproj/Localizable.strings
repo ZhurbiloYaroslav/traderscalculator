@@ -135,7 +135,7 @@
 "Edit name of the history"
 = "Редактировать название истории";
 
-"Choose or create a history list"
+"Choose or create a list"
 = "Выберите или создайте список";
 
 "This name of the list exist"
@@ -185,6 +185,9 @@
 
 "Copy"
 = "Дублировать";
+
+"Save positions to the list"
+= "Сохранить позиции в список";
 
 
 
