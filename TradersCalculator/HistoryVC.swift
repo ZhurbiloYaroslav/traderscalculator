@@ -16,10 +16,13 @@ class HistoryVC: UIViewController {
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var googleBannerView: GADBannerView!
     
+    @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
+    
     var adMob: AdMob!
     var openedCell: Int?
     var arrayWithListOfPositions: [ListOfPositions]!
     
+    var freeOrProVersion: FreeOrProVersion!
     var userDefaultsManager: UserDefaultsManager!
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
@@ -58,6 +61,10 @@ class HistoryVC: UIViewController {
     
     func initializeVariables() {
         
+        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+                                            constraint: containerConstraintToChange,
+                                            tableViewToChange: historyTableView)
+        
         userDefaultsManager = UserDefaultsManager()
         coreDataManager = CoreDataManager()
         context = coreDataManager.context
@@ -88,6 +95,8 @@ class HistoryVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
         

@@ -16,6 +16,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var totalLossLabel: UILabel!
     @IBOutlet weak var totalMarginLabel: UILabel!
     @IBOutlet weak var currentListOfPositionsNameLabel: UILabel!
+    @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
     @IBOutlet weak var googleBannerView: GADBannerView!
     @IBOutlet weak var calculatorTableView: UITableView!
@@ -23,6 +24,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     var adMob: AdMob!
     var openedCell: Int?
     
+    var freeOrProVersion: FreeOrProVersion!
     var userDefaultsManager: UserDefaultsManager!
     var coreDataManager: CoreDataManager!
     var context: NSManagedObjectContext!
@@ -52,16 +54,18 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     func initializeVariables() {
         
+        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+                                            constraint: containerConstraintToChange,
+                                            tableViewToChange: calculatorTableView)
+        
         controller = NSFetchedResultsController<Position>()
         userDefaultsManager = UserDefaultsManager()
         coreDataManager = CoreDataManager()
         context = coreDataManager.context
         updateTable()
         
-        let userDefaults = UserDefaultsManager()
-        
-        if userDefaults.accountCurrency == nil || userDefaults.leverage == nil {
-            performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
+        if FirstLaunch.isFirstLaunched {
+            chooseParamsAtFirstLaunch()
         }
         
         longTapOnCellRecognizerSetup()
@@ -69,6 +73,10 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         calculatorTableView.estimatedRowHeight = 100
         calculatorTableView.rowHeight = UITableViewAutomaticDimension
         
+    }
+    
+    func chooseParamsAtFirstLaunch() {
+        performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
     }
     
     func initDelegates() {
@@ -98,6 +106,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         guard let arrayWithPositionsFromCoreData = controller.fetchedObjects else {
             return
         }
+        
         for position in arrayWithPositionsFromCoreData {
             //---Back---
             if let profit = Double(position.getProfit()) {
@@ -131,6 +140,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
 

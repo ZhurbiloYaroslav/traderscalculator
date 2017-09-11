@@ -367,6 +367,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calculatorTableView" destination="9md-EW-wge" id="7Hg-Es-5Z1"/>
+                        <outlet property="containerConstraintToChange" destination="8ld-be-PwZ" id="Elm-xh-AJv"/>
                         <outlet property="currentListOfPositionsNameLabel" destination="low-QV-Law" id="Gay-aH-csb"/>
                         <outlet property="googleBannerView" destination="yHx-qP-Tx7" id="kY3-Dv-Pv6"/>
                         <outlet property="totalLossLabel" destination="RB4-fx-vsM" id="lpR-7Q-emV"/>
@@ -425,6 +426,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="LLI-w9-pau"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerConstraintToChange" destination="KzN-QD-cRa" id="z6J-Zb-FE6"/>
                         <outlet property="containerTopConstraint" destination="KzN-QD-cRa" id="cp0-UY-mjH"/>
                         <outlet property="containerView" destination="Avd-bG-vOh" id="FsS-wZ-1Ey"/>
                         <outlet property="googleBannerView" destination="lrl-Lg-3EX" id="idd-Q2-U3g"/>
@@ -637,7 +639,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -664,29 +666,32 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="122" width="304" height="275"/>
+                                <rect key="frame" x="8" y="114" width="304" height="446"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="136"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="224"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="28"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEm-l5-rsB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="eRn-M2-L1K"/>
+                                                </constraints>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
+                                                <rect key="frame" x="0.0" y="28" width="304" height="196"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="141" width="304" height="134"/>
+                                        <rect key="frame" x="0.0" y="229" width="304" height="217"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -695,7 +700,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="113.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -709,9 +714,9 @@
                             <constraint firstAttribute="bottom" secondItem="EkR-gy-KlN" secondAttribute="bottom" constant="8" id="78A-FK-oao"/>
                             <constraint firstItem="jci-Nn-X2t" firstAttribute="leading" secondItem="o8D-Ae-930" secondAttribute="leading" id="KvS-0X-UNy"/>
                             <constraint firstItem="EkR-gy-KlN" firstAttribute="leading" secondItem="o8D-Ae-930" secondAttribute="leading" constant="8" id="Rd0-xx-qlO"/>
-                            <constraint firstItem="EkR-gy-KlN" firstAttribute="top" secondItem="Nde-ag-o2R" secondAttribute="bottom" constant="8" id="WSz-Ma-D9u"/>
                             <constraint firstItem="jci-Nn-X2t" firstAttribute="top" secondItem="o8D-Ae-930" secondAttribute="top" id="X9h-Uk-GGV"/>
                             <constraint firstItem="Nde-ag-o2R" firstAttribute="top" secondItem="o8D-Ae-930" secondAttribute="top" constant="64" id="ag2-UG-gN3"/>
+                            <constraint firstItem="EkR-gy-KlN" firstAttribute="top" secondItem="jci-Nn-X2t" secondAttribute="bottom" constant="50" id="f4R-fl-5ek"/>
                             <constraint firstAttribute="trailing" secondItem="jci-Nn-X2t" secondAttribute="trailing" id="is1-4i-ZSY"/>
                         </constraints>
                     </view>
@@ -725,6 +730,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerConstraintToChange" destination="f4R-fl-5ek" id="Nu5-S0-3Ka"/>
                         <outlet property="currencyOrLanguageLabel" destination="ZEm-l5-rsB" id="4go-6n-2dE"/>
                         <outlet property="currencyOrLanguagePickerView" destination="fHP-zg-pcM" id="Uk8-eW-nYg"/>
                         <outlet property="firstLaunchNavBar" destination="jci-Nn-X2t" id="4WT-lB-x5i"/>
@@ -1034,6 +1040,7 @@
                         <outlet property="buyButton" destination="NV4-6p-hGB" id="7Zf-OK-1fh"/>
                         <outlet property="clearLossButton" destination="Bsc-y5-5gL" id="5qi-ML-dB5"/>
                         <outlet property="clearProfitButton" destination="iTi-xo-Gf8" id="2JH-X9-c33"/>
+                        <outlet property="containerConstraintToChange" destination="UUC-DM-k5l" id="8uY-tz-8w2"/>
                         <outlet property="googleBannerView" destination="b8d-2n-e0T" id="P3B-rG-TLl"/>
                         <outlet property="instrumentDescription" destination="2mD-5i-CDu" id="HbR-VG-2g8"/>
                         <outlet property="instrumentsPicker" destination="gpv-4s-XCM" id="3Hk-w1-aOu"/>
@@ -1180,6 +1187,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerConstraintToChange" destination="y9q-ge-mp8" id="pQw-R0-nvz"/>
                         <outlet property="googleBannerView" destination="Hgf-CL-HuI" id="e66-W6-mTM"/>
                         <outlet property="historyTableView" destination="yr9-Id-yQd" id="oFN-ng-ELa"/>
                     </connections>
@@ -1287,7 +1295,7 @@
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hhy-tK-JxJ"/>
+        <segue reference="w74-J8-l96"/>
         <segue reference="J65-Kh-cIp"/>
     </inferredMetricsTieBreakers>
 </document>

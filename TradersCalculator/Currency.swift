@@ -30,7 +30,7 @@ let CNH = "CNH"
 let CZK = "CZK"
 let HUF = "HUF"
 let MXN = "MXN"
-let RUR = "RUR"
+let RUB = "RUB"
 let THB = "THB"
 let XBR = "XBR"
 let XNG = "XNG"
@@ -61,7 +61,7 @@ let instrumentPartFullName = [
     CZK : "Czech Republic Korunas",
     HUF : "Hungarian Forints",
     MXN : "Mexican Peso",
-    RUR : "Russian Ruble",
+    RUB : "Russian Ruble",
     THB : "Thai Baht",
     XBR : "Brent",
     XNG : "Natural Gas",

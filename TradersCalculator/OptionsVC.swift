@@ -17,8 +17,12 @@ class OptionsVC: UIViewController {
     @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
+    
     var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
+    
+    var freeOrProVersion: FreeOrProVersion!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,11 @@ class OptionsVC: UIViewController {
         
         adMob = AdMob()
         adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+        
+        
+        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+                                            constraint: containerConstraintToChange,
+                                            tableViewToChange: nil)
         
     }
     
@@ -53,6 +62,8 @@ class OptionsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
         removeAdIfPRO()

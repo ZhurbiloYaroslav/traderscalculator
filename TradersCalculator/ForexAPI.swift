@@ -52,7 +52,7 @@ class ForexAPI {
     func replaceInstrumentNameWithCorrect(_ instrumentName: String) -> String {
         switch instrumentName {
         case let x where x.contains("RUR"):
-            return "RUB"
+            return instrumentName.replacingOccurrences(of: "RUR", with: "RUB")
         case "#Bitcoin":
             return instrumentName.replacingOccurrences(of: "#Bitcoin", with: "BTCUSD")
         default:

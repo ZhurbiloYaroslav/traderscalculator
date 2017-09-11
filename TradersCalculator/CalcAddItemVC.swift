@@ -34,10 +34,13 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var clearProfitButton: UIButton!
     @IBOutlet weak var clearLossButton: UIButton!
     
+    @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
+    
     var options: UserDefaultsManager!
     var adMob: AdMob!
     var forexAPI: ForexAPI!
     
+    var freeOrProVersion: FreeOrProVersion!
     var coreDataManager = CoreDataManager()
     var instruments = Instruments()
     var currentCategoryID: Int!
@@ -101,6 +104,10 @@ class CalcAddItemVC: UIViewController {
     }
     
     func initializeVariables() {
+        
+        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+                                            constraint: containerConstraintToChange,
+                                            tableViewToChange: nil)
         
         let lastUsedInstrument = options.lastUsedInstrument
         currentCategoryID = lastUsedInstrument.categoryID
@@ -208,6 +215,8 @@ class CalcAddItemVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
         

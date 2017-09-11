@@ -13,35 +13,32 @@ class FreeOrProVersion {
     
     public weak var googleBannerView: GADBannerView!
     public weak var tableViewToChange: UITableView?
-    public weak var viewToChange: UIView?
     public weak var containerConstraintToChange: NSLayoutConstraint!
     
     private var isPRO: Bool {
         return UserDefaultsManager().isProVersion
     }
     
-    private init(constraint: NSLayoutConstraint, tableViewToChange: UITableView?, viewToChange: UIView?) {
-        self.containerConstraintToChange = constraint
+    private init(bannerView: GADBannerView, viewConstraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
+        self.containerConstraintToChange = viewConstraint
+        self.googleBannerView = bannerView
+        self.tableViewToChange = tableViewToChange
         
     }
     
-    public convenience init(constraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
-        self.init(constraint: constraint, tableViewToChange: tableViewToChange, viewToChange: nil)
-    }
-    
-    public convenience init(constraint: NSLayoutConstraint, viewToChange: UIView?) {
-        self.init(constraint: constraint, tableViewToChange: nil, viewToChange: viewToChange)
+    public convenience init(bannerView: GADBannerView, constraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
+        self.init(bannerView: bannerView, viewConstraint: constraint, tableViewToChange: tableViewToChange)
     }
     
     func removeAdIfPRO() {
         
         if isPRO {
             changeBannersVisibilityToState(true)
+            updateContainerSizeAndConstraingts()
             
         } else {
             changeBannersVisibilityToState(false)
-            containerConstraintToChange.constant = 50
-            tableViewToChange?.layoutIfNeeded()
+            updateContainerSizeAndConstraingts()
         }
         
     }
@@ -53,17 +50,17 @@ class FreeOrProVersion {
     }
     
     func updateContainerSizeAndConstraingts() {
-        if let tableView = tableViewToChange {
-            
+        
+        if isPRO {
             containerConstraintToChange.constant = 0
-            tableView.layoutIfNeeded()
-            
-        } else if let view = viewToChange {
-            
-            containerConstraintToChange.constant = 0
-            view.layoutIfNeeded()
-            
+        } else {
+            containerConstraintToChange.constant = 50
         }
+        
+        if let table = tableViewToChange {
+            table.layoutIfNeeded()
+        }
+        
     }
     
 }

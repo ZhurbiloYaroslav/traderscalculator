@@ -21,8 +21,12 @@ class OptSelectParamsVC: UIViewController {
     @IBOutlet weak var leveragePickerView: UIPickerView!
     @IBOutlet weak var stackViewLeverage: UIStackView!
     
+    @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
+    
     var options: UserDefaultsManager!
     var adMob: AdMob!
+    
+    var freeOrProVersion: FreeOrProVersion!
     
     // If we press "Choose language" in Options, this value is True
     var doWeChooseLanguageNow: Bool?
@@ -63,6 +67,10 @@ class OptSelectParamsVC: UIViewController {
     }
     
     func initializeVariables() {
+        
+        freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
+                                            constraint: containerConstraintToChange,
+                                            tableViewToChange: nil)
         
         if doWeChooseParamsAtFirstLaunch == nil {
             firstLaunchNavBar.isHidden = true
@@ -142,6 +150,8 @@ class OptSelectParamsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
         
