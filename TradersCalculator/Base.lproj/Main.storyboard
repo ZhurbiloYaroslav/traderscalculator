@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -430,18 +431,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Options" id="Dap-HV-7od">
                         <barButtonItem key="backBarButtonItem" title="Back" id="LLI-w9-pau"/>
-                        <barButtonItem key="rightBarButtonItem" title="Buy test" id="Dmj-Vd-DSy">
-                            <connections>
-                                <segue destination="pCn-sg-V8Y" kind="show" identifier="inAppTest2" id="yzN-ZZ-TxO"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="containerConstraintToChange" destination="KzN-QD-cRa" id="z6J-Zb-FE6"/>
                         <outlet property="containerTopConstraint" destination="KzN-QD-cRa" id="cp0-UY-mjH"/>
                         <outlet property="containerView" destination="Avd-bG-vOh" id="FsS-wZ-1Ey"/>
                         <outlet property="googleBannerView" destination="lrl-Lg-3EX" id="idd-Q2-U3g"/>
-                        <segue destination="wJd-XX-aXU" kind="show" identifier="TestPurchases" id="zh2-86-gfp"/>
+                        <segue destination="wJd-XX-aXU" kind="show" identifier="PurchaseTest2" id="qCm-2N-vwC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Is-7N-K7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,29 +575,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsBenefitsCell" textLabel="6h9-mi-CyH" style="IBUITableViewCellStyleDefault" id="xoy-8K-Nrj">
-                                        <rect key="frame" x="0.0" y="388" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xoy-8K-Nrj" id="laO-or-Umz">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Benefits of PRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6h9-mi-CyH">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="Ncz-tW-Lra">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppInfo" textLabel="DV7-dc-myD" style="IBUITableViewCellStyleDefault" id="Oj5-KZ-u6D">
-                                        <rect key="frame" x="0.0" y="468" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="424" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oj5-KZ-u6D" id="yk3-je-nyP">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -631,7 +610,6 @@
                     <navigationItem key="navigationItem" id="J5t-R1-g4V"/>
                     <connections>
                         <outlet property="appInfoCell" destination="Oj5-KZ-u6D" id="ciN-Nh-tIs"/>
-                        <outlet property="benefitsCell" destination="xoy-8K-Nrj" id="aLV-BK-gSO"/>
                         <outlet property="buyProCell" destination="8uV-i2-Sj1" id="6zv-7n-tG2"/>
                         <outlet property="currencyCell" destination="OjX-Mu-FLL" id="0KQ-ee-zaZ"/>
                         <outlet property="languageCell" destination="kLe-Yl-vnP" id="Z2C-zt-Lfd"/>
@@ -653,7 +631,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -680,10 +658,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="114" width="304" height="446"/>
+                                <rect key="frame" x="8" y="114" width="304" height="283"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="142"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="28"/>
@@ -700,12 +678,12 @@
                                                 </constraints>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="28" width="304" height="196"/>
+                                                <rect key="frame" x="0.0" y="28" width="304" height="114"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="229" width="304" height="217"/>
+                                        <rect key="frame" x="0.0" y="147" width="304" height="136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -714,7 +692,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -759,24 +737,6 @@
                 <exit id="eg4-fE-uh6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4121" y="969"/>
-        </scene>
-        <!--In App Test2VC-->
-        <scene sceneID="vDk-SS-piP">
-            <objects>
-                <viewController id="pCn-sg-V8Y" customClass="inAppTest2VC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8HG-bu-rK7"/>
-                        <viewControllerLayoutGuide type="bottom" id="2dR-TR-dh4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yIM-0M-0vR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ml0-JY-YaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5134" y="201"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Jub-y8-U1y">
@@ -1297,18 +1257,18 @@
                                         <rect key="frame" x="0.0" y="56" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FCX-iC-W1u" id="5te-iD-LyC">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Digital Lab Studio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TqZ-vE-9Ga">
-                                                    <rect key="frame" x="15" y="9" width="135" height="21"/>
+                                                    <rect key="frame" x="15" y="16" width="135" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jHk-7R-La5">
-                                                    <rect key="frame" x="15" y="30" width="276" height="43"/>
+                                                    <rect key="frame" x="15" y="36.5" width="268.5" height="29"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <string key="text">разработка мобильных приложений, сайтов, 
 фото-видео студия, рекламное агентство.</string>
@@ -1527,7 +1487,7 @@
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w74-J8-l96"/>
+        <segue reference="hhy-tK-JxJ"/>
         <segue reference="qHu-0t-K2J"/>
     </inferredMetricsTieBreakers>
 </document>

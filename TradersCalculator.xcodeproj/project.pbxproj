@@ -18,7 +18,6 @@
 		C44CC79E1F2E715500DF2D03 /* PurchasesTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */; };
 		C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */; };
 		C451AE441F274AC500826790 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE431F274AC500826790 /* HistoryCell.swift */; };
-		C451AE521F66EBF800F988D1 /* inAppTest2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451AE511F66EBF800F988D1 /* inAppTest2VC.swift */; };
 		C45411A81F58665700266979 /* Position+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45411A21F58665700266979 /* Position+CoreDataClass.swift */; };
 		C45411AA1F58665700266979 /* ListOfPositions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45411A41F58665700266979 /* ListOfPositions+CoreDataClass.swift */; };
 		C45411AC1F58665700266979 /* Instrument+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45411A61F58665700266979 /* Instrument+CoreDataClass.swift */; };
@@ -76,7 +75,6 @@
 		C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesTestVC.swift; sourceTree = "<group>"; };
 		C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		C451AE431F274AC500826790 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
-		C451AE511F66EBF800F988D1 /* inAppTest2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inAppTest2VC.swift; sourceTree = "<group>"; };
 		C45411A21F58665700266979 /* Position+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Position+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C45411A41F58665700266979 /* ListOfPositions+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListOfPositions+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C45411A61F58665700266979 /* Instrument+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instrument+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				C413B4181F238C790004F327 /* OptionsTableVC.swift */,
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
 				C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */,
-				C451AE511F66EBF800F988D1 /* inAppTest2VC.swift */,
 				C4AD63ED1F66769300091AD9 /* TabBarController.swift */,
 			);
 			name = Controller;
@@ -343,6 +340,9 @@
 						DevelopmentTeam = 4PM46468DE;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 0;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -475,7 +475,6 @@
 				C4E917391F1CDE1000BE792E /* Index.swift in Sources */,
 				C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */,
 				C4582F261F2B552F001B7403 /* LastUsedInstrument.swift in Sources */,
-				C451AE521F66EBF800F988D1 /* inAppTest2VC.swift in Sources */,
 				C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */,
 				C413B4191F238C790004F327 /* OptionsTableVC.swift in Sources */,
 				C4EAF6D81F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift in Sources */,

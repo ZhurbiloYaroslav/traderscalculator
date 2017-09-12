@@ -376,7 +376,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         let titleForExportAction = "Export".localized()
-        let exportAction = UIAlertAction(title: titleForExportAction, style: .default) { (action) in
+        _ = UIAlertAction(title: titleForExportAction, style: .default) { (action) in
             
             //TODO:
             

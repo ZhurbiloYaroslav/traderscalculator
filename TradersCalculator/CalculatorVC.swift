@@ -509,7 +509,7 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         let titleForMovePosition = "Move this position to list".localized()
-        let moveAction = UIAlertAction(title: titleForMovePosition, style: .default) { (action) in
+        _ = UIAlertAction(title: titleForMovePosition, style: .default) { (action) in
             
             //TODO: Write fuction for moving selected position
             

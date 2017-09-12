@@ -22,10 +22,8 @@ class OptionsTableVC: UITableViewController {
     @IBOutlet weak var languageCell: UITableViewCell!
     @IBOutlet weak var buyProCell: UITableViewCell!
     @IBOutlet weak var restorePurchasesCell: UITableViewCell!
-    @IBOutlet weak var benefitsCell: UITableViewCell!
+    // @IBOutlet weak var benefitsCell: UITableViewCell!
     @IBOutlet weak var appInfoCell: UITableViewCell!
-    
-    //TODO: Сделать перевод этого блока
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +47,7 @@ class OptionsTableVC: UITableViewController {
         languageCell.textLabel?.text = "Language".localized()
         buyProCell.textLabel?.text = UserDefaultsManager().isProVersion ? "Pro version".localized() : "Buy Pro".localized()
         restorePurchasesCell.textLabel?.text = "Restore purchases".localized()
-        benefitsCell.textLabel?.text = "Benefits of PRO".localized()
+        // benefitsCell.textLabel?.text = "Benefits of PRO".localized()
         appInfoCell.textLabel?.text = "App info".localized()
     }
     
@@ -66,24 +64,24 @@ class OptionsTableVC: UITableViewController {
         purchases = [SKProduct]()
         p = SKProduct()
         
-//        // Prepare Purchases cells before get information about purchases
-//        buyProCell.isUserInteractionEnabled = false
-//        restorePurchasesCell.isUserInteractionEnabled = false
-//        benefitsCell.isUserInteractionEnabled = false
-//        
-//        if (SKPaymentQueue.canMakePayments()) {
-//            
-//            print("IAP is enabled, loading")
-//            
-//            let productsID: NSSet = NSSet(objects: "com.soft4status.TradersCalculator.BuyPro")
-//            
-//            let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
-//            request.delegate = self
-//            request.start()
-//            
-//        } else {
-//            print("Please, enable IAP")
-//        }
+        // Prepare Purchases cells before get information about purchases
+        buyProCell.isUserInteractionEnabled = false
+        restorePurchasesCell.isUserInteractionEnabled = false
+        // benefitsCell.isUserInteractionEnabled = false
+        
+        if (SKPaymentQueue.canMakePayments()) {
+            
+            print("IAP is enabled, loading")
+            
+            let productsID: NSSet = NSSet(objects: "com.soft4status.TradersCalculator.BuyPro")
+            
+            let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
+            request.delegate = self
+            request.start()
+            
+        } else {
+            print("Please, enable IAP")
+        }
         
     }
     
@@ -109,19 +107,18 @@ class OptionsTableVC: UITableViewController {
         case [2,0]:
             // Here we will implement Purchase of Pro version without Ads
             
-            let isProVersion = UserDefaultsManager().isProVersion
-            UserDefaultsManager().isProVersion = !isProVersion
-            buyProCell.textLabel?.text = (isProVersion) ? "Buy Pro".localized() : "Pro version".localized()
-
-            switchPro()
+            // let isProVersion = UserDefaultsManager().isProVersion
+            // UserDefaultsManager().isProVersion = !isProVersion
+            // buyProCell.textLabel?.text = (isProVersion) ? "Buy Pro".localized() : "Pro version".localized()
+            // switchPro()
             
-            //        for product in purchases {
-            //            let prodID = product.productIdentifier
-            //            if(prodID == "com.soft4status.TradersCalculator.BuyPro") {
-            //                p = product
-            //                purchaseProVersion()
-            //            }
-            //        }
+            for product in purchases {
+                let prodID = product.productIdentifier
+                if(prodID == "com.soft4status.TradersCalculator.BuyPro") {
+                    p = product
+                    purchaseProVersion()
+                }
+            }
             
         case [2,1]:
             // Here we will implement Restore of Pro version without Ads
@@ -175,9 +172,6 @@ class OptionsTableVC: UITableViewController {
 //MARK: Methods That related to Store Kit
 extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
-    // First Video: Swift 3 In App Purchase Tutorial https://www.youtube.com/watch?v=zRrs7O5yjKI
-    
-    
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         
         let myProducts = response.products
@@ -198,7 +192,7 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
         // Enable user interactions buttons to work with Purchases
         buyProCell.isUserInteractionEnabled = true
         restorePurchasesCell.isUserInteractionEnabled = true
-        benefitsCell.isUserInteractionEnabled = true
+        // benefitsCell.isUserInteractionEnabled = true
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
