@@ -66,24 +66,24 @@ class OptionsTableVC: UITableViewController {
         purchases = [SKProduct]()
         p = SKProduct()
         
-        // Prepare Purchases cells before get information about purchases
-        buyProCell.isUserInteractionEnabled = false
-        restorePurchasesCell.isUserInteractionEnabled = false
-        benefitsCell.isUserInteractionEnabled = false
-        
-        if (SKPaymentQueue.canMakePayments()) {
-            
-            print("IAP is enabled, loading")
-            
-            let productsID: NSSet = NSSet(objects: "com.soft4status.TradersCalculator.BuyPro")
-            
-            let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
-            request.delegate = self
-            request.start()
-            
-        } else {
-            print("Please, enable IAP")
-        }
+//        // Prepare Purchases cells before get information about purchases
+//        buyProCell.isUserInteractionEnabled = false
+//        restorePurchasesCell.isUserInteractionEnabled = false
+//        benefitsCell.isUserInteractionEnabled = false
+//        
+//        if (SKPaymentQueue.canMakePayments()) {
+//            
+//            print("IAP is enabled, loading")
+//            
+//            let productsID: NSSet = NSSet(objects: "com.soft4status.TradersCalculator.BuyPro")
+//            
+//            let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
+//            request.delegate = self
+//            request.start()
+//            
+//        } else {
+//            print("Please, enable IAP")
+//        }
         
     }
     

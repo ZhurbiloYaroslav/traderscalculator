@@ -68,8 +68,11 @@ public class Position: NSManagedObject {
         
         switch accountCurrency {
         case "USD":
+            
             return requestedValue
+            
         case "EUR":
+            
             let currencyPair = "EURUSD"
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
                 let resultValue = requestedValue / rateForCurrentAccountCurrency
@@ -77,9 +80,10 @@ public class Position: NSManagedObject {
             }
             
         case "RUB":
+            
             let currencyPair = "USDRUB"
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
-                let resultValue = requestedValue / rateForCurrentAccountCurrency
+                let resultValue = requestedValue * rateForCurrentAccountCurrency
                 return resultValue
             }
             

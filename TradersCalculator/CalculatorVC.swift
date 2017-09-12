@@ -437,16 +437,19 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
             listNameToolBarButton.title = currentListOfPositions.listName
             listNameToolBarButton.isEnabled = false
+            listNameToolBarButton.tintColor = UIColor.black
             
         } else if let positions = controller.fetchedObjects, positions.count == 0 {
             
             listNameToolBarButton.title = "Choose or create a list".localized()
             listNameToolBarButton.isEnabled = false
+            listNameToolBarButton.tintColor = UIColor.black
             
         } else if let positions = controller.fetchedObjects, positions.count > 0 {
             
             listNameToolBarButton.title = "Save positions to the list".localized()
             listNameToolBarButton.isEnabled = true
+            listNameToolBarButton.tintColor = Constants.Color.blue
             
         }
         
