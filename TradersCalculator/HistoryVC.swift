@@ -171,8 +171,6 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
             }
         }
         
-        print(csvText)
-        
         if let csvData = csvText.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             return csvData
         } else {

@@ -176,7 +176,6 @@
 		C45F8CB21F127244007B1B49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C4AD63ED1F66769300091AD9 /* TabBarController.swift */,
 				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
 				C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */,
 				C45697A81F1A8DAF00599563 /* HistoryVC.swift */,
@@ -185,6 +184,7 @@
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
 				C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */,
 				C451AE511F66EBF800F988D1 /* inAppTest2VC.swift */,
+				C4AD63ED1F66769300091AD9 /* TabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

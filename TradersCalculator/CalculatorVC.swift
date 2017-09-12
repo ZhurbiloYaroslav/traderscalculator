@@ -124,9 +124,10 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         }
         
         // Update the Total Label's values
-        totalProfitLabel.text = String(format: "%.2f", totalProfitValue)
-        totalLossLabel.text = String(format: "%.2f", totalLossValue)
-        totalMarginLabel.text = String(format: "%.2f", totalMarginValue)
+        let accountCurrency = userDefaultsManager.accountCurrency
+        totalProfitLabel.text = String(format: "%.2f", totalProfitValue) + " \(accountCurrency)"
+        totalLossLabel.text = String(format: "%.2f", totalLossValue) + " \(accountCurrency)"
+        totalMarginLabel.text = String(format: "%.2f", totalMarginValue) + " \(accountCurrency)"
         
     }
     

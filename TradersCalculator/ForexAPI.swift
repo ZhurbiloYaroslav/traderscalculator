@@ -53,6 +53,8 @@ class ForexAPI {
         switch instrumentName {
         case let x where x.contains("RUR"):
             return instrumentName.replacingOccurrences(of: "RUR", with: "RUB")
+        case let x where x.contains("CNY"):
+            return instrumentName.replacingOccurrences(of: "CNY", with: "CNH")
         case "#Bitcoin":
             return instrumentName.replacingOccurrences(of: "#Bitcoin", with: "BTCUSD")
         default:
