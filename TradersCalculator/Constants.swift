@@ -22,25 +22,52 @@ struct Constants {
     }
     
     static let bundleID = "com.soft4status.TradersCalculator"
-//    static let bundleID = "com.diglabstudio.TraderCalculator"
+    //    static let bundleID = "com.diglabstudio.TraderCalculator"
     
     static let defaultCurrency = Constants.currenciesOfAccount[0]
     static let defaultLanguage = Constants.languages[0]
     static let defaultLeverage = Constants.leverage[3]
-        
+    
     // Currency constants
     // Uses in options
     static let currenciesOfAccount = [
         "USD",
         "EUR",
-        "RUB"
+        "RUB",
+        "AUD",
+        "GBP",
+        "CAD",
+        "CHF",
+        "JPY",
+        "NZD",
+        "CNH",
+        "CZK",
+        "DKK",
+        "HKD",
+        "HUF",
+        "MXN",
+        "NOK",
+        "PLN",
+        "SEK",
+        "THB",
+        "TRY",
+        "ZAR"
     ]
     
     // Uses in options
     static let languages = [
         "System",
         "English",
-        "Русский"
+        "Русский",
+        "Français",
+        "Español",
+        "Deutsch",
+        "Português",
+        "Türkçe",
+        "हिन्दी",
+        "中国",
+        "日本語",
+               "العربية"
     ]
     
     // "Кредитное плечо" in Russian
