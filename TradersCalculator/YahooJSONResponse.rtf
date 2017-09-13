@@ -1,10 +1,10 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
 {\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 Menlo-Regular;\f2\fmodern\fcharset0 Courier-Bold;
 }
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red163\green21\blue21;\red0\green0\blue0;
-\red0\green0\blue255;\red15\green112\blue1;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgenericrgb\c63900\c8200\c8200;\cssrgb\c0\c0\c0;
-\cssrgb\c0\c0\c100000;\cssrgb\c0\c50196\c0;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;
+\red163\green21\blue21;\red0\green0\blue255;\red15\green112\blue1;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgenericrgb\c0\c0\c100000;\csgenericrgb\c0\c0\c0;
+\csgenericrgb\c63900\c8200\c8200;\cssrgb\c0\c0\c100000;\cssrgb\c0\c50196\c0;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid2\'00;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid3\'00;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid4\'00;}{\levelnumbers;}\fi-360\li2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid5\'00;}{\levelnumbers;}\fi-360\li3600\lin3600 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
 \paperw12240\paperh15840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
@@ -15,1035 +15,1035 @@
 \
 \pard\tx543\pardeftab543\pardirnatural\partightenfactor0
 
-\f1\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22AUDUSD%22%2C%20%22EURUSD%22%2C%20%22GBPUSD%22%2C%20%22USDCAD%22%2C%20%22USDCHF%22%2C%20%22USDJPY%22%2C%20%22AUDCAD%22%2C%20%22AUDCHF%22%2C%20%22AUDJPY%22%2C%20%22AUDNZD%22%2C%20%22CADCHF%22%2C%20%22CADJPY%22%2C%20%22CHFJPY%22%2C%20%22EURAUD%22%2C%20%22EURCAD%22%2C%20%22EURCHF%22%2C%20%22EURGBP%22%2C%20%22EURJPY%22%2C%20%22EURNZD%22%2C%20%22GBPAUD%22%2C%20%22GBPCAD%22%2C%20%22GBPCHF%22%2C%20%22GBPJPY%22%2C%20%22GBPNZD%22%2C%20%22NZDCAD%22%2C%20%22NZDCHF%22%2C%20%22NZDJPY%22%2C%20%22NZDUSD%22%2C%20%22USDSGD%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
+\f1\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 static\cf4  \cf3 let\cf4  yahooBaseURL = \cf5 "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20('AUDUSD'%2C'EURUSD'%2C'GBPUSD'%2C'USDCAD'%2C'USDCHF'%2C'USDJPY'%2C'AUDCAD'%2C'AUDCHF'%2C'AUDJPY'%2C'AUDNZD'%2C'CADCHF'%2C'CADJPY'%2C'CHFJPY'%2C'EURAUD'%2C'EURCAD'%2C'EURCHF'%2C'EURGBP'%2C'EURJPY'%2C'EURNZD'%2C'GBPAUD'%2C'GBPCAD'%2C'GBPCHF'%2C'GBPJPY'%2C'GBPNZD'%2C'NZDCAD'%2C'NZDCHF'%2C'NZDJPY'%2C'NZDUSD'%2C'USDSGD'%2C'AUDSGD'%2C'CHFSGD'%2C'EURDKK'%2C'EURHKD'%2C'EURNOK'%2C'EURPLN'%2C'EURSEK'%2C'EURSGD'%2C'EURTRY'%2C'EURZAR'%2C'GBPDKK'%2C'GBPNOK'%2C'GBPSEK'%2C'GBPSGD'%2C'NOKJPY'%2C'NOKSEK'%2C'SEKJPY'%2C'SGDJPY'%2C'USDCNH'%2C'USDCZK'%2C'USDDKK'%2C'USDHKD'%2C'USDHUF'%2C'USDMXN'%2C'USDNOK'%2C'USDPLN'%2C'USDRUB'%2C'USDSEK'%2C'USDTHB'%2C'USDTRY'%2C'USDZAR'%2C%20'BTCUSD')&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
 \f0\fs24 \cf2 \expnd0\expndtw0\kerning0
 \CocoaLigature1 \
 \pard\pardeftab720\sl280\partightenfactor0
 \cf2 \
 \pard\pardeftab720\sl280\partightenfactor0
-\cf4 \outl0\strokewidth0 \strokec4 \{\
+\cf2 \{\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl280\partightenfactor0
 \ls1\ilvl0
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 query
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+query
 \f0\b0 :\'a0\uc0\u8232 \{\
 \pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl280\partightenfactor0
 \ls1\ilvl1
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 count
-\f0\b0 :\'a0\cf5 \strokec5 29\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+count
+\f0\b0 :\'a0\cf6 29\cf2 ,\
 \ls1\ilvl1
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 created
-\f0\b0 :\'a0\cf6 \strokec6 "2017-07-27T10:21:59Z"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+created
+\f0\b0 :\'a0\cf7 "2017-07-27T10:21:59Z"\cf2 ,\
 \ls1\ilvl1
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 lang
-\f0\b0 :\'a0\cf6 \strokec6 "ru-RU"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+lang
+\f0\b0 :\'a0\cf7 "ru-RU"\cf2 ,\
 \ls1\ilvl1
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 results
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+results
 \f0\b0 :\'a0\uc0\u8232 \{\
 \pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\sl280\partightenfactor0
 \ls1\ilvl2
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 rate
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+rate
 \f0\b0 :\'a0\uc0\u8232 [\
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "AUDUSD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "AUDUSD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "AUD/USD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "AUD/USD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.7992"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.7992"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "8:43pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "8:43pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.7992"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.7992"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.7992"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.7992"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURUSD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURUSD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/USD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/USD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.1723"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.1723"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "8:56pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "8:56pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.1724"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.1724"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.1723"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.1723"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "GBPUSD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "GBPUSD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "GBP/USD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "GBP/USD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.3144"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.3144"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "4:26am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "4:26am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.3144"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.3144"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.3144"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.3144"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "USDCAD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "USDCAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "USD/CAD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "USD/CAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.2442"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.2442"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "7:27am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "7:27am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.2448"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.2448"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.2442"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.2442"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "USDCHF"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "USDCHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "USD/CHF"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "USD/CHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.9512"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.9512"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "1:38am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "1:38am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.9513"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.9513"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.9512"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.9512"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "USDJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "USDJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "USD/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "USD/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "111.9650"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "111.9650"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "6:50pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "6:50pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "111.9700"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "111.9700"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "111.9650"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "111.9650"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "AUDCAD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "AUDCAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "AUD/CAD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "AUD/CAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.9949"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.9949"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "9:06pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "9:06pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.9952"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.9952"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.9949"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.9949"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "AUDCHF"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "AUDCHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "AUD/CHF"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "AUD/CHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.7653"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.7653"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "5:58am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "5:58am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.7654"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.7654"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.7653"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.7653"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "AUDJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "AUDJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "AUD/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "AUD/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "88.9100"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "88.9100"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "9:05pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "9:05pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "88.9250"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "88.9250"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "88.9100"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "88.9100"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "AUDNZD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "AUDNZD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "AUD/NZD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "AUD/NZD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.0642"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.0642"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "11:22pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "11:22pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.0643"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.0643"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.0642"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.0642"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "CADCHF"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "CADCHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "CAD/CHF"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "CAD/CHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.7637"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.7637"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "11:21pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "11:21pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.7639"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.7639"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.7637"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.7637"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "CADJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "CADJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "CAD/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "CAD/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "89.2980"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "89.2980"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "11:26pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "11:26pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "89.3130"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "89.3130"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "89.2980"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "89.2980"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "CHFJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "CHFJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "CHF/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "CHF/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "116.8860"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "116.8860"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "11:21pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "11:21pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "116.8980"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "116.8980"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "116.8860"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "116.8860"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURAUD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURAUD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/AUD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/AUD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.4606"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.4606"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "3:29am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "3:29am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.4607"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.4607"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.4606"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.4606"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURCAD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURCAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/CAD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/CAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.4587"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.4587"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "10:09am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "10:09am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.4589"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.4589"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.4587"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.4587"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURCHF"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURCHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/CHF"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/CHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.1155"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.1155"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "9:05pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "9:05pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.1158"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.1158"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.1155"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.1155"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURGBP"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURGBP"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/GBP"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/GBP"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.8944"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.8944"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "8:08pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "8:08pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.8945"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.8945"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.8944"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.8944"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "130.4800"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "130.4800"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "9:47am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "9:47am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "130.5500"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "130.5500"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "130.4800"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "130.4800"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "EURNZD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "EURNZD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "EUR/NZD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "EUR/NZD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.5634"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.5634"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "8:43pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "8:43pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.5637"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.5637"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.5634"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.5634"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "GBPAUD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "GBPAUD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "GBP/AUD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "GBP/AUD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.6400"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.6400"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "0:32am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "0:32am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.6402"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.6402"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.6400"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.6400"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "GBPCAD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "GBPCAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "GBP/CAD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "GBP/CAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.6328"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.6328"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "11:58pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "11:58pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.6331"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.6331"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.6328"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.6328"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "GBPCHF"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "GBPCHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "GBP/CHF"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "GBP/CHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.2464"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.2464"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "10:08pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "10:08pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.2471"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.2471"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.2464"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.2464"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "GBPJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "GBPJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "GBP/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "GBP/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "145.7690"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "145.7690"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "4:26am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "4:26am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "145.7710"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "145.7710"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "145.7690"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "145.7690"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "GBPNZD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "GBPNZD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "GBP/NZD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "GBP/NZD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.7443"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.7443"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "10:08pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "10:08pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.7450"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.7450"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.7443"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.7443"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "NZDCAD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "NZDCAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "NZD/CAD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "NZD/CAD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.9366"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.9366"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "0:00am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "0:00am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.9367"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.9367"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.9366"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.9366"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "NZDCHF"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "NZDCHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "NZD/CHF"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "NZD/CHF"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.7168"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.7168"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "2:41am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "2:41am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.7169"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.7169"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.7168"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.7168"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "NZDJPY"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "NZDJPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "NZD/JPY"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "NZD/JPY"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "83.5620"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "83.5620"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "2:38am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "2:38am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "83.5680"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "83.5680"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "83.5620"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "83.5620"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "NZDUSD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "NZDUSD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "NZD/USD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "NZD/USD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "0.7553"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "0.7553"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/27/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/27/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "4:43am"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "4:43am"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "0.7554"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "0.7554"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "0.7553"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "0.7553"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \},\
-\ls1\ilvl3\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \uc0\u8232 \{\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\},\
+\ls1\ilvl3\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\uc0\u8232 \{\
 \pard\tx3100\tx3600\pardeftab720\li3600\fi-3600\sl280\partightenfactor0
 \ls1\ilvl4
-\f2\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 id
-\f0\b0 :\'a0\cf6 \strokec6 "USDSGD"\cf4 \strokec4 ,\
+\f2\b \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+id
+\f0\b0 :\'a0\cf7 "USDSGD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Name
-\f0\b0 :\'a0\cf6 \strokec6 "USD/SGD"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Name
+\f0\b0 :\'a0\cf7 "USD/SGD"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Rate
-\f0\b0 :\'a0\cf6 \strokec6 "1.3570"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Rate
+\f0\b0 :\'a0\cf7 "1.3570"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Date
-\f0\b0 :\'a0\cf6 \strokec6 "7/26/2017"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Date
+\f0\b0 :\'a0\cf7 "7/26/2017"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Time
-\f0\b0 :\'a0\cf6 \strokec6 "9:05pm"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Time
+\f0\b0 :\'a0\cf7 "9:05pm"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Ask
-\f0\b0 :\'a0\cf6 \strokec6 "1.3577"\cf4 \strokec4 ,\
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Ask
+\f0\b0 :\'a0\cf7 "1.3577"\cf2 ,\
 \ls1\ilvl4
-\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 Bid
-\f0\b0 :\'a0\cf6 \strokec6 "1.3570"\cf4 \strokec4 \
+\f2\b \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Bid
+\f0\b0 :\'a0\cf7 "1.3570"\cf2 \
 \pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\sl280\partightenfactor0
-\ls1\ilvl3\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \}\
+\ls1\ilvl3\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\}\
 \pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\sl280\partightenfactor0
-\ls1\ilvl2\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\
+\ls1\ilvl2\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+]\
 \pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl280\partightenfactor0
-\ls1\ilvl1\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \}\
+\ls1\ilvl1\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\}\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl280\partightenfactor0
-\ls1\ilvl0\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \}\
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+\}\
 \pard\pardeftab720\sl280\partightenfactor0
-\cf4 \}}
+\cf2 \}}

@@ -11,11 +11,27 @@ import Alamofire
 
 class ForexAPI {
     
+    private let yahooBaseURL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20('EURTRY'%2C'NOKSEK')&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
+    
+    private let instaForexBaseURL = "https://quotes.instaforex.com/api/quotesTick?m=json&q=USDCNY,USDRUR,AUDUSD,EURUSD,GBPUSD,USDCAD,USDCHF,USDJPY,AUDCAD,AUDCHF,AUDJPY,AUDNZD,CADCHF,CADJPY,CHFJPY,EURAUD,EURCAD,EURCHF,EURGBP,EURJPY,EURNZD,GBPAUD,GBPCAD,GBPCHF,GBPJPY,GBPNZD,NZDCAD,NZDCHF,NZDJPY,NZDUSD,USDSGD,AUDSGD,CHFSGD,EURDKK,EURHKD,EURNOK,EURPLN,EURSEK,EURSGD,EURTRY,EURZAR,GBPDKK,GBPNOK,GBPSEK,GBPSGD,NOKJPY,NOKSEK,SEKJPY,SGDJPY,USDCNH,USDCZK,USDDKK,USDHKD,USDHUF,USDMXN,USDNOK,USDPLN,USDRUR,USDSEK,USDTHB,USDTRY,USDZAR,BTCUSD,XBRUSD,%23bitcoin"
+    
     var ratesByInstrumentName: Dictionary<String, String>!
+    
+    init() {
+        ratesByInstrumentName = UserDefaultsManager().cachedInstrumentsRates.rates
+    }
+    
+    func saveLastRatesToUserDefaults() {
+        
+        UserDefaultsManager().cachedInstrumentsRates = InstrumentsRates(rates: ratesByInstrumentName,
+                                                                        date: "\(Date())")
+    }
     
     func downloadInstrumentsRates(completed: @escaping DownloadComplete) {
         
-        guard let url = URL(string: Constants.instaForexBaseURL) else { return }
+        downloadInstrumentsRatesFromYahoo()
+        
+        guard let url = URL(string: instaForexBaseURL) else { return }
         
         Alamofire.request(url).responseJSON { (response) in
             
@@ -33,49 +49,22 @@ class ForexAPI {
                     return
                 }
                 
-                let correctInstrumentName = self.replaceInstrumentNameWithCorrect(instrumentName)
+                let correctInstrumentName = self.getCorrectInstrumentNameFrom(instrumentName)
+                let formattedInstrumentRate = self.getFormattedInstrumentRateFrom(instrumentRate, for: correctInstrumentName)
                 
-                let digitsAfterDotInInstrument = correctInstrumentName.contains("JPY") ? 3 : 5
-                let formatString = "%.\(digitsAfterDotInInstrument)f"
-                
-                self.ratesByInstrumentName.updateValue(String(format: formatString, instrumentRate), forKey: correctInstrumentName)
+                self.ratesByInstrumentName.updateValue(formattedInstrumentRate, forKey: correctInstrumentName)
+                self.saveLastRatesToUserDefaults()
                 
             }
-            
-            self.saveLastRatesToUserDefaults()
             
             completed()
         }
         
     }
     
-    func replaceInstrumentNameWithCorrect(_ instrumentName: String) -> String {
-        switch instrumentName {
-        case let x where x.contains("RUR"):
-            return instrumentName.replacingOccurrences(of: "RUR", with: "RUB")
-        case let x where x.contains("CNY"):
-            return instrumentName.replacingOccurrences(of: "CNY", with: "CNH")
-        case "#Bitcoin":
-            return instrumentName.replacingOccurrences(of: "#Bitcoin", with: "BTCUSD")
-        default:
-            return instrumentName
-        }
-    }
-    
-    init() {
-        ratesByInstrumentName = UserDefaultsManager().cachedInstrumentsRates.rates
-    }
-    
-    func saveLastRatesToUserDefaults() {
-        let thisDate = Date()
-        UserDefaultsManager().cachedInstrumentsRates = InstrumentsRates(rates: ratesByInstrumentName,
-                                                                        date: "\(thisDate)")
-    }
-    
-    /*
-    func downloadInstrumentsRatesFromYahoo(completed: @escaping DownloadComplete) {
+    func downloadInstrumentsRatesFromYahoo() {
         
-        guard let url = URL(string: Constants.yahooBaseURL) else { return }
+        guard let url = URL(string: yahooBaseURL) else { return }
         
         Alamofire.request(url).responseJSON { (response) in
             
@@ -93,15 +82,41 @@ class ForexAPI {
                 guard let instrumentName = resource["id"] as? String else { return }
                 guard let instrumentRate = resource["Rate"] as? String else { return }
                 
-                self.ratesByInstrumentName.updateValue(instrumentRate, forKey: instrumentName)
-                self.saveLastRatesToUserDefaults()
+                if let _instrumentRate = Double(instrumentRate) {
+                    
+                    let correctInstrumentName = self.getCorrectInstrumentNameFrom(instrumentName)
+                    let formattedInstrumentRate = self.getFormattedInstrumentRateFrom(_instrumentRate, for: correctInstrumentName)
+                    
+                    self.ratesByInstrumentName.updateValue(formattedInstrumentRate, forKey: correctInstrumentName)
+                    self.saveLastRatesToUserDefaults()
+                    
+                }
                 
             }
             
-            completed()
         }
         
     }
-    */
+    
+    func getCorrectInstrumentNameFrom(_ instrumentName: String) -> String {
+        switch instrumentName {
+        case let x where x.contains("RUR"):
+            return instrumentName.replacingOccurrences(of: "RUR", with: "RUB")
+        case let x where x.contains("CNY"):
+            return instrumentName.replacingOccurrences(of: "CNY", with: "CNH")
+        case "#Bitcoin":
+            return instrumentName.replacingOccurrences(of: "#Bitcoin", with: "BTCUSD")
+        default:
+            return instrumentName
+        }
+    }
+    
+    func getFormattedInstrumentRateFrom(_ instrumentRate: Double, for forInstrumentName: String) -> String {
+        
+        let digitsAfterDotInInstrument = forInstrumentName.contains("JPY") ? 3 : 5
+        let formatString = "%.\(digitsAfterDotInInstrument)f"
+        return String(format: formatString, instrumentRate)
+        
+    }
 }
 

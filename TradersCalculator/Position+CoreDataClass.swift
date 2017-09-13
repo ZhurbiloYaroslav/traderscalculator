@@ -67,21 +67,22 @@ public class Position: NSManagedObject {
         let ratesByInstrumentName = ForexAPI().ratesByInstrumentName
         
         switch accountCurrency {
-        case "USD":
+            
+        case USD:
             
             return requestedValue
             
-        case "EUR":
+        case EUR, AUD, GBP, NZD:
             
-            let currencyPair = "EURUSD"
+            let currencyPair = accountCurrency + "USD"
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
                 let resultValue = requestedValue / rateForCurrentAccountCurrency
                 return resultValue
             }
             
-        case "RUB":
+        case RUB, CAD, CHF, JPY, CNH, CZK, DKK, HKD, HUF, MXN, NOK, PLN, SEK, THB, TRY, ZAR:
             
-            let currencyPair = "USDRUB"
+            let currencyPair = "USD" + accountCurrency
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
                 let resultValue = requestedValue * rateForCurrentAccountCurrency
                 return resultValue
