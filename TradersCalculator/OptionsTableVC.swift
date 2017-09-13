@@ -11,6 +11,8 @@ import StoreKit
 
 class OptionsTableVC: UITableViewController {
     
+    var productIdBuyPro = "com.soft4status.TradersCalculator.BuyPro"
+    
     var options: UserDefaultsManager!
     
     //MARK: Variables for purchases
@@ -22,7 +24,6 @@ class OptionsTableVC: UITableViewController {
     @IBOutlet weak var languageCell: UITableViewCell!
     @IBOutlet weak var buyProCell: UITableViewCell!
     @IBOutlet weak var restorePurchasesCell: UITableViewCell!
-    // @IBOutlet weak var benefitsCell: UITableViewCell!
     @IBOutlet weak var appInfoCell: UITableViewCell!
     
     override func viewDidLoad() {
@@ -47,8 +48,7 @@ class OptionsTableVC: UITableViewController {
         languageCell.textLabel?.text = "Language".localized()
         buyProCell.textLabel?.text = UserDefaultsManager().isProVersion ? "Pro version".localized() : "Buy Pro".localized()
         restorePurchasesCell.textLabel?.text = "Restore purchases".localized()
-        // benefitsCell.textLabel?.text = "Benefits of PRO".localized()
-        appInfoCell.textLabel?.text = "App info".localized()
+        appInfoCell.textLabel?.text = "Developers".localized()
     }
     
     // Init delegates
@@ -57,7 +57,6 @@ class OptionsTableVC: UITableViewController {
         
         
     }
-    
     
     func initializeVariables() {
         
@@ -71,16 +70,17 @@ class OptionsTableVC: UITableViewController {
         
         if (SKPaymentQueue.canMakePayments()) {
             
-            print("IAP is enabled, loading")
+            // "IAP is enabled, loading"
             
-            let productsID: NSSet = NSSet(objects: "com.soft4status.TradersCalculator.BuyPro")
+            let productsID: NSSet = NSSet(objects: productIdBuyPro)
             
             let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
             request.delegate = self
             request.start()
             
         } else {
-            print("Please, enable IAP")
+            
+            // "Please, enable IAP"
         }
         
     }
@@ -107,14 +107,9 @@ class OptionsTableVC: UITableViewController {
         case [2,0]:
             // Here we will implement Purchase of Pro version without Ads
             
-            // let isProVersion = UserDefaultsManager().isProVersion
-            // UserDefaultsManager().isProVersion = !isProVersion
-            // buyProCell.textLabel?.text = (isProVersion) ? "Buy Pro".localized() : "Pro version".localized()
-            // switchPro()
-            
             for product in purchases {
                 let prodID = product.productIdentifier
-                if(prodID == "com.soft4status.TradersCalculator.BuyPro") {
+                if(prodID == productIdBuyPro) {
                     p = product
                     purchaseProVersion()
                 }
@@ -152,7 +147,7 @@ class OptionsTableVC: UITableViewController {
         case 2:
             return "Purchases".localized()
         case 3:
-            return "".localized()
+            return "App info".localized()
         case 4:
             return "".localized()
         default:
@@ -175,15 +170,8 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         
         let myProducts = response.products
-        print("Products from response", response.products)
-        print("Invalid Products from response", response.invalidProductIdentifiers)
         
         for product in myProducts {
-            print("Product added")
-            print(product.productIdentifier)
-            print(product.localizedTitle)
-            print(product.localizedDescription)
-            print(product.price)
             
             purchases.append(product)
             
@@ -192,18 +180,17 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
         // Enable user interactions buttons to work with Purchases
         buyProCell.isUserInteractionEnabled = true
         restorePurchasesCell.isUserInteractionEnabled = true
-        // benefitsCell.isUserInteractionEnabled = true
+        
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        print("Transactions restored")
         
         for transaction in queue.transactions {
             let t: SKPaymentTransaction = transaction
             let productID = t.payment.productIdentifier
             
             switch productID {
-            case "com.soft4status.TradersCalculator.BuyPro":
+            case productIdBuyPro:
                 
                 print("Purchase PRO version")
                 purchaseProVersion()
@@ -214,30 +201,35 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
         }
     }
     
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func makeThisAppPro() {
         
-        print("Add payment")
+        UserDefaultsManager().isProVersion = true
+        
+        if UserDefaultsManager().isProVersion {
+            buyProCell.textLabel?.text = "Pro version".localized()
+            
+            switchPro()
+        }
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
         for transaction: AnyObject in transactions {
             
             if let trans = transaction as? SKPaymentTransaction {
-                print(trans.error ?? "Error")
                 
                 switch trans.transactionState {
                 case .purchased:
                     
-                    print("Buy OK! Unlock IAP Here!")
-                    print(p.productIdentifier)
-                    //TODO: Unlock In-App purchase here!
-                    
                     switch p.productIdentifier {
-                    case "com.soft4status.TradersCalculator.BuyPro":
+                    case productIdBuyPro:
                         
-                        print("Purchase PRO version")
                         purchaseProVersion()
                         
                     default:
-                        print("IAP not found")
+                        break
+                        // "IAP not found"
                     }
                     
                     // Finish currecn transaction
@@ -254,13 +246,12 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
                 }
             }
             
-            
         }
     }
     
     // This function purchases PRO version
     func purchaseProVersion() {
-        print("Buy " + p.productIdentifier)
+        
         let payment = SKPayment(product: p)
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(payment as SKPayment)

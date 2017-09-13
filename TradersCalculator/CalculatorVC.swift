@@ -110,7 +110,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         }
         
         for position in arrayWithPositionsFromCoreData {
-            //---Back---
+
             if let profit = Double(position.getProfit()) {
                 totalProfitValue += profit
             }

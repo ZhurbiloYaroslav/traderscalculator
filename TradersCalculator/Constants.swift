@@ -21,6 +21,9 @@ struct Constants {
         static let red = UIColor(red: 210/255, green: 107/255, blue: 88/255, alpha: 1)
     }
     
+    static let bundleID = "com.soft4status.TradersCalculator"
+//    static let bundleID = "com.diglabstudio.TraderCalculator"
+    
     static let defaultCurrency = Constants.currenciesOfAccount[0]
     static let defaultLanguage = Constants.languages[0]
     static let defaultLeverage = Constants.leverage[3]
