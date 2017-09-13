@@ -11,7 +11,7 @@ import StoreKit
 
 class OptionsTableVC: UITableViewController {
     
-    var productIdBuyPro = "com.soft4status.TradersCalculator.BuyPro"
+    var productIdBuyPro = "com.diglabstudio.TraderCalculator.BuyPro"
     
     var options: UserDefaultsManager!
     

@@ -48,7 +48,6 @@
 		C4EAF6D81F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF6D51F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift */; };
 		C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3A5621F17F84B004DC1C9 /* Constants.swift */; };
 		C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */; };
-		C4F87BDF1F1F708B00C3BC7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4F87BDE1F1F708B00C3BC7E /* GoogleService-Info.plist */; };
 		C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */; };
 		C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */; };
 		C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FB60DD1F1268A700EDE9C7 /* Main.storyboard */; };
@@ -108,8 +107,7 @@
 		C4EAF6D51F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListOfPositions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C4F3A5621F17F84B004DC1C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = YahooJSONResponse.rtf; sourceTree = "<group>"; };
-		C4F87BDE1F1F708B00C3BC7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradersCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FB60D61F1268A700EDE9C7 /* TraderCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraderCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		C4FB60E11F1268A700EDE9C7 /* TradersCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TradersCalculator.xcdatamodel; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		C45F8CB51F12726D007B1B49 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C4F87BDE1F1F708B00C3BC7E /* GoogleService-Info.plist */,
 				C4FB60E31F1268A700EDE9C7 /* Assets.xcassets */,
 				C4FB60E81F1268A700EDE9C7 /* Info.plist */,
 				C464FB021F5FF90000D5A9C9 /* Localizable.strings */,
@@ -283,7 +280,7 @@
 		C4FB60D71F1268A700EDE9C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */,
+				C4FB60D61F1268A700EDE9C7 /* TraderCalculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -305,9 +302,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C4FB60D51F1268A700EDE9C7 /* TradersCalculator */ = {
+		C4FB60D51F1268A700EDE9C7 /* TraderCalculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C4FB60EB1F1268A700EDE9C7 /* Build configuration list for PBXNativeTarget "TradersCalculator" */;
+			buildConfigurationList = C4FB60EB1F1268A700EDE9C7 /* Build configuration list for PBXNativeTarget "TraderCalculator" */;
 			buildPhases = (
 				C7EEE88B3FF3ECEE8C23A3B5 /* [CP] Check Pods Manifest.lock */,
 				C4FB60D21F1268A700EDE9C7 /* Sources */,
@@ -320,9 +317,9 @@
 			);
 			dependencies = (
 			);
-			name = TradersCalculator;
+			name = TraderCalculator;
 			productName = TradersCalculator;
-			productReference = C4FB60D61F1268A700EDE9C7 /* TradersCalculator.app */;
+			productReference = C4FB60D61F1268A700EDE9C7 /* TraderCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -337,7 +334,7 @@
 				TargetAttributes = {
 					C4FB60D51F1268A700EDE9C7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4PM46468DE;
+						DevelopmentTeam = 4G7Z85GAX4;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
@@ -350,7 +347,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C4FB60D11F1268A700EDE9C7 /* Build configuration list for PBXProject "TradersCalculator" */;
+			buildConfigurationList = C4FB60D11F1268A700EDE9C7 /* Build configuration list for PBXProject "TraderCalculator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -364,7 +361,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C4FB60D51F1268A700EDE9C7 /* TradersCalculator */,
+				C4FB60D51F1268A700EDE9C7 /* TraderCalculator */,
 			);
 		};
 /* End PBXProject section */
@@ -379,7 +376,6 @@
 				C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */,
 				C464FB001F5FF90000D5A9C9 /* Localizable.strings in Resources */,
 				C4FB60E71F1268A700EDE9C7 /* LaunchScreen.storyboard in Resources */,
-				C4F87BDF1F1F708B00C3BC7E /* GoogleService-Info.plist in Resources */,
 				C4FB60E41F1268A700EDE9C7 /* Assets.xcassets in Resources */,
 				C4FB60DF1F1268A700EDE9C7 /* Main.storyboard in Resources */,
 				C472B1CB1F29F5B500BAA1CD /* instaforexAllquotesList.rtf in Resources */,
@@ -617,11 +613,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4PM46468DE;
+				DEVELOPMENT_TEAM = 4G7Z85GAX4;
 				INFOPLIST_FILE = TradersCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soft4status.TradersCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diglabstudio.TraderCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -635,11 +631,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4PM46468DE;
+				DEVELOPMENT_TEAM = 4G7Z85GAX4;
 				INFOPLIST_FILE = TradersCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soft4status.TradersCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diglabstudio.TraderCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -650,7 +646,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C4FB60D11F1268A700EDE9C7 /* Build configuration list for PBXProject "TradersCalculator" */ = {
+		C4FB60D11F1268A700EDE9C7 /* Build configuration list for PBXProject "TraderCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4FB60E91F1268A700EDE9C7 /* Debug */,
@@ -659,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4FB60EB1F1268A700EDE9C7 /* Build configuration list for PBXNativeTarget "TradersCalculator" */ = {
+		C4FB60EB1F1268A700EDE9C7 /* Build configuration list for PBXNativeTarget "TraderCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4FB60EC1F1268A700EDE9C7 /* Debug */,

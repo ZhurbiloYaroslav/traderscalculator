@@ -13,7 +13,7 @@ import StoreKit
 var productsSharedSecret = "e4d4544092d44ebfb69283940cd9479d"
 
 enum RegisteredPurchase : String {
-    case BuyPro = "com.soft4status.TradersCalculator.BuyPro"
+    case BuyPro = "com.diglabstudio.TraderCalculator.BuyPro"
 }
 
 class PurchasesTestVC: UIViewController {
