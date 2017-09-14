@@ -18,14 +18,13 @@ class AdMob {
     //TODO: Make description
     func getLittleBannerFor(viewController: UIViewController, adBannerView: GADBannerView) {
         
-        let request = GADRequest()
-//        request.testDevices = ["83c4c085bb410adc60257e1183e7630a8b602e71"]
-        request.testDevices = [kGADSimulatorID, "83c4c085bb410adc60257e1183e7630a8b602e71"]
-        
-        adBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
-        adBannerView.delegate = viewController as? GADBannerViewDelegate
-        adBannerView.rootViewController = viewController
-        adBannerView.load(request)
+//        let request = GADRequest()
+//        request.testDevices = [kGADSimulatorID, "83c4c085bb410adc60257e1183e7630a8b602e71"]
+//        
+//        adBannerView.adUnitID = "ca-app-pub-7923953444264875/5465129548"
+//        adBannerView.delegate = viewController as? GADBannerViewDelegate
+//        adBannerView.rootViewController = viewController
+//        adBannerView.load(request)
         
     }
 }

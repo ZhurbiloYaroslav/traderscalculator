@@ -112,7 +112,7 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         
-        mailComposerVC.setToRecipients(["5814611@gmail.com"])
+        mailComposerVC.setToRecipients([""])
         mailComposerVC.setSubject("Export of the history")
         
         let dataForExport = getCsvDataForExportHistory()

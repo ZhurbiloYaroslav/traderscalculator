@@ -10,7 +10,7 @@
 = "sell";
 
 "buy"
-= "sell";
+= "buy";
 
 "Edit position"
 = "Edit position";

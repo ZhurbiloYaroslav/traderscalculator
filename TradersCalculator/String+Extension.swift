@@ -107,6 +107,10 @@ extension String {
     func localized() -> String {
         
         switch UserDefaultsManager().language {
+        case "English":
+            let path = Bundle.main.path(forResource: "Base", ofType: "lproj")
+            let bundle = Bundle(path: path!)!
+            return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
         case "Русский":
             let path = Bundle.main.path(forResource: "ru", ofType: "lproj")
             let bundle = Bundle(path: path!)!

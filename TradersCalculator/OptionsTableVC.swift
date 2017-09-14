@@ -11,11 +11,9 @@ import StoreKit
 
 class OptionsTableVC: UITableViewController {
     
-    var productIdBuyPro = "com.diglabstudio.TraderCalculator.BuyPro"
-    
     var options: UserDefaultsManager!
     
-    //MARK: Variables for purchases
+    var productIdBuyPro = "com.diglabstudio.TraderCalculator.BuyPro"
     var purchases: [SKProduct]!
     var p: SKProduct!
     
@@ -31,11 +29,7 @@ class OptionsTableVC: UITableViewController {
         
         updateUILabelsWithLocalizedText()
         
-        initDelegates()
-        
         initializeVariables()
-        
-        options = UserDefaultsManager()
         
         updateTable()
         
@@ -51,29 +45,24 @@ class OptionsTableVC: UITableViewController {
         appInfoCell.textLabel?.text = "Developers".localized()
     }
     
-    // Init delegates
-    func initDelegates() {
-        
-        
-        
-    }
-    
     func initializeVariables() {
+        
+        options = UserDefaultsManager()
         
         purchases = [SKProduct]()
         p = SKProduct()
         
-        // Prepare Purchases cells before get information about purchases
-        buyProCell.isUserInteractionEnabled = false
-        restorePurchasesCell.isUserInteractionEnabled = false
-        // benefitsCell.isUserInteractionEnabled = false
+        makePurchaseAndRestoreButtons(state: .Disabled)
+        
+        requestProUpgradeProductData()
+        
+    }
+    
+    func requestProUpgradeProductData() {
         
         if (SKPaymentQueue.canMakePayments()) {
             
-            // "IAP is enabled, loading"
-            
             let productsID: NSSet = NSSet(objects: productIdBuyPro)
-            
             let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productsID as! Set<String>)
             request.delegate = self
             request.start()
@@ -148,8 +137,6 @@ class OptionsTableVC: UITableViewController {
             return "Purchases".localized()
         case 3:
             return "App info".localized()
-        case 4:
-            return "".localized()
         default:
             return "".localized()
         }
@@ -177,10 +164,26 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
             
         }
         
-        // Enable user interactions buttons to work with Purchases
-        buyProCell.isUserInteractionEnabled = true
-        restorePurchasesCell.isUserInteractionEnabled = true
+        makePurchaseAndRestoreButtons(state: .Enabled)
         
+    }
+    
+    func makePurchaseAndRestoreButtons(state: ButtonState) {
+        
+        var isEnabled = true
+        
+        if state == .Disabled {
+            isEnabled = false
+        }
+        
+        buyProCell.isUserInteractionEnabled = isEnabled
+        restorePurchasesCell.isUserInteractionEnabled = isEnabled
+        
+    }
+    
+    enum ButtonState {
+        case Enabled
+        case Disabled
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
@@ -192,7 +195,6 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
             switch productID {
             case productIdBuyPro:
                 
-                print("Purchase PRO version")
                 purchaseProVersion()
                 
             default:
@@ -202,8 +204,6 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
     }
     
     func makeThisAppPro() {
-        
-        UserDefaultsManager().isProVersion = true
         
         if UserDefaultsManager().isProVersion {
             buyProCell.textLabel?.text = "Pro version".localized()
@@ -249,6 +249,26 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
         }
     }
     
+    func recordTransaction(_ transaction: SKPaymentTransaction) {
+        
+        if transaction.payment.productIdentifier == productIdBuyPro {
+            
+            //TODO: Save transaction receipt to the User Defaults
+            
+            UserDefaultsManager().isProVersion = true
+            
+        }
+        
+    }
+    
+    func enableProFunctions() {
+        
+        if UserDefaultsManager().isProVersion {
+            
+        }
+        
+    }
+    
     // This function purchases PRO version
     func purchaseProVersion() {
         
@@ -260,7 +280,6 @@ extension OptionsTableVC: SKProductsRequestDelegate, SKPaymentTransactionObserve
     
 }
 
-//MARK: Methods that related to seagues
 extension OptionsTableVC {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

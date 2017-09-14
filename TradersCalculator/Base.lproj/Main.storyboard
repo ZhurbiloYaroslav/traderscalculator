@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--CalculatorVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CalculatorVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculatorVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -98,7 +97,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalculatedPositionCell" rowHeight="120" id="tXS-ig-hMi" customClass="CalculatorItemCell" customModule="TradersCalculator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalculatedPositionCell" rowHeight="120" id="tXS-ig-hMi" customClass="CalculatorItemCell" customModule="TraderCalculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tXS-ig-hMi" id="Ep0-AZ-cUa">
@@ -308,12 +307,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-qP-Tx7" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-qP-Tx7">
                                 <rect key="frame" x="0.0" y="469" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1S-Gd-CPD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <connections>
+                                            <action selector="bannerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vss-Qy-uta"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_320X50.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="b0i-vH-NKZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="b0i-vH-NKZ" firstAttribute="top" secondItem="yHx-qP-Tx7" secondAttribute="top" id="N6y-rW-ZmU"/>
+                                    <constraint firstItem="h1S-Gd-CPD" firstAttribute="leading" secondItem="yHx-qP-Tx7" secondAttribute="leading" id="OAo-EM-1xz"/>
+                                    <constraint firstAttribute="bottom" secondItem="b0i-vH-NKZ" secondAttribute="bottom" id="edk-MV-w5X"/>
+                                    <constraint firstItem="b0i-vH-NKZ" firstAttribute="leading" secondItem="yHx-qP-Tx7" secondAttribute="leading" id="fhs-Bh-xpW"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1S-Gd-CPD" secondAttribute="trailing" id="hrq-mq-PtT"/>
+                                    <constraint firstAttribute="trailing" secondItem="b0i-vH-NKZ" secondAttribute="trailing" id="lwR-M3-qtF"/>
                                     <constraint firstAttribute="height" constant="50" id="oXV-Ep-2Sd"/>
+                                    <constraint firstItem="h1S-Gd-CPD" firstAttribute="top" secondItem="yHx-qP-Tx7" secondAttribute="top" id="r2H-id-b1N"/>
                                     <constraint firstAttribute="width" constant="320" id="tZI-Mr-2Vd"/>
+                                    <constraint firstAttribute="bottom" secondItem="h1S-Gd-CPD" secondAttribute="bottom" id="uZ9-cL-UOn"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
@@ -392,7 +410,7 @@
         <!--Options-->
         <scene sceneID="N5d-NH-pQv">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nSt-dE-Ccw" customClass="OptionsVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nSt-dE-Ccw" customClass="OptionsVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdq-z9-QOD"/>
                         <viewControllerLayoutGuide type="bottom" id="4wz-Ay-EgU"/>
@@ -447,7 +465,7 @@
         <!--Options TableVC-->
         <scene sceneID="Yvq-xF-N8T">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="KZ9-nv-M8n" customClass="OptionsTableVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="KZ9-nv-M8n" customClass="OptionsTableVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="XC1-iz-tIc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -625,13 +643,13 @@
         <!--Parameters-->
         <scene sceneID="gFZ-aD-qc2">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="4eA-5g-0oM" customClass="OptSelectParamsVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="4eA-5g-0oM" customClass="OptSelectParamsVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="caj-Rb-2Ly"/>
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -658,10 +676,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="114" width="304" height="283"/>
+                                <rect key="frame" x="8" y="114" width="304" height="446"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="142"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="224"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="28"/>
@@ -678,12 +696,12 @@
                                                 </constraints>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="28" width="304" height="114"/>
+                                                <rect key="frame" x="0.0" y="28" width="304" height="196"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="147" width="304" height="136"/>
+                                        <rect key="frame" x="0.0" y="229" width="304" height="217"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -692,7 +710,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -741,7 +759,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Jub-y8-U1y">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SmR-gZ-kVU" customClass="TabBarController" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SmR-gZ-kVU" customClass="TabBarController" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="7NP-BS-8pX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -761,7 +779,7 @@
         <!--Add position-->
         <scene sceneID="QW2-tV-2Z7">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="T57-kg-F5P" customClass="CalcAddItemVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="T57-kg-F5P" customClass="CalcAddItemVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cqX-cx-387"/>
                         <viewControllerLayoutGuide type="bottom" id="ZSH-te-APy"/>
@@ -810,11 +828,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLB-Pz-tqP">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hkB-At-Ifi">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hkB-At-Ifi">
                                                 <rect key="frame" x="8" y="8" width="304" height="391"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y2h-Jb-QlW" userLabel="Stack Instrument">
-                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="192.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="197.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose an instrument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuN-YL-Tsw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="23.5"/>
@@ -823,12 +841,12 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpv-4s-XCM">
-                                                                <rect key="frame" x="0.0" y="23.5" width="304" height="169"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="304" height="174"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="GxU-oP-Khd">
-                                                        <rect key="frame" x="0.0" y="212.5" width="304" height="23.5"/>
+                                                        <rect key="frame" x="0.0" y="207.5" width="304" height="23.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Australian Dollar vs Canadian Dollar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mD-5i-CDu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="23.5"/>
@@ -838,8 +856,8 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-Tc-T4Q" userLabel="Stack - Values">
-                                                        <rect key="frame" x="0.0" y="256" width="304" height="135"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-Tc-T4Q" userLabel="Stack - Values">
+                                                        <rect key="frame" x="0.0" y="241" width="304" height="150"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-fj-9Id">
                                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
@@ -863,7 +881,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhs-BT-mfG">
-                                                                <rect key="frame" x="0.0" y="35" width="304" height="30"/>
+                                                                <rect key="frame" x="0.0" y="40" width="304" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yft-wk-Q41">
                                                                         <rect key="frame" x="0.0" y="0.0" width="204" height="30"/>
@@ -884,7 +902,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ume-3n-aQt">
-                                                                <rect key="frame" x="0.0" y="70" width="304" height="30"/>
+                                                                <rect key="frame" x="0.0" y="80" width="304" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take profit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYy-6s-1mO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="30"/>
@@ -914,7 +932,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e0Z-Na-0ln">
-                                                                <rect key="frame" x="0.0" y="105" width="304" height="30"/>
+                                                                <rect key="frame" x="0.0" y="120" width="304" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop loss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUU-kp-uYy">
                                                                         <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
@@ -1079,7 +1097,7 @@
         <!--History-->
         <scene sceneID="HmQ-UJ-Vgl">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mgg-5x-8vw" customClass="HistoryVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mgg-5x-8vw" customClass="HistoryVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jse-ku-r6d"/>
                         <viewControllerLayoutGuide type="bottom" id="4kJ-em-az0"/>
@@ -1108,7 +1126,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="70" id="Izg-3b-tZr" customClass="HistoryCell" customModule="TradersCalculator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="70" id="Izg-3b-tZr" customClass="HistoryCell" customModule="TraderCalculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izg-3b-tZr" id="qCF-uR-zN9">
@@ -1191,7 +1209,7 @@
         <!--Purchases TestVC-->
         <scene sceneID="P9x-SD-87U">
             <objects>
-                <viewController id="wJd-XX-aXU" customClass="PurchasesTestVC" customModule="TradersCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wJd-XX-aXU" customClass="PurchasesTestVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2fw-4e-0St"/>
                         <viewControllerLayoutGuide type="bottom" id="v3X-tL-poq"/>
@@ -1201,7 +1219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eYW-3y-VVi">
-                                <rect key="frame" x="129.5" y="234.5" width="61" height="100.5"/>
+                                <rect key="frame" x="129.5" y="234" width="61" height="100.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4q-AS-bPg">
                                         <rect key="frame" x="13.5" y="0.0" width="34" height="20.5"/>
@@ -1482,12 +1500,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Mob_320X50.jpeg" width="320" height="50"/>
         <image name="icon-calculator" width="21" height="21"/>
         <image name="icon-calendar" width="23" height="24"/>
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hhy-tK-JxJ"/>
+        <segue reference="w74-J8-l96"/>
         <segue reference="qHu-0t-K2J"/>
     </inferredMetricsTieBreakers>
 </document>

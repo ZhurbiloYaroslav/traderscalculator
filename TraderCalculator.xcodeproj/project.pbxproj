@@ -198,6 +198,7 @@
 		C45F8CB41F127257007B1B49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C4EED9CC1F6AB06500F8FDC8 /* In-App purchase */,
 				C45411A11F58662C00266979 /* Core Data */,
 				C41030601F309F450060F191 /* Calculator.swift */,
 				C4260F4D1F208F75004ECCB5 /* FirebaseConnect.swift */,
@@ -210,7 +211,6 @@
 				C40FAD9F1F54564800778090 /* InstrumentsRates.swift */,
 				C49B93831F5AFF00003433DF /* FirstLaunch.swift */,
 				C402E8CB1F63EFE0001433F0 /* Formatter.swift */,
-				C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -256,6 +256,14 @@
 				C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */,
 			);
 			name = "Examples of JSON";
+			sourceTree = "<group>";
+		};
+		C4EED9CC1F6AB06500F8FDC8 /* In-App purchase */ = {
+			isa = PBXGroup;
+			children = (
+				C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */,
+			);
+			name = "In-App purchase";
 			sourceTree = "<group>";
 		};
 		C4F3A5611F17F315004DC1C9 /* Utils */ = {
