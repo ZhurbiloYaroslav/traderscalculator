@@ -80,7 +80,7 @@ public class Position: NSManagedObject {
                 return resultValue
             }
             
-        case RUB, CAD, CHF, JPY, CNH, CZK, DKK, HKD, HUF, MXN, NOK, PLN, SEK, THB, TRY, ZAR:
+        case RUB, CAD, CHF, JPY, CNH, CZK, DKK, HKD, HUF, MXN, NOK, PLN, SEK, THB, TRY, ZAR, UAH:
             
             let currencyPair = "USD" + accountCurrency
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {

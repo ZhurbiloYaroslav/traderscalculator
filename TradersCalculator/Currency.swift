@@ -36,11 +36,13 @@ let XBR = "XBR"
 let XNG = "XNG"
 let XTI = "XTI"
 let BTC = "BTC"
+let UAH = "UAH"
 
 
 //TODO: Write a description
 let instrumentPartFullName = [
     
+    UAH : "Ukrainian Hryvnia",
     AUD : "Australian Dollar",
     CAD : "Canadian Dollar",
     CHF : "Swiss Franc",

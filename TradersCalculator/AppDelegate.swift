@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import CoreData
 import GoogleMobileAds
 import INSPersistentContainer
@@ -23,9 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
         initializeGoogleMobileAds()
-        
-        FirebaseConfiguration.shared.setLoggerLevel(.min)
-        FirebaseApp.configure()
         
         // test start
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)

@@ -31,6 +31,7 @@ struct Constants {
         "USD",
         "EUR",
         "RUB",
+        "UAH",
         "AUD",
         "GBP",
         "CAD",

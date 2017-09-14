@@ -47,7 +47,6 @@ class CalcAddItemVC: UIViewController {
     var currentInstrumentLeftPartID: Int!
     var currentInstrumentRightPartID: Int!
     
-    // Contains position ID in Firebase and appear when edit position from CalculatorVC
     var positionToEdit: Position?
     
     override func viewDidLoad() {
@@ -278,7 +277,6 @@ extension CalcAddItemVC {
     
 }
 
-// Methods that related with Firebase
 extension CalcAddItemVC {
     
     //TODO: Make a description
