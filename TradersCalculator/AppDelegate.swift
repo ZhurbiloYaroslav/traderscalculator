@@ -23,11 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // initializeGoogleMobileAds()
         
-        // test start
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        print("---", paths[0])
-        // test end
-        
         return true
     }
     

@@ -54,18 +54,18 @@ struct Constants {
     
     // Uses in options
     static let languages = [
-        "System",
-        "English",
-        "Русский",
-        "Français",
-        "Español",
-        "Deutsch",
-        "Português",
-        "Türkçe",
-        "हिन्दी",
-        "中国",
-        "日本語",
-               "العربية"
+        Languages.System.name,
+        Languages.English.name,
+        Languages.Russian.name,
+        Languages.French.name,
+        Languages.Spanish.name,
+        Languages.German.name,
+        Languages.Portuguese.name,
+        Languages.Turkish.name,
+        Languages.Hindi.name,
+        Languages.ChineseSimplified.name,
+        Languages.Japanese.name,
+        Languages.Arabic.name
     ]
     
     // "Кредитное плечо" in Russian

@@ -1,218 +1,132 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "トレードの電卓";
+"Add that advertisement text here " = "広告のテキストを加える";
+"Put the description here " = "説明事項";
+"Extended PRO version" = "拡張プロバージョン";
+"Remove ads and restrictions off the history, calculator and export" = "制限解除、広告の非表示";
+"Edit position" = "ポジションの追加";
+"Account currency" = "通貨アカウント";
+"Account parameters" = "パラメーターアカウント";
+"Add position" = "通貨のアカウントとレバレッジを選ぶ";
+"Back" = "戻る";
+"Benefits of PRO" = "プロバージョンのメリット";
+"Buy" = "購入";
+"Buy Pro" = "プロバージョンの購入";
+"Calculator" = "領収書の更新に失敗";
+"Cancel" = "キャンセル";
+"Choose account currency" = "通貨アカウントを選ぶ";
+"Choose account leverage" = "レバレッジアカウントを選ぶ";
+"Choose language" = "言語を選ぶ";
+"clear" = "クリア";
+"Delete" = "消去";
+"Delete  position" = "ポジションの消去";
+"Delete all positions" = "消去";
+"Developers" = "デベロッパー";
+"Edit name" = "名前の編集";
+"Export" = "エクスポート";
+"History" = "アプリケーションの購入で有効にしてください";
+"Interfaсe" = "インターフェース";
+"Language" = "通貨のアカウント";
+"Leverage" = "マージン";
+"Open" = "ポジションと履歴をセーブする";
+"Open price" = "公開価格";
+"Options" = "オプション";
+"Parameters" = "パラメーター";
+"Purchases" = "購入";
+"Restore purchases" = "購入の復元";
+"Save all positions to history" = "全てのポジションと履歴をセーブする";
+"Sell" = "売る";
+"Stop loss" = "開始価格";
+"Take profit" = "利益確保";
+"Value" = "価格";
+"Working set" = "ワーキングセット";
+"Thank you " = "ありがとう";
+"Purchase is successfully made " = "購入が正常に行われています";
+"Restore failed" = "キャンセルが失敗しました";
+"Unknown error, please contact support" = "エラー";
+"Purchases are restored" = "サポートにご連絡ください";
+"All purchases have been restored" = "購入は復元されます";
+"Nothing to restore" = "全ての購入が復元されました";
+"No previous purchases were made" = "復元するものがありません";
+"Receipt Varified" = "購入履歴がありません";
+"Receipt Verified Remotely" = "領収書の確認";
+"Receipt Verification" = "領収書データが見つかりません。もう一度お試しください";
+"No receipt data found, application will try to get a new one. Try Again" = "領収書の確認";
+"Receipt verification failed" = "領収書の確認";
+"Product is purchased" = "入金確認に失敗しました";
+"Product will not  be expired" = "製品を購入しました";
+"Product is not Purchased" = "";
+"Product has never been purchased" = "この製品には制限がありません";
+"Receipt Refreshed" = "製品を購入されていません";
+"Receipt refresh successfully" = "製品の購入は一度もされていません";
+"Receipt refresh failed" = "領収書の更新に成功しました";
+"Please, enable in-App purchase" = "領収書の更新に失敗";
+"Settings " = "電卓";
+"Choose the currency of account" = "履歴";
+"Choose the leverage" = "設定";
+"Choose the currency of account and the leverage " = "通貨のアカウントを選ぶ";
+"Selection of parameters" = "レバレッジを選ぶ";
+"Change the language" = "設定を選ぶ";
+"Change position" = "言語の変更";
+"Choose the lot" = "ポジションの編集";
+"Opening price " = "ポジションの変更";
+"Take profit " = "ロットを選ぶ";
+"Opening price" = "利益を得る";
+"Marge" = "ストップロス";
+"Currency off account " = "開始価格";
+"Purchases " = "レバレッジ";
+"Turn off the ad " = "言語";
+"Restor purchases" = "購入";
+"Paid version differences " = "広告を消す";
+"Choose that tool " = "購入を復元";
+"Description for" = "有料版との違い";
+"Close the language " = "ツールを選ぶ";
+"Settings  " = "の説明";
+"Select the language" = "言語を選ぶ";
+"Change " = "設定";
+"Delete " = "全てのポジションを消去する";
+"Save the position in history" = "変更";
+"Change the name " = "開く";
+"Export the history" = "消去";
+"Please check your Internet connection and try again " = "名前の変更";
+"Error occurred, please try again" = "エクスポート履歴";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+
+/*
+"Edit position #navBarTitle" = "";
+"Pro version" = "";
+"App info" = "";
+"Save all positions to the list in history" = "";
+"save" = "";
+"cancel" = "";
+"Edit name of the history" = "";
+"Choose or create a list" = "";
+"This name of the list exist" = "";
+"ok" = "";
+"export date" = "";
+"list date" = "";
+"list name" = "";
+"instrument name" = "";
+"value" = "";
+"open price" = "";
+"take profit" = "";
+"stop loss" = "";
+"profit" = "";
+"loss" = "";
+"margin" = "";
+"Could Not Send Email" = "";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "";
+"Copy" = "";
+"Save positions to the list" = "";
+"save & clear" = "";
+"save & open" = "";
+"The list with such name exists" = "";
+"Buy PRO to add more records" = "";
+"Create an empty list" = "";
 */
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Edit position";
-
-"Edit position #navBarTitle"
-= "Edit position";
-
-"Save all positions to history"
-= "Save all positions to history";
-
-"Delete  position"
-= "Delete  position";
-
-"Cancel"
-= "Cancel";
-
-"Open"
-= "Open";
-
-"Edit name"
-= "Edit name";
-
-"Export"
-= "Export";
-
-"Delete"
-= "Delete";
-
-"Choose language"
-= "Choose language";
-
-"Value"
-= "Value";
-
-"Open price"
-= "Open price";
-
-"Take profit"
-= "Take profit";
-
-"Stop loss"
-= "Stop loss";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Buy";
-
-"clear"
-= "clear";
-
-"Add position"
-= "Add position";
-
-"Back"
-= "Back";
-
-"Calculator"
-= "Calculator";
-
-"History"
-= "History";
-
-"Options"
-= "Options";
-
-"Working set"
-= "Working set";
-
-"Parameters"
-= "Parameters";
-
-"Account parameters"
-= "Account parameters";
-
-"Account currency"
-= "Account currency";
-
-"Leverage"
-= "Leverage";
-
-"Interfaсe"
-= "Interfaсe";
-
-"Language"
-= "Language";
-
-"Purchases"
-= "Purchases";
-
-"Buy Pro"
-= "Buy Pro";
-
-"Pro version"
-= "Pro version";
-
-"Restore purchases"
-= "Restore purchases";
-
-"Benefits of PRO"
-= "Benefits of Pro";
-
-"App info"
-= "App info";
-
-"Choose account currency"
-= "Choose account currency";
-
-"Choose account leverage"
-= "Choose account leverage";
-
-"Save all positions to the list in history"
-= "Save all positions to the history";
-
-"save"
-= "save";
-
-"cancel"
-= "cancel";
-
-"Edit name of the history"
-= "Edit name of the history";
-
-"Choose or create a list"
-= "Choose or create a history";
-
-"This name of the list exist"
-= "This name of the history exists";
-
-"ok"
-= "ok";
-
-"export date"
-= "Export Date";
-
-"list date"
-= "History Date";
-
-"list name"
-= "History Name";
-
-"instrument name"
-= "Instrument name";
-
-"value"
-= "Value";
-
-"open price"
-= "Open price";
-
-"take profit"
-= "Take profit";
-
-"stop loss"
-= "Stop loss";
-
-"profit"
-= "Profit";
-
-"loss"
-= "Loss";
-
-"margin"
-= "Margin";
-
-"Could Not Send Email"
-= "Could Not Send Email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Your device could not send e-mail. Please check e-mail configuration and try again";
-
-"Copy"
-= "Duplicate";
-
-"Save positions to the list"
-= "Save positions to the history";
-
-"save & clear"
-= "save & clear";
-
-"save & open"
-= "save & open";
-
-"The list with such name exists"
-= "The history with such name exists";
-
-"Buy PRO to add more records"
-= "Buy PRO to add more records";
-
-"Create an empty list"
-= "Create an empty history";
-
-"Developers"
-= "Developers";
-
-
-
-
-
-
-
-
-
-

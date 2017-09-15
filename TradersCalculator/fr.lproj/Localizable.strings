@@ -1,218 +1,132 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "La calculatrice du trader";
+"Add that advertisement text here " = "Ajouter le texte de la publicité ici";
+"Put the description here " = "Mettez la description ici";
+"Extended PRO version" = "Version Pro prolongée";
+"Remove ads and restrictions off the history, calculator and export" = "Supprimer les announces. Supprimer les restrictions dans la liste des éléments de la calculatrice, de l'historique et des exportations.";
+"Edit position" = "Modifier la position";
+"Account currency" = "Devise du compte";
+"Account parameters" = "Paramètres du compte";
+"Add position" = "Ajouter une position";
+"Back" = "Précédent";
+"Benefits of PRO" = "Avantages de Pro";
+"Buy" = "Achat";
+"Buy Pro" = "Acheter Pro";
+"Calculator" = "Calculatrice";
+"Cancel" = "Annuler";
+"Choose account currency" = "Choisir la devise du compte";
+"Choose account leverage" = "Choisir un levier de compte";
+"Choose language" = "Choisir la langue";
+"clear" = "Clair";
+"Delete" = "Supprimer ";
+"Delete  position" = "Supprimer la position";
+"Delete all positions" = "Supprimer toutes les positions";
+"Developers" = "Développeurs";
+"Edit name" = "Modifier le nom";
+"Export" = "Exportation";
+"History" = "Histoire";
+"Interfaсe" = "Interfaсe";
+"Language" = "Langue";
+"Leverage" = "Effet de levier";
+"Open" = "Ouvrir";
+"Open price" = "Prix ouvert";
+"Options" = "Options";
+"Parameters" = "Paramètres";
+"Purchases" = "Achats";
+"Restore purchases" = "Restaurer les achats";
+"Save all positions to history" = "Enregistrer toutes les positions dans l'historique";
+"Sell" = "Vendre";
+"Stop loss" = "Stop loss";
+"Take profit" = "Take profit";
+"Value" = "Valeur";
+"Working set" = "Ensemble de travail";
+"Thank you " = "Merci";
+"Purchase is successfully made " = "L'achat est réalisé avec succès";
+"Restore failed" = "L'achat est réalisé avec succès";
+"Unknown error, please contact support" = "Erreur inconnue, veuillez contacter le support";
+"Purchases are restored" = "Les achats sont restaurés";
+"All purchases have been restored" = "Tous les achats ont été restaurés";
+"Nothing to restore" = "Rien à restaurer";
+"No previous purchases were made" = "Aucun achat antérieur n'a été effectué";
+"Receipt Varified" = "Réception Varified";
+"Receipt Verified Remotely" = "Réception vérifiée à distance";
+"Receipt Verification" = "Vérification des reçus";
+"No receipt data found, application will try to get a new one. Try Again" = "Aucune donnée de réception n'a été trouvée, s'il vous plaît, essayez d'obtenir un nouveau et essaye encore.";
+"Receipt verification failed" = "Échec de la vérification de réception";
+"Product is purchased" = "Le produit est acheté";
+"Product will not  be expired" = "Le produit ne sera pas expiré";
+"Product is not Purchased" = "Le produit n'est pas acheté";
+"Product has never been purchased" = "Produit n'a jamais été acheté";
+"Receipt Refreshed" = "Réception rafraîchie";
+"Receipt refresh successfully" = "Rafraîchissement de réception avec succès";
+"Receipt refresh failed" = "L'actualisation de réception a échoué";
+"Please, enable in-App purchase" = "S'il vous plaît, activer l'achat in-app";
+"Settings " = "Paramètres";
+"Choose the currency of account" = "Choisissez la devise du compte";
+"Choose the leverage" = "Choisissez l'effet de levier";
+"Choose the currency of account and the leverage " = "Choisissez la devise du compte et l'effet de levie";
+"Selection of parameters" = "Sélection des options";
+"Change the language" = "Changer la langue";
+"Change position" = "Changer de position";
+"Choose the lot" = "Choisissez le lot";
+"Opening price " = "Prix d'ouverture";
+"Take profit " = "Take profit";
+"Opening price" = "Prix d'ouverture";
+"Marge" = "Marge";
+"Currency off account " = "Compte de devise";
+"Purchases " = "Achats";
+"Turn off the ad " = "Désactiver l'annonce";
+"Restor purchases" = "Restauration des achats";
+"Paid version differences " = "Différences de version payante";
+"Choose that tool " = "Choisissez cet outil";
+"Description for" = "Description pour";
+"Close the language " = "Choisissez la langue";
+"Settings  " = "Paramètres";
+"Select the language" = "Sélectionnez la langue";
+"Change " = "Changement";
+"Delete " = "Supprimer";
+"Save the position in history" = "Enregistrer la position dans l'historique";
+"Change the name " = "Modifier le nom";
+"Export the history" = "Exporter l'historique";
+"Please check your Internet connection and try again " = "Vérifier votre connexion Internet, s'il vous plaît, et essayez à nouveau";
+"Error occurred, please try again" = "Erreur s'est produite, s'il vous plaît essayer à nouveau";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+
+/*
+"Edit position #navBarTitle" = "";
+"Pro version" = "Version Pro";
+"App info" = "";
+"Save all positions to the list in history" = "";
+"save" = "";
+"cancel" = "";
+"Edit name of the history" = "";
+"Choose or create a list" = "";
+"This name of the list exist" = "";
+"ok" = "ok";
+"export date" = "";
+"list date" = "";
+"list name" = "";
+"instrument name" = "";
+"value" = "";
+"open price" = "";
+"take profit" = "";
+"stop loss" = "";
+"profit" = "";
+"loss" = "";
+"margin" = "";
+"Could Not Send Email" = "";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "";
+"Copy" = "";
+"Save positions to the list" = "";
+"save & clear" = "";
+"save & open" = "";
+"The list with such name exists" = "";
+"Buy PRO to add more records" = "";
+"Create an empty list" = "";
 */
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Edit position";
-
-"Edit position #navBarTitle"
-= "Edit position";
-
-"Save all positions to history"
-= "Save all positions to history";
-
-"Delete  position"
-= "Delete  position";
-
-"Cancel"
-= "Cancel";
-
-"Open"
-= "Open";
-
-"Edit name"
-= "Edit name";
-
-"Export"
-= "Export";
-
-"Delete"
-= "Delete";
-
-"Choose language"
-= "Choose language";
-
-"Value"
-= "Value";
-
-"Open price"
-= "Open price";
-
-"Take profit"
-= "Take profit";
-
-"Stop loss"
-= "Stop loss";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Buy";
-
-"clear"
-= "clear";
-
-"Add position"
-= "Add position";
-
-"Back"
-= "Back";
-
-"Calculator"
-= "Calculator";
-
-"History"
-= "History";
-
-"Options"
-= "Options";
-
-"Working set"
-= "Working set";
-
-"Parameters"
-= "Parameters";
-
-"Account parameters"
-= "Account parameters";
-
-"Account currency"
-= "Account currency";
-
-"Leverage"
-= "Leverage";
-
-"Interfaсe"
-= "Interfaсe";
-
-"Language"
-= "Language";
-
-"Purchases"
-= "Purchases";
-
-"Buy Pro"
-= "Buy Pro";
-
-"Pro version"
-= "Pro version";
-
-"Restore purchases"
-= "Restore purchases";
-
-"Benefits of PRO"
-= "Benefits of Pro";
-
-"App info"
-= "App info";
-
-"Choose account currency"
-= "Choose account currency";
-
-"Choose account leverage"
-= "Choose account leverage";
-
-"Save all positions to the list in history"
-= "Save all positions to the history";
-
-"save"
-= "save";
-
-"cancel"
-= "cancel";
-
-"Edit name of the history"
-= "Edit name of the history";
-
-"Choose or create a list"
-= "Choose or create a history";
-
-"This name of the list exist"
-= "This name of the history exists";
-
-"ok"
-= "ok";
-
-"export date"
-= "Export Date";
-
-"list date"
-= "History Date";
-
-"list name"
-= "History Name";
-
-"instrument name"
-= "Instrument name";
-
-"value"
-= "Value";
-
-"open price"
-= "Open price";
-
-"take profit"
-= "Take profit";
-
-"stop loss"
-= "Stop loss";
-
-"profit"
-= "Profit";
-
-"loss"
-= "Loss";
-
-"margin"
-= "Margin";
-
-"Could Not Send Email"
-= "Could Not Send Email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Your device could not send e-mail. Please check e-mail configuration and try again";
-
-"Copy"
-= "Duplicate";
-
-"Save positions to the list"
-= "Save positions to the history";
-
-"save & clear"
-= "save & clear";
-
-"save & open"
-= "save & open";
-
-"The list with such name exists"
-= "The history with such name exists";
-
-"Buy PRO to add more records"
-= "Buy PRO to add more records";
-
-"Create an empty list"
-= "Create an empty history";
-
-"Developers"
-= "Developers";
-
-
-
-
-
-
-
-
-
-

@@ -1,218 +1,132 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "Yatırımcı hesaplayıcısı";
+"Add that advertisement text here " = " Reklam metnini buraya eklemek gerek.";
+"Put the description here " = " Açıklamanı buraya yazmak gerek";
+"Extended PRO version" = "Genişletilmiş PRO sürümü";
+"Remove ads and restrictions off the history, calculator and export" = "Reklâmı   ve   hesap makinesi kalemleri listesindeki kısıtlamaları,   hikâyeleri ve ihracatı kaldırın";
+"Edit position" = "Dili değiştir";
+"Account currency" = "Pozisyonu düzenle";
+"Account parameters" = "Hesap para birimi";
+"Add position" = "Parametrelerin seçimi";
+"Back" = "Konum ekle";
+"Benefits of PRO" = "Geriye";
+"Buy" = "PRO'nun avantajları";
+"Buy Pro" = "Satın almak";
+"Calculator" = "Сalculator";
+"Cancel" = "Hesap makinesi";
+"Choose account currency" = "İptal etmek";
+"Choose account leverage" = "Hesap para birimini seçin";
+"Choose language" = "Bir kredi kaldıraç seç";
+"clear" = "Dil seçiniz";
+"Delete" = "Temizle";
+"Delete  position" = "Sil";
+"Delete all positions" = "Konumunu tarihte kaydet";
+"Developers" = "Tüm pozisyonları sil";
+"Edit name" = "Geliştiriciler";
+"Export" = "Pozisyonu düzenle";
+"History" = "Hesap makinesi";
+"Interfaсe" = "Tarih";
+"Language" = "Kredi kaldıraç";
+"Leverage" = " Para birimi";
+"Open" = "Tüm pozisyonları sil";
+"Open price" = "Aç";
+"Options" = "Açık fiyat";
+"Parameters" = "Seçenekler";
+"Purchases" = "Parametreler";
+"Restore purchases" = "Alımlar";
+"Save all positions to history" = "Satın alımları geri yükle";
+"Sell" = "Tüm pozisyonları tarihe kaydet";
+"Stop loss" = " Kar almak";
+"Take profit" = "Kaybı durdurmak";
+"Value" = "Kar almak";
+"Working set" = "Lot";
+"Thank you " = "Çalışma seti";
+"Purchase is successfully made " = " Teşekkürler";
+"Restore failed" = " Satın alma başarıyla yapıldı";
+"Unknown error, please contact support" = "Geri yüklenemedi";
+"Purchases are restored" = "Bilinmeyen hata, lütfen destek ile iletişime geçin.";
+"All purchases have been restored" = "Satın alımlar geri yüklendi";
+"Nothing to restore" = "Tüm satın alımlar geri yüklendi";
+"No previous purchases were made" = "Geri yüklemek için bir şey yok";
+"Receipt Varified" = "Daha önce yapılan satın alımlar yapılmadı";
+"Receipt Verified Remotely" = "Makbuz Onaylandı";
+"Receipt Verification" = "Hiçbir makbuz veri bulunamadı, uygulama yeni bir tanesini almaya çalışacak. Tekrar denetle";
+"No receipt data found, application will try to get a new one. Try Again" = "Makbuz Onaylanması";
+"Receipt verification failed" = "Makbuz Onaylanması";
+"Product is purchased" = "Makbuz Onaylanması başarısız oldu";
+"Product will not  be expired" = "Ürün satın alındı";
+"Product is not Purchased" = "Ürünün süresi dolmamış olacak";
+"Product has never been purchased" = "Ürün satın alınmadı";
+"Receipt Refreshed" = "Ürün hiç bir zaman satın alınmadı";
+"Receipt refresh successfully" = "Makbuz yenilendi";
+"Receipt refresh failed" = "Makbuz yenilemesi başarısız oldu";
+"Please, enable in-App purchase" = "Makbuz yenilemesi başarısız oldu";
+"Settings " = "Tarih";
+"Choose the currency of account" = "Ayarlar";
+"Choose the leverage" = "Hesap para birimini seçin";
+"Choose the currency of account and the leverage " = "Kredi kaldıraç seçin";
+"Selection of parameters" = "Hesap para birimini ve kredi kaldıraç seçin";
+"Change the language" = "Konum ekle";
+"Change position" = "Pozisyonu düzenle";
+"Choose the lot" = "Pozisyon değiştir";
+"Opening price " = " Partiyi (lotu) seçin";
+"Take profit " = " Açılış fiyatı";
+"Opening price" = "Kaybı durdurmak";
+"Marge" = "Açılış fiyatı";
+"Currency off account " = "Marj";
+"Purchases " = "Dil";
+"Turn off the ad " = " Alımlar";
+"Restor purchases" = " Reklamı kapat";
+"Paid version differences " = "Satın alımları geri yükle";
+"Choose that tool " = "Ücretli sürümün farkları";
+"Description for" = " Bu aracı seçin";
+"Close the language " = "Açıklama";
+"Settings  " = "Dili seç";
+"Select the language" = "Ayarlar";
+"Change " = "Dili seçin";
+"Delete " = "Aç";
+"Save the position in history" = "Silmek";
+"Change the name " = "Sil";
+"Export the history" = "İsmini değiştir";
+"Please check your Internet connection and try again " = "Geçmişin ihracatını yap";
+"Error occurred, please try again" = " Lütfen,  internet bağlantınızı kontrol edin ve tekrar deneyin";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+
+/*
+"Edit position #navBarTitle" = "";
+"Pro version" = "";
+"App info" = "";
+"Save all positions to the list in history" = "";
+"save" = "";
+"cancel" = "";
+"Edit name of the history" = "";
+"Choose or create a list" = "";
+"This name of the list exist" = "";
+"ok" = "";
+"export date" = "";
+"list date" = "";
+"list name" = "";
+"instrument name" = "";
+"value" = "";
+"open price" = "";
+"take profit" = "";
+"stop loss" = "";
+"profit" = "";
+"loss" = "";
+"margin" = "";
+"Could Not Send Email" = "";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "";
+"Copy" = "";
+"Save positions to the list" = "";
+"save & clear" = "";
+"save & open" = "";
+"The list with such name exists" = "";
+"Buy PRO to add more records" = "";
+"Create an empty list" = "";
 */
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Edit position";
-
-"Edit position #navBarTitle"
-= "Edit position";
-
-"Save all positions to history"
-= "Save all positions to history";
-
-"Delete  position"
-= "Delete  position";
-
-"Cancel"
-= "Cancel";
-
-"Open"
-= "Open";
-
-"Edit name"
-= "Edit name";
-
-"Export"
-= "Export";
-
-"Delete"
-= "Delete";
-
-"Choose language"
-= "Choose language";
-
-"Value"
-= "Value";
-
-"Open price"
-= "Open price";
-
-"Take profit"
-= "Take profit";
-
-"Stop loss"
-= "Stop loss";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Buy";
-
-"clear"
-= "clear";
-
-"Add position"
-= "Add position";
-
-"Back"
-= "Back";
-
-"Calculator"
-= "Calculator";
-
-"History"
-= "History";
-
-"Options"
-= "Options";
-
-"Working set"
-= "Working set";
-
-"Parameters"
-= "Parameters";
-
-"Account parameters"
-= "Account parameters";
-
-"Account currency"
-= "Account currency";
-
-"Leverage"
-= "Leverage";
-
-"Interfaсe"
-= "Interfaсe";
-
-"Language"
-= "Language";
-
-"Purchases"
-= "Purchases";
-
-"Buy Pro"
-= "Buy Pro";
-
-"Pro version"
-= "Pro version";
-
-"Restore purchases"
-= "Restore purchases";
-
-"Benefits of PRO"
-= "Benefits of Pro";
-
-"App info"
-= "App info";
-
-"Choose account currency"
-= "Choose account currency";
-
-"Choose account leverage"
-= "Choose account leverage";
-
-"Save all positions to the list in history"
-= "Save all positions to the history";
-
-"save"
-= "save";
-
-"cancel"
-= "cancel";
-
-"Edit name of the history"
-= "Edit name of the history";
-
-"Choose or create a list"
-= "Choose or create a history";
-
-"This name of the list exist"
-= "This name of the history exists";
-
-"ok"
-= "ok";
-
-"export date"
-= "Export Date";
-
-"list date"
-= "History Date";
-
-"list name"
-= "History Name";
-
-"instrument name"
-= "Instrument name";
-
-"value"
-= "Value";
-
-"open price"
-= "Open price";
-
-"take profit"
-= "Take profit";
-
-"stop loss"
-= "Stop loss";
-
-"profit"
-= "Profit";
-
-"loss"
-= "Loss";
-
-"margin"
-= "Margin";
-
-"Could Not Send Email"
-= "Could Not Send Email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Your device could not send e-mail. Please check e-mail configuration and try again";
-
-"Copy"
-= "Duplicate";
-
-"Save positions to the list"
-= "Save positions to the history";
-
-"save & clear"
-= "save & clear";
-
-"save & open"
-= "save & open";
-
-"The list with such name exists"
-= "The history with such name exists";
-
-"Buy PRO to add more records"
-= "Buy PRO to add more records";
-
-"Create an empty list"
-= "Create an empty history";
-
-"Developers"
-= "Developers";
-
-
-
-
-
-
-
-
-
-

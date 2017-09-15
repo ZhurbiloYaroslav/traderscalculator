@@ -1,218 +1,132 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "ट्रेडर का कैलक्यूलेटर";
+"Add that advertisement text here " = "यहाँ विज्ञापन टेक्स्ट जोड़ने की जरूरत है";
+"Put the description here " = "यहाँ विवरण जोड़ने की जरूरत है";
+"Extended PRO version" = "विस्तारित प्रो संस्करण";
+"Remove ads and restrictions off the history, calculator and export" = "कैलकुलेटर, इतिहास और निर्यात की सूची में विज्ञापन और प्रतिबंध हटाएं।";
+"Edit position" = "पोजीशन संपादित करें";
+"Account currency" = "खाते की मुद्रा";
+"Account parameters" = "खाते के पैरामीटर्स";
+"Add position" = "पोजीशन जोड़ें";
+"Back" = "वापस जाएँ";
+"Benefits of PRO" = "PRO के फायदे";
+"Buy" = "खरीदें";
+"Buy Pro" = "PRO खरीदें";
+"Calculator" = "कैलकुलेटर";
+"Cancel" = "रद्द करें";
+"Choose account currency" = "खाते की मुद्रा का चयन करें";
+"Choose account leverage" = "खाते का लीवरेज चुनें";
+"Choose language" = "अपनी भाषा चुनें";
+"clear" = "साफ़ करें";
+"Delete" = "हटाएँ";
+"Delete  position" = "पोजीशन हटाएँ";
+"Delete all positions" = "सभी पोजीशन्स हटाएँ";
+"Developers" = "डेवलपर्स";
+"Edit name" = "नाम संपादित करें";
+"Export" = "निर्यात";
+"History" = "इतिहास";
+"Interfaсe" = "इंटरफ़ेस";
+"Language" = "भाषा";
+"Leverage" = "लीवरेज";
+"Open" = "खोलें";
+"Open price" = "खोलने की कीमत";
+"Options" = "सेटिंग्स";
+"Parameters" = "पैरामीटर्स";
+"Purchases" = "खरीदारियां";
+"Restore purchases" = "खरीदारियों को पुनर्स्थापित करें";
+"Save all positions to history" = "इतिहास में सभी खरिदारियां सहेजें";
+"Sell" = "बिक्री";
+"Stop loss" = "स्टॉप लॉस";
+"Take profit" = "टेक प्रॉफिट";
+"Value" = "मूल्य";
+"Working set" = "वर्किंग सेट";
+"Thank you " = "धन्यवाद";
+"Purchase is successfully made " = "खरीदारी सफलतापूर्वक की गई है";
+"Restore failed" = "पुनर्स्थापित करने में असमर्थ है";
+"Unknown error, please contact support" = "अज्ञात त्रुटि, कृपया समर्थन से संपर्क करें";
+"Purchases are restored" = "खरीदारियां पुनर्स्थापित की गई हैं";
+"All purchases have been restored" = "सभी खरीदारियां पुनर्स्थापित की गई थीं";
+"Nothing to restore" = "पुनर्स्थापित करने के लिए कुछ नहीं";
+"No previous purchases were made" = "कोई पिछली खरीदारियां नहीं की गई थीं";
+"Receipt Varified" = "रसीद सत्यापित की गई है";
+"Receipt Verified Remotely" = "रसीद दूर से सत्यापित की गई है";
+"Receipt Verification" = "रसीद की जांच";
+"No receipt data found, application will try to get a new one. Try Again" = "रसीद के बारे में कोई जानकारी नहीं मिला है। कृपया नई रसीद को प्राप्त करने का प्रयास करें और फिर से प्रयास करें।";
+"Receipt verification failed" = "रसीद की जांच में त्रुटि";
+"Product is purchased" = "उत्पाद खरीदा गया है";
+"Product will not  be expired" = "उत्पाद की समय सीमा समाप्त नहीं होगी";
+"Product is not Purchased" = "उत्पाद खरीदा नहीं जाता है";
+"Product has never been purchased" = "उत्पाद कभी खरीदा नहीं गया था";
+"Receipt Refreshed" = "रसीदों का अद्यतन";
+"Receipt refresh successfully" = "रसीद सफलतापूर्वक रिफ्रेश की गई हैं";
+"Receipt refresh failed" = "रसीद रिफ्रेश विफल हो गया";
+"Please, enable in-App purchase" = "कृपया एप्लिकेशन की खरीदारी सक्षम करें";
+"Settings " = "सेटिंग्स";
+"Choose the currency of account" = "खाते की मुद्रा का चयन करें";
+"Choose the leverage" = "लीवरेज चुनें";
+"Choose the currency of account and the leverage " = "खाते की मुद्रा और लीवरेज चुनें";
+"Selection of parameters" = "विकल्पों का चयन करें";
+"Change the language" = "भाषा बदलें";
+"Change position" = "पोजीशन बदलें";
+"Choose the lot" = "लाट चुनें";
+"Opening price " = "खोलने की कीमत";
+"Take profit " = "टेक प्रॉफिट";
+"Opening price" = "खोलने की कीमत";
+"Marge" = "मार्जिन";
+"Currency off account " = "खाते की मुद्रा";
+"Purchases " = "खरीदारियां";
+"Turn off the ad " = "विज्ञापन अक्षम करें";
+"Restor purchases" = "खरीदारियों को पुनर्स्थापित करें";
+"Paid version differences " = "सशुल्क संस्करण का भेद";
+"Choose that tool " = "उपकरण का चयन करें";
+"Description for" = "... के लिए विवरण";
+"Close the language " = "अपनी भाषा चुनें";
+"Settings  " = "सेटिंग्स";
+"Select the language" = "भाषा का चयन करें";
+"Change " = "बदलें";
+"Delete " = "हटाएँ";
+"Save the position in history" = "इतिहास में पोजीशन्स सहेजें";
+"Change the name " = "नाम बदलें";
+"Export the history" = "इतिहास निर्यात करें";
+"Please check your Internet connection and try again " = "कृपया अपना इंटरनेट कनेक्शन जांचें और फिर से प्रयास करें";
+"Error occurred, please try again" = "एक त्रुटि हुई, कृपया पुनः प्रयास करें";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+
+/*
+"Edit position #navBarTitle" = "";
+"Pro version" = "";
+"App info" = "";
+"Save all positions to the list in history" = "";
+"save" = "";
+"cancel" = "";
+"Edit name of the history" = "";
+"Choose or create a list" = "";
+"This name of the list exist" = "";
+"ok" = "";
+"export date" = "";
+"list date" = "";
+"list name" = "";
+"instrument name" = "";
+"value" = "";
+"open price" = "";
+"take profit" = "";
+"stop loss" = "";
+"profit" = "";
+"loss" = "";
+"margin" = "";
+"Could Not Send Email" = "";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "";
+"Copy" = "";
+"Save positions to the list" = "";
+"save & clear" = "";
+"save & open" = "";
+"The list with such name exists" = "";
+"Buy PRO to add more records" = "";
+"Create an empty list" = "";
 */
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Edit position";
-
-"Edit position #navBarTitle"
-= "Edit position";
-
-"Save all positions to history"
-= "Save all positions to history";
-
-"Delete  position"
-= "Delete  position";
-
-"Cancel"
-= "Cancel";
-
-"Open"
-= "Open";
-
-"Edit name"
-= "Edit name";
-
-"Export"
-= "Export";
-
-"Delete"
-= "Delete";
-
-"Choose language"
-= "Choose language";
-
-"Value"
-= "Value";
-
-"Open price"
-= "Open price";
-
-"Take profit"
-= "Take profit";
-
-"Stop loss"
-= "Stop loss";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Buy";
-
-"clear"
-= "clear";
-
-"Add position"
-= "Add position";
-
-"Back"
-= "Back";
-
-"Calculator"
-= "Calculator";
-
-"History"
-= "History";
-
-"Options"
-= "Options";
-
-"Working set"
-= "Working set";
-
-"Parameters"
-= "Parameters";
-
-"Account parameters"
-= "Account parameters";
-
-"Account currency"
-= "Account currency";
-
-"Leverage"
-= "Leverage";
-
-"Interfaсe"
-= "Interfaсe";
-
-"Language"
-= "Language";
-
-"Purchases"
-= "Purchases";
-
-"Buy Pro"
-= "Buy Pro";
-
-"Pro version"
-= "Pro version";
-
-"Restore purchases"
-= "Restore purchases";
-
-"Benefits of PRO"
-= "Benefits of Pro";
-
-"App info"
-= "App info";
-
-"Choose account currency"
-= "Choose account currency";
-
-"Choose account leverage"
-= "Choose account leverage";
-
-"Save all positions to the list in history"
-= "Save all positions to the history";
-
-"save"
-= "save";
-
-"cancel"
-= "cancel";
-
-"Edit name of the history"
-= "Edit name of the history";
-
-"Choose or create a list"
-= "Choose or create a history";
-
-"This name of the list exist"
-= "This name of the history exists";
-
-"ok"
-= "ok";
-
-"export date"
-= "Export Date";
-
-"list date"
-= "History Date";
-
-"list name"
-= "History Name";
-
-"instrument name"
-= "Instrument name";
-
-"value"
-= "Value";
-
-"open price"
-= "Open price";
-
-"take profit"
-= "Take profit";
-
-"stop loss"
-= "Stop loss";
-
-"profit"
-= "Profit";
-
-"loss"
-= "Loss";
-
-"margin"
-= "Margin";
-
-"Could Not Send Email"
-= "Could Not Send Email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Your device could not send e-mail. Please check e-mail configuration and try again";
-
-"Copy"
-= "Duplicate";
-
-"Save positions to the list"
-= "Save positions to the history";
-
-"save & clear"
-= "save & clear";
-
-"save & open"
-= "save & open";
-
-"The list with such name exists"
-= "The history with such name exists";
-
-"Buy PRO to add more records"
-= "Buy PRO to add more records";
-
-"Create an empty list"
-= "Create an empty history";
-
-"Developers"
-= "Developers";
-
-
-
-
-
-
-
-
-
-

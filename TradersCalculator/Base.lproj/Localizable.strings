@@ -1,218 +1,129 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "Trader’s Calculator";
+"Add that advertisement text here " = "Add that advertisement text here ";
+"Put the description here " = "Put the description here ";
+"Extended PRO version" = "Extended PRO version";
+"Remove ads and restrictions off the history, calculator and export" = "Remove ads and restrictions off the history, calculator and export";
+"Edit position" = "Edit position";
+"Account currency" = "Account currency";
+"Account parameters" = "Account parameters";
+"Add position" = "Add position";
+"Back" = "Back";
+"Benefits of PRO" = "Benefits of PRO";
+"Buy" = "Buy";
+"Buy Pro" = "Buy Pro";
+"Calculator" = "Calculator";
+"Cancel" = "Cancel";
+"Choose account currency" = "Choose account currency";
+"Choose account leverage" = "Choose account leverage";
+"Choose language" = "Choose language";
+"clear" = "clear";
+"Delete" = "Delete";
+"Delete  position" = "Delete  position";
+"Delete all positions" = "Delete all positions";
+"Developers" = "Developers";
+"Edit name" = "Edit name";
+"Export" = "Export";
+"History" = "History";
+"Interfaсe" = "Interfaсe";
+"Language" = "Language";
+"Leverage" = "Leverage";
+"Open" = "Open";
+"Open price" = "Open price";
+"Options" = "Options";
+"Parameters" = "Parameters";
+"Purchases" = "Purchases";
+"Restore purchases" = "Restore purchases";
+"Save all positions to history" = "Save all positions to history";
+"Sell" = "Sell";
+"Stop loss" = "Stop loss";
+"Take profit" = "Take profit";
+"Value" = "Value";
+"Working set" = "Working set";
+"Thank you " = "Thank you ";
+"Purchase is successfully made " = "Purchase is successfully made ";
+"Restore failed" = "Restore failed";
+"Unknown error, please contact support" = "Unknown error, please contact support";
+"Purchases are restored" = "Purchases are restored";
+"All purchases have been restored" = "All purchases have been restored";
+"Nothing to restore" = "Nothing to restore";
+"No previous purchases were made" = "No previous purchases were made";
+"Receipt Varified" = "Receipt Varified";
+"Receipt Verified Remotely" = "Receipt Verified Remotely";
+"Receipt Verification" = "Receipt Verification";
+"No receipt data found, application will try to get a new one. Try Again" = "No receipt data found, application will try to get a new one. Try Again";
+"Receipt verification failed" = "Receipt verification failed";
+"Product is purchased" = "Product is purchased";
+"Product will not  be expired" = "Product will not  be expired";
+"Product is not Purchased" = "Product is not Purchased";
+"Product has never been purchased" = "Product has never been purchased";
+"Receipt Refreshed" = "Receipt Refreshed";
+"Receipt refresh successfully" = "Receipt refresh successfully";
+"Receipt refresh failed" = "Receipt refresh failed";
+"Please, enable in-App purchase" = "Please, enable in-App purchase";
+"Settings " = "Settings ";
+"Choose the currency of account" = "Choose the currency of account";
+"Choose the leverage" = "Choose the leverage";
+"Choose the currency of account and the leverage " = "Choose the currency of account and the leverage ";
+"Selection of parameters" = "Selection of parameters";
+"Change the language" = "Change the language";
+"Change position" = "Change position";
+"Choose the lot" = "Choose the lot";
+"Opening price " = "Opening price ";
+"Take profit " = "Take profit ";
+"Opening price" = "Opening price";
+"Marge" = "Marge";
+"Currency off account " = "Currency off account ";
+"Purchases " = "Purchases ";
+"Turn off the ad " = "Turn off the ad ";
+"Restor purchases" = "Restor purchases";
+"Paid version differences " = "Paid version differences ";
+"Choose that tool " = "Choose that tool ";
+"Description for" = "Description for";
+"Close the language " = "Close the language ";
+"Settings  " = "Settings  ";
+"Select the language" = "Select the language";
+"Change " = "Change ";
+"Delete " = "Delete ";
+"Save the position in history" = "Save the position in history";
+"Change the name " = "Change the name ";
+"Export the history" = "Export the history";
+"Please check your Internet connection and try again " = "Please check your Internet connection and try again ";
+"Error occurred, please try again" = "Error occurred, please try again";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
-*/
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Edit position";
-
-"Edit position #navBarTitle"
-= "Edit position";
-
-"Save all positions to history"
-= "Save all positions to history";
-
-"Delete  position"
-= "Delete  position";
-
-"Cancel"
-= "Cancel";
-
-"Open"
-= "Open";
-
-"Edit name"
-= "Edit name";
-
-"Export"
-= "Export";
-
-"Delete"
-= "Delete";
-
-"Choose language"
-= "Choose language";
-
-"Value"
-= "Value";
-
-"Open price"
-= "Open price";
-
-"Take profit"
-= "Take profit";
-
-"Stop loss"
-= "Stop loss";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Buy";
-
-"clear"
-= "clear";
-
-"Add position"
-= "Add position";
-
-"Back"
-= "Back";
-
-"Calculator"
-= "Calculator";
-
-"History"
-= "History";
-
-"Options"
-= "Options";
-
-"Working set"
-= "Working set";
-
-"Parameters"
-= "Parameters";
-
-"Account parameters"
-= "Account parameters";
-
-"Account currency"
-= "Account currency";
-
-"Leverage"
-= "Leverage";
-
-"Interfaсe"
-= "Interfaсe";
-
-"Language"
-= "Language";
-
-"Purchases"
-= "Purchases";
-
-"Buy Pro"
-= "Buy Pro";
-
-"Pro version"
-= "Pro version";
-
-"Restore purchases"
-= "Restore purchases";
-
-"Benefits of PRO"
-= "Benefits of Pro";
-
-"App info"
-= "App info";
-
-"Choose account currency"
-= "Choose account currency";
-
-"Choose account leverage"
-= "Choose account leverage";
-
-"Save all positions to the list in history"
-= "Save all positions to the history";
-
-"save"
-= "save";
-
-"cancel"
-= "cancel";
-
-"Edit name of the history"
-= "Edit name of the history";
-
-"Choose or create a list"
-= "Choose or create a history";
-
-"This name of the list exist"
-= "This name of the history exists";
-
-"ok"
-= "ok";
-
-"export date"
-= "Export Date";
-
-"list date"
-= "History Date";
-
-"list name"
-= "History Name";
-
-"instrument name"
-= "Instrument name";
-
-"value"
-= "Value";
-
-"open price"
-= "Open price";
-
-"take profit"
-= "Take profit";
-
-"stop loss"
-= "Stop loss";
-
-"profit"
-= "Profit";
-
-"loss"
-= "Loss";
-
-"margin"
-= "Margin";
-
-"Could Not Send Email"
-= "Could Not Send Email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Your device could not send e-mail. Please check e-mail configuration and try again";
-
-"Copy"
-= "Duplicate";
-
-"Save positions to the list"
-= "Save positions to the history";
-
-"save & clear"
-= "save & clear";
-
-"save & open"
-= "save & open";
-
-"The list with such name exists"
-= "The history with such name exists";
-
-"Buy PRO to add more records"
-= "Buy PRO to add more records";
-
-"Create an empty list"
-= "Create an empty history";
-
-"Developers"
-= "Developers";
-
-
-
-
-
-
-
-
-
-
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+"Edit position #navBarTitle" = "Edit position";
+"Pro version" = "Pro version";
+"App info" = "App info";
+"Save all positions to the list in history" = "Save all positions to the history";
+"save" = "save";
+"cancel" = "cancel";
+"Edit name of the history" = "Edit name of the history";
+"Choose or create a list" = "Choose or create a history";
+"This name of the list exist" = "This name of the history exists";
+"ok" = "ok";
+"export date" = "Export date";
+"list date" = "History date";
+"list name" = "History name";
+"instrument name" = "Instrument name";
+"value" = "Value";
+"open price" = "Open price";
+"take profit" = "Take profit";
+"stop loss" = "Stop loss";
+"profit" = "Profit";
+"loss" = "Loss";
+"margin" = "Margin";
+"Could Not Send Email" = "Could Not Send Email";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "Your device could not send e-mail. Please check e-mail configuration and try again";
+"Copy" = "Duplicate";
+"Save positions to the list" = "Save positions to the history";
+"save & clear" = "save & clear";
+"save & open" = "save & open";
+"The list with such name exists" = "The history with such name exists";
+"Buy PRO to add more records" = "Buy PRO to add more records";
+"Create an empty list" = "Create an empty history";

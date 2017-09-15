@@ -1,218 +1,132 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "交易者计算器";
+"Add that advertisement text here " = "在这里需要插入广告文字";
+"Put the description here " = "在这里需要插入描述";
+"Extended PRO version" = "高级PRO版";
+"Remove ads and restrictions off the history, calculator and export" = "删除广告和限制计算器, 历史记录, 和出口列表中";
+"Edit position" = "编辑位置";
+"Account currency" = "帐户货币";
+"Account parameters" = "帐户参数 ";
+"Add position" = "添加位置";
+"Back" = "返回";
+"Benefits of PRO" = "PRO优点";
+"Buy" = "买";
+"Buy Pro" = "买Pro";
+"Calculator" = "计算器";
+"Cancel" = "取消";
+"Choose account currency" = "选帐户货币";
+"Choose account leverage" = "选杠杆";
+"Choose language" = "选语言";
+"clear" = "清除";
+"Delete" = "删除";
+"Delete  position" = "删除位置";
+"Delete all positions" = "删除全位置";
+"Developers" = "开发商";
+"Edit name" = "编辑名称";
+"Export" = "出口";
+"History" = "历史记录";
+"Interfaсe" = "界面";
+"Language" = "语言";
+"Leverage" = "杠杆";
+"Open" = "打开";
+"Open price" = "打开价格";
+"Options" = "设置";
+"Parameters" = "参数";
+"Purchases" = "购买";
+"Restore purchases" = "恢复购买";
+"Save all positions to history" = "保存全位置在历史记录中";
+"Sell" = "卖";
+"Stop loss" = "止损价";
+"Take profit" = "止盈";
+"Value" = "拍品";
+"Working set" = "工作集";
+"Thank you " = "谢谢";
+"Purchase is successfully made " = "购买成功完成";
+"Restore failed" = "无法恢复";
+"Unknown error, please contact support" = "未知错误，请联系支援服务";
+"Purchases are restored" = "购买已恢复";
+"All purchases have been restored" = "所有购买都已恢复";
+"Nothing to restore" = "没有什么可以恢复";
+"No previous purchases were made" = "以前购买什么都没有";
+"Receipt Varified" = "收据确认";
+"Receipt Verified Remotely" = "";
+"Receipt Verification" = "翻译成俄语";
+"No receipt data found, application will try to get a new one. Try Again" = "收据的信息未找到, 请尝试收到新的信息，然后重试";
+"Receipt verification failed" = "翻译成俄语";
+"Product is purchased" = "翻译成俄语";
+"Product will not  be expired" = "产品的有效期限不会过期";
+"Product is not Purchased" = "产品未购买";
+"Product has never been purchased" = "产品从未支付";
+"Receipt Refreshed" = "更新收据";
+"Receipt refresh successfully" = "收到的已经成功更新";
+"Receipt refresh failed" = "更新收据时的错误";
+"Please, enable in-App purchase" = "请开应用程序购买";
+"Settings " = "设置";
+"Choose the currency of account" = "选帐户货币";
+"Choose the leverage" = "选杠杆";
+"Choose the currency of account and the leverage " = "帐户货币和杠杆选择";
+"Selection of parameters" = "参数选择";
+"Change the language" = "改变语言";
+"Change position" = "改变位置";
+"Choose the lot" = "拍品选择";
+"Opening price " = "打开价格";
+"Take profit " = "止盈";
+"Opening price" = "打开价格";
+"Marge" = "利差";
+"Currency off account " = "拍品选择";
+"Purchases " = "购买";
+"Turn off the ad " = "关闭广告";
+"Restor purchases" = "恢复购买";
+"Paid version differences " = "收费版本的差异";
+"Choose that tool " = "选工具";
+"Description for" = "说明为";
+"Close the language " = "选语言";
+"Settings  " = "设置";
+"Select the language" = "语言选择";
+"Change " = "改变";
+"Delete " = "删除";
+"Save the position in history" = "保存位置在历史记录中";
+"Change the name " = "改变名称";
+"Export the history" = "出口历史";
+"Please check your Internet connection and try again " = "请检查您的互联网连接，然后重试";
+"Error occurred, please try again" = "出现错误，请重试";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+
+/*
+"Edit position #navBarTitle" = "";
+"Pro version" = "";
+"App info" = "";
+"Save all positions to the list in history" = "";
+"save" = "";
+"cancel" = "";
+"Edit name of the history" = "";
+"Choose or create a list" = "";
+"This name of the list exist" = "";
+"ok" = "";
+"export date" = "";
+"list date" = "";
+"list name" = "";
+"instrument name" = "";
+"value" = "";
+"open price" = "";
+"take profit" = "";
+"stop loss" = "";
+"profit" = "";
+"loss" = "";
+"margin" = "";
+"Could Not Send Email" = "";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "";
+"Copy" = "";
+"Save positions to the list" = "";
+"save & clear" = "";
+"save & open" = "";
+"The list with such name exists" = "";
+"Buy PRO to add more records" = "";
+"Create an empty list" = "";
 */
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Edit position";
-
-"Edit position #navBarTitle"
-= "Edit position";
-
-"Save all positions to history"
-= "Save all positions to history";
-
-"Delete  position"
-= "Delete  position";
-
-"Cancel"
-= "Cancel";
-
-"Open"
-= "Open";
-
-"Edit name"
-= "Edit name";
-
-"Export"
-= "Export";
-
-"Delete"
-= "Delete";
-
-"Choose language"
-= "Choose language";
-
-"Value"
-= "Value";
-
-"Open price"
-= "Open price";
-
-"Take profit"
-= "Take profit";
-
-"Stop loss"
-= "Stop loss";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Buy";
-
-"clear"
-= "clear";
-
-"Add position"
-= "Add position";
-
-"Back"
-= "Back";
-
-"Calculator"
-= "Calculator";
-
-"History"
-= "History";
-
-"Options"
-= "Options";
-
-"Working set"
-= "Working set";
-
-"Parameters"
-= "Parameters";
-
-"Account parameters"
-= "Account parameters";
-
-"Account currency"
-= "Account currency";
-
-"Leverage"
-= "Leverage";
-
-"Interfaсe"
-= "Interfaсe";
-
-"Language"
-= "Language";
-
-"Purchases"
-= "Purchases";
-
-"Buy Pro"
-= "Buy Pro";
-
-"Pro version"
-= "Pro version";
-
-"Restore purchases"
-= "Restore purchases";
-
-"Benefits of PRO"
-= "Benefits of Pro";
-
-"App info"
-= "App info";
-
-"Choose account currency"
-= "Choose account currency";
-
-"Choose account leverage"
-= "Choose account leverage";
-
-"Save all positions to the list in history"
-= "Save all positions to the history";
-
-"save"
-= "save";
-
-"cancel"
-= "cancel";
-
-"Edit name of the history"
-= "Edit name of the history";
-
-"Choose or create a list"
-= "Choose or create a history";
-
-"This name of the list exist"
-= "This name of the history exists";
-
-"ok"
-= "ok";
-
-"export date"
-= "Export Date";
-
-"list date"
-= "History Date";
-
-"list name"
-= "History Name";
-
-"instrument name"
-= "Instrument name";
-
-"value"
-= "Value";
-
-"open price"
-= "Open price";
-
-"take profit"
-= "Take profit";
-
-"stop loss"
-= "Stop loss";
-
-"profit"
-= "Profit";
-
-"loss"
-= "Loss";
-
-"margin"
-= "Margin";
-
-"Could Not Send Email"
-= "Could Not Send Email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Your device could not send e-mail. Please check e-mail configuration and try again";
-
-"Copy"
-= "Duplicate";
-
-"Save positions to the list"
-= "Save positions to the history";
-
-"save & clear"
-= "save & clear";
-
-"save & open"
-= "save & open";
-
-"The list with such name exists"
-= "The history with such name exists";
-
-"Buy PRO to add more records"
-= "Buy PRO to add more records";
-
-"Create an empty list"
-= "Create an empty history";
-
-"Developers"
-= "Developers";
-
-
-
-
-
-
-
-
-
-

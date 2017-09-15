@@ -1,0 +1,151 @@
+/* 
+  Localization.strings
+  TradersCalculator
+
+  Created by Yaroslav Zhurbilo on 23.07.17.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+*/
+
+"sell" = "sell";
+
+"buy" = "buy";
+
+"Edit position" = "Edit position";
+
+"Edit position #navBarTitle" = "Edit position";
+
+"Save all positions to history" = "Save all positions to history";
+
+"Delete  position" = "Delete  position";
+
+"Cancel" = "Cancel";
+
+"Open" = "Open";
+
+"Edit name" = "Edit name";
+
+"Export" = "Export";
+
+"Delete" = "Delete";
+
+"Choose language" = "Choose language";
+
+"Value" = "Value";
+
+"Open price" = "Open price";
+
+"Take profit" = "Take profit";
+
+"Stop loss" = "Stop loss";
+
+"Sell" = "Sell";
+
+"Buy" = "Buy";
+
+"clear" = "clear";
+
+"Add position" = "Add position";
+
+"Back" = "Back";
+
+"Calculator" = "Calculator";
+
+"History" = "History";
+
+"Options" = "Options";
+
+"Working set" = "Working set";
+
+"Parameters" = "Parameters";
+
+"Account parameters" = "Account parameters";
+
+"Account currency" = "Account currency";
+
+"Leverage" = "Leverage";
+
+"Interfaсe" = "Interfaсe";
+
+"Language" = "Language";
+
+"Purchases" = "Purchases";
+
+"Buy Pro" = "Buy Pro";
+
+"Pro version" = "Pro version";
+
+"Restore purchases" = "Restore purchases";
+
+"Benefits of PRO" = "Benefits of Pro";
+
+"App info" = "App info";
+
+"Choose account currency" = "Choose account currency";
+
+"Choose account leverage" = "Choose account leverage";
+
+"Save all positions to the list in history" = "Save all positions to the history";
+
+"save" = "save";
+
+"cancel" = "cancel";
+
+"Edit name of the history" = "Edit name of the history";
+
+"Choose or create a list" = "Choose or create a history";
+
+"This name of the list exist" = "This name of the history exists";
+
+"ok" = "ok";
+
+"export date" = "Export Date";
+
+"list date" = "History Date";
+
+"list name" = "History Name";
+
+"instrument name" = "Instrument name";
+
+"value" = "Value";
+
+"open price" = "Open price";
+
+"take profit" = "Take profit";
+
+"stop loss" = "Stop loss";
+
+"profit" = "Profit";
+
+"loss" = "Loss";
+
+"margin" = "Margin";
+
+"Could Not Send Email" = "Could Not Send Email";
+
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "Your device could not send e-mail. Please check e-mail configuration and try again";
+
+"Copy" = "Duplicate";
+
+"Save positions to the list" = "Save positions to the history";
+
+"save & clear" = "save & clear";
+
+"save & open" = "save & open";
+
+"The list with such name exists" = "The history with such name exists";
+
+"Buy PRO to add more records" = "Buy PRO to add more records";
+
+"Create an empty list" = "Create an empty history";
+
+"Developers" = "Developers";
+
+
+
+
+
+
+
+
+
+

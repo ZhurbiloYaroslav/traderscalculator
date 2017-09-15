@@ -1,224 +1,129 @@
-/* 
-  Localization.strings
+"Trader’s Calculator" = "Калькулятор трейдера";
+"Add that advertisement text here " = "Сюда нужно вставить рекламный текст";
+"Put the description here " = "Сюда нужно вставить описание";
+"Extended PRO version" = "Расширенная PRO версия";
+"Remove ads and restrictions off the history, calculator and export" = "Убрать рекламу и  ограничения в списке позиций калькулятора, истории, и экспорта";
+"Edit position" = "Редактировать позицию";
+"Account currency" = "Валюта счета";
+"Account parameters" = "Параметры счета";
+"Add position" = "Добавить позицию";
+"Back" = "Назад";
+"Benefits of PRO" = "Преимущества PRO";
+"Buy" = "Покупка";
+"Buy Pro" = "Купить Pro";
+"Calculator" = "Калькулятор";
+"Cancel" = "Отмена";
+"Choose account currency" = "Выберите валюту счета";
+"Choose account leverage" = "Выберите кредитное плечо";
+"Choose language" = "Выберите язык";
+"clear" = "Очистить";
+"Delete" = "Удалить";
+"Delete  position" = "Удалить позицию";
+"Delete all positions" = "Удалить все позиции";
+"Developers" = "Разработчики";
+"Edit name" = "Редактировать имя";
+"Export" = "Экспорт";
+"History" = "История";
+"Interfaсe" = "Интерфейс";
+"Language" = "Язык";
+"Leverage" = "Кредитное плечо";
+"Open" = "Открыть";
+"Open price" = "Цена открытия";
+"Options" = "Настройки";
+"Parameters" = "Параметры";
+"Purchases" = "Покупки";
+"Restore purchases" = "Восстановить покупки";
+"Save all positions to history" = "Сохранить все позиции в историю";
+"Sell" = "Продажа";
+"Stop loss" = "Стоп лосс";
+"Take profit" = "Тейк профит";
+"Value" = "Лот";
+"Working set" = "Рабочий набор";
+"Thank you " = "Спасибо";
+"Purchase is successfully made " = "Покупка совершена успешно";
+"Restore failed" = "Не удалось восстановить  ";
+"Unknown error, please contact support" = "Неизвестная ошибка, пожалуйста обратитесь в службу поддержки  ";
+"Purchases are restored" = "Покупки восстановлены ";
+"All purchases have been restored" = "Все покупки были восстановлены ";
+"Nothing to restore" = "Нечего восстанавливать ";
+"No previous purchases were made" = " Никаких при ведущих покупок не было сделано ";
+"Receipt Varified" = " Квитанция подтверждено ";
+"Receipt Verified Remotely" = "Receipt Verified Remotely";
+"Receipt Verification" = "Покупка совершена";
+"No receipt data found, application will try to get a new one. Try Again" = " Информация о квитанции не обнаружено,  Пожалуйста попытайтесь получить новую и попробуйте ещё раз";
+"Receipt verification failed" = "Покупка не совершена";
+"Product is purchased" = "Продукт приобретен";
+"Product will not  be expired" = "Срок действия продукта не истечёт ";
+"Product is not Purchased" = "Продукт не приобретается";
+"Product has never been purchased" = "Продукт никогда не оплачивался";
+"Receipt Refreshed" = "Обновление квитанций ";
+"Receipt refresh successfully" = "Поступления успешно обновились ";
+"Receipt refresh failed" = "Ошибка при обновлении квитанций";
+"Please, enable in-App purchase" = "Пожалуйста, включите покупку приложения ";
+"Settings " = "Настройки";
+"Choose the currency of account" = "Выберите валюту счета";
+"Choose the leverage" = "Выберите кредитное плечо";
+"Choose the currency of account and the leverage " = "Выбор валюты счета и кредитного плеча";
+"Selection of parameters" = "Выбор параметров";
+"Change the language" = "Изменить язык";
+"Change position" = "Изменить позицию";
+"Choose the lot" = "Выбор лота";
+"Opening price " = "Цена открытия";
+"Take profit " = "Тейк профит";
+"Opening price" = "ЦО (цена открытия)";
+"Marge" = "Маржа";
+"Currency off account " = "Валюта счета";
+"Purchases " = "Покупки";
+"Turn off the ad " = "Отключить рекламу";
+"Restor purchases" = "Восстановить покупки";
+"Paid version differences " = "Отличие платной версии";
+"Choose that tool " = "Выберите инструмент";
+"Description for" = "Описание для";
+"Close the language " = "Выберите язык";
+"Settings  " = "Настройки";
+"Select the language" = "Выбор языка";
+"Change " = "Изменить";
+"Delete " = "Удалить";
+"Save the position in history" = "Сохранить позиции в историю";
+"Change the name " = "Изменить имя";
+"Export the history" = "Экспортировать историю";
+"Please check your Internet connection and try again " = "Пожалуйста, проверьте ваше интернет соединение и попробуйте еще раз";
+"Error occurred, please try again" = "Произошла ошибка, пожалуйста, попробуйте еще раз";
+
+/*Localization.strings
   TradersCalculator
 
   Created by Yaroslav Zhurbilo on 23.07.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
-*/
-
-"sell"
-= "sell";
-
-"buy"
-= "buy";
-
-"Edit position"
-= "Редактировать позицию";
-
-"Edit position #navBarTitle"
-= "Редактировать позицию";
-
-"Save all positions to history"
-= "Сохранить все позиции в историю";
-
-"Delete  position"
-= "Удалить позицию";
-
-"Cancel"
-= "Отмена";
-
-"Open"
-= "Открыть";
-
-"Edit name"
-= "Редактировать имя";
-
-"Export"
-= "Экспорт";
-
-"Delete"
-= "Удалить";
-
-"Choose language"
-= "Выберите язык";
-
-"Value"
-= "Лот";
-
-"Open price"
-= "Цена открытия";
-
-"Take profit"
-= "Тейк профит";
-
-"Stop loss"
-= "Стоп лосс";
-
-"Sell"
-= "Sell";
-
-"Buy"
-= "Покупка";
-
-"clear"
-= "Очистить";
-
-"Add position"
-= "Добавить позицию";
-
-"Back"
-= "Назад";
-
-"Calculator"
-= "Калькулятор";
-
-"History"
-= "История";
-
-"Options"
-= "Настройки";
-
-"Working set"
-= "Рабочий набор";
-
-"Parameters"
-= "Параметры";
-
-"Account parameters"
-= "Параметры счета";
-
-"Account currency"
-= "Валюта счета";
-
-"Leverage"
-= "Кредитное плечо";
-
-"Interfaсe"
-= "Интерфейс";
-
-"Language"
-= "Язык";
-
-"Purchases"
-= "Покупки";
-
-"Buy Pro"
-= "Купить Pro";
-
-"Pro version"
-= "Pro версия";
-
-"Restore purchases"
-= "Восстановить покупки";
-
-"Benefits of PRO"
-= "Преимущества Pro";
-
-"App info"
-= "Информация о приложении";
-
-"Choose account currency"
-= "Выберите валюту счета";
-
-"Choose account leverage"
-= "Выберите кредитное плечо";
-
-"Save all positions to the list in history"
-= "Сохранить все позиции в историю";
-
-"save"
-= "сохранить";
-
-"cancel"
-= "отмена";
-
-"Edit name of the history"
-= "Редактировать название истории";
-
-"Choose or create a list"
-= "Выберите или создайте историю";
-
-"This name of the list exist"
-= "Это имя уже существует";
-
-"ok"
-= "хорошо";
-
-"export date"
-= "Дата экспорта";
-
-"list date"
-= "Дата изменения списка";
-
-"list name"
-= "Название списка";
-
-"instrument name"
-= "Название инструмента";
-
-"value"
-= "Лот";
-
-"open price"
-= "Цена открытия";
-
-"take profit"
-= "Тейк профит";
-
-"stop loss"
-= "Стоп лосс";
-
-"profit"
-= "Прибыль";
-
-"loss"
-= "Убыток";
-
-"margin"
-= "Маржа";
-
-"Could Not Send Email"
-= "Не получилось отправить email";
-
-"Your device could not send e-mail. Please check e-mail configuration and try again"
-= "Ваше устройство не может отправить e-mail. Пожалуйста, проверьте конфигурацию e-mail и попробуйте опять";
-
-"Copy"
-= "Дублировать";
-
-"Save positions to the list"
-= "Сохранить позиции в историю";
-
-"save & clear"
-= "Сохранить и очистить";
-
-"save & open"
-= "Сохранить и открыть";
-
-"The list with such name exists"
-= "История с таким именем уже существует";
-
-"Buy PRO to add more records"
-= "Купите PRO для добавления больше записей";
-
-"Create an empty list"
-= "Создать пустую историю";
-
-"Developers"
-= "Разработчики";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+"sell" = "sell";
+"buy" = "buy";
+"Edit position #navBarTitle" = "Редактировать позицию";
+"Pro version" = "Pro версия";
+"App info" = "Информация о приложении";
+"Save all positions to the list in history" = "Сохранить все позиции в историю";
+"save" = "сохранить";
+"cancel" = "отмена";
+"Edit name of the history" = "Редактировать название истории";
+"Choose or create a list" = "Выберите или создайте историю";
+"This name of the list exist" = "Это имя уже существует";
+"ok" = "хорошо";
+"export date" = "Дата экспорта";
+"list date" = "Дата изменения истории";
+"list name" = "Название списка";
+"instrument name" = "Название инструмента";
+"value" = "Лот";
+"open price" = "Цена открытия";
+"take profit" = "Тейк профит";
+"stop loss" = "Стоп лосс";
+"profit" = "Прибыль";
+"loss" = "Убыток";
+"margin" = "Маржа";
+"Could Not Send Email" = "Не получилось отправить email";
+"Your device could not send e-mail. Please check e-mail configuration and try again" = "Ваше устройство не может отправить e-mail. Пожалуйста, проверьте конфигурацию e-mail и попробуйте опять";
+"Copy" = "Дублировать";
+"Save positions to the list" = "Сохранить позиции в историю";
+"save & clear" = "Сохранить и очистить";
+"save & open" = "Сохранить и открыть";
+"The list with such name exists" = "История с таким именем уже существует";
+"Buy PRO to add more records" = "Купите PRO для добавления больше записей";
+"Create an empty list" = "Создать пустую историю";
