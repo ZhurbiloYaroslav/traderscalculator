@@ -167,6 +167,14 @@ extension OptionsTableVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath {
+        case [0,0]:
+            
+            performSegue(withIdentifier: "OptionsChangeLeverage", sender: nil)
+            
+        case [0,1]:
+            
+            performSegue(withIdentifier: "OptionsChangeLeverage", sender: nil)
+            
         case [1,0]:
             
             performSegue(withIdentifier: "OptionsChangeLanguage", sender: nil)
@@ -213,7 +221,7 @@ extension OptionsTableVC: SKPaymentTransactionObserver {
         case Enabled
         case Disabled
     }
-
+    
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         
         for transaction in queue.transactions {
@@ -230,7 +238,7 @@ extension OptionsTableVC: SKPaymentTransactionObserver {
             }
         }
     }
-
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
         for transaction: AnyObject in transactions {
@@ -274,12 +282,19 @@ extension OptionsTableVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifier = segue.identifier
             else { return }
+        guard let destination = segue.destination as? OptSelectParamsVC
+            else { return }
         
         switch segueIdentifier {
         case "OptionsChangeLanguage":
-            guard let destination = segue.destination as? OptSelectParamsVC
-                else { return }
             destination.doWeChooseLanguageNow = true
+            
+        case "OptionsChangeLeverage":
+            destination.doWeChooseParamsAtFirstLaunch = nil
+            
+        case "OptionsChangeAccountCurrency":
+            destination.doWeChooseParamsAtFirstLaunch = nil
+            
         default:
             break
         }

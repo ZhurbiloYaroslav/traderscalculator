@@ -103,6 +103,12 @@ class HistoryVC: UIViewController {
     
     @IBAction func exportButtonPressed(_ sender: UIBarButtonItem) {
         let mailComposeViewController = configuredMailComposeViewController()
+        if freeOrPro.canWeAddMoreRecordsWithType(type: .ExportOfList) == false {
+            simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                 andMessage: nil)
+            return
+        }
+        
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
@@ -125,7 +131,7 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         mailComposerVC.addAttachmentData(dataForExport, mimeType: "text/csv", fileName: "ExportedHistory.csv")
         
         mailComposerVC.setMessageBody("Export of the history is in attachments", isHTML: false)
-        
+                
         return mailComposerVC
         
     }

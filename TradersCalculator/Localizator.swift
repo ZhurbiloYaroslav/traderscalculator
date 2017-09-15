@@ -57,53 +57,27 @@ extension String {
     
     func returnLocalizedStringForResource(_ resource: String) -> String {
         
-        let path = Bundle.main.path(forResource: resource, ofType: "lproj")
-        let bundle = Bundle(path: path!)!
+        var bundle = Bundle.main
+        if let path = Bundle.main.path(forResource: resource, ofType: "lproj") {
+            bundle = Bundle(path: path)!
+        }
         return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
         
     }
     
-    func localized(comment: String = "") -> String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: comment)
-    }
-    
-    func localized(lang:String) ->String {
-        
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    }
-    
-    //    func localized() -> String {
-    //        if let _ = UserDefaults.standard.string(forKey: "i18n_language") {} else {
-    //            // we set a default, just in case
-    //            UserDefaults.standard.set("fr", forKey: "i18n_language")
-    //            UserDefaults.standard.synchronize()
-    //        }
-    //
-    //        let lang = UserDefaults.standard.string(forKey: "i18n_language")
-    //
-    //        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-    //        let bundle = Bundle(path: path!)
-    //
-    //        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    //    }
 }
 
-//MARK: New way of localization
-
 //private class Localizator {
-//    
+//
 //    static let sharedInstance = Localizator()
-//    
+//
 //    lazy var localizableDictionary: NSDictionary! = {
 //        if let path = Bundle.main.path(forResource: "Localizable", ofType: "plist") {
 //            return NSDictionary(contentsOfFile: path)
 //        }
 //        fatalError("Localizable file NOT found")
 //    }()
-//    
+//
 //    func localize(_ string: String) -> String {
 //        guard let localizedString = (localizableDictionary.value(forKey: string) as AnyObject).value(forKey: "value") as? String else {
 //            assertionFailure("Missing translation for: \(string)")
@@ -112,9 +86,5 @@ extension String {
 //        return localizedString
 //    }
 //}
-//
-//extension String {
-//    func localized() -> String {
-//        return Localizator.sharedInstance.localize(self)
-//    }
-//}
+
+

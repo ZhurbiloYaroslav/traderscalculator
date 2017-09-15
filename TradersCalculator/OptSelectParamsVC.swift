@@ -20,6 +20,7 @@ class OptSelectParamsVC: UIViewController {
     @IBOutlet weak var leverageLabel: UILabel!
     @IBOutlet weak var leveragePickerView: UIPickerView!
     @IBOutlet weak var stackViewLeverage: UIStackView!
+    @IBOutlet weak var saveButtonAtFirstLaunch: UIBarButtonItem!
     
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
@@ -60,7 +61,26 @@ class OptSelectParamsVC: UIViewController {
         
         navigationItem.title = "Parameters".localized()
         
-        currencyOrLanguageLabel.text = "Choose account currency".localized()
+        if doWeChooseLanguageNow == nil {
+            currencyOrLanguageLabel.text = "Choose account currency".localized()
+        } else {
+            currencyOrLanguageLabel.text = "Choose language".localized()
+        }
+        
+        if doWeChooseParamsAtFirstLaunch != nil {
+            
+        }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized(),
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(saveButtonPressed(sender:)))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(),
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(saveButtonPressed(sender:)))
+        
         leverageLabel.text = "Choose account leverage".localized()
         
     }
@@ -104,7 +124,7 @@ class OptSelectParamsVC: UIViewController {
             var accountLeverage = Constants.defaultLeverage
             if let _leverage = options.leverage {
                 accountLeverage = _leverage
-                doWeChooseParamsAtFirstLaunch = false
+                doWeChooseParamsAtFirstLaunch = nil
             }
             
             // Select rows in PickerView
@@ -118,14 +138,21 @@ class OptSelectParamsVC: UIViewController {
         }
         
     }
-
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-                
+    
+    @IBAction func saveButtonAtFirstLaunchPressed(_ sender: UIBarButtonItem) {
+        saveButtonPressed(sender: sender)
+    }
+    
+    func saveButtonPressed(sender: UIBarButtonItem) {
+        
+        
+        
         if doWeChooseLanguageNow != nil {
             
             let languageNumber = currencyOrLanguagePickerView.selectedRow(inComponent: 0)
             
-            options.language = Constants.currenciesOfAccount[languageNumber]
+            options.language = Constants.languages[languageNumber]
+            performSegue(withIdentifier: "backToOptionsFromParametersWithSaving", sender: nil)
             
         } else {
             
@@ -137,13 +164,12 @@ class OptSelectParamsVC: UIViewController {
             
             if doWeChooseParamsAtFirstLaunch == nil {
                 
+                performSegue(withIdentifier: "backToOptionsFromParametersWithSaving", sender: nil)
                 navigationController?.popViewController(animated: true)
-                performSegue(withIdentifier: "backToCalculatorFromParamsSelectionPage", sender: nil)
                 
             } else {
                 
                 performSegue(withIdentifier: "backToCalculatorFromParamsSelectionPage", sender: nil)
-                
             }
             
         }

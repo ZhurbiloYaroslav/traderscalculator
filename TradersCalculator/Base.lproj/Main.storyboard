@@ -515,9 +515,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="4eA-5g-0oM" kind="show" identifier="OptionsChangeAccountCurrency" id="hhy-tK-JxJ"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OptionsLeverageCell" textLabel="vng-EA-NFP" detailTextLabel="HS6-Ih-d2k" style="IBUITableViewCellStyleValue1" id="Qdv-2u-9ED">
                                         <rect key="frame" x="0.0" y="100" width="320" height="44"/>
@@ -542,9 +539,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="4eA-5g-0oM" kind="show" identifier="OptionsChangeLeverage" id="Ikh-dd-hk3"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -653,6 +647,8 @@
                         <outlet property="leverageCell" destination="Qdv-2u-9ED" id="Um1-6X-Eoh"/>
                         <outlet property="restorePurchasesCell" destination="fWt-80-BR1" id="h5R-DF-kEn"/>
                         <segue destination="4eA-5g-0oM" kind="show" identifier="OptionsChangeLanguage" id="fta-u4-Qyj"/>
+                        <segue destination="4eA-5g-0oM" kind="show" identifier="OptionsChangeLeverage" id="JfH-uv-5s0"/>
+                        <segue destination="4eA-5g-0oM" kind="show" identifier="OptionsChangeAccountCurrency" id="c8H-Ga-vSE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nx-8q-7CW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -678,9 +674,9 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Parameters" id="Zyx-xn-HY0">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LAd-qn-gfX">
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="LAd-qn-gfX">
                                             <connections>
-                                                <action selector="saveButtonPressed:" destination="4eA-5g-0oM" id="r3y-i9-ISH"/>
+                                                <action selector="saveButtonAtFirstLaunchPressed:" destination="4eA-5g-0oM" id="7C0-nG-8J7"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -691,9 +687,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bge-OY-qpG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                        <connections>
-                                            <action selector="bannerPressed:" destination="4eA-5g-0oM" eventType="touchUpInside" id="geX-0m-uLB"/>
-                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_320X50.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YdD-SH-8Hl">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -772,8 +765,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="hfw-2K-HaV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="K5V-R8-l9R">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="4eA-5g-0oM" id="JeX-Q1-Pgy"/>
-                                <segue destination="eg4-fE-uh6" kind="unwind" unwindAction="backToOptionsFromParametersWithSavingWithSender:" id="Lt2-pB-LHe"/>
+                                <segue destination="eg4-fE-uh6" kind="unwind" identifier="backToOptionsFromParametersWithSaving" unwindAction="backToOptionsFromParametersWithSavingWithSender:" id="Lt2-pB-LHe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -785,6 +777,7 @@
                         <outlet property="googleBannerView" destination="Nde-ag-o2R" id="M2q-tF-TZX"/>
                         <outlet property="leverageLabel" destination="iln-yV-b4X" id="Ipb-wJ-hZE"/>
                         <outlet property="leveragePickerView" destination="iX2-g4-Aem" id="pdZ-fb-JSP"/>
+                        <outlet property="saveButtonAtFirstLaunch" destination="LAd-qn-gfX" id="83b-sh-nkq"/>
                         <outlet property="stackViewLeverage" destination="Pst-rg-90q" id="NN0-jk-vfj"/>
                         <segue destination="eg4-fE-uh6" kind="unwind" identifier="backToCalculatorFromParamsSelectionPage" unwindAction="backToCalculatorFromParamsSelectionPageWithSender:" id="ei4-F9-oR1"/>
                     </connections>
@@ -834,10 +827,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-3t-0lO">
-                                        <rect key="frame" x="14" y="30" width="34" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Back"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-3t-0lO">
+                                        <rect key="frame" x="8" y="35" width="99" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="XD6-V9-7wl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="tintColor" red="0.38074839119999998" green="0.6713193059" blue="0.95571380849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" red="0.38074839115142822" green="0.67131930589675903" blue="0.95571380853652954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="0Zt-kU-RyF" kind="unwind" unwindAction="backToCalculatorFromAddPositionWithoutSavingWithSender:" id="hPc-4f-6U9"/>
                                         </connections>
@@ -845,8 +844,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="eR6-3t-0lO" secondAttribute="bottom" constant="8" id="NW5-4V-LJg"/>
+                                    <constraint firstItem="eR6-3t-0lO" firstAttribute="leading" secondItem="0zc-v1-5hm" secondAttribute="leading" constant="8" id="g1v-af-y9b"/>
                                     <constraint firstAttribute="bottom" secondItem="bBk-VE-QGu" secondAttribute="bottom" constant="8" id="gUt-gW-ueB"/>
                                     <constraint firstAttribute="height" constant="64" id="h2H-Wm-YeA"/>
+                                    <constraint firstItem="bBk-VE-QGu" firstAttribute="leading" secondItem="eR6-3t-0lO" secondAttribute="trailing" constant="5" id="pPw-be-QPL"/>
                                     <constraint firstItem="bBk-VE-QGu" firstAttribute="centerX" secondItem="0zc-v1-5hm" secondAttribute="centerX" id="sPp-8z-fv4"/>
                                 </constraints>
                             </view>
@@ -1112,6 +1114,7 @@
                         <outlet property="instrumentDescription" destination="2mD-5i-CDu" id="HbR-VG-2g8"/>
                         <outlet property="instrumentsPicker" destination="gpv-4s-XCM" id="3Hk-w1-aOu"/>
                         <outlet property="instrumentsPickerDescription" destination="QuN-YL-Tsw" id="gz5-3o-0sU"/>
+                        <outlet property="navigationBackButton" destination="eR6-3t-0lO" id="bNP-Jx-qId"/>
                         <outlet property="navigationBarTitle" destination="bBk-VE-QGu" id="8rt-TA-x28"/>
                         <outlet property="openPriceLabel" destination="yft-wk-Q41" id="e6B-1d-L11"/>
                         <outlet property="positionOpenPrice" destination="zFS-BB-cbi" id="D5y-sx-hKM"/>
@@ -1582,7 +1585,7 @@
         <image name="icon-settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w74-J8-l96"/>
         <segue reference="qHu-0t-K2J"/>
+        <segue reference="w74-J8-l96"/>
     </inferredMetricsTieBreakers>
 </document>

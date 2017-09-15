@@ -12,6 +12,7 @@ import GoogleMobileAds
 
 class CalcAddItemVC: UIViewController {
     
+    @IBOutlet weak var navigationBackButton: UIButton!
     @IBOutlet weak var navigationBarTitle: UILabel!
     @IBOutlet weak var viewInScrollView: UIView!
     @IBOutlet weak var googleBannerView: GADBannerView!
@@ -85,6 +86,7 @@ class CalcAddItemVC: UIViewController {
         stopLossLabel.text = "Stop loss".localized()
         sellButton.setTitle("Sell".localized(), for: .normal)
         buyButton.setTitle("Buy".localized(), for: .normal)
+        navigationBackButton.setTitle("Back".localized(), for: .normal)
         clearProfitButton.setTitle("clear".localized(), for: .normal)
         clearLossButton.setTitle("clear".localized(), for: .normal)
         

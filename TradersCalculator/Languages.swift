@@ -13,14 +13,18 @@ struct Languages {
     
     //TODO: Determine code for System language
     struct System {
+        
         static let name = "System"
+        
+        static let prefLang = Locale.preferredLanguages[0]
+        
         static var code: String {
-            let prefLang = Locale.preferredLanguages[0]
-            return prefLang.components(separatedBy: "-")[0]
+            let languageParts = prefLang.components(separatedBy: "-")
+            return languageParts.count > 0 ? languageParts[0] : "Base"
         }
         static var locale: String {
-            let prefLang = Locale.preferredLanguages[0]
-            return prefLang.components(separatedBy: "-")[1]
+            let languageParts = prefLang.components(separatedBy: "-")
+            return languageParts.count > 1 ? languageParts[1] : "Base"
         }
     }
     

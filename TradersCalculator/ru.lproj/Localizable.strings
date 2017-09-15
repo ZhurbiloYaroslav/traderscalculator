@@ -95,6 +95,8 @@
 
   Created by Yaroslav Zhurbilo on 23.07.17.
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
+
+"Save" = "Сохранить";
 "sell" = "sell";
 "buy" = "buy";
 "Edit position #navBarTitle" = "Редактировать позицию";

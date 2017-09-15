@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
+        print("---", Locale.preferredLanguages)
+        
         // initializeGoogleMobileAds()
         
         return true
