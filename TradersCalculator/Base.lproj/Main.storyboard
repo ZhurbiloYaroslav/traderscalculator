@@ -425,11 +425,30 @@
                                     <segue destination="KZ9-nv-M8n" kind="embed" id="I02-vG-Ry5"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrl-Lg-3EX" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrl-Lg-3EX">
                                 <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HN7-t4-vQM">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <connections>
+                                            <action selector="bannerPressed:" destination="nSt-dE-Ccw" eventType="touchUpInside" id="hHk-0N-Ewu"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_320X50.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Py9-sO-Jwp">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HN7-t4-vQM" secondAttribute="trailing" id="5rb-WZ-ula"/>
+                                    <constraint firstItem="Py9-sO-Jwp" firstAttribute="leading" secondItem="lrl-Lg-3EX" secondAttribute="leading" id="8GB-0g-LQd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Py9-sO-Jwp" secondAttribute="trailing" id="BSD-yW-6in"/>
+                                    <constraint firstItem="HN7-t4-vQM" firstAttribute="top" secondItem="lrl-Lg-3EX" secondAttribute="top" id="E2J-cm-0Xd"/>
                                     <constraint firstAttribute="width" constant="320" id="FyQ-JX-67r"/>
+                                    <constraint firstAttribute="bottom" secondItem="HN7-t4-vQM" secondAttribute="bottom" id="NWI-id-uiW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Py9-sO-Jwp" secondAttribute="bottom" id="SOZ-eg-eGm"/>
+                                    <constraint firstItem="Py9-sO-Jwp" firstAttribute="top" secondItem="lrl-Lg-3EX" secondAttribute="top" id="Uxp-WB-HtB"/>
+                                    <constraint firstItem="HN7-t4-vQM" firstAttribute="leading" secondItem="lrl-Lg-3EX" secondAttribute="leading" id="kT7-QW-Fso"/>
                                     <constraint firstAttribute="height" constant="50" id="rSv-iv-7Gg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -455,7 +474,7 @@
                         <outlet property="containerTopConstraint" destination="KzN-QD-cRa" id="cp0-UY-mjH"/>
                         <outlet property="containerView" destination="Avd-bG-vOh" id="FsS-wZ-1Ey"/>
                         <outlet property="googleBannerView" destination="lrl-Lg-3EX" id="idd-Q2-U3g"/>
-                        <segue destination="wJd-XX-aXU" kind="show" identifier="PurchaseTest2" id="qCm-2N-vwC"/>
+                        <segue destination="wJd-XX-aXU" kind="show" identifier="IAPTest2" id="rDJ-pY-BWE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Is-7N-K7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -667,12 +686,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-ag-o2R" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-ag-o2R">
                                 <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bge-OY-qpG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <connections>
+                                            <action selector="bannerPressed:" destination="4eA-5g-0oM" eventType="touchUpInside" id="geX-0m-uLB"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_320X50.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YdD-SH-8Hl">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YdD-SH-8Hl" secondAttribute="bottom" id="0Ep-mp-CIN"/>
+                                    <constraint firstItem="YdD-SH-8Hl" firstAttribute="top" secondItem="Nde-ag-o2R" secondAttribute="top" id="Cxc-uW-H43"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bge-OY-qpG" secondAttribute="trailing" id="HBo-iE-kAJ"/>
+                                    <constraint firstItem="Bge-OY-qpG" firstAttribute="leading" secondItem="Nde-ag-o2R" secondAttribute="leading" id="MGH-i6-x4e"/>
+                                    <constraint firstAttribute="trailing" secondItem="YdD-SH-8Hl" secondAttribute="trailing" id="Peg-7m-ZWY"/>
                                     <constraint firstAttribute="height" constant="50" id="SPe-7Y-Wse"/>
+                                    <constraint firstItem="YdD-SH-8Hl" firstAttribute="leading" secondItem="Nde-ag-o2R" secondAttribute="leading" id="aMi-yF-3h9"/>
+                                    <constraint firstItem="Bge-OY-qpG" firstAttribute="top" secondItem="Nde-ag-o2R" secondAttribute="top" id="fsy-9k-QkC"/>
                                     <constraint firstAttribute="width" constant="320" id="iev-QX-i7Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bge-OY-qpG" secondAttribute="bottom" id="ntS-Pe-uXl"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
@@ -754,7 +792,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sT8-Uy-q97" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eg4-fE-uh6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4121" y="969"/>
+            <point key="canvasLocation" x="4119.375" y="968.66197183098598"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Jub-y8-U1y">
@@ -812,11 +850,30 @@
                                     <constraint firstItem="bBk-VE-QGu" firstAttribute="centerX" secondItem="0zc-v1-5hm" secondAttribute="centerX" id="sPp-8z-fv4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-2n-e0T" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-2n-e0T">
                                 <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eux-Bb-Cgh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <connections>
+                                            <action selector="bannerPressed:" destination="T57-kg-F5P" eventType="touchUpInside" id="OMJ-Dc-xKe"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_320X50.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="a2t-Ff-DXm">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="eux-Bb-Cgh" secondAttribute="bottom" id="2Ej-oz-j3P"/>
+                                    <constraint firstItem="eux-Bb-Cgh" firstAttribute="top" secondItem="b8d-2n-e0T" secondAttribute="top" id="80Y-HX-MXh"/>
+                                    <constraint firstAttribute="trailing" secondItem="eux-Bb-Cgh" secondAttribute="trailing" id="BaP-3w-21F"/>
+                                    <constraint firstAttribute="bottom" secondItem="a2t-Ff-DXm" secondAttribute="bottom" id="Ddv-dM-6KO"/>
                                     <constraint firstAttribute="height" constant="50" id="MTC-2D-90P"/>
+                                    <constraint firstAttribute="trailing" secondItem="a2t-Ff-DXm" secondAttribute="trailing" id="Plv-eu-QYv"/>
+                                    <constraint firstItem="a2t-Ff-DXm" firstAttribute="top" secondItem="b8d-2n-e0T" secondAttribute="top" id="b4w-mG-DIw"/>
+                                    <constraint firstItem="eux-Bb-Cgh" firstAttribute="leading" secondItem="b8d-2n-e0T" secondAttribute="leading" id="pdY-19-uz3"/>
+                                    <constraint firstItem="a2t-Ff-DXm" firstAttribute="leading" secondItem="b8d-2n-e0T" secondAttribute="leading" id="piA-9n-bGF"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
@@ -1106,12 +1163,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgf-CL-HuI" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgf-CL-HuI">
                                 <rect key="frame" x="0.0" y="469" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-f7-mSV">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <connections>
+                                            <action selector="bannerPressed:" destination="mgg-5x-8vw" eventType="touchUpInside" id="CsK-BH-D41"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_320X50.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ej2-eg-G6y">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.68639081719999995" green="0.80389195680000003" blue="0.97976380590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qjc-f7-mSV" secondAttribute="trailing" id="09K-EU-IBf"/>
+                                    <constraint firstAttribute="trailing" secondItem="ej2-eg-G6y" secondAttribute="trailing" id="4z7-f0-vVp"/>
+                                    <constraint firstAttribute="bottom" secondItem="ej2-eg-G6y" secondAttribute="bottom" id="GVL-JX-nn8"/>
+                                    <constraint firstItem="qjc-f7-mSV" firstAttribute="top" secondItem="Hgf-CL-HuI" secondAttribute="top" id="PqG-Bs-qUZ"/>
+                                    <constraint firstItem="ej2-eg-G6y" firstAttribute="leading" secondItem="Hgf-CL-HuI" secondAttribute="leading" id="VPC-LY-NFn"/>
+                                    <constraint firstItem="qjc-f7-mSV" firstAttribute="leading" secondItem="Hgf-CL-HuI" secondAttribute="leading" id="kh4-zK-OYq"/>
                                     <constraint firstAttribute="height" constant="50" id="rou-A2-gGF"/>
                                     <constraint firstAttribute="width" constant="320" id="thG-v9-of6"/>
+                                    <constraint firstAttribute="bottom" secondItem="qjc-f7-mSV" secondAttribute="bottom" id="vGy-I0-1GS"/>
+                                    <constraint firstItem="ej2-eg-G6y" firstAttribute="top" secondItem="Hgf-CL-HuI" secondAttribute="top" id="wd1-Yl-O1j"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7923953444264875/5465129548"/>
@@ -1204,7 +1280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfQ-3K-H9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="1671"/>
+            <point key="canvasLocation" x="1111.875" y="1670.0704225352113"/>
         </scene>
         <!--Purchases TestVC-->
         <scene sceneID="P9x-SD-87U">

@@ -10,7 +10,7 @@ import UIKit
 import SwiftyStoreKit
 import StoreKit
 
-var productsSharedSecret = "e4d4544092d44ebfb69283940cd9479d"
+var productsSharedSecret = "e78dac645bbe42f688687da5962713a4"
 
 enum RegisteredPurchase : String {
     case BuyPro = "com.diglabstudio.TraderCalculator.BuyPro"

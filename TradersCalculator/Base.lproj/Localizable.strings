@@ -19,7 +19,7 @@
 = "Edit position";
 
 "Save all positions to history"
-= "Save all positions to list";
+= "Save all positions to history";
 
 "Delete  position"
 = "Delete  position";
@@ -73,7 +73,7 @@
 = "Calculator";
 
 "History"
-= "List";
+= "History";
 
 "Options"
 = "Options";
@@ -124,7 +124,7 @@
 = "Choose account leverage";
 
 "Save all positions to the list in history"
-= "Save all positions to the list";
+= "Save all positions to the history";
 
 "save"
 = "save";
@@ -136,10 +136,10 @@
 = "Edit name of the history";
 
 "Choose or create a list"
-= "Choose or create a list";
+= "Choose or create a history";
 
 "This name of the list exist"
-= "This name of the list exist";
+= "This name of the history exists";
 
 "ok"
 = "ok";
@@ -148,10 +148,10 @@
 = "Export Date";
 
 "list date"
-= "List Date";
+= "History Date";
 
 "list name"
-= "List Name";
+= "History Name";
 
 "instrument name"
 = "Instrument name";
@@ -187,7 +187,7 @@
 = "Duplicate";
 
 "Save positions to the list"
-= "Save positions to the list";
+= "Save positions to the history";
 
 "save & clear"
 = "save & clear";
@@ -196,13 +196,13 @@
 = "save & open";
 
 "The list with such name exists"
-= "The list with such name exists";
+= "The history with such name exists";
 
 "Buy PRO to add more records"
 = "Buy PRO to add more records";
 
 "Create an empty list"
-= "Create an empty list";
+= "Create an empty history";
 
 "Developers"
 = "Developers";

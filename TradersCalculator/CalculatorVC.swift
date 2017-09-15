@@ -49,15 +49,7 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     @IBAction func bannerPressed(_ sender: UIButton) {
 
-        if let url = URL(string: "http://serv.markets.com/promoRedirect?key=ej0xNTM1MzQxNSZsPTE1MzUzNDAyJnA9Mzc1ODU="){
-            
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-            
-        }
+        CustomBanner().showAdvertAfterBannerPressed()
         
     }
     

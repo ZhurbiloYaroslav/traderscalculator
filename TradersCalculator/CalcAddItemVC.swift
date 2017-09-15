@@ -69,6 +69,12 @@ class CalcAddItemVC: UIViewController {
         
     }
     
+    @IBAction func bannerPressed(_ sender: UIButton) {
+        
+        CustomBanner().showAdvertAfterBannerPressed()
+        
+    }
+    
     func updateUILabelsWithLocalizedText() {
         
         instrumentsPickerDescription.text = "".localized()

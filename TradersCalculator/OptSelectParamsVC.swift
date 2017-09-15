@@ -50,6 +50,12 @@ class OptSelectParamsVC: UIViewController {
         
     }
     
+    @IBAction func bannerPressed(_ sender: UIButton) {
+        
+        CustomBanner().showAdvertAfterBannerPressed()
+        
+    }
+    
     func updateUILabelsWithLocalizedText() {
         
         navigationItem.title = "Parameters".localized()

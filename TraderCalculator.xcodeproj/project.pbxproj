@@ -46,6 +46,9 @@
 		C4EAF6D61F5BDD29005AC480 /* Position+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF6D31F5BDD29005AC480 /* Position+CoreDataProperties.swift */; };
 		C4EAF6D71F5BDD29005AC480 /* Instrument+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF6D41F5BDD29005AC480 /* Instrument+CoreDataProperties.swift */; };
 		C4EAF6D81F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF6D51F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift */; };
+		C4EED9CF1F6B136200F8FDC8 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EED9CD1F6B136200F8FDC8 /* IAPHelper.swift */; };
+		C4EED9D01F6B136200F8FDC8 /* AppProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EED9CE1F6B136200F8FDC8 /* AppProducts.swift */; };
+		C4EED9D41F6B34CD00F8FDC8 /* CustomBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EED9D31F6B34CD00F8FDC8 /* CustomBanner.swift */; };
 		C4F3A5631F17F84B004DC1C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3A5621F17F84B004DC1C9 /* Constants.swift */; };
 		C4F3A5651F1800E1004DC1C9 /* YahooJSONResponse.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */; };
 		C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB60D91F1268A700EDE9C7 /* AppDelegate.swift */; };
@@ -105,6 +108,9 @@
 		C4EAF6D31F5BDD29005AC480 /* Position+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Position+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C4EAF6D41F5BDD29005AC480 /* Instrument+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instrument+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C4EAF6D51F5BDD29005AC480 /* ListOfPositions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListOfPositions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4EED9CD1F6B136200F8FDC8 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		C4EED9CE1F6B136200F8FDC8 /* AppProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProducts.swift; sourceTree = "<group>"; };
+		C4EED9D31F6B34CD00F8FDC8 /* CustomBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBanner.swift; sourceTree = "<group>"; };
 		C4F3A5621F17F84B004DC1C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4F3A5641F1800E1004DC1C9 /* YahooJSONResponse.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = YahooJSONResponse.rtf; sourceTree = "<group>"; };
 		C4FB60D61F1268A700EDE9C7 /* TraderCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraderCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +184,6 @@
 				C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */,
 				C413B4181F238C790004F327 /* OptionsTableVC.swift */,
 				C45697A41F1A8D4100599563 /* OptSelectParamsVC.swift */,
-				C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */,
 				C4AD63ED1F66769300091AD9 /* TabBarController.swift */,
 			);
 			name = Controller;
@@ -211,6 +216,7 @@
 				C40FAD9F1F54564800778090 /* InstrumentsRates.swift */,
 				C49B93831F5AFF00003433DF /* FirstLaunch.swift */,
 				C402E8CB1F63EFE0001433F0 /* Formatter.swift */,
+				C4EED9D31F6B34CD00F8FDC8 /* CustomBanner.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +267,9 @@
 		C4EED9CC1F6AB06500F8FDC8 /* In-App purchase */ = {
 			isa = PBXGroup;
 			children = (
+				C4EED9CD1F6B136200F8FDC8 /* IAPHelper.swift */,
+				C44CC79D1F2E715500DF2D03 /* PurchasesTestVC.swift */,
+				C4EED9CE1F6B136200F8FDC8 /* AppProducts.swift */,
 				C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */,
 			);
 			name = "In-App purchase";
@@ -460,6 +469,7 @@
 				C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */,
 				C45697A91F1A8DAF00599563 /* HistoryVC.swift in Sources */,
 				C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */,
+				C4EED9CF1F6B136200F8FDC8 /* IAPHelper.swift in Sources */,
 				C4EAF6D71F5BDD29005AC480 /* Instrument+CoreDataProperties.swift in Sources */,
 				C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */,
 				C45411AC1F58665700266979 /* Instrument+CoreDataClass.swift in Sources */,
@@ -467,10 +477,12 @@
 				C41030611F309F450060F191 /* Calculator.swift in Sources */,
 				C44CC7A01F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift in Sources */,
 				C45411AA1F58665700266979 /* ListOfPositions+CoreDataClass.swift in Sources */,
+				C4EED9D41F6B34CD00F8FDC8 /* CustomBanner.swift in Sources */,
 				C4AD63EE1F66769300091AD9 /* TabBarController.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
+				C4EED9D01F6B136200F8FDC8 /* AppProducts.swift in Sources */,
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
 				C4260F501F2093E3004ECCB5 /* AdMob.swift in Sources */,
 				C4E917341F1BC30200BE792E /* Currency.swift in Sources */,
