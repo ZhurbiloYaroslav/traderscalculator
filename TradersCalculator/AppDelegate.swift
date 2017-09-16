@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-        
-        print("---", Locale.preferredLanguages)
-        
+                
         // initializeGoogleMobileAds()
         
         return true

@@ -138,6 +138,12 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     @IBAction func addListOfPositionsButtonPressed(_ sender: UIBarButtonItem) {
         
+        if freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions) == false {
+            simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                 andMessage: nil)
+            return
+        }
+        
         self.performAlertForCreatingListOfPositions()
         
     }
@@ -183,12 +189,6 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         var newListOfPositions: ListOfPositions!
         let listNameFromTextField = createListAlert.textFields![0].text!
-        
-        if freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions) == false {
-            simpleAlertWithTitle("Buy PRO to add more records".localized(),
-                                 andMessage: nil)
-            return
-        }
         
         if coreDataManager.thereIsNoListWithSimilarName(listNameFromTextField) {
             

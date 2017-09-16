@@ -205,9 +205,10 @@ class CalcAddItemVC: UIViewController {
         }
         coreDataManager.saveContext()
         
+        performSegue(withIdentifier: "showFullScreenAdvert", sender: nil)
         // Dismiss this view controller and go to previous
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+//        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
         
     }
     

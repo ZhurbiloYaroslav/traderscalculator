@@ -103,9 +103,9 @@ class HistoryVC: UIViewController {
     
     @IBAction func exportButtonPressed(_ sender: UIBarButtonItem) {
         let mailComposeViewController = configuredMailComposeViewController()
+        
         if freeOrPro.canWeAddMoreRecordsWithType(type: .ExportOfList) == false {
-            simpleAlertWithTitle("Buy PRO to add more records".localized(),
-                                 andMessage: nil)
+            simpleAlertWithTitle("Buy PRO to export more records".localized(), andMessage: "")
             return
         }
         
@@ -131,7 +131,9 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         mailComposerVC.addAttachmentData(dataForExport, mimeType: "text/csv", fileName: "ExportedHistory.csv")
         
         mailComposerVC.setMessageBody("Export of the history is in attachments", isHTML: false)
-                
+        
+        userDefaultsManager.increaseAmountOfExports()
+        
         return mailComposerVC
         
     }
@@ -350,6 +352,12 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         let titleForCopyAction = "Copy".localized()
         let copyAction = UIAlertAction(title: titleForCopyAction, style: .default) { (action) in
             
+            if self.freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions, forList: editedListOfPositions) == false {
+                self.simpleAlertWithTitle("Buy PRO to add more records".localized(),
+                                     andMessage: nil)
+                return
+            }
+            
             self.performAlertForCopyOfTheListOfPositions(editedListOfPositions)
             
         }
@@ -466,12 +474,6 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         
         let listOfPositionsForSaving: ListOfPositions!
         let listNameFromTextField = savePositionsAlert.textFields![0].text!
-        
-        if freeOrPro.canWeAddMoreRecordsWithType(type: .ListOfPositions) == false {
-            simpleAlertWithTitle("Buy PRO to add more records".localized(),
-                                 andMessage: nil)
-            return
-        }
         
         if coreDataManager.thereIsNoListWithSimilarName(listNameFromTextField) {
             

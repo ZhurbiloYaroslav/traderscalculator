@@ -148,4 +148,8 @@ class UserDefaultsManager {
         
     }
     
+    public func increaseAmountOfExports() {
+        amountOfExports = amountOfExports + 1
+    }
+    
 }

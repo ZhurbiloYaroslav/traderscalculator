@@ -18,6 +18,7 @@ class FreeOrProVersion {
     private var coreDataManager: CoreDataManager!
     
     private let maxAmountOf_Positions_InFreeVersion = 9
+    private let maxAmountOf_PositionsInTheList_InFreeVersion = 3
     private let maxAmountOf_Lists_InFreeVersion = 3
     private let maxAmountOf_Exports_InFreeVersion = 3
     
@@ -33,7 +34,7 @@ class FreeOrProVersion {
         return UserDefaultsManager().amountOfExports
     }
     
-    func canWeAddMoreRecordsWithType(type: RecordTypes) -> Bool {
+    func canWeAddMoreRecordsWithType(type: RecordTypes, forList listOfPositions: ListOfPositions? = nil) -> Bool {
         
         if isPRO {
             return true
@@ -42,19 +43,46 @@ class FreeOrProVersion {
         switch type {
         case .Position:
             
-            if currentAmountOf_Positions < maxAmountOf_Positions_InFreeVersion {
-                return true
-            } else {
+            let amountOfPositionsWithoutList = coreDataManager.getPositionsWithoutList().count
+            if amountOfPositionsWithoutList >= maxAmountOf_PositionsInTheList_InFreeVersion {
                 return false
             }
+            
+            if let currentListOfPositions = coreDataManager.getInstanceOfCurrentPositionsList() {
+                
+                let amountOfPositionsForCurrentList = coreDataManager.getPositionsForList(currentListOfPositions).count
+                if amountOfPositionsForCurrentList >= maxAmountOf_PositionsInTheList_InFreeVersion {
+                    return false
+                }
+                
+            }
+            
+            if currentAmountOf_Positions >= maxAmountOf_Positions_InFreeVersion {
+                return false
+            }
+            
+            return true
             
         case .ListOfPositions:
             
-            if currentAmountOf_Lists < maxAmountOf_Lists_InFreeVersion {
-                return true
-            } else {
+            if currentAmountOf_Lists >= maxAmountOf_Lists_InFreeVersion {
                 return false
             }
+            
+            guard let list = listOfPositions else {
+                // Means, that we don't copy the list, only create list with positions
+                return true
+            }
+            
+            let amountOfPositionsInList = coreDataManager.getPositionsForList(list).count
+            
+            let amountOfPositionsAfterCopyingList = amountOfPositionsInList + currentAmountOf_Positions
+            
+            if amountOfPositionsAfterCopyingList >= maxAmountOf_Positions_InFreeVersion {
+                return false
+            }
+            
+            return true
             
         case .ExportOfList:
             

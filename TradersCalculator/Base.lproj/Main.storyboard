@@ -30,16 +30,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4a-sB-YfL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4a-sB-YfL">
                                         <rect key="frame" x="266" y="31" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0oZ-sz-WPP"/>
                                             <constraint firstAttribute="width" constant="46" id="ire-cI-VGQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="plus_math_filled"/>
                                         <connections>
                                             <action selector="AddPositionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbu-J1-onx"/>
                                         </connections>
@@ -1128,12 +1127,83 @@
                         <outlet property="takeProfitLabel" destination="LYy-6s-1mO" id="54E-in-Wdq"/>
                         <outlet property="valueLabel" destination="a4H-MN-c1X" id="rqG-2v-7nd"/>
                         <outlet property="viewInScrollView" destination="BLB-Pz-tqP" id="txX-Yi-74K"/>
+                        <segue destination="Qei-cw-IwP" kind="show" identifier="showFullScreenAdvert" id="Vp7-4y-CHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzQ-2Q-bo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0Zt-kU-RyF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3067.5" y="122.53521126760563"/>
+        </scene>
+        <!--Full Screen AdvertVC-->
+        <scene sceneID="ev7-ZM-mqR">
+            <objects>
+                <viewController id="Qei-cw-IwP" customClass="FullScreenAdvertVC" customModule="TraderCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2er-pW-xHF"/>
+                        <viewControllerLayoutGuide type="bottom" id="a6y-jV-Gjq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XjP-2f-70O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxD-O9-5Wt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.058813281359999997" green="0.058830909430000002" blue="0.05880954117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mob_300X250" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-Ku-vay">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTc-aK-9le">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <connections>
+                                    <action selector="bannerPressed:" destination="Qei-cw-IwP" eventType="touchUpInside" id="Ro8-Oe-sgy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkA-ZZ-ypT" userLabel="Close Button">
+                                <rect key="frame" x="234" y="50" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6oK-Db-fIP"/>
+                                    <constraint firstAttribute="width" constant="40" id="hmi-eK-bOL"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="icons8-cancel_filled"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="Qei-cw-IwP" eventType="touchUpInside" id="JC2-nv-4C6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fh0-Ku-vay" firstAttribute="leading" secondItem="XjP-2f-70O" secondAttribute="leading" id="0AN-bL-Kib"/>
+                            <constraint firstItem="a6y-jV-Gjq" firstAttribute="top" secondItem="XTc-aK-9le" secondAttribute="bottom" id="7aU-7g-SB9"/>
+                            <constraint firstItem="a6y-jV-Gjq" firstAttribute="top" secondItem="fh0-Ku-vay" secondAttribute="bottom" id="Aqn-PF-CLj"/>
+                            <constraint firstItem="mkA-ZZ-ypT" firstAttribute="top" secondItem="2er-pW-xHF" secondAttribute="bottom" constant="30" id="JOh-DQ-j2v"/>
+                            <constraint firstAttribute="trailing" secondItem="fh0-Ku-vay" secondAttribute="trailing" id="Pru-YB-TsZ"/>
+                            <constraint firstItem="WxD-O9-5Wt" firstAttribute="leading" secondItem="XjP-2f-70O" secondAttribute="leading" id="RJl-ea-Bud"/>
+                            <constraint firstItem="XTc-aK-9le" firstAttribute="top" secondItem="2er-pW-xHF" secondAttribute="bottom" id="Vwd-Wj-LHj"/>
+                            <constraint firstItem="fh0-Ku-vay" firstAttribute="top" secondItem="2er-pW-xHF" secondAttribute="bottom" id="abo-oo-heQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mkA-ZZ-ypT" secondAttribute="trailing" constant="30" id="g7A-xx-V70"/>
+                            <constraint firstAttribute="trailing" secondItem="XTc-aK-9le" secondAttribute="trailing" id="kjE-pA-ej2"/>
+                            <constraint firstItem="XTc-aK-9le" firstAttribute="leading" secondItem="XjP-2f-70O" secondAttribute="leading" id="laa-bx-fj3"/>
+                            <constraint firstItem="a6y-jV-Gjq" firstAttribute="top" secondItem="WxD-O9-5Wt" secondAttribute="bottom" id="w50-h8-EtG"/>
+                            <constraint firstItem="WxD-O9-5Wt" firstAttribute="top" secondItem="XjP-2f-70O" secondAttribute="top" id="weC-xe-Xoa"/>
+                            <constraint firstAttribute="trailing" secondItem="WxD-O9-5Wt" secondAttribute="trailing" id="zn1-8C-w3s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="SNz-R7-4cd" kind="unwind" identifier="backToCalculatorFromFullScreenAdvert" unwindAction="backToCalculatorFromAddPositionWithoutSavingWithSender:" id="iIC-G6-2Ho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncF-N4-ZO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SNz-R7-4cd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4025.625" y="122.53521126760563"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="uPq-lY-3PS">
@@ -1579,10 +1649,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Mob_300X250" width="150" height="125"/>
         <image name="Mob_320X50.jpeg" width="320" height="50"/>
         <image name="icon-calculator" width="21" height="21"/>
         <image name="icon-calendar" width="23" height="24"/>
         <image name="icon-settings" width="25" height="25"/>
+        <image name="icons8-cancel_filled" width="25" height="25"/>
+        <image name="plus_math_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qHu-0t-K2J"/>
