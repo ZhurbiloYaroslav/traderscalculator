@@ -40,8 +40,8 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
         initializeVariables()
         
-        adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+//        adMob = AdMob()
+//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         attemptFetch()
         

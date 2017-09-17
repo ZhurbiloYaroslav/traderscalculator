@@ -37,8 +37,8 @@ class HistoryVC: UIViewController {
         
         initializeVariables()
         
-        adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+//        adMob = AdMob()
+//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         attemptFetch()
         

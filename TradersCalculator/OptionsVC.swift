@@ -8,8 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-import FirebaseDatabase
-import FirebaseAuth
 
 class OptionsVC: UIViewController {
     
@@ -19,7 +17,6 @@ class OptionsVC: UIViewController {
     
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
-    var firebase: FirebaseConnect!  // Reference variable for the Database
     var adMob: AdMob!
     
     var freeOrProVersion: FreeOrProVersion!
@@ -29,8 +26,8 @@ class OptionsVC: UIViewController {
         
         updateUILabelsWithLocalizedText()
         
-        adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+//        adMob = AdMob()
+//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         
         freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,

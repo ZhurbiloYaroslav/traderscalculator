@@ -8,8 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-import FirebaseDatabase
-import FirebaseAuth
 
 class OptSelectParamsVC: UIViewController {
     
@@ -44,8 +42,8 @@ class OptSelectParamsVC: UIViewController {
         
         options = UserDefaultsManager()
         
-        adMob = AdMob()
-        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+//        adMob = AdMob()
+//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
         
         selectDefaultRowsInPickerViews()
         
