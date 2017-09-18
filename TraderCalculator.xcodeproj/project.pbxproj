@@ -39,6 +39,7 @@
 		C472B1CF1F2A2B8700BAA1CD /* Indices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */; };
 		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
 		C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B93831F5AFF00003433DF /* FirstLaunch.swift */; };
+		C4A0A5761F7039E700FF4670 /* GreetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0A5751F7039E700FF4670 /* GreetingsVC.swift */; };
 		C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */; };
 		C4AD63EE1F66769300091AD9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63ED1F66769300091AD9 /* TabBarController.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
@@ -129,6 +130,7 @@
 		C472B1CE1F2A2B8700BAA1CD /* Indices.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Indices.rtf; sourceTree = "<group>"; };
 		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C49B93831F5AFF00003433DF /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		C4A0A5751F7039E700FF4670 /* GreetingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingsVC.swift; sourceTree = "<group>"; };
 		C4A880865C90F451C4C74797 /* Pods_TraderCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraderCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeOrProVersion.swift; sourceTree = "<group>"; };
 		C4AD63ED1F66769300091AD9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		C45F8CB21F127244007B1B49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0A5751F7039E700FF4670 /* GreetingsVC.swift */,
 				C4FB60DB1F1268A700EDE9C7 /* CalculatorVC.swift */,
 				C45697A61F1A8D6D00599563 /* CalcAddItemVC.swift */,
 				C45697A81F1A8DAF00599563 /* HistoryVC.swift */,
@@ -535,6 +538,7 @@
 				C44F96371F6BFEEF009DFF92 /* Localizator.swift in Sources */,
 				C4FB60DC1F1268A700EDE9C7 /* CalculatorVC.swift in Sources */,
 				C4FB60DA1F1268A700EDE9C7 /* AppDelegate.swift in Sources */,
+				C4A0A5761F7039E700FF4670 /* GreetingsVC.swift in Sources */,
 				C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */,
 				C4EED9D01F6B136200F8FDC8 /* AppProducts.swift in Sources */,
 				C45697A51F1A8D4100599563 /* OptSelectParamsVC.swift in Sources */,
