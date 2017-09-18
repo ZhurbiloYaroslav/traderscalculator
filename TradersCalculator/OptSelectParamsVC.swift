@@ -65,16 +65,16 @@ class OptSelectParamsVC: UIViewController {
             currencyOrLanguageLabel.text = "Choose language".localized()
         }
         
-        if doWeChooseParamsAtFirstLaunch != nil {
+        if doWeChooseParamsAtFirstLaunch == nil {
+            
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back-1"),
+                                                                    style: .plain,
+                                                                    target: self,
+                                                                    action: #selector(saveButtonPressed(sender:)))
             
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized(),
-                                                                 style: .plain,
-                                                                 target: self,
-                                                                 action: #selector(saveButtonPressed(sender:)))
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(),
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(saveButtonPressed(sender:)))

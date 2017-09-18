@@ -68,21 +68,23 @@ public class Position: NSManagedObject {
         
         switch accountCurrency {
             
-        case USD:
+        case Currency.USD:
             
             return requestedValue
             
-        case EUR, AUD, GBP, NZD:
+        case Currency.EUR, Currency.AUD, Currency.GBP, Currency.NZD:
             
-            let currencyPair = accountCurrency + "USD"
+            let currencyPair = accountCurrency + Currency.USD
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
                 let resultValue = requestedValue / rateForCurrentAccountCurrency
                 return resultValue
             }
             
-        case RUB, CAD, CHF, JPY, CNH, CZK, DKK, HKD, HUF, MXN, NOK, PLN, SEK, THB, TRY, ZAR, UAH:
+        case Currency.RUB, Currency.CAD, Currency.CHF, Currency.JPY, Currency.CNH, Currency.CZK, Currency.DKK,
+             Currency.HKD, Currency.HUF, Currency.MXN, Currency.NOK, Currency.PLN, Currency.SEK, Currency.THB, Currency.TRY,
+             Currency.ZAR, Currency.UAH:
             
-            let currencyPair = "USD" + accountCurrency
+            let currencyPair = Currency.USD + accountCurrency
             if let _rate = ratesByInstrumentName?[currencyPair], let rateForCurrentAccountCurrency = Double(_rate) {
                 let resultValue = requestedValue * rateForCurrentAccountCurrency
                 return resultValue

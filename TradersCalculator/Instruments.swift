@@ -20,7 +20,7 @@ struct Instruments {
     //TODO: Make comment
     var defaultInstrumentPair: [String] {
         guard let defInstrPair = categoriesAndInstruments["Forex Majors"]?[0]
-            else { return [EUR,USD] }
+            else { return [Currency.EUR,Currency.USD] }
         return defInstrPair
     }
     
@@ -41,114 +41,114 @@ struct Instruments {
         
         "Forex Majors": [
             
-            [AUD,USD],
-            [EUR,USD],
-            [GBP,USD],
-            [USD,CAD],
-            [USD,CHF],
-            [USD,JPY]
+            [Currency.AUD, Currency.USD],
+            [Currency.EUR, Currency.USD],
+            [Currency.GBP, Currency.USD],
+            [Currency.USD, Currency.CAD],
+            [Currency.USD, Currency.CHF],
+            [Currency.USD, Currency.JPY]
             
         ],
 
         "Forex Minors": [
             
-            [AUD,CAD],
-            [AUD,CHF],
-            [AUD,JPY],
-            [AUD,NZD],
-            [CAD,CHF],
-            [CAD,JPY],
-            [CHF,JPY],
-            [EUR,AUD],
-            [EUR,CAD],
-            [EUR,CHF],
-            [EUR,GBP],
-            [EUR,JPY],
-            [EUR,NZD],
-            [GBP,AUD],
-            [GBP,CAD],
-            [GBP,CHF],
-            [GBP,JPY],
-            [GBP,NZD],
-            [NZD,CAD],
-            [NZD,CHF],
-            [NZD,JPY],
-            [NZD,USD],
-            [USD,SGD]
+            [Currency.AUD, Currency.CAD],
+            [Currency.AUD, Currency.CHF],
+            [Currency.AUD, Currency.JPY],
+            [Currency.AUD, Currency.NZD],
+            [Currency.CAD, Currency.CHF],
+            [Currency.CAD, Currency.JPY],
+            [Currency.CHF, Currency.JPY],
+            [Currency.EUR, Currency.AUD],
+            [Currency.EUR, Currency.CAD],
+            [Currency.EUR, Currency.CHF],
+            [Currency.EUR, Currency.GBP],
+            [Currency.EUR, Currency.JPY],
+            [Currency.EUR, Currency.NZD],
+            [Currency.GBP, Currency.AUD],
+            [Currency.GBP, Currency.CAD],
+            [Currency.GBP, Currency.CHF],
+            [Currency.GBP, Currency.JPY],
+            [Currency.GBP, Currency.NZD],
+            [Currency.NZD, Currency.CAD],
+            [Currency.NZD, Currency.CHF],
+            [Currency.NZD, Currency.JPY],
+            [Currency.NZD, Currency.USD],
+            [Currency.USD, Currency.SGD]
         
         ],
         
         "Forex Exotics": [
             
-            [AUD,SGD],
-            [CHF,SGD],
-            [EUR,DKK],
-            [EUR,HKD],
-            [EUR,NOK],
-            [EUR,PLN],
-            [EUR,SEK],
-            [EUR,SGD],
-            [EUR,TRY],
-            [EUR,ZAR],
-            [GBP,DKK],
-            [GBP,NOK],
-            [GBP,SEK],
-            [GBP,SGD],
-            [NOK,JPY],
-            [NOK,SEK],
-            [SEK,JPY],
-            [SGD,JPY],
-            [USD,CNH],
-            [USD,CZK],
-            [USD,DKK],
-            [USD,HKD],
-            [USD,HUF],
-            [USD,MXN],
-            [USD,NOK],
-            [USD,PLN],
-            [USD,RUB],
-            [USD,SEK],
-            [USD,THB],
-            [USD,TRY],
-            [USD,ZAR]
+            [Currency.AUD, Currency.SGD],
+            [Currency.CHF, Currency.SGD],
+            [Currency.EUR, Currency.DKK],
+            [Currency.EUR, Currency.HKD],
+            [Currency.EUR, Currency.NOK],
+            [Currency.EUR, Currency.PLN],
+            [Currency.EUR, Currency.SEK],
+            [Currency.EUR, Currency.SGD],
+            [Currency.EUR, Currency.TRY],
+            [Currency.EUR, Currency.ZAR],
+            [Currency.GBP, Currency.DKK],
+            [Currency.GBP, Currency.NOK],
+            [Currency.GBP, Currency.SEK],
+            [Currency.GBP, Currency.SGD],
+            [Currency.NOK, Currency.JPY],
+            [Currency.NOK, Currency.SEK],
+            [Currency.SEK, Currency.JPY],
+            [Currency.SGD, Currency.JPY],
+            [Currency.USD, Currency.CNH],
+            [Currency.USD, Currency.CZK],
+            [Currency.USD, Currency.DKK],
+            [Currency.USD, Currency.HKD],
+            [Currency.USD, Currency.HUF],
+            [Currency.USD, Currency.MXN],
+            [Currency.USD, Currency.NOK],
+            [Currency.USD, Currency.PLN],
+            [Currency.USD, Currency.RUB],
+            [Currency.USD, Currency.SEK],
+            [Currency.USD, Currency.THB],
+            [Currency.USD, Currency.TRY],
+            [Currency.USD, Currency.ZAR]
             
         ],
         
         "Crypto": [
             
-            [BTC,USD]
+            [Currency.BTC, Currency.USD]
         ],
         
         "Energies": [
             
-            [XBR,USD],
-            [XNG,USD],
-            [XTI,USD]
+            [Currency.XBR, Currency.USD],
+            [Currency.XNG, Currency.USD],
+            [Currency.XTI, Currency.USD]
         ],
         
         "Indeices CFDs": [
             
-            [AUS200]
+            [Index.AUS200]
         ],
         
         "Futures CFDs": [
             
-            [DXY_U7],
-            [VIX_M7],
-            [VIX_N7]
+            [Index.DXY_U7],
+            [Index.VIX_M7],
+            [Index.VIX_N7]
         ],
         
         "Commodity CFDs": [
             
-            [BRENT_Q7],
-            [BRENT_U7],
-            [Coffee_N7],
-            [Coffee_U7],
-            [Corn_N7],
-            [Soybean_N7],
-            [Sugar_N7],
-            [WTI_Q7],
-            [Wheat_N7]
+            [Index.BRENT_Q7],
+            [Index.BRENT_U7],
+            [Index.Coffee_N7],
+            [Index.Coffee_U7],
+            [Index.Corn_N7],
+            [Index.Soybean_N7],
+            [Index.Sugar_N7],
+            [Index.WTI_Q7],
+            [Index.Wheat_N7]
         ]
 
     ]

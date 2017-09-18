@@ -2,17 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, ’9.0’
 use_frameworks!
 
-target 'TradersCalculator' do
+target 'TraderCalculator' do
 
   pod 'Alamofire', '~> 4.5'
-  
-  pod 'Firebase'
-  pod 'Firebase/AdMob'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-
-  pod 'SwiftyStoreKit'
   
   pod 'Google-Mobile-Ads-SDK'
 

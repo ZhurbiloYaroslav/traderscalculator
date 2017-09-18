@@ -86,7 +86,7 @@ class CalcAddItemVC: UIViewController {
         stopLossLabel.text = "Stop loss".localized()
         sellButton.setTitle("Sell".localized(), for: .normal)
         buyButton.setTitle("Buy".localized(), for: .normal)
-        navigationBackButton.setTitle("Back".localized(), for: .normal)
+//        navigationBackButton.setTitle("Back".localized(), for: .normal)
         clearProfitButton.setTitle("clear".localized(), for: .normal)
         clearLossButton.setTitle("clear".localized(), for: .normal)
         
@@ -531,7 +531,7 @@ extension CalcAddItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         for instrumentPart in instrumentParts {
             
-            guard let fullPartName = instrumentPartFullName[instrumentPart]
+            guard let fullPartName = Currency.instrumentPartFullName[instrumentPart]
                 else { return }
             
             if iterator == 0 {

@@ -16,40 +16,40 @@ typealias DownloadComplete = () -> ()
 
 struct Constants {
     
-    struct Color {
-        static let blue = UIColor(red: 81/255, green: 152/255, blue: 241/255, alpha: 1)
-        static let red = UIColor(red: 210/255, green: 107/255, blue: 88/255, alpha: 1)
-    }
-        
     static let defaultCurrency = Constants.currenciesOfAccount[0]
     static let defaultLanguage = Constants.languages[0]
     static let defaultLeverage = Constants.leverage[3]
     
+    public struct Color {
+        static let blue = UIColor(red: 81/255, green: 152/255, blue: 241/255, alpha: 1)
+        static let red = UIColor(red: 210/255, green: 107/255, blue: 88/255, alpha: 1)
+    }
+        
     // Currency constants
     // Uses in options
     static let currenciesOfAccount = [
-        "USD",
-        "EUR",
-        "RUB",
-        "UAH",
-        "AUD",
-        "GBP",
-        "CAD",
-        "CHF",
-        "JPY",
-        "NZD",
-        "CNH",
-        "CZK",
-        "DKK",
-        "HKD",
-        "HUF",
-        "MXN",
-        "NOK",
-        "PLN",
-        "SEK",
-        "THB",
-        "TRY",
-        "ZAR"
+        Currency.USD,
+        Currency.EUR,
+        Currency.RUB,
+        Currency.UAH,
+        Currency.AUD,
+        Currency.GBP,
+        Currency.CAD,
+        Currency.CHF,
+        Currency.JPY,
+        Currency.NZD,
+        Currency.CNH,
+        Currency.CZK,
+        Currency.DKK,
+        Currency.HKD,
+        Currency.HUF,
+        Currency.MXN,
+        Currency.NOK,
+        Currency.PLN,
+        Currency.SEK,
+        Currency.THB,
+        Currency.TRY,
+        Currency.ZAR
     ]
     
     // Uses in options

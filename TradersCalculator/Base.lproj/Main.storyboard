@@ -31,11 +31,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4a-sB-YfL">
-                                        <rect key="frame" x="266" y="31" width="46" height="30"/>
+                                        <rect key="frame" x="262" y="31" width="50" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0oZ-sz-WPP"/>
-                                            <constraint firstAttribute="width" constant="46" id="ire-cI-VGQ"/>
+                                            <constraint firstAttribute="width" constant="50" id="ire-cI-VGQ"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="plus_math_filled"/>
@@ -663,7 +663,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kBw-tf-4tP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o8D-Ae-930">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Nn-X2t">
@@ -706,10 +706,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-gy-KlN">
-                                <rect key="frame" x="8" y="114" width="304" height="446"/>
+                                <rect key="frame" x="8" y="114" width="304" height="283"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N48-TR-MoT" userLabel="Stack Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="142"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-Rk-bl6">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="28"/>
@@ -726,12 +726,12 @@
                                                 </constraints>
                                             </stackView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-zg-pcM">
-                                                <rect key="frame" x="0.0" y="28" width="304" height="196"/>
+                                                <rect key="frame" x="0.0" y="28" width="304" height="114"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-rg-90q" userLabel="Stack Leverage">
-                                        <rect key="frame" x="0.0" y="229" width="304" height="217"/>
+                                        <rect key="frame" x="0.0" y="147" width="304" height="136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Choose account leverage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iln-yV-b4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -740,7 +740,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-g4-Aem">
-                                                <rect key="frame" x="0.0" y="20.5" width="304" height="196.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="304" height="115.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -761,7 +761,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Parameters" id="bmc-eh-d46">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="hfw-2K-HaV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="K5V-R8-l9R">
                             <connections>
                                 <segue destination="eg4-fE-uh6" kind="unwind" identifier="backToOptionsFromParametersWithSaving" unwindAction="backToOptionsFromParametersWithSavingWithSender:" id="Lt2-pB-LHe"/>
@@ -826,16 +825,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-3t-0lO">
-                                        <rect key="frame" x="8" y="35" width="99" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-3t-0lO">
+                                        <rect key="frame" x="8" y="26" width="99" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="XD6-V9-7wl"/>
+                                            <constraint firstAttribute="height" constant="30" id="XD6-V9-7wl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.38074839119999998" green="0.6713193059" blue="0.95571380849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.38074839115142822" green="0.67131930589675903" blue="0.95571380853652954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" image="Back-1"/>
                                         <connections>
                                             <segue destination="0Zt-kU-RyF" kind="unwind" unwindAction="backToCalculatorFromAddPositionWithoutSavingWithSender:" id="hPc-4f-6U9"/>
                                         </connections>
@@ -843,11 +839,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="bBk-VE-QGu" firstAttribute="leading" secondItem="eR6-3t-0lO" secondAttribute="trailing" constant="5" id="LXN-wM-Yc1"/>
                                     <constraint firstAttribute="bottom" secondItem="eR6-3t-0lO" secondAttribute="bottom" constant="8" id="NW5-4V-LJg"/>
                                     <constraint firstItem="eR6-3t-0lO" firstAttribute="leading" secondItem="0zc-v1-5hm" secondAttribute="leading" constant="8" id="g1v-af-y9b"/>
                                     <constraint firstAttribute="bottom" secondItem="bBk-VE-QGu" secondAttribute="bottom" constant="8" id="gUt-gW-ueB"/>
                                     <constraint firstAttribute="height" constant="64" id="h2H-Wm-YeA"/>
-                                    <constraint firstItem="bBk-VE-QGu" firstAttribute="leading" secondItem="eR6-3t-0lO" secondAttribute="trailing" constant="5" id="pPw-be-QPL"/>
                                     <constraint firstItem="bBk-VE-QGu" firstAttribute="centerX" secondItem="0zc-v1-5hm" secondAttribute="centerX" id="sPp-8z-fv4"/>
                                 </constraints>
                             </view>
@@ -1279,7 +1275,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izg-3b-tZr" id="qCF-uR-zN9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Rb-gd3">
@@ -1421,7 +1417,7 @@
                             <tableViewSection headerTitle="Компания разработчик" id="t5b-zQ-6WB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="TqZ-vE-9Ga" detailTextLabel="jHk-7R-La5" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="FCX-iC-W1u">
-                                        <rect key="frame" x="0.0" y="56" width="320" height="81"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FCX-iC-W1u" id="5te-iD-LyC">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
@@ -1447,7 +1443,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="hCn-fZ-kFa" detailTextLabel="SO3-85-gny" style="IBUITableViewCellStyleValue1" id="4Ux-Pp-MhA">
-                                        <rect key="frame" x="0.0" y="137" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ux-Pp-MhA" id="pu9-gn-exV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1471,7 +1467,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="yed-K3-YKE" detailTextLabel="Lr2-ui-bP1" style="IBUITableViewCellStyleValue1" id="rhJ-rk-FAU">
-                                        <rect key="frame" x="0.0" y="181" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="180" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhJ-rk-FAU" id="zMX-vg-ggK">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1495,7 +1491,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Fmg-WN-57k" detailTextLabel="0Cy-v1-RcT" style="IBUITableViewCellStyleValue1" id="ubs-sG-RBp">
-                                        <rect key="frame" x="0.0" y="225" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="224" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubs-sG-RBp" id="f5x-8j-QwK">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1521,7 +1517,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="GxZ-O2-7G7" detailTextLabel="001-1Z-K8X" style="IBUITableViewCellStyleValue1" id="AUo-DK-W4u">
-                                        <rect key="frame" x="0.0" y="269" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="268" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AUo-DK-W4u" id="OJB-rw-Hha">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1649,6 +1645,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back-1" width="13" height="22"/>
         <image name="Mob_300X250" width="150" height="125"/>
         <image name="Mob_320X50.jpeg" width="320" height="50"/>
         <image name="icon-calculator" width="21" height="21"/>
@@ -1658,7 +1655,7 @@
         <image name="plus_math_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fta-u4-Qyj"/>
         <segue reference="qHu-0t-K2J"/>
-        <segue reference="w74-J8-l96"/>
     </inferredMetricsTieBreakers>
 </document>
