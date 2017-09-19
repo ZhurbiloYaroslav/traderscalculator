@@ -8,14 +8,12 @@
 
 import UIKit
 
-import GoogleMobileAds
-
 class CalcAddItemVC: UIViewController {
     
     @IBOutlet weak var navigationBackButton: UIButton!
     @IBOutlet weak var navigationBarTitle: UILabel!
     @IBOutlet weak var viewInScrollView: UIView!
-    @IBOutlet weak var googleBannerView: GADBannerView!
+    @IBOutlet weak var googleBannerView: AdBannerView!
     @IBOutlet weak var instrumentsPicker: UIPickerView!
     @IBOutlet weak var instrumentDescription: UILabel!
     @IBOutlet weak var positionValue: UITextField!
@@ -38,7 +36,6 @@ class CalcAddItemVC: UIViewController {
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
     var options: UserDefaultsManager!
-    var adMob: AdMob!
     var forexAPI: ForexAPI!
     
     var freeOrProVersion: FreeOrProVersion!
@@ -61,18 +58,9 @@ class CalcAddItemVC: UIViewController {
         
         makeRequest()
         
-//        adMob = AdMob()
-//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
-        
         initializeVariables()
         
         registerForKeyboardNotifications()
-        
-    }
-    
-    @IBAction func bannerPressed(_ sender: UIButton) {
-        
-        CustomBanner().showAdvertAfterBannerPressed()
         
     }
     
@@ -115,6 +103,8 @@ class CalcAddItemVC: UIViewController {
         freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
                                             constraint: containerConstraintToChange,
                                             tableViewToChange: nil)
+        
+        googleBannerView.configure()
         
         let lastUsedInstrument = options.lastUsedInstrument
         currentCategoryID = lastUsedInstrument.categoryID

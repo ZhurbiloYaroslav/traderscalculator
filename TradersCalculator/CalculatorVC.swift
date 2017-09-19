@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import CoreData
 
-class CalculatorVC: UIViewController, GADBannerViewDelegate {
+class CalculatorVC: UIViewController {
     
     @IBOutlet weak var totalProfitLabel: UILabel!
     @IBOutlet weak var totalLossLabel: UILabel!
@@ -19,10 +18,9 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
-    @IBOutlet weak var googleBannerView: GADBannerView!
+    @IBOutlet weak var googleBannerView: AdBannerView!
     @IBOutlet weak var calculatorTableView: UITableView!
     
-    var adMob: AdMob!
     var openedCell: Int?
     
     var freeOrPro: FreeOrProVersion!
@@ -34,28 +32,22 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if FirstLaunch.isFirstLaunched {
+            showGreetingsView()
+        }
+        
         updateUILabelsWithLocalizedText()
         
         initDelegates()
         
         initializeVariables()
         
-//        adMob = AdMob()
-//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
-        
         attemptFetch()
-        
-    }
-    
-    @IBAction func bannerPressed(_ sender: UIButton) {
-
-        CustomBanner().showAdvertAfterBannerPressed()
         
     }
     
     func updateUILabelsWithLocalizedText() {
 
-        
         
     }
     
@@ -65,15 +57,14 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
                                             constraint: containerConstraintToChange,
                                             tableViewToChange: calculatorTableView)
         
+        googleBannerView.configure()
+        
         controller = NSFetchedResultsController<Position>()
         userDefaultsManager = UserDefaultsManager()
         coreDataManager = CoreDataManager()
         context = coreDataManager.context
         updateTable()
         
-        if FirstLaunch.isFirstLaunched {
-            chooseParamsAtFirstLaunch()
-        }
         
         longTapOnCellRecognizerSetup()
         
@@ -82,8 +73,10 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
         
     }
     
-    func chooseParamsAtFirstLaunch() {
-        performSegue(withIdentifier: "chooseParamsAtFirstLaunch", sender: nil)
+    func showGreetingsView() {
+        
+        performSegue(withIdentifier: "showGreetingsView", sender: nil)
+        
     }
     
     func initDelegates() {
@@ -343,13 +336,14 @@ class CalculatorVC: UIViewController, GADBannerViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        freeOrPro.removeAdIfPRO()
+         freeOrPro.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
 
         attemptFetch()
         updateTable()
         calculatorTableView.reloadData()
+        
     }
     
 }
@@ -540,29 +534,19 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueID = segue.identifier
-            else { return }
-        
-        switch segueID {
-        case "chooseParamsAtFirstLaunch":
-            
-            guard let destination = segue.destination as? OptSelectParamsVC
-                else { return }
-            
-            destination.doWeChooseParamsAtFirstLaunch = true
-            
-        case "EditPosition":
-            guard let destination = segue.destination as? CalcAddItemVC
-                else { return }
-            guard let currentPosition = sender as? Position
-                else { return }
-            destination.positionToEdit = currentPosition
-            
-        default: break
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let segueID = segue.identifier
+//            else { return }
+//        
+//        if segueID == "EditPosition" {
+//            guard let destination = segue.destination as? CalcAddItemVC
+//                else { return }
+//            guard let currentPosition = sender as? Position
+//                else { return }
+//            destination.positionToEdit = currentPosition
+//        }
+//        
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

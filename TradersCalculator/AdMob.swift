@@ -13,7 +13,6 @@ class AdMob {
     
     //TODO: appcoda.com/google-admob-ios-swift/
     
-    //TODO: Make description
 //    func getLittleBannerFor(viewController: UIViewController, adBannerView: GADBannerView) {
 //        
 ////        let request = GADRequest()

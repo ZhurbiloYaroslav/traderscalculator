@@ -7,18 +7,16 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import CoreData
 import MessageUI
 
 class HistoryVC: UIViewController {
     
     @IBOutlet weak var historyTableView: UITableView!
-    @IBOutlet weak var googleBannerView: GADBannerView!
+    @IBOutlet weak var googleBannerView: AdBannerView!
     
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
-    var adMob: AdMob!
     var openedCell: Int?
     var arrayWithListOfPositions: [ListOfPositions]!
     
@@ -37,18 +35,9 @@ class HistoryVC: UIViewController {
         
         initializeVariables()
         
-//        adMob = AdMob()
-//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
-        
         attemptFetch()
         
         longTapOnCellRecognizerSetup()
-        
-    }
-    
-    @IBAction func bannerPressed(_ sender: UIButton) {
-        
-        CustomBanner().showAdvertAfterBannerPressed()
         
     }
     
@@ -70,6 +59,8 @@ class HistoryVC: UIViewController {
         freeOrPro = FreeOrProVersion(bannerView: googleBannerView,
                                             constraint: containerConstraintToChange,
                                             tableViewToChange: historyTableView)
+        
+        googleBannerView.configure()
         
         userDefaultsManager = UserDefaultsManager()
         coreDataManager = CoreDataManager()
@@ -127,8 +118,11 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         mailComposerVC.setToRecipients([""])
         mailComposerVC.setSubject("Export of the history")
         
-        let dataForExport = getCsvDataForExportHistory()
-        mailComposerVC.addAttachmentData(dataForExport, mimeType: "text/csv", fileName: "ExportedHistory.csv")
+        let dataForExportWithComma = getCsvDataForExportHistory(withDelimiter: ",")
+        let dataForExportWithSemicolon = getCsvDataForExportHistory(withDelimiter: ";")
+        
+        mailComposerVC.addAttachmentData(dataForExportWithComma, mimeType: "text/csv", fileName: "History 1.csv")
+        mailComposerVC.addAttachmentData(dataForExportWithSemicolon, mimeType: "text/csv", fileName: "History 2.csv")
         
         mailComposerVC.setMessageBody("Export of the history is in attachments", isHTML: false)
         
@@ -138,23 +132,23 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         
     }
     
-    func getCsvDataForExportHistory() -> Data {
+    func getCsvDataForExportHistory(withDelimiter delimiter: String = ",") -> Data {
         
         var csvText = ""
         
         var headerOfCsvFile = ""
-        headerOfCsvFile += getWrappedString("export date".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("list date".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("list name".localized(), withDelimiter: true)
+        headerOfCsvFile += getWrappedString("export date", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("list date", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("list name", withDelimiter: delimiter)
         
-        headerOfCsvFile += getWrappedString("instrument name".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("value".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("open price".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("take profit".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("stop loss".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("profit".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("loss".localized(), withDelimiter: true)
-        headerOfCsvFile += getWrappedString("margin".localized(), withEndOfLine: true)
+        headerOfCsvFile += getWrappedString("instrument name", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("value", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("open price", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("take profit", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("stop loss", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("profit", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("loss", withDelimiter: delimiter)
+        headerOfCsvFile += getWrappedString("margin", withEndOfLine: true)
         
         csvText += headerOfCsvFile
         
@@ -168,16 +162,16 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
                     let listName = position.listOfPositions?.listName ?? ""
                     
                     var newLine = ""
-                    newLine += getWrappedString(Formatter.getFormatted(date: NSDate()), withDelimiter: true)
-                    newLine += getWrappedString(Formatter.getFormatted(date: creationDate), withDelimiter: true)
-                    newLine += getWrappedString(listName, withDelimiter: true)
-                    newLine += getWrappedString(position.instrument.name, withDelimiter: true)
-                    newLine += getWrappedStringFromDouble(position.value, withDelimiter: true)
-                    newLine += getWrappedStringFromDouble(position.openPrice, withDelimiter: true)
-                    newLine += getWrappedStringFromDouble(position.takeProfit, withDelimiter: true)
-                    newLine += getWrappedStringFromDouble(position.stopLoss, withDelimiter: true)
-                    newLine += getWrappedString(position.getProfit(), withDelimiter: true)
-                    newLine += getWrappedString(position.getLoss(), withDelimiter: true)
+                    newLine += getWrappedString(Formatter.getFormatted(date: NSDate()), withDelimiter: delimiter)
+                    newLine += getWrappedString(Formatter.getFormatted(date: creationDate), withDelimiter: delimiter)
+                    newLine += getWrappedString(listName, withDelimiter: delimiter)
+                    newLine += getWrappedString(position.instrument.name, withDelimiter: delimiter)
+                    newLine += getWrappedStringFromDouble(position.value, withDelimiter: delimiter)
+                    newLine += getWrappedStringFromDouble(position.openPrice, withDelimiter: delimiter)
+                    newLine += getWrappedStringFromDouble(position.takeProfit, withDelimiter: delimiter)
+                    newLine += getWrappedStringFromDouble(position.stopLoss, withDelimiter: delimiter)
+                    newLine += getWrappedString(position.getProfit(), withDelimiter: delimiter)
+                    newLine += getWrappedString(position.getLoss(), withDelimiter: delimiter)
                     newLine += getWrappedString(position.getMargin(), withEndOfLine: true)
                     
                     csvText.append(newLine)
@@ -193,20 +187,19 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         
     }
     
-    func getWrappedString(_ string: String, withDelimiter: Bool = false, withEndOfLine: Bool = false) -> String {
+    func getWrappedString(_ string: String, withDelimiter delimiter: String = "", withEndOfLine: Bool = false) -> String {
         
-        let delimiter = ","
         let endOfLine = "\n"
         
         var result = "\"" + string + "\""
-        result += withDelimiter ? delimiter : ""
+        result += delimiter
         result += withEndOfLine ? endOfLine : ""
         return result
     }
     
-    func getWrappedStringFromDouble(_ double: Double, withDelimiter: Bool = false, withEndOfLine: Bool = false) -> String {
+    func getWrappedStringFromDouble(_ double: Double, withDelimiter delimiter: String = "", withEndOfLine: Bool = false) -> String {
         let stringFromDouble = String(describing: double)
-        return getWrappedString(stringFromDouble, withDelimiter: withDelimiter, withEndOfLine: withEndOfLine)
+        return getWrappedString(stringFromDouble, withDelimiter: delimiter, withEndOfLine: withEndOfLine)
     }
 
     

@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 class OptSelectParamsVC: UIViewController {
     
     @IBOutlet weak var firstLaunchNavBar: UINavigationBar!
-    @IBOutlet weak var googleBannerView: GADBannerView!
+    @IBOutlet weak var googleBannerView: AdBannerView!
     @IBOutlet weak var currencyOrLanguageLabel: UILabel!
     @IBOutlet weak var currencyOrLanguagePickerView: UIPickerView!
     @IBOutlet weak var leverageLabel: UILabel!
@@ -23,7 +22,6 @@ class OptSelectParamsVC: UIViewController {
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
     
     var options: UserDefaultsManager!
-    var adMob: AdMob!
     
     var freeOrProVersion: FreeOrProVersion!
     
@@ -42,16 +40,9 @@ class OptSelectParamsVC: UIViewController {
         
         options = UserDefaultsManager()
         
-//        adMob = AdMob()
-//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+        googleBannerView.configure()
         
         selectDefaultRowsInPickerViews()
-        
-    }
-    
-    @IBAction func bannerPressed(_ sender: UIButton) {
-        
-        CustomBanner().showAdvertAfterBannerPressed()
         
     }
     

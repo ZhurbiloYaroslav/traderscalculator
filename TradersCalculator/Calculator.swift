@@ -197,7 +197,7 @@ extension Calculator {
         }
         
         func margin3_CrossCur1() -> Double {
-            return (_position.currentRateXX1XX2 * getValueSize()) / _accountLeverage
+            return (_position.currentRateXX1USD * getValueSize()) / _accountLeverage
         }
         
         func margin4_CrossCur2() -> Double {

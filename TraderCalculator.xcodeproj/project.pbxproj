@@ -40,6 +40,7 @@
 		C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4963EF41F36608A00E8AA00 /* Double+Extension.swift */; };
 		C49B93841F5AFF00003433DF /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B93831F5AFF00003433DF /* FirstLaunch.swift */; };
 		C4A0A5761F7039E700FF4670 /* GreetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0A5751F7039E700FF4670 /* GreetingsVC.swift */; };
+		C4A0A57C1F71493C00FF4670 /* adBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0A57B1F71493C00FF4670 /* adBannerView.swift */; };
 		C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */; };
 		C4AD63EE1F66769300091AD9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63ED1F66769300091AD9 /* TabBarController.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
@@ -131,6 +132,7 @@
 		C4963EF41F36608A00E8AA00 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C49B93831F5AFF00003433DF /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		C4A0A5751F7039E700FF4670 /* GreetingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingsVC.swift; sourceTree = "<group>"; };
+		C4A0A57B1F71493C00FF4670 /* adBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = adBannerView.swift; sourceTree = "<group>"; };
 		C4A880865C90F451C4C74797 /* Pods_TraderCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraderCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeOrProVersion.swift; sourceTree = "<group>"; };
 		C4AD63ED1F66769300091AD9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				C4FB60E51F1268A700EDE9C7 /* LaunchScreen.storyboard */,
 				C45697AA1F1A8EB400599563 /* CalculatorItemCell.swift */,
 				C451AE431F274AC500826790 /* HistoryCell.swift */,
+				C4A0A57B1F71493C00FF4670 /* adBannerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				C44CC79E1F2E715500DF2D03 /* PurchasesTestVC.swift in Sources */,
 				C44F96451F6C97D4009DFF92 /* FullScreenAdvertVC.swift in Sources */,
 				C45697AB1F1A8EB400599563 /* CalculatorItemCell.swift in Sources */,
+				C4A0A57C1F71493C00FF4670 /* adBannerView.swift in Sources */,
 				C451AE441F274AC500826790 /* HistoryCell.swift in Sources */,
 				C45F50D61F4DAE7C009D3F9F /* CoreDataManager.swift in Sources */,
 				C4EAF6D61F5BDD29005AC480 /* Position+CoreDataProperties.swift in Sources */,

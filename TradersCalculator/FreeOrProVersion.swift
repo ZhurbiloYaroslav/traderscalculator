@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class FreeOrProVersion {
     
-    public weak var googleBannerView: GADBannerView!
+    public weak var googleBannerView: AdBannerView!
     public weak var tableViewToChange: UITableView?
     public weak var containerConstraintToChange: NSLayoutConstraint!
     
@@ -99,7 +99,7 @@ class FreeOrProVersion {
         return UserDefaultsManager().isProVersion
     }
     
-    private init(bannerView: GADBannerView, viewConstraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
+    private init(bannerView: AdBannerView, viewConstraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
         self.containerConstraintToChange = viewConstraint
         self.googleBannerView = bannerView
         self.tableViewToChange = tableViewToChange
@@ -107,7 +107,7 @@ class FreeOrProVersion {
         
     }
     
-    public convenience init(bannerView: GADBannerView, constraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
+    public convenience init(bannerView: AdBannerView, constraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
         self.init(bannerView: bannerView, viewConstraint: constraint, tableViewToChange: tableViewToChange)
     }
     

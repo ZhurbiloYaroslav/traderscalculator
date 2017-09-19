@@ -7,17 +7,14 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 class OptionsVC: UIViewController {
     
-    @IBOutlet weak var googleBannerView: GADBannerView!
+    @IBOutlet weak var googleBannerView: AdBannerView!
     @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var containerConstraintToChange: NSLayoutConstraint!
-    
-    var adMob: AdMob!
     
     var freeOrProVersion: FreeOrProVersion!
     
@@ -26,19 +23,12 @@ class OptionsVC: UIViewController {
         
         updateUILabelsWithLocalizedText()
         
-//        adMob = AdMob()
-//        adMob.getLittleBannerFor(viewController: self, adBannerView: googleBannerView)
+        googleBannerView.configure()
         
         
         freeOrProVersion = FreeOrProVersion(bannerView: googleBannerView,
                                             constraint: containerConstraintToChange,
                                             tableViewToChange: nil)
-        
-    }
-    
-    @IBAction func bannerPressed(_ sender: UIButton) {
-        
-        CustomBanner().showAdvertAfterBannerPressed()
         
     }
     
@@ -76,7 +66,7 @@ class OptionsVC: UIViewController {
         removeAdIfPRO()
         
     }
-
+    
 }
 
 

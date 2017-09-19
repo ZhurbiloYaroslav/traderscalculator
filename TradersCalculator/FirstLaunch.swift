@@ -37,5 +37,4 @@ class FirstLaunch {
         UserDefaultsManager().currentListOfPositionsID = listIdInDBURI
         
     }
-    
 }

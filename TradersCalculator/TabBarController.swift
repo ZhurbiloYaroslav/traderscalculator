@@ -13,23 +13,23 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        test()
+        updateUILabelsWithLocalizedText()
         
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
-        test()
+        updateUILabelsWithLocalizedText()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        test()
+        updateUILabelsWithLocalizedText()
     }
     
-    func test() {
+    func updateUILabelsWithLocalizedText() {
         
         tabBar.items?[0].title = "Calculator".localized()
         tabBar.items?[1].title = "History".localized()
