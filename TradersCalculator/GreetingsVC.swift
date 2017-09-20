@@ -10,9 +10,19 @@ import UIKit
 
 class GreetingsVC: UIViewController {
     
+    @IBOutlet weak var welcomeScreenText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        updateUILabelsWithLocalizedText()
+        
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        welcomeScreenText.text = "welcome screen text".localized()
+        
     }
     
     @IBAction func greetingsNextButtonPressed(_ sender: UIButton) {

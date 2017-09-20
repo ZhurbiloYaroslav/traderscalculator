@@ -121,8 +121,8 @@ extension HistoryVC: MFMailComposeViewControllerDelegate {
         let dataForExportWithComma = getCsvDataForExportHistory(withDelimiter: ",")
         let dataForExportWithSemicolon = getCsvDataForExportHistory(withDelimiter: ";")
         
-        mailComposerVC.addAttachmentData(dataForExportWithComma, mimeType: "text/csv", fileName: "History 1.csv")
-        mailComposerVC.addAttachmentData(dataForExportWithSemicolon, mimeType: "text/csv", fileName: "History 2.csv")
+        mailComposerVC.addAttachmentData(dataForExportWithComma, mimeType: "text/csv", fileName: "History mac.csv")
+        mailComposerVC.addAttachmentData(dataForExportWithSemicolon, mimeType: "text/csv", fileName: "History win.csv")
         
         mailComposerVC.setMessageBody("Export of the history is in attachments", isHTML: false)
         
