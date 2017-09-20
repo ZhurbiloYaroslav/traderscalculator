@@ -507,13 +507,6 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        let titleForMovePosition = "Move this position to list".localized()
-        _ = UIAlertAction(title: titleForMovePosition, style: .default) { (action) in
-            
-            //TODO: Write fuction for moving selected position
-            
-        }
-        
         let titleForDeleteAction = "Delete  position".localized()
         let deleteAction = UIAlertAction(title: titleForDeleteAction, style: .destructive) { (action) in
             
@@ -534,19 +527,19 @@ extension CalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let segueID = segue.identifier
-//            else { return }
-//        
-//        if segueID == "EditPosition" {
-//            guard let destination = segue.destination as? CalcAddItemVC
-//                else { return }
-//            guard let currentPosition = sender as? Position
-//                else { return }
-//            destination.positionToEdit = currentPosition
-//        }
-//        
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueID = segue.identifier
+            else { return }
+        
+        if segueID == "EditPosition" {
+            guard let destination = segue.destination as? CalcAddItemVC
+                else { return }
+            guard let currentPosition = sender as? Position
+                else { return }
+            destination.positionToEdit = currentPosition
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

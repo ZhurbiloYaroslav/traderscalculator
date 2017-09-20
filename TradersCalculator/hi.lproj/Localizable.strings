@@ -104,6 +104,7 @@
 "Copy" = "प्रतिलिपि";
 "Choose or create a list" = "एक सूची चुनें या बनाएं";
 "Create an empty list" = "एक खाली सूची बनाएं";
+"Save positions to the list" = "将位置保存到列表中...";
 
 /*
 "Edit position #navBarTitle" = "";

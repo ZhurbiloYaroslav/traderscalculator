@@ -104,6 +104,7 @@
 "Copy" = "مكرر";
 "Choose or create a list" = "اختر قائمة أو أنشئها";
 "Create an empty list" = "إنشاء قائمة فارغة";
+"Save positions to the list" = "حفظ المواضع إلى القائمة";
 
 /*
 "Edit position #navBarTitle" = "";

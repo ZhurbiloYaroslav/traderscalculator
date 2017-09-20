@@ -4,7 +4,7 @@
 //
 //  Created by Yaroslav Zhurbilo on 01.08.17.
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
-//
+//S
 
 import Foundation
 

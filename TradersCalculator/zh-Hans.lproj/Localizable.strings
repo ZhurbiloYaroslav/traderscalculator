@@ -104,6 +104,7 @@
 "Copy" = "重复";
 "Choose or create a list" = "选择或创建列表";
 "Create an empty list" = "创建一个空列表";
+"Save positions to the list" = "将位置保存到列表中";
 
 /*
 "Edit position #navBarTitle" = "";

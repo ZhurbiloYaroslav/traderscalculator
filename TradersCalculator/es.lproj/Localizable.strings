@@ -104,6 +104,7 @@
 "Copy" = "Duplicar";
 "Choose or create a list" = "Elegir o crear una lista";
 "Create an empty list" = "Crear una lista vacía";
+"Save positions to the list" = "Guardar posiciones en la lista";
 
 /*
 "Edit position #navBarTitle" = "";

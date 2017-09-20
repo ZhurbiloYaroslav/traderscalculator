@@ -104,6 +104,7 @@
 "Copy" = "重複する";
 "Choose or create a list" = "リストを選択または作成する";
 "Create an empty list" = "空のリストを作成する";
+"Save positions to the list" = "位置をリストに保存する";
 
 /*
 "Edit position #navBarTitle" = "";

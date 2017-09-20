@@ -104,6 +104,7 @@
 "Copy" = "çift";
 "Choose or create a list" = "Bir liste seçin veya oluşturun";
 "Create an empty list" = "Boş bir liste oluştur";
+"Save positions to the list" = "Pozisyonları listeye kaydet";
 
 /*
 "Edit position #navBarTitle" = "";
