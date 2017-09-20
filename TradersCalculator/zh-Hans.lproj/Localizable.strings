@@ -97,6 +97,13 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
 "sell" = "sell";
 "buy" = "buy";
+"Save all positions to the list in history" = "将所有职位保存到历史记录";
+"save & clear" = "保存并清除";
+"save & open" = "保存并打开";
+"ok" = "好";
+"Copy" = "重复";
+"Choose or create a list" = "选择或创建列表";
+"Create an empty list" = "创建一个空列表";
 
 /*
 "Edit position #navBarTitle" = "";

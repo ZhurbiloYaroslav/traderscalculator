@@ -166,7 +166,7 @@ class CalculatorVC: UIViewController {
             
         })
         
-        let titleForCancelAction = "cancel".localized()
+        let titleForCancelAction = "Cancel".localized()
         let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         
@@ -254,7 +254,7 @@ class CalculatorVC: UIViewController {
         savePositionsAlert.addAction(saveAndClearAction)
         savePositionsAlert.addAction(saveAndOpenAction)
         
-        let titleForCancelAction = "cancel".localized()
+        let titleForCancelAction = "Cancel".localized()
         let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         savePositionsAlert.addAction(cancelAction)

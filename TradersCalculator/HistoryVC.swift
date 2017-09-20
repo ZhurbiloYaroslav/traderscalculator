@@ -365,7 +365,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
                 textField.text = editedListOfPositions.listName
             })
             
-            let titleForConfirmAction = "save".localized()
+            let titleForConfirmAction = "Save".localized()
             let confirmAction = UIAlertAction(title: titleForConfirmAction, style: .default, handler: { (_) in
                 
                 let textField = editNameAlert.textFields![0]
@@ -378,7 +378,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
                 
             })
             
-            let titleForCancelAction = "cancel".localized()
+            let titleForCancelAction = "Cancel".localized()
             let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
             
             editNameAlert.addAction(confirmAction)
@@ -443,7 +443,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
             
         })
         
-        let titleForConfirmAction = "save".localized()
+        let titleForConfirmAction = "Save".localized()
         let confirmAction = UIAlertAction(title: titleForConfirmAction, style: .default, handler: { (_) in
             
             self.makeDublicateOfTheListOfPositions(editedListOfPositions, withAlert: savePositionsAlert)
@@ -452,7 +452,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         
         savePositionsAlert.addAction(confirmAction)
         
-        let titleForCancelAction = "cancel".localized()
+        let titleForCancelAction = "Cancel".localized()
         let cancelAction = UIAlertAction(title: titleForCancelAction, style: .cancel, handler: nil)
         
         savePositionsAlert.addAction(cancelAction)

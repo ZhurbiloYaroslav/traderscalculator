@@ -97,6 +97,13 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
 "sell" = "sell";
 "buy" = "buy";
+"Save all positions to the list in history" = "すべてのポジションを履歴に保存する";
+"save & clear" = "セーブ＆クリア";
+"save & open" = "保存して開く";
+"ok" = "OK";
+"Copy" = "重複する";
+"Choose or create a list" = "リストを選択または作成する";
+"Create an empty list" = "空のリストを作成する";
 
 /*
 "Edit position #navBarTitle" = "";

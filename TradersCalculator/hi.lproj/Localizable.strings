@@ -97,6 +97,13 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
 "sell" = "sell";
 "buy" = "buy";
+"Save all positions to the list in history" = "सभी स्थितियों को इतिहास में सहेजें";
+"save & clear" = "सहेजें और साफ करें";
+"save & open" = "सहेजें और खोलें";
+"ok" = "ठीक";
+"Copy" = "प्रतिलिपि";
+"Choose or create a list" = "एक सूची चुनें या बनाएं";
+"Create an empty list" = "एक खाली सूची बनाएं";
 
 /*
 "Edit position #navBarTitle" = "";

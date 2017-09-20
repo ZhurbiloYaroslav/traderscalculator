@@ -97,18 +97,22 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
 "sell" = "sell";
 "buy" = "buy";
+"Save all positions to the list in history" = "Sauvegarder tous les postes de l'historique";
+"save & clear" = "sauvegarder et effacer";
+"save & open" = "sauvegarder et ouvrir";
+"ok" = "D'accord";
+"Copy" = "Dupliquer";
+"Choose or create a list" = "Choisissez ou créez une liste";
+"Create an empty list" = "Créer une liste vide";
 
 /*
 "Edit position #navBarTitle" = "";
 "Pro version" = "Version Pro";
 "App info" = "";
-"Save all positions to the list in history" = "";
 "save" = "";
 "cancel" = "";
 "Edit name of the history" = "";
-"Choose or create a list" = "";
 "This name of the list exist" = "";
-"ok" = "ok";
 "export date" = "";
 "list date" = "";
 "list name" = "";
@@ -124,11 +128,8 @@
 "Your device could not send e-mail. Please check e-mail configuration and try again" = "";
 "Copy" = "";
 "Save positions to the list" = "";
-"save & clear" = "";
-"save & open" = "";
 "The list with such name exists" = "";
 "Buy PRO to add more records" = "";
-"Create an empty list" = "";
 */
 "welcome screen text" = "Bonjour, mon ami! \nJ'ai une bonne et une mauvaise nouvelles! \nMauvaise nouvelle -la machine de temps s'est cassée! \nLes bonnes nouvelles: maintenant vous avez une bonne application j'ai écrit spécialement pour vous et vos excellentes offres! \nIci, il n'y a que ce que vous devez savoir : le bénéfice, la perte (si vous êtes un fan de frisson), marge. \nAvez-vous besoin d'autre chose mon cher ami? \nTout est simple, Il y a tout ce que vous connaissez déjà! \nEssayez la version gratuite. \nDans un premier temps, utilisez trois paires de devises, ce sera suffisant pour vous. Vous pouvez enregistrer deux historiques de calcul. Et les histoires d'exportation sur votre PC trois fois. \nEt quand vous serez prêt à acheter la version Pro, vous obtiendrez des possibilités illimitées \nEt vous aiderez le voyageur du temps... \n\nVôtre \nEndrew Carlsin \n";
 

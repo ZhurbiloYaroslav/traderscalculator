@@ -97,6 +97,13 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
 "sell" = "sell";
 "buy" = "buy";
+"Save all positions to the list in history" = "Alle Positionen in der Geschichte speichern";
+"save & clear" = "speichern und löschen";
+"save & open" = "speichern und öffnen";
+"ok" = "OK";
+"Copy" = "Duplikat";
+"Choose or create a list" = "Wählen oder erstellen Sie eine Liste";
+"Create an empty list" = "Erstellen Sie eine leere Liste";
 
 /*
 "Edit position #navBarTitle" = "";
@@ -122,7 +129,6 @@
 "margin" = "";
 "Could Not Send Email" = "";
 "Your device could not send e-mail. Please check e-mail configuration and try again" = "";
-"Copy" = "";
 "Save positions to the list" = "";
 "save & clear" = "";
 "save & open" = "";

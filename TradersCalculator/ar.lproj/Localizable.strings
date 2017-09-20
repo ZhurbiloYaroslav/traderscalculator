@@ -97,6 +97,13 @@
   Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.*/
 "sell" = "sell";
 "buy" = "buy";
+"Save all positions to the list in history" = "حفظ جميع المواقف إلى التاريخ";
+"save & clear" = "حفظ وواضحة";
+"save & open" = "حفظ وفتح";
+"ok" = "حسنا";
+"Copy" = "مكرر";
+"Choose or create a list" = "اختر قائمة أو أنشئها";
+"Create an empty list" = "إنشاء قائمة فارغة";
 
 /*
 "Edit position #navBarTitle" = "";
