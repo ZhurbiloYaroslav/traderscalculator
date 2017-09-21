@@ -76,19 +76,22 @@ class Calculator {
             return formulas.margin1_LocalUSD()
             
         case let x where FormulaOption().USDLocal.contains(x):
-            return formulas.margin2_USDLocal()
+            return formulas.margin_USDLocal()
             
-        case let x where FormulaOption().crossCur1.contains(x):
-            return formulas.margin3_CrossCur1()
+        case let x where FormulaOption().baseUSD.contains(x):
+            return formulas.margin_baseUSD()
             
-        case let x where FormulaOption().crossCur2.contains(x):
-            return formulas.margin4_CrossCur2()
-            
-        case let x where FormulaOption().crossCur3.contains(x):
-            return formulas.margin5_CrossCur3()
+            //        case let x where FormulaOption().crossCur1.contains(x):
+            //            return formulas.margin3_CrossCur1()
+            //
+            //        case let x where FormulaOption().crossCur2.contains(x):
+            //            return formulas.margin4_CrossCur2()
+            //
+            //        case let x where FormulaOption().crossCur3.contains(x):
+            //            return formulas.margin5_CrossCur3()
             
         default:
-            return 0
+            return formulas.margin_usdBase()
         }
     }
     
@@ -188,25 +191,42 @@ extension Calculator {
         }
         
         //Margin formulas
+        
         func margin1_LocalUSD() -> Double {
             return (_position.currentRateXX1XX2 * getValueSize()) / _accountLeverage
         }
         
-        func margin2_USDLocal() -> Double {
+        func margin_USDLocal() -> Double {
             return getValueSize() / _accountLeverage
         }
         
-        func margin3_CrossCur1() -> Double {
-            return (_position.currentRateXX1USD * getValueSize()) / _accountLeverage
+        func margin_baseUSD() -> Double {
+            return (getValueSize() * _position.currentRateXX1USD) / _accountLeverage
         }
         
-        func margin4_CrossCur2() -> Double {
-            return (_position.currentRateXX1USD * getValueSize()) / _accountLeverage
+        func margin_usdBase() -> Double {
+            return (getValueSize() * (1 / _position.currentRateUSDXX1)) / _accountLeverage
         }
         
-        func margin5_CrossCur3() -> Double {
-            return (_position.currentRateXX1XX2 * getValueSize()) / _accountLeverage
-        }
+        //        func margin1_LocalUSD() -> Double {
+        //            return (_position.currentRateXX1XX2 * getValueSize()) / _accountLeverage
+        //        }
+        //
+        //        func margin2_USDLocal() -> Double {
+        //            return getValueSize() / _accountLeverage
+        //        }
+        //
+        //        func margin3_CrossCur1() -> Double {
+        //            return (_position.currentRateXX1USD * getValueSize()) / _accountLeverage
+        //        }
+        //
+        //        func margin4_CrossCur2() -> Double {
+        //            return (_position.currentRateXX1USD * getValueSize()) / _accountLeverage
+        //        }
+        //
+        //        func margin5_CrossCur3() -> Double {
+        //            return (_position.currentRateXX1XX2 * getValueSize()) / _accountLeverage
+        //        }
         
     }
     
@@ -218,6 +238,40 @@ extension Calculator {
             "GBPUSD",
             "NZDUSD"
         ]
+        
+        var baseUSD = [
+            "AUDCAD",
+            "AUDCHF",
+            "AUDJPY",
+            "AUDSGD",
+            "AUDNZD",
+            "EURCAD",
+            "EURCHF",
+            "EURJPY",
+            "EURDKK",
+            "EURHKD",
+            "EURNOK",
+            "EURPLN",
+            "EURSEK",
+            "EURSGD",
+            "EURTRY",
+            "EURZAR",
+            "EURAUD",
+            "EURGBP",
+            "EURNZD",
+            "GBPCAD",
+            "GBPCHF",
+            "GBPJPY",
+            "GBPDKK",
+            "GBPNOK",
+            "GBPSEK",
+            "GBPSGD",
+            "GBPAUD",
+            "GBPNZD",
+            "NZDCAD",
+            "NZDCHF",
+            "NZDJPY",
+            ]
         
         var USDLocal = [
             "USDCAD",
