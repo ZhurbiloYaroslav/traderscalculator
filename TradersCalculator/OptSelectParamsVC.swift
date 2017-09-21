@@ -172,6 +172,8 @@ class OptSelectParamsVC: UIViewController {
         
         updateUILabelsWithLocalizedText()
         
+        _ = HonestCustomer(withVC: self)
+        
     }
     
 }

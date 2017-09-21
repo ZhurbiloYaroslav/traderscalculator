@@ -43,6 +43,7 @@
 		C4A0A57C1F71493C00FF4670 /* adBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0A57B1F71493C00FF4670 /* adBannerView.swift */; };
 		C4AD63EC1F665E0C00091AD9 /* FreeOrProVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */; };
 		C4AD63EE1F66769300091AD9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD63ED1F66769300091AD9 /* TabBarController.swift */; };
+		C4D786101F740AED0048305E /* HonestCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7860F1F740AED0048305E /* HonestCustomer.swift */; };
 		C4DF3EDA1F127E8A00C2CB89 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */; };
 		C4DF3EDF1F12BA6A00C2CB89 /* ForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */; };
 		C4DF3EE11F12CE8A00C2CB89 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */; };
@@ -136,6 +137,7 @@
 		C4A880865C90F451C4C74797 /* Pods_TraderCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraderCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AD63EB1F665E0C00091AD9 /* FreeOrProVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeOrProVersion.swift; sourceTree = "<group>"; };
 		C4AD63ED1F66769300091AD9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C4D7860F1F740AED0048305E /* HonestCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HonestCustomer.swift; sourceTree = "<group>"; };
 		C4DF3ED91F127E8A00C2CB89 /* OptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		C4DF3EDE1F12BA6A00C2CB89 /* ForexAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForexAPI.swift; sourceTree = "<group>"; };
 		C4DF3EE01F12CE8A00C2CB89 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				C4582F251F2B552F001B7403 /* LastUsedInstrument.swift */,
 				C44CC79F1F2F23E800DF2D03 /* NetworkActivityIndicatorManager.swift */,
 				C45F50D51F4DAE7C009D3F9F /* CoreDataManager.swift */,
+				C4D7860F1F740AED0048305E /* HonestCustomer.swift */,
 				C40FAD9F1F54564800778090 /* InstrumentsRates.swift */,
 				C49B93831F5AFF00003433DF /* FirstLaunch.swift */,
 				C402E8CB1F63EFE0001433F0 /* Formatter.swift */,
@@ -522,6 +525,7 @@
 				C4963EF51F36608B00E8AA00 /* Double+Extension.swift in Sources */,
 				C4260F4E1F208F75004ECCB5 /* FirebaseConnect.swift in Sources */,
 				C42783241F23CD0C00430916 /* UserDefaultsManager.swift in Sources */,
+				C4D786101F740AED0048305E /* HonestCustomer.swift in Sources */,
 				C45697A71F1A8D6D00599563 /* CalcAddItemVC.swift in Sources */,
 				C4FB60E21F1268A700EDE9C7 /* TradersCalculator.xcdatamodeld in Sources */,
 				C40FADA01F54564800778090 /* InstrumentsRates.swift in Sources */,

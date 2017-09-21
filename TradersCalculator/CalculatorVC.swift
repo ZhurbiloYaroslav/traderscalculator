@@ -344,6 +344,8 @@ class CalculatorVC: UIViewController {
         updateTable()
         calculatorTableView.reloadData()
         
+        _ = HonestCustomer(withVC: self)
+        
     }
     
 }

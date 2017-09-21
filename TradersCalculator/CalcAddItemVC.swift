@@ -218,6 +218,8 @@ class CalcAddItemVC: UIViewController {
         
         updateUILabelsWithLocalizedText()
         
+        _ = HonestCustomer(withVC: self)
+        
     }
     
 }
