@@ -10,7 +10,7 @@ import Foundation
 
 public struct AppProducts {
   
-  public static let BuyProProductID = "com.diglabstudio.TraderCalculator.BuyPro"
+  public static let BuyProProductID = "com.diglabstudio.TraderCalculator.BuyProVersion"
   
   fileprivate static let productIdentifiers: Set<ProductIdentifier> = [AppProducts.BuyProProductID]
 
