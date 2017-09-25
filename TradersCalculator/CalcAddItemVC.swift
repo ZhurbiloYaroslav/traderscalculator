@@ -217,9 +217,7 @@ class CalcAddItemVC: UIViewController {
         freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
-        
-        _ = HonestCustomer(withVC: self)
-        
+                
     }
     
 }

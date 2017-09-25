@@ -97,13 +97,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-//// Initialize the Google Mobile Ads SDK.
-//extension AppDelegate {
-//    
-//    func initializeGoogleMobileAds() {
-//        
-//        GADMobileAds.configure(withApplicationID: "ca-app-pub-7923953444264875~2930465540")
-//        
-//    }
-//    
-//}

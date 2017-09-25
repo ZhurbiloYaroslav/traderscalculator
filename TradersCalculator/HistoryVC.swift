@@ -90,8 +90,6 @@ class HistoryVC: UIViewController {
         updateUILabelsWithLocalizedText()
         
         historyTableView.reloadData()
-        
-        _ = HonestCustomer(withVC: self)
     }
     
     @IBAction func exportButtonPressed(_ sender: UIBarButtonItem) {

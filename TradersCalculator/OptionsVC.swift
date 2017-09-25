@@ -64,9 +64,7 @@ class OptionsVC: UIViewController {
         
         updateUILabelsWithLocalizedText()
         removeAdIfPRO()
-        
-        _ = HonestCustomer(withVC: self)
-        
+                
     }
     
 }

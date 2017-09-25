@@ -343,9 +343,7 @@ class CalculatorVC: UIViewController {
         attemptFetch()
         updateTable()
         calculatorTableView.reloadData()
-        
-        _ = HonestCustomer(withVC: self)
-        
+                
     }
     
 }
