@@ -99,6 +99,14 @@ class FreeOrProVersion {
         return UserDefaultsManager().isProVersion
     }
     
+    public func doWeShowAdvert() -> Bool {
+        if isPRO {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     private init(bannerView: AdBannerView, viewConstraint: NSLayoutConstraint, tableViewToChange: UITableView?) {
         self.containerConstraintToChange = viewConstraint
         self.googleBannerView = bannerView

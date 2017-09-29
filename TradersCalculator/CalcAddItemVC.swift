@@ -74,7 +74,7 @@ class CalcAddItemVC: UIViewController {
         stopLossLabel.text = "Stop loss".localized()
         sellButton.setTitle("Sell".localized(), for: .normal)
         buyButton.setTitle("Buy".localized(), for: .normal)
-//        navigationBackButton.setTitle("Back".localized(), for: .normal)
+        //        navigationBackButton.setTitle("Back".localized(), for: .normal)
         clearProfitButton.setTitle("clear".localized(), for: .normal)
         clearLossButton.setTitle("clear".localized(), for: .normal)
         
@@ -195,10 +195,17 @@ class CalcAddItemVC: UIViewController {
         }
         coreDataManager.saveContext()
         
-        performSegue(withIdentifier: "showFullScreenAdvert", sender: nil)
-        // Dismiss this view controller and go to previous
-//        navigationController?.popViewController(animated: true)
-//        dismiss(animated: true, completion: nil)
+        if freeOrProVersion.doWeShowAdvert() {
+            
+            performSegue(withIdentifier: "showFullScreenAdvert", sender: nil)
+            
+        } else {
+            
+            // Dismiss this view controller and go to previous
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+            
+        }
         
     }
     
@@ -217,7 +224,7 @@ class CalcAddItemVC: UIViewController {
         freeOrProVersion.removeAdIfPRO()
         
         updateUILabelsWithLocalizedText()
-                
+        
     }
     
 }
